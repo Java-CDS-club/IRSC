@@ -157,6 +157,41 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_JV_M"/>
+  <Attribute
+    Name="AutoAmount"
+    ColumnName="AUTO_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JV_M"/>
+  <Attribute
+    Name="AutoCbAc"
+    ColumnName="AUTO_CB_AC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JV_M"/>
+  <Attribute
+    Name="AutoExpAc"
+    ColumnName="AUTO_EXP_AC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JV_M"/>
+  <Attribute
+    Name="AutoVchr"
+    Precision="1"
+    ColumnName="AUTO_VCHR"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_JV_M"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblJvD"
     Association="model.ERP.EO.FkJvDMasterAssoc"

@@ -75,6 +75,7 @@
           <Item Value="CbGlId"/>
           <Item Value="Description"/>
           <Item Value="Amount"/>
+          <Item Value="Ast"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -24,7 +24,11 @@
        TblJvM.IMAGE_NAME, 
        TblJvM.JOB_M_ID, 
        TblJvM.DRAWER_ID, 
-       TblJvM.DRAWER_ID AS DRAWER_ID1"
+       TblJvM.DRAWER_ID AS DRAWER_ID1, 
+       TblJvM.AUTO_AMOUNT, 
+       TblJvM.AUTO_CB_AC, 
+       TblJvM.AUTO_EXP_AC, 
+       TblJvM.AUTO_VCHR"
   FromList="TBL_JV_M TblJvM"
   Where="TblJvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblJvM.COMPANY_ID)">
   <Variable
@@ -301,6 +305,30 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="AutoAmount"
+    PrecisionRule="true"
+    EntityAttrName="AutoAmount"
+    EntityUsage="TblJvM"
+    AliasName="AUTO_AMOUNT"/>
+  <ViewAttribute
+    Name="AutoCbAc"
+    PrecisionRule="true"
+    EntityAttrName="AutoCbAc"
+    EntityUsage="TblJvM"
+    AliasName="AUTO_CB_AC"/>
+  <ViewAttribute
+    Name="AutoExpAc"
+    PrecisionRule="true"
+    EntityAttrName="AutoExpAc"
+    EntityUsage="TblJvM"
+    AliasName="AUTO_EXP_AC"/>
+  <ViewAttribute
+    Name="AutoVchr"
+    PrecisionRule="true"
+    EntityAttrName="AutoVchr"
+    EntityUsage="TblJvM"
+    AliasName="AUTO_VCHR"/>
   <ViewLinkAccessor
     Name="TblJvDView"
     ViewLink="model.ERP.VO.FkJvDMasterLink"

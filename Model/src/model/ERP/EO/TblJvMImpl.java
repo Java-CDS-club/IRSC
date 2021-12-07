@@ -40,6 +40,10 @@ public class TblJvMImpl extends EntityImpl {
         ImageName,
         JobMId,
         DrawerId,
+        AutoAmount,
+        AutoCbAc,
+        AutoExpAc,
+        AutoVchr,
         TblJvD,
         TblJvAtt;
         private static AttributesEnum[] vals = null;
@@ -81,6 +85,10 @@ public class TblJvMImpl extends EntityImpl {
     public static final int IMAGENAME = AttributesEnum.ImageName.index();
     public static final int JOBMID = AttributesEnum.JobMId.index();
     public static final int DRAWERID = AttributesEnum.DrawerId.index();
+    public static final int AUTOAMOUNT = AttributesEnum.AutoAmount.index();
+    public static final int AUTOCBAC = AttributesEnum.AutoCbAc.index();
+    public static final int AUTOEXPAC = AttributesEnum.AutoExpAc.index();
+    public static final int AUTOVCHR = AttributesEnum.AutoVchr.index();
     public static final int TBLJVD = AttributesEnum.TblJvD.index();
     public static final int TBLJVATT = AttributesEnum.TblJvAtt.index();
 
@@ -320,6 +328,70 @@ public class TblJvMImpl extends EntityImpl {
      */
     public void setDrawerId(BigDecimal value) {
         setAttributeInternal(DRAWERID, value);
+    }
+
+    /**
+     * Gets the attribute value for AutoAmount, using the alias name AutoAmount.
+     * @return the value of AutoAmount
+     */
+    public BigDecimal getAutoAmount() {
+        return (BigDecimal) getAttributeInternal(AUTOAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AutoAmount.
+     * @param value value to set the AutoAmount
+     */
+    public void setAutoAmount(BigDecimal value) {
+        setAttributeInternal(AUTOAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for AutoCbAc, using the alias name AutoCbAc.
+     * @return the value of AutoCbAc
+     */
+    public BigDecimal getAutoCbAc() {
+        return (BigDecimal) getAttributeInternal(AUTOCBAC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AutoCbAc.
+     * @param value value to set the AutoCbAc
+     */
+    public void setAutoCbAc(BigDecimal value) {
+        setAttributeInternal(AUTOCBAC, value);
+    }
+
+    /**
+     * Gets the attribute value for AutoExpAc, using the alias name AutoExpAc.
+     * @return the value of AutoExpAc
+     */
+    public BigDecimal getAutoExpAc() {
+        return (BigDecimal) getAttributeInternal(AUTOEXPAC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AutoExpAc.
+     * @param value value to set the AutoExpAc
+     */
+    public void setAutoExpAc(BigDecimal value) {
+        setAttributeInternal(AUTOEXPAC, value);
+    }
+
+    /**
+     * Gets the attribute value for AutoVchr, using the alias name AutoVchr.
+     * @return the value of AutoVchr
+     */
+    public String getAutoVchr() {
+        return (String) getAttributeInternal(AUTOVCHR);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AutoVchr.
+     * @param value value to set the AutoVchr
+     */
+    public void setAutoVchr(String value) {
+        setAttributeInternal(AUTOVCHR, value);
     }
 
     /**

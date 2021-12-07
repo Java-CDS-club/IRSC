@@ -99,6 +99,20 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_EXP_APP_D"/>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_EXP_APP_D"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblExpAppM"
     Association="model.ERP.EO.FkExpAppDMasterAssoc"
