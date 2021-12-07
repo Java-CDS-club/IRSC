@@ -6,12 +6,9 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblExpAppMView1" RangeSize="10" DataControl="AppModuleDataControl1" id="TblExpAppMView1Iterator"/>
-    <searchRegion Binds="TblExpAppMView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpAppMView1Query"/>
-    <iterator Binds="TblExpAppDView2" RangeSize="10" DataControl="AppModuleDataControl1" id="TblExpAppDView2Iterator"/>
-    <searchRegion Binds="TblExpAppDView2Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpAppDView2Query"/>
+    <iterator Binds="TblExpAppView1" RangeSize="10" DataControl="AppModuleDataControl1" id="TblExpAppView1Iterator"/>
+    <searchRegion Binds="TblExpAppView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpAppView1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -25,76 +22,25 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="TblExpAppMView1Iterator" id="Id">
-      <AttrNames>
-        <Item Value="Id"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblExpAppMView1Iterator" id="Dated">
-      <AttrNames>
-        <Item Value="Dated"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="TblExpAppMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblExpAppMView1Iterator" id="FromDated">
-      <AttrNames>
-        <Item Value="FromDated"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblExpAppMView1Iterator" id="ToDated">
-      <AttrNames>
-        <Item Value="ToDated"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblExpAppMView1Iterator" id="Vno">
-      <AttrNames>
-        <Item Value="Vno"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblExpAppMView1Iterator" id="Narration">
-      <AttrNames>
-        <Item Value="Narration"/>
-      </AttrNames>
-    </attributeValues>
-    <action IterBinding="TblExpAppMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblExpAppMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblExpAppMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblExpAppMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
-    <action IterBinding="TblExpAppMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblExpAppMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblExpAppMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
-    <tree IterBinding="TblExpAppDView2Iterator" id="TblExpAppDView2">
-      <nodeDefinition DefName="model.ERP.VO.TblExpAppDView" Name="TblExpAppDView20">
+    <tree IterBinding="TblExpAppView1Iterator" id="TblExpAppView1">
+      <nodeDefinition DefName="model.ERP.VO.TblExpAppView" Name="TblExpAppView10">
         <AttrNames>
           <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="ProjectId"/>
           <Item Value="ExpGlId"/>
           <Item Value="CbGlId"/>
           <Item Value="Description"/>
           <Item Value="Amount"/>
+          <Item Value="Type"/>
           <Item Value="Ast"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblExpAppDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblExpAppDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblExpAppDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <tree IterBinding="TblExpAppMView1Iterator" id="TblExpAppMView1">
-      <nodeDefinition DefName="model.ERP.VO.TblExpAppMView" Name="TblExpAppMView10">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="Vno"/>
-          <Item Value="Dated"/>
-          <Item Value="ProjectId"/>
-          <Item Value="FromDated"/>
-          <Item Value="ToDated"/>
-          <Item Value="Narration"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
+    <action IterBinding="TblExpAppView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblExpAppView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblExpAppView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

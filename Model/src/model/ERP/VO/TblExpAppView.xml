@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblExpAppView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblExpApp.ID, 
+       TblExpApp.DATED, 
+       TblExpApp.PROJECT_ID, 
+       TblExpApp.COMPANY_ID, 
+       TblExpApp.EXP_GL_ID, 
+       TblExpApp.CB_GL_ID, 
+       TblExpApp.DESCRIPTION, 
+       TblExpApp.AMOUNT, 
+       TblExpApp.CREATED_DATE, 
+       TblExpApp.CREATED_BY, 
+       TblExpApp.UPDATED_DATE, 
+       TblExpApp.UPDATED_BY, 
+       TblExpApp.AST, 
+       TblExpApp.TYPE"
+  FromList="TBL_EXP_APP TblExpApp"
+  Where="TblExpApp.COMPANY_ID = nvl(:P_COMPANY_ID,TblExpApp.COMPANY_ID) 
+AND (AST='N' or AST is null)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblExpAppView"/>
+  </Variable>
+  <ViewAccessor
+    Name="Project_Name_LOV1"
+    ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Expense_Approval_Type_LOV1"
+    ViewObjectName="model.LOV.Expense_Approval_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ProjectId"
+    ListVOName="Project_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Type"
+    ListVOName="Expense_Approval_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Type"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ExpGlId"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExpGlId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CbGlId"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CbGlId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblExpApp"
+    Entity="model.ERP.EO.TblExpApp"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblExpApp"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblExpApp"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="ProjectId"
+    PrecisionRule="true"
+    EntityAttrName="ProjectId"
+    EntityUsage="TblExpApp"
+    AliasName="PROJECT_ID"
+    LOVName="LOV_ProjectId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblExpApp"
+    AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="ExpGlId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ExpGlId"
+    EntityUsage="TblExpApp"
+    AliasName="EXP_GL_ID"
+    LOVName="LOV_ExpGlId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CbGlId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CbGlId"
+    EntityUsage="TblExpApp"
+    AliasName="CB_GL_ID"
+    LOVName="LOV_CbGlId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="TblExpApp"
+    AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="TblExpApp"
+    AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblExpApp"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblExpApp"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblExpApp"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblExpApp"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblExpApp"
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Type"
+    PrecisionRule="true"
+    EntityAttrName="Type"
+    EntityUsage="TblExpApp"
+    AliasName="TYPE"
+    LOVName="LOV_Type">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>
