@@ -187,15 +187,15 @@
                                                    actionListener="#{pageFlowScope.UploadBean.UploadImage}">
                                                   
                                                 </af:button>-->
-                                                 <af:image id="i1"
+                                                 <af:image id="i1" styleClass="af|moduleimg" 
                                                   shortDesc="Upload image or refresh page to render properly"
-                                                  inlineStyle="height:200px; width:169px;"
+                                                  inlineStyle="height:200px; width:169px;" 
                                                   source="/viewimageservlet?getPath=#{sessionScope.sessIMGP}&amp;getImage=#{bindings.Image.inputValue}"
                                                   partialTriggers="it1"/>
                                                     <af:spacer width="5" height="5" id="s17"/>
                         <af:inputFile id="if1" value="#{pageFlowScope.FileManagingBean.file}" />
                         <af:spacer width="5" height="5" id="s18"/>
-                        <af:button text="Save Image" id="b6" partialSubmit="true"  styleClass="af|Voucheractionbutton"
+                        <af:button text="Save Image" id="b6" partialSubmit="true"  styleClass="af|Voucheractionbutton" 
                                                    actionListener="#{pageFlowScope.FileManagingBean.UploadFImage}">
                                                    <f:attribute name="path" value="#{sessionScope.sessIMGP}"/>
                                                    <f:attribute name="actionPerform" value="db_Image_Value"/>
