@@ -6,7 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblDrawerView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblDrawerView1Iterator"/>
+    <iterator Binds="TblDrawerView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblDrawerView1Iterator"
+              CacheResults="false"/>
     <searchRegion Binds="TblDrawerView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblDrawerView1Query"/>
     <iterator Binds="BPV_BRV_CPV_CRV_JV_Open_Fragment1" RangeSize="25" DataControl="AppModuleDataControl"
@@ -36,6 +37,11 @@
           <Item Value="ImageName"/>
           <Item Value="Ast"/>
           <Item Value="Remarks"/>
+          <Item Value="ProjectId"/>
+          <Item Value="ExpGlId"/>
+          <Item Value="CbGlId"/>
+          <Item Value="Amount"/>
+          <Item Value="Dated"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -79,5 +85,25 @@
         <Item Value="Image"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblDrawerView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblDrawerView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblDrawerView1Iterator" StaticList="false" Uses="LOV_ExpGlId" id="ExpGlId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblDrawerView1Iterator" StaticList="false" Uses="LOV_CbGlId" id="CbGlId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblDrawerView1Iterator" id="Amount">
+      <AttrNames>
+        <Item Value="Amount"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblDrawerView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblDrawerView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblDrawerView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblDrawerView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
   </bindings>
 </pageDefinition>

@@ -17,7 +17,7 @@
                   <af:gridRow marginTop="5px" height="auto" id="gr5">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
                       <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
-                        <af:showDetailItem id="tab3" text="Detail">
+                        <af:showDetailItem id="tab3">
                        
                           <af:table value="#{bindings.TblExpAppView1.collectionModel}" var="row"
                                     rows="#{bindings.TblExpAppView1.rangeSize}"

@@ -19,6 +19,28 @@
         ResId="model.ERP.VO.TblDrawerView1_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="Project_Name_LOV1"
+    ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ProjectId"
+    ListVOName="Project_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblDrawer"
     Entity="model.ERP.EO.TblDrawer"/>
@@ -64,6 +86,38 @@
     EntityAttrName="UpdatedDate"
     EntityUsage="TblDrawer"
     AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="TblDrawer"
+    AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="CbGlId"
+    PrecisionRule="true"
+    EntityAttrName="CbGlId"
+    EntityUsage="TblDrawer"
+    AliasName="CB_GL_ID"/>
+  <ViewAttribute
+    Name="ExpGlId"
+    PrecisionRule="true"
+    EntityAttrName="ExpGlId"
+    EntityUsage="TblDrawer"
+    AliasName="EXP_GL_ID"/>
+  <ViewAttribute
+    Name="ProjectId"
+    PrecisionRule="true"
+    EntityAttrName="ProjectId"
+    EntityUsage="TblDrawer"
+    AliasName="PROJECT_ID"
+    LOVName="LOV_ProjectId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
