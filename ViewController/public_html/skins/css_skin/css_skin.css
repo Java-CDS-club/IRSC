@@ -12,15 +12,13 @@ border-radius:10px;
 
 af|moduleimg {
 box-shadow:1px 5px 10px #330066;
-opacity:0.8;
+/*opacity:0.8;*/
 }
 
 af|moduleimg:hover{
-  opacity:1;
 min-height: 250px;
 min-width: 250px;
 position: center;
-
 }
 
 af|modulebutton {

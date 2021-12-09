@@ -276,7 +276,7 @@
                     <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                   </af:inputDate>
                   <af:spacer  id="s2"/>
-                   <af:selectOneChoice value="#{bindings.ExpGlId.inputValue}" label="Expense"
+                   <af:selectOneChoice value="#{bindings.ExpGlId.inputValue}" label="Debit Head"
                                       required="#{bindings.ExpGlId.hints.mandatory}"
                                       shortDesc="#{bindings.ExpGlId.hints.tooltip}" id="soc7"
                                       contentStyle="width:150px;">
@@ -304,7 +304,7 @@
                   </af:selectOneChoice>
                   
                   <af:spacer  id="s6"/>
-                  <af:selectOneChoice value="#{bindings.CbGlId.inputValue}" label="Cash\\Bank"
+                  <af:selectOneChoice value="#{bindings.CbGlId.inputValue}" label="Credit Head"
                                       required="#{bindings.CbGlId.hints.mandatory}"
                                       shortDesc="#{bindings.CbGlId.hints.tooltip}" id="soc8"
                                       contentStyle="width:150px;">

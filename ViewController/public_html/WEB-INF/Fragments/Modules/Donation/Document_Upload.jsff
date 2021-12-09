@@ -175,7 +175,7 @@
                       </af:panelTabbed>
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc10">
-                      <af:panelGroupLayout id="pgl5" layout="vertical" inlineStyle="margin-top: 15%; margin-left: 5%; padding:8%; border: 0px solid black;" >
+                      <af:panelGroupLayout id="pgl5" layout="vertical" inlineStyle="margin-top: 5%; margin-left: 1%; padding:8%; border: 0px solid black;" >
                                        <!--<af:image id="i1"
                                                   shortDesc="#{bindings.ImageName.hints.tooltip}"
                                                   inlineStyle="height:200px; width:169px;"
