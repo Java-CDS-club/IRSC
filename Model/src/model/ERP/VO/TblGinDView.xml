@@ -31,7 +31,8 @@
        TblGinM.FROM_DEPARTMENT_ID, 
        TblGinD.ITEM_L4_ID AS ITEM_L4ID2, 
        TblGinD.CONS_CA, 
-       TblGinD.GL_L4_ID"
+       TblGinD.GL_L4_ID, 
+       TblGinM.COMPANY_ID"
   FromList="TBL_GIN_D TblGinD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom, TBL_GIN_M TblGinM"
   Where="TblGinD.GIN_M_ID = TblGinM.ID(+) 
 AND TblGinD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID            
@@ -49,15 +50,15 @@ and TblItemL4.UOM_ID = TblUom.ID">
     ViewObjectName="model.LOV.FIFO_LOV"
     RowLevelBinds="true">
     <ParameterMap>
-      <PIMap Variable="get_Proj_ID">
-        <TransientExpression
-          trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[FromProjectId]]></TransientExpression>
-      </PIMap>
-      <PIMap Variable="get_dept_ID">
+      <PIMap Variable="get_Dept_ID">
         <TransientExpression
           trustMode="untrusted"
           Name="ExpressionScript"><![CDATA[FromDepartmentId]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="get_Company_ID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[CompanyId]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -383,6 +384,12 @@ and TblItemL4.UOM_ID = TblUom.ID">
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblGinM"
+    AliasName="COMPANY_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
     <Item Value="ItemL4Id1"/>

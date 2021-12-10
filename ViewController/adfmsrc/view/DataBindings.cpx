@@ -431,6 +431,10 @@
     <page path="/WEB-INF/Task_Flows/Modules/Bank_Cash/Expense_Approval_TaskFlow.xml#Expense_Approval_TaskFlow@ExecuteWithParams"
           usageId="view_Expense_Approval_TaskFlow_Expense_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Bank_Cash/Expense_Approval.jsff" usageId="view_Expense_ApprovalPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sale_Purchase/Goods_Issue_Notes_TaskFlow.xml#Goods_Issue_Notes_TaskFlow@ExecuteWithParams"
+          usageId="view_Goods_Issue_Notes_TaskFlow_Goods_Issue_Notes_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Goods_Issue_Notes.jsff"
+          usageId="view_Goods_Issue_NotesPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -835,6 +839,9 @@
     <page id="view_Expense_Approval_TaskFlow_Expense_Approval_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Bank_Cash.Expense_Approval_TaskFlow_Expense_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Expense_ApprovalPageDef" path="Fragments.Modules.Bank_Cash.Expense_ApprovalPageDef"/>
+    <page id="view_Goods_Issue_Notes_TaskFlow_Goods_Issue_Notes_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Sale_Purchase.Goods_Issue_Notes_TaskFlow_Goods_Issue_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Goods_Issue_NotesPageDef1" path="Fragments.Modules.Sale_Purchase.Goods_Issue_NotesPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

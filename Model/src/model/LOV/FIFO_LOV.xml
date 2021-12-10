@@ -19,19 +19,24 @@
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="get_Proj_ID"
+    Name="get_Dept_ID"
     Kind="where"
     Type="java.math.BigDecimal"/>
-  <SQLQuery><![CDATA[select              
-VF.ID, VF.Item_L4_ID, VF.Item_Name, VF.bal_qty ,VF.bal_amt/VF.bal_qty rate,    
-RD.RATE RD_RATE    
-             
-from VEW_FIFO VF,TBL_RDF_MASTER RM,TBL_RDF_DETAIL RD    
-    
-where    
-VF.ITEM_L4_ID = RD.ITEM_L4_ID    
-and RM.ID = RD.RDF_MASTER_ID    
-and VF.project_id = nvl(:get_Proj_ID,VF.project_id)]]></SQLQuery>
+  <Variable
+    Name="get_Company_ID"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <SQLQuery><![CDATA[select                  
+VF.ID, VF.Item_L4_ID, VF.Item_Name, VF.bal_qty ,VF.bal_amt/VF.bal_qty rate,        
+RD.RATE RD_RATE        
+                 
+from VEW_FIFO VF,TBL_RDF_MASTER RM,TBL_RDF_DETAIL RD        
+        
+where        
+VF.ITEM_L4_ID = RD.ITEM_L4_ID(+)    
+and RM.ID = RD.RDF_MASTER_ID        
+and VF.Department_id = nvl(:get_Dept_ID,VF.Department_id) 
+and VF.Company_id = nvl(:get_Company_ID,VF.Company_id)]]></SQLQuery>
   <ViewAttribute
     Name="Id"
     IsUpdateable="false"
