@@ -180,5 +180,9 @@
         <Item Value="BarCode"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="TblItemL4View1Iterator" StaticList="false" Uses="LOV_GlL4Id" id="GlL4Id" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblItemL4View1Iterator" StaticList="false" Uses="LOV_ConsCa" id="ConsCa" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

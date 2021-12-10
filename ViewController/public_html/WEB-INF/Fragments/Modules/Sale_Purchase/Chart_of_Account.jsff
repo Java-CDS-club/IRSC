@@ -285,7 +285,7 @@
               <af:showDetailItem text="Level 4" id="sdi7">
                 <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi3">
-                    <af:panelFormLayout id="pfl4" maxColumns="2" rows="14">
+                    <af:panelFormLayout id="pfl4" maxColumns="2" rows="16">
                       <af:inputText value="#{bindings.ItemL4Id.inputValue}" label="#{bindings.ItemL4Id.hints.label}"
                                     required="#{bindings.ItemL4Id.hints.mandatory}" visible="false"
                                     columns="#{bindings.ItemL4Id.hints.displayWidth}"
@@ -336,6 +336,20 @@
                         <f:validator binding="#{bindings.TaxDetailId.validator}"/>
                       </af:selectOneChoice>
                       <af:spacer  id="s24"/>
+                      <af:selectOneChoice value="#{bindings.GlL4Id.inputValue}" label="Stock C/A"
+                                          required="#{bindings.GlL4Id.hints.mandatory}"
+                                          shortDesc="#{bindings.GlL4Id.hints.tooltip}" id="soc7" contentStyle="width:150px;">
+                        <f:selectItems value="#{bindings.GlL4Id.items}" id="si7"/>
+                        <f:validator binding="#{bindings.GlL4Id.validator}"/>
+                      </af:selectOneChoice>
+                      <af:spacer  id="s31"/>
+                      <af:selectOneChoice value="#{bindings.ConsCa.inputValue}" label="Consumption C/A"
+                                          required="#{bindings.ConsCa.hints.mandatory}"
+                                          shortDesc="#{bindings.ConsCa.hints.tooltip}" id="soc12" contentStyle="width:150px;">
+                        <f:selectItems value="#{bindings.ConsCa.items}" id="si12"/>
+                        <f:validator binding="#{bindings.ConsCa.validator}"/>
+                      </af:selectOneChoice>
+                      <af:spacer  id="s32"/>
                       <af:selectOneChoice value="#{bindings.Ast3.inputValue}" label="Active"
                                           required="#{bindings.Ast3.hints.mandatory}"
                                           shortDesc="#{bindings.Ast3.hints.tooltip}" id="soc11"
@@ -344,11 +358,7 @@
                         <f:validator binding="#{bindings.Ast3.validator}"/>
                       </af:selectOneChoice>
                       <af:spacer  id="s25"/>
-                      <af:link shortDesc="#{bindings.CompanyId.hints.tooltip}" id="l1"  text="Print"
-                         icon="#{resource['images:get_report.png']}"
-                          actionListener="#{backingBeanScope.VoucherPrintBean.getCOAReport}">
-                         <f:attribute name="sendCOMPANYID" value="#{bindings.CompanyId.inputValue}" />
-                          </af:link>
+                     
                           <!--<af:spacer  id="s26"/>-->
                       <af:inputDate value="#{bindings.ExpDate.inputValue}" label="Expire Date"
                                     required="#{bindings.ExpDate.hints.mandatory}"
@@ -405,6 +415,11 @@
                                     shortDesc="#{bindings.BarCode.hints.tooltip}" id="it23" contentStyle="width:150px;">
                         <f:validator binding="#{bindings.BarCode.validator}"/>
                       </af:inputText>
+                       <af:link shortDesc="#{bindings.CompanyId.hints.tooltip}" id="l1"  text="Print"
+                         icon="#{resource['images:get_report.png']}"
+                          actionListener="#{backingBeanScope.VoucherPrintBean.getCOAReport}">
+                         <f:attribute name="sendCOMPANYID" value="#{bindings.CompanyId.inputValue}" />
+                          </af:link>
                       <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="left" id="pgl15">
                                 <af:button actionListener="#{bindings.First3.execute}" text="First"  styleClass="af|Voucheractionbutton"

@@ -35,6 +35,8 @@ public class TblGinDImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         GrnMId,
+        ConsCa,
+        GlL4Id,
         TblGinM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -59,6 +61,7 @@ public class TblGinDImpl extends EntityImpl {
         }
     }
 
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int GINMID = AttributesEnum.GinMId.index();
     public static final int ITEML4ID = AttributesEnum.ItemL4Id.index();
@@ -72,6 +75,8 @@ public class TblGinDImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int GRNMID = AttributesEnum.GrnMId.index();
+    public static final int CONSCA = AttributesEnum.ConsCa.index();
+    public static final int GLL4ID = AttributesEnum.GlL4Id.index();
     public static final int TBLGINM = AttributesEnum.TblGinM.index();
 
     /**
@@ -86,6 +91,7 @@ public class TblGinDImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblGinD");
     }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -277,6 +283,38 @@ public class TblGinDImpl extends EntityImpl {
      */
     public void setGrnMId(BigDecimal value) {
         setAttributeInternal(GRNMID, value);
+    }
+
+    /**
+     * Gets the attribute value for ConsCa, using the alias name ConsCa.
+     * @return the value of ConsCa
+     */
+    public BigDecimal getConsCa() {
+        return (BigDecimal) getAttributeInternal(CONSCA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ConsCa.
+     * @param value value to set the ConsCa
+     */
+    public void setConsCa(BigDecimal value) {
+        setAttributeInternal(CONSCA, value);
+    }
+
+    /**
+     * Gets the attribute value for GlL4Id, using the alias name GlL4Id.
+     * @return the value of GlL4Id
+     */
+    public BigDecimal getGlL4Id() {
+        return (BigDecimal) getAttributeInternal(GLL4ID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GlL4Id.
+     * @param value value to set the GlL4Id
+     */
+    public void setGlL4Id(BigDecimal value) {
+        setAttributeInternal(GLL4ID, value);
     }
 
     /**

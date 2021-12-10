@@ -29,7 +29,9 @@
        TblGinM.FROM_PROJECT_ID, 
        TblGinM.ID AS ID2, 
        TblGinM.FROM_DEPARTMENT_ID, 
-       TblGinD.ITEM_L4_ID AS ITEM_L4ID2"
+       TblGinD.ITEM_L4_ID AS ITEM_L4ID2, 
+       TblGinD.CONS_CA, 
+       TblGinD.GL_L4_ID"
   FromList="TBL_GIN_D TblGinD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom, TBL_GIN_M TblGinM"
   Where="TblGinD.GIN_M_ID = TblGinM.ID(+) 
 AND TblGinD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID            
@@ -59,6 +61,10 @@ and TblItemL4.UOM_ID = TblUom.ID">
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_UomId"
     ListVOName="Unit_of_Measurements_LOV1"
@@ -116,6 +122,42 @@ and TblItemL4.UOM_ID = TblUom.ID">
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ConsCa"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ConsCa"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GlL4Id"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -306,6 +348,34 @@ and TblItemL4.UOM_ID = TblUom.ID">
     EntityUsage="TblGinD"
     AliasName="ITEM_L4ID2"
     LOVName="LOV_ItemL4Id2">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ConsCa"
+    PrecisionRule="true"
+    EntityAttrName="ConsCa"
+    EntityUsage="TblGinD"
+    AliasName="CONS_CA"
+    LOVName="LOV_ConsCa">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GlL4Id"
+    PrecisionRule="true"
+    EntityAttrName="GlL4Id"
+    EntityUsage="TblGinD"
+    AliasName="GL_L4_ID"
+    LOVName="LOV_GlL4Id">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

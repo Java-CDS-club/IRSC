@@ -26,7 +26,9 @@
        TblItemL4.MAX_ORDER_LEVELL, 
        TblItemL4.RE_ORDER_LEVEL, 
        TblItemL4.BAR_CODE, 
-       TblItemL4.TYPE"
+       TblItemL4.TYPE, 
+       TblItemL4.GL_L4_ID, 
+       TblItemL4.CONS_CA"
   FromList="TBL_ITEM_L4 TblItemL4"
   Where="TblItemL4.COMPANY_ID=nvl(:P_COMPANY_ID,TblItemL4.COMPANY_ID)">
   <Variable
@@ -56,6 +58,10 @@
   <ViewAccessor
     Name="BarCode_Type_LOV1"
     ViewObjectName="model.LOV.BarCode_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ItemL3Id"
@@ -145,6 +151,42 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GlL4Id"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ConsCa"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ConsCa"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -299,6 +341,34 @@
     EntityUsage="TblItemL4"
     AliasName="TYPE"
     LOVName="LOV_Type">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GlL4Id"
+    PrecisionRule="true"
+    EntityAttrName="GlL4Id"
+    EntityUsage="TblItemL4"
+    AliasName="GL_L4_ID"
+    LOVName="LOV_GlL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ConsCa"
+    PrecisionRule="true"
+    EntityAttrName="ConsCa"
+    EntityUsage="TblItemL4"
+    AliasName="CONS_CA"
+    LOVName="LOV_ConsCa">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

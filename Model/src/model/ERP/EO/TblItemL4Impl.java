@@ -41,6 +41,8 @@ public class TblItemL4Impl extends EntityImpl {
         ReOrderLevel,
         BarCode,
         Type,
+        GlL4Id,
+        ConsCa,
         TblOpenBlncInv,
         TblPblSuppItems,
         TblItemL3;
@@ -86,6 +88,8 @@ public class TblItemL4Impl extends EntityImpl {
     public static final int REORDERLEVEL = AttributesEnum.ReOrderLevel.index();
     public static final int BARCODE = AttributesEnum.BarCode.index();
     public static final int TYPE = AttributesEnum.Type.index();
+    public static final int GLL4ID = AttributesEnum.GlL4Id.index();
+    public static final int CONSCA = AttributesEnum.ConsCa.index();
     public static final int TBLOPENBLNCINV = AttributesEnum.TblOpenBlncInv.index();
     public static final int TBLPBLSUPPITEMS = AttributesEnum.TblPblSuppItems.index();
     public static final int TBLITEML3 = AttributesEnum.TblItemL3.index();
@@ -374,6 +378,38 @@ public class TblItemL4Impl extends EntityImpl {
      */
     public void setType(String value) {
         setAttributeInternal(TYPE, value);
+    }
+
+    /**
+     * Gets the attribute value for GlL4Id, using the alias name GlL4Id.
+     * @return the value of GlL4Id
+     */
+    public BigDecimal getGlL4Id() {
+        return (BigDecimal) getAttributeInternal(GLL4ID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GlL4Id.
+     * @param value value to set the GlL4Id
+     */
+    public void setGlL4Id(BigDecimal value) {
+        setAttributeInternal(GLL4ID, value);
+    }
+
+    /**
+     * Gets the attribute value for ConsCa, using the alias name ConsCa.
+     * @return the value of ConsCa
+     */
+    public BigDecimal getConsCa() {
+        return (BigDecimal) getAttributeInternal(CONSCA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ConsCa.
+     * @param value value to set the ConsCa
+     */
+    public void setConsCa(BigDecimal value) {
+        setAttributeInternal(CONSCA, value);
     }
 
     /**

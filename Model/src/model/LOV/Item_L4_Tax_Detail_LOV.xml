@@ -14,8 +14,8 @@
        TblTaxDetail.TAX_PERC, 
        TblTaxDetail.ID"
   FromList="TBL_ITEM_L4 TblItemL4, TBL_TAX_DETAIL TblTaxDetail"
-  Where="TblItemL4.AST='Y'       
-AND  TblItemL4.TAX_DETAIL_ID= TblTaxDetail.ID 
+  Where="TblItemL4.AST='Y'        
+AND  TblItemL4.TAX_DETAIL_ID= TblTaxDetail.ID(+)  
 AND TblItemL4.COMPANY_ID = nvl(:P_COMPANY_ID,TblItemL4.COMPANY_ID)"
   BindingStyle="OracleName"
   CustomQuery="false"
