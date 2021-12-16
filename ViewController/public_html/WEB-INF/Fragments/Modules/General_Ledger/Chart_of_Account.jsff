@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+   <af:panelBox text="Chart of Account" id="pb1" >
+                <f:facet name="toolbar"/>
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Chart of Account">
          <!--<af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -15,8 +17,8 @@
                                    iconPosition="top"/>
                         <af:spacer width="10" height="10" id="s1"/>
                         </af:panelGroupLayout>-->
-     
-      <af:panelGridLayout id="pgl1">
+   
+           <af:panelGridLayout id="pgl1">
      
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
@@ -960,6 +962,9 @@
         </af:gridRow>
         
       </af:panelGridLayout>
+       
+    
+    
        <af:panelGridLayout id="pgl5">
         <af:gridRow marginTop="5px" height="auto" id="gr6">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"/>
@@ -1013,4 +1018,5 @@
     
     </af:showDetailItem>
   </af:panelAccordion>
+    </af:panelBox>
 </ui:composition>

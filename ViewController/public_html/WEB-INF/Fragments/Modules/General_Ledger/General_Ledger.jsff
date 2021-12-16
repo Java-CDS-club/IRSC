@@ -8,13 +8,13 @@
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
         
           <af:gridCell marginStart="5px" width="auto" id="gc1">
-            <af:panelSplitter id="ps1" orientation="vertical" 
-                              splitterPosition="200"  inlineStyle="width:620px;" collapsed="false">
-              <f:facet name="first">
-                 <af:panelGroupLayout id="pgl1" layout="scroll">
-            <af:outputLabel value="Notepad Messages" id="ol1"/>
+           
+               <af:panelBox text="Notepad Messages" id="pb1" >
+                <f:facet name="toolbar"/>
+                <af:panelGroupLayout id="pgl1" layout="scroll">
+           
               <af:panelGroupLayout id="pgl13" halign="right">
-                <af:spacer width="330" height="10" id="s2"/>
+                <af:spacer width="430" height="10" id="s2"/>
                 <af:button actionListener="#{bindings.Execute.execute}" text="Execute" icon="#{resource['images:edit.png']}"
                          disabled="#{!bindings.Execute.enabled}" id="b1"/>
               <af:spacer width="5" height="5" id="s1"/>
@@ -95,12 +95,20 @@
               </af:table>
               
             </af:panelGroupLayout>
+              </af:panelBox>
+            
+           
+           
+            <!--<af:panelSplitter id="ps1" orientation="vertical" 
+                              splitterPosition="200"  inlineStyle="width:620px;" collapsed="false">
+              <f:facet name="first">
+                
               </f:facet>
               <f:facet name="second">
                <af:outputLabel value="Notepad Messages" id="ol10" />
                 
               </f:facet>
-            </af:panelSplitter>
+            </af:panelSplitter>-->
            
       
                 
@@ -108,11 +116,10 @@
          </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
           <af:gridCell marginStart="5px" width="auto" id="gc2">
-            <af:panelSplitter id="ps2"  inlineStyle="width:620px;" orientation="vertical" splitterPosition="200"
-                              collapsed="false">
-              <f:facet name="first">
-                  <af:panelGroupLayout id="pgl6" >
-              <af:outputLabel value="Un Cleared Post dated Cheque's Issued" id="ol6"/>
+           <af:panelBox text="Un Cleared Post dated Cheque's Issued" id="pb3" >
+                <f:facet name="toolbar"/>
+                <af:panelGroupLayout id="pgl6" >
+             
               <af:table value="#{bindings.VIEW_PDC_PAID_CHART1.collectionModel}" var="row"
                           rows="#{bindings.VIEW_PDC_PAID_CHART1.rangeSize}"
                           emptyText="#{bindings.VIEW_PDC_PAID_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -196,21 +203,26 @@
             
             
             </af:panelGroupLayout>
+              </af:panelBox>
+           
+            <!--<af:panelSplitter id="ps2"  inlineStyle="width:620px;" orientation="vertical" splitterPosition="200"
+                              collapsed="false">
+              <f:facet name="first">
+                 
               </f:facet>
               <f:facet name="second">
                  <af:outputLabel value="Un Cleared Post dated Cheque's Issued" id="ol11"/>
               </f:facet>
-            </af:panelSplitter>
+            </af:panelSplitter>-->
           
             
           </af:gridCell>
           
           <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc13">
-            <af:panelSplitter id="ps3" orientation="vertical"  inlineStyle="width:620px;" splitterPosition="200"
-                              collapsed="false">
-              <f:facet name="first">
-                <af:panelGroupLayout id="pgl7" >
-              <af:outputLabel value="Un Cleared Post dated Cheque's  Received" id="ol2"/>
+           <af:panelBox text="Un Cleared Post dated Cheque's  Received" id="pb2" >
+                <f:facet name="toolbar"/>
+                 <af:panelGroupLayout id="pgl7" >
+             
              
               <af:table value="#{bindings.VIEW_PDC_REC_CHARTS1.collectionModel}" var="row"
                           rows="#{bindings.VIEW_PDC_REC_CHARTS1.rangeSize}"
@@ -291,21 +303,26 @@
                   </af:column>
                 </af:table>
             </af:panelGroupLayout>
+           
+           </af:panelBox>
+            <!--<af:panelSplitter id="ps3" orientation="vertical"  inlineStyle="width:620px;" splitterPosition="200"
+                              collapsed="false">
+              <f:facet name="first">
+               
               </f:facet>
               <f:facet name="second">
                 <af:outputLabel value="Un Cleared Post dated Cheque's  Received" id="ol12"/>
               </f:facet>
-            </af:panelSplitter>
-           
+            </af:panelSplitter>-->
           </af:gridCell>
         </af:gridRow>
        
          <af:gridRow  marginTop="5px" height="auto" marginBottom="5px" id="gr3">
           <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc4">
-            <af:panelSplitter id="ps4" orientation="vertical"  inlineStyle="width:620px;" splitterPosition="350"
-                              collapsed="false">
-              <f:facet name="first">
-                 <af:panelGroupLayout id="pgl2"  layout="horizontal">
+          
+           <af:panelBox text="Date Wise Expenses" id="pb4" >
+                <f:facet name="toolbar"/>
+           <af:panelGroupLayout id="pgl2"  layout="horizontal">
                <dvt:lineChart id="lineChart1" var="row" value="#{bindings.VIEW_EXPENSE_CHART12.collectionModel}" styleClass="abc"
                            title="Date Wise Expenses">
               <dvt:chartLegend id="cl2"/>
@@ -316,22 +333,26 @@
             </dvt:lineChart>
              
             </af:panelGroupLayout>
+            
+          
+            
+          
+              </af:panelBox>
+              <!--<af:panelSplitter id="ps4" orientation="vertical"  inlineStyle="width:620px;" splitterPosition="350"
+                              collapsed="false">
+              <f:facet name="first">
+                
               </f:facet>
               <f:facet name="second">
                 <af:outputLabel value="Date Wise Expenses" id="ol14"/>
               </f:facet>
-            </af:panelSplitter>
-          
-            
-          
-            
+            </af:panelSplitter>-->
           </af:gridCell>
           
           <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc14">
-            <af:panelSplitter id="ps5" orientation="vertical" splitterPosition="350" inlineStyle="width:620px;"
-                              collapsed="false">
-              <f:facet name="first">
-                <af:panelGroupLayout  id="pgl5" layout="horizontal">
+          <af:panelBox text="Date Wise Payments &amp; Receipts" id="pb5" >
+                <f:facet name="toolbar"/>
+                  <af:panelGroupLayout  id="pgl5" layout="horizontal">
                  <dvt:lineChart id="lineChart2" var="row" value="#{bindings.VIEW_PR_CHART11.collectionModel}"
                            title="Date Wise Payments &amp; Receipts">
               <dvt:chartLegend id="cl3"/>
@@ -345,21 +366,25 @@
               </f:facet>
             </dvt:lineChart>
               </af:panelGroupLayout>
+              </af:panelBox>
+            <!--<af:panelSplitter id="ps5" orientation="vertical" splitterPosition="350" inlineStyle="width:620px;"
+                              collapsed="false">
+              <f:facet name="first">
+              
               </f:facet>
               <f:facet name="second">
                  <af:outputLabel value="Date Wise Payments &amp; Receipts" id="ol13"/>
               </f:facet>
-            </af:panelSplitter>
+            </af:panelSplitter>-->
            
           </af:gridCell>
         </af:gridRow>
         
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
-            <af:panelSplitter id="ps7" orientation="vertical" collapsed="false" inlineStyle="width:620px;"
-                              splitterPosition="350">
-              <f:facet name="first">
-                 <dvt:barChart orientation="vertical" id="barChart1" var="row" title="Date wise Sales"
+           <af:panelBox text="Date wise Sales" id="pb6" >
+                <f:facet name="toolbar"/>
+                  <dvt:barChart orientation="vertical" id="barChart1" var="row" title="Date wise Sales"
                           value="#{bindings.VIEW_SALES_CHART1.collectionModel}">
               <dvt:chartLegend id="cl1"/>
               <f:facet name="dataStamp">
@@ -367,38 +392,48 @@
                                    value="#{row.NetAmount}" group="#{row.Dated}"/>
               </f:facet>
             </dvt:barChart>
+           
+            </af:panelBox>
+             <!--<af:panelSplitter id="ps7" orientation="vertical" collapsed="false" inlineStyle="width:620px;"
+                              splitterPosition="350">
+              <f:facet name="first">
+               
               </f:facet>
               <f:facet name="second">
                 <af:outputLabel value="Date wise Sales" id="ol16"/>
               </f:facet>
-            </af:panelSplitter>
-           
+            </af:panelSplitter>-->
           </af:gridCell>
            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
-            <af:panelSplitter id="ps8" orientation="vertical" collapsed="false" splitterPosition="350" inlineStyle="width:620px;">
-              <f:facet name="first">
-                 <dvt:lineChart id="lineChart6" var="row" value="#{bindings.VIEW_SALES_MONTHLY_CHART1.collectionModel}" title="Month wise Sales">
+            <af:panelBox text="Month wise Sales" id="pb7" >
+                <f:facet name="toolbar"/>
+                                 <dvt:lineChart id="lineChart6" var="row" value="#{bindings.VIEW_SALES_MONTHLY_CHART1.collectionModel}" title="Month wise Sales">
               <dvt:chartLegend id="cl7"/>
               <f:facet name="dataStamp">
                 <dvt:chartDataItem id="di8" series="#{bindings.VIEW_SALES_MONTHLY_CHART1.hints.NetAmount.label}"
                                    value="#{row.NetAmount}" group="#{row.Dated}"/>
               </f:facet>
             </dvt:lineChart>
+                        </af:panelBox>
+
+            <!--<af:panelSplitter id="ps8" orientation="vertical" collapsed="false" splitterPosition="350" inlineStyle="width:620px;">
+              <f:facet name="first">
+
               </f:facet>
               <f:facet name="second">
                  <af:outputLabel value="Month wise Sales" id="ol17"/>
               </f:facet>
-            </af:panelSplitter>
+            </af:panelSplitter>-->
           
           </af:gridCell>
         </af:gridRow>
        
          <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr12">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc12">
-            <af:panelSplitter id="ps6" collapsed="false" orientation="vertical" inlineStyle="width:620px;">
-              <f:facet name="first">
-                <af:panelGroupLayout id="pgl8" layout="scroll">
-            <af:outputLabel value="Pending Sale Orders" id="ol3"/>
+           <af:panelBox text="Pending Sale Orders" id="pb8" >
+                <f:facet name="toolbar"/>
+                 <af:panelGroupLayout id="pgl8" layout="scroll">
+           
               <af:table value="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.collectionModel}" var="row"
                         rows="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.rangeSize}"
                         emptyText="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -469,18 +504,22 @@
                 </af:column>
               </af:table>
             </af:panelGroupLayout>
+             </af:panelBox>
+            <!--<af:panelSplitter id="ps6" collapsed="false" orientation="vertical" inlineStyle="width:620px;">
+              <f:facet name="first">
+               
               </f:facet>
               <f:facet name="second">
                  <af:outputLabel value="Pending Sale Orders" id="ol15"/>
               </f:facet>
-            </af:panelSplitter>
+            </af:panelSplitter>-->
            
           </af:gridCell>
            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
-            <af:panelSplitter id="ps9" orientation="vertical" collapsed="false" inlineStyle="width:620px;">
-              <f:facet name="first">
-                <af:panelGroupLayout id="pgl9" layout="scroll">
-             <af:outputLabel value="Today Sales Detail" id="ol4"/>
+           <af:panelBox text="Today Sales Detail" id="pb9" >
+                <f:facet name="toolbar"/>
+                 <af:panelGroupLayout id="pgl9" layout="scroll">
+            
                 <af:table value="#{bindings.VIEW_TODAY_SALES_CHART1.collectionModel}" var="row"
                       rows="#{bindings.VIEW_TODAY_SALES_CHART1.rangeSize}"
                       emptyText="#{bindings.VIEW_TODAY_SALES_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -544,11 +583,15 @@
               </af:column>
             </af:table>
             </af:panelGroupLayout>
+             </af:panelBox>
+            <!--<af:panelSplitter id="ps9" orientation="vertical" collapsed="false" inlineStyle="width:620px;">
+              <f:facet name="first">
+               
               </f:facet>
               <f:facet name="second">
                 <af:outputLabel value="Today Sales Detail" id="ol18"/>
               </f:facet>
-            </af:panelSplitter>
+            </af:panelSplitter>-->
           
          
           </af:gridCell>
@@ -557,11 +600,10 @@
         
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
-            <af:panelSplitter id="ps10" orientation="vertical" collapsed="false" inlineStyle="width:620px;"
-                              splitterPosition="200">
-              <f:facet name="first">
+          <af:panelBox text="Pending Purchase Orders" id="pb10" >
+                <f:facet name="toolbar"/>
                 <af:panelGroupLayout id="pgl4" layout="scroll">
-            <af:outputLabel value="Pending Purchase Orders" id="ol5"/>
+           
               <af:table value="#{bindings.VIEW_PENDING_PO_CHART1.collectionModel}" var="row"
                         rows="#{bindings.VIEW_PENDING_PO_CHART1.rangeSize}"
                         emptyText="#{bindings.VIEW_PENDING_PO_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -628,58 +670,71 @@
                 </af:column>
               </af:table>
             </af:panelGroupLayout>
+                 </af:panelBox>
+            <!--<af:panelSplitter id="ps10" orientation="vertical" collapsed="false" inlineStyle="width:620px;"
+                              splitterPosition="200">
+              <f:facet name="first">
+                
               </f:facet>
               <f:facet name="second">
                 <af:outputLabel value="Pending Purchase Orders" id="ol19"/>
               </f:facet>
-            </af:panelSplitter>
+            </af:panelSplitter>-->
            
           </af:gridCell>
         </af:gridRow>
          <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr10">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
-            <af:panelSplitter id="ps11" orientation="vertical"  inlineStyle="width:620px;"
-                              splitterPosition="350">
-              <f:facet name="first">
-                <dvt:lineChart id="lineChart7" var="row" value="#{bindings.VIEW_PURCHASE_CHART1.collectionModel}" title="Date Wise Purchases">
+          <af:panelBox text="Date Wise Purchases" id="pb11" >
+                <f:facet name="toolbar"/>
+                 <dvt:lineChart id="lineChart7" var="row" value="#{bindings.VIEW_PURCHASE_CHART1.collectionModel}" title="Date Wise Purchases">
               <dvt:chartLegend id="cl8"/>
               <f:facet name="dataStamp">
                 <dvt:chartDataItem id="di9" series="#{bindings.VIEW_PURCHASE_CHART1.hints.NetAmount.label}"
                                    value="#{row.NetAmount}" group="#{row.Dated}"/>
               </f:facet>
             </dvt:lineChart>
+                 </af:panelBox>
+            <!--<af:panelSplitter id="ps11" orientation="vertical"  inlineStyle="width:620px;"
+                              splitterPosition="350">
+              <f:facet name="first">
+               
               </f:facet>
               <f:facet name="second">
                 <af:outputLabel value="Date Wise Purchases" id="ol20"/>
               </f:facet>
-            </af:panelSplitter>
+            </af:panelSplitter>-->
            
           </af:gridCell>
            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11">
-            <af:panelSplitter id="ps12" orientation="vertical" inlineStyle="width:620px;"
-                              splitterPosition="350">
-              <f:facet name="first">
-                <dvt:lineChart id="lineChart8" var="row" value="#{bindings.VIEW_PURCHASE_MONTHLY_CHART1.collectionModel}" title="Month Wise Purchases">
+            <af:panelBox text="Date Wise Purchases" id="pb12" >
+                <f:facet name="toolbar"/>
+                 <dvt:lineChart id="lineChart8" var="row" value="#{bindings.VIEW_PURCHASE_MONTHLY_CHART1.collectionModel}" title="Month Wise Purchases">
               <dvt:chartLegend id="cl9"/>
               <f:facet name="dataStamp">
                 <dvt:chartDataItem id="di10" series="#{bindings.VIEW_PURCHASE_MONTHLY_CHART1.hints.NetAmount.label}"
                                    value="#{row.NetAmount}" group="#{row.Dated}"/>
               </f:facet>
             </dvt:lineChart>
+             </af:panelBox>
+            <!--<af:panelSplitter id="ps12" orientation="vertical" inlineStyle="width:620px;"
+                              splitterPosition="350">
+              <f:facet name="first">
+               
               </f:facet>
               <f:facet name="second">
                 <af:outputLabel value="Month Wise Purchases" id="ol22"/>
               </f:facet>
-            </af:panelSplitter>
+            </af:panelSplitter>-->
            
           </af:gridCell>
         </af:gridRow>
          <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
-            <af:panelSplitter id="ps13" orientation="vertical" collapsed="false" inlineStyle="width:620px;">
-              <f:facet name="first">
+          <af:panelBox text="Empoyees with Departments" id="pb13" >
+                <f:facet name="toolbar"/>
                 <af:panelGroupLayout id="pgl10" layout="scroll">
-          <af:outputLabel value="Empoyees with Departments" id="ol7"/>
+          
               <af:table value="#{bindings.VIEW_DEPT_EMP_CHART1.collectionModel}" var="row"
                         rows="#{bindings.VIEW_DEPT_EMP_CHART1.rangeSize}"
                         emptyText="#{bindings.VIEW_DEPT_EMP_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -728,19 +783,23 @@
                 </af:column>
               </af:table>
             </af:panelGroupLayout>
-              </f:facet>
+             
+                </af:panelBox>
+            <!--<af:panelSplitter id="ps13" orientation="vertical" collapsed="false" inlineStyle="width:620px;">
+              <f:facet name="first">
+                 </f:facet>
               <f:facet name="second">
                <af:outputLabel value="Empoyees with Departments" id="ol21"/>
               </f:facet>
-            </af:panelSplitter>
+            </af:panelSplitter>-->
            
           </af:gridCell>
            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-            <af:panelSplitter id="ps14" orientation="vertical" collapsed="false" inlineStyle="width:620px;">
-              <f:facet name="first">
-              <af:panelGroupLayout id="pgl11" layout="scroll">
+           <af:panelBox text="Empoyees with Designations" id="pb14" >
+                <f:facet name="toolbar"/>
+                 <af:panelGroupLayout id="pgl11" layout="scroll">
               
-              <af:outputLabel value="Empoyees with Designations" id="ol8"/>
+              
               <af:table value="#{bindings.VIEW_DESIG_EMP_CHART1.collectionModel}" var="row"
                         rows="#{bindings.VIEW_DESIG_EMP_CHART1.rangeSize}"
                         emptyText="#{bindings.VIEW_DESIG_EMP_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -789,22 +848,26 @@
                 </af:column>
               </af:table>
             </af:panelGroupLayout>
+                 </af:panelBox>
+            <!--<af:panelSplitter id="ps14" orientation="vertical" collapsed="false" inlineStyle="width:620px;">
+              <f:facet name="first">
+             
               </f:facet>
               <f:facet name="second">
                <af:outputLabel value="Empoyees with Designations" id="ol23"/>
               </f:facet>
-            </af:panelSplitter>
+            </af:panelSplitter>-->
            
           </af:gridCell>
         </af:gridRow>
        
         <af:gridRow marginTop="5px" height="auto" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc15">
-            <af:panelSplitter id="ps15" orientation="vertical" collapsed="false" inlineStyle="width:620px;">
-              <f:facet name="first">
-                 <af:panelGroupLayout id="pgl12" layout="scroll">
+          <af:panelBox text="Department Attendance" id="pb16" >
+                <f:facet name="toolbar"/>
+                  <af:panelGroupLayout id="pgl12" layout="scroll">
              
-              <af:outputLabel value="Department Attendance" id="ol9"/>
+             
               <af:table value="#{bindings.VIEW_DEPT_ATT_CHART1.collectionModel}" var="row"
                         rows="#{bindings.VIEW_DEPT_ATT_CHART1.rangeSize}"
                         emptyText="#{bindings.VIEW_DEPT_ATT_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -881,11 +944,15 @@
                 
               </af:table>
             </af:panelGroupLayout>
+                 </af:panelBox>
+            <!--<af:panelSplitter id="ps15" orientation="vertical" collapsed="false" inlineStyle="width:620px;">
+              <f:facet name="first">
+               
               </f:facet>
               <f:facet name="second">
                 <af:outputLabel value="Department Attendance" id="ol24"/>
               </f:facet>
-            </af:panelSplitter>
+            </af:panelSplitter>-->
           
           </af:gridCell>
         </af:gridRow>
