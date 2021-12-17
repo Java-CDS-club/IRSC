@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Dashboard" styleClass="backColor">
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+             <dvt:barChart orientation="vertical" id="barChart1" var="row" value="#{bindings.View_Bank_Cash1.collectionModel}" title="Bank Cash Setup">
+        <dvt:chartLegend id="cl1"/>
+        <f:facet name="dataStamp">
+          <dvt:chartDataItem id="di1" series="#{row.Type}" value="#{row.Id}" group="#{row.Name}"/>
+        </f:facet>
+      </dvt:barChart>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+           <af:panelGroupLayout id="pgl6" >
+          <af:outputLabel value="Un Cleared Post dated Cheque's Issued" id="ol1"/>
+              <af:table value="#{bindings.VIEW_PDC_PAID_CHART1.collectionModel}" var="row"
+                          rows="#{bindings.VIEW_PDC_PAID_CHART1.rangeSize}"
+                          emptyText="#{bindings.VIEW_PDC_PAID_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.VIEW_PDC_PAID_CHART1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.VIEW_PDC_PAID_CHART1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.VIEW_PDC_PAID_CHART1.rangeSize}"
+                          filterModel="#{bindings.VIEW_PDC_PAID_CHART1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.VIEW_PDC_PAID_CHART1Query.processQuery}" varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.name}" filterable="false"
+                             sortable="false" headerText="Date" id="c5">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.VIEW_PDC_PAID_CHART1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id3" placeholder="Search "> 
+                        <af:convertDateTime pattern="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.label}"
+                                  required="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.tooltip}" id="id5" readOnly="true">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.VIEW_PDC_PAID_CHART1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                <af:column headerText="Bank Name" id="c7" sortable="true"
+                           filterable="true" width="150">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.BankName}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.BankName.inputValue}"
+                                label="#{bindings.VIEW_PDC_PAID_CHART1.hints.BankName.label}"
+                                required="#{bindings.VIEW_PDC_PAID_CHART1.hints.BankName.mandatory}"
+                                columns="#{bindings.VIEW_PDC_PAID_CHART1.hints.BankName.displayWidth}"
+                                maximumLength="#{bindings.VIEW_PDC_PAID_CHART1.hints.BankName.precision}"
+                                shortDesc="#{bindings.VIEW_PDC_PAID_CHART1.hints.BankName.tooltip}" id="it8" readOnly="true">
+                    <f:validator binding="#{row.bindings.BankName.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.name}" filterable="false"
+                             sortable="false" headerText="Cheque No." id="c6">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ChqNo}"
+       id="it9" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+
+
+                    <af:inputText value="#{row.bindings.ChqNo.inputValue}"
+                                  label="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.label}"
+                                  required="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.displayWidth}"
+                                  maximumLength="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.precision}"
+                                  shortDesc="#{bindings.VIEW_PDC_PAID_CHART1.hints.ChqNo.tooltip}" id="it4" readOnly="true">
+                      <f:validator binding="#{row.bindings.ChqNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.name}" filterable="false"
+                             sortable="false" headerText="Amount" id="c8">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it5" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                  label="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.label}"
+                                  required="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.displayWidth}"
+                                  maximumLength="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.precision}"
+                                  shortDesc="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.tooltip}" id="it6" readOnly="true">
+                      <f:validator binding="#{row.bindings.Amount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.VIEW_PDC_PAID_CHART1.hints.Amount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+             
+            
+            
+            </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+           <af:panelGroupLayout id="pgl7">
+              <af:outputLabel value="Un Cleared Post dated Cheque's  Received" id="ol2"/>
+             
+              <af:table value="#{bindings.VIEW_PDC_REC_CHARTS1.collectionModel}" var="row"
+                          rows="#{bindings.VIEW_PDC_REC_CHARTS1.rangeSize}"
+                          emptyText="#{bindings.VIEW_PDC_REC_CHARTS1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.VIEW_PDC_REC_CHARTS1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.VIEW_PDC_REC_CHARTS1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.VIEW_PDC_REC_CHARTS1.rangeSize}"
+                          filterModel="#{bindings.VIEW_PDC_REC_CHARTS1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.VIEW_PDC_REC_CHARTS1Query.processQuery}" varStatus="vs" id="t1" scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.name}" filterable="false"
+                             sortable="false" headerText="Date" id="c4">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.VIEW_PDC_REC_CHARTS1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id1" placeholder="Search ">
+                        <af:convertDateTime pattern="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.label}"
+                                  required="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.tooltip}" id="id2" readOnly="true">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                <af:column headerText="Bank Name" id="c1" sortable="true"
+                           filterable="true" width="150">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.BankName}"
+       id="it1" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.BankName.inputValue}"
+                                label="#{bindings.VIEW_PDC_REC_CHARTS1.hints.BankName.label}"
+                                required="#{bindings.VIEW_PDC_REC_CHARTS1.hints.BankName.mandatory}"
+                                columns="#{bindings.VIEW_PDC_REC_CHARTS1.hints.BankName.displayWidth}"
+                                maximumLength="#{bindings.VIEW_PDC_REC_CHARTS1.hints.BankName.precision}"
+                                shortDesc="#{bindings.VIEW_PDC_REC_CHARTS1.hints.BankName.tooltip}" id="it10" readOnly="true">
+                    <f:validator binding="#{row.bindings.BankName.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHARTS1.hints.ChqNo.name}" filterable="false"
+                             sortable="false" headerText="Cheque No." id="c2">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ChqNo}"
+       id="it11" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.ChqNo.inputValue}"
+                                  label="#{bindings.VIEW_PDC_REC_CHARTS1.hints.ChqNo.label}"
+                                  required="#{bindings.VIEW_PDC_REC_CHARTS1.hints.ChqNo.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_REC_CHARTS1.hints.ChqNo.displayWidth}"
+                                  maximumLength="#{bindings.VIEW_PDC_REC_CHARTS1.hints.ChqNo.precision}"
+                                  shortDesc="#{bindings.VIEW_PDC_REC_CHARTS1.hints.ChqNo.tooltip}" id="it3" readOnly="true">
+                      <f:validator binding="#{row.bindings.ChqNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.name}" filterable="false"
+                             sortable="false" headerText="Amount" id="c3">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it7" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                  label="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.label}"
+                                  required="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.mandatory}"
+                                  columns="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.displayWidth}"
+                                  maximumLength="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.precision}"
+                                  shortDesc="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.tooltip}" id="it2" readOnly="true">
+                      <f:validator binding="#{row.bindings.Amount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.VIEW_PDC_REC_CHARTS1.hints.Amount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+        </af:gridRow>
+      </af:panelGridLayout>
+     
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

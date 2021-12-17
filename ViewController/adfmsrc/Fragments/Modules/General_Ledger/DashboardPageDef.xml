@@ -1,77 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="General_LedgerPageDef"
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="DashboardPageDef"
                 Package="Fragments.Modules.General_Ledger">
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="VIEW_EXPENSE_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_EXPENSE_CHART1Iterator" CacheResults="false"/>
-    <iterator Binds="VIEW_PR_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1" id="VIEW_PR_CHART1Iterator"
-              CacheResults="false"/>
+    <iterator Binds="Notepad_Chart1" RangeSize="4" DataControl="AppModuleDataControl1" id="Notepad_Chart1Iterator"/>
+    <searchRegion Binds="Notepad_Chart1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Notepad_Chart1Query"/>
     <iterator Binds="VIEW_PDC_PAID_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PDC_PAID_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_PDC_PAID_CHART1Iterator"/>
     <searchRegion Binds="VIEW_PDC_PAID_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_PAID_CHART1Query"/>
     <iterator Binds="VIEW_PDC_REC_CHARTS1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PDC_REC_CHARTS1Iterator" CacheResults="false"/>
+              id="VIEW_PDC_REC_CHARTS1Iterator"/>
     <searchRegion Binds="VIEW_PDC_REC_CHARTS1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_REC_CHARTS1Query"/>
+    <iterator Binds="VIEW_EXPENSE_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
+              id="VIEW_EXPENSE_CHART1Iterator"/>
+    <iterator Binds="VIEW_PR_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1" id="VIEW_PR_CHART1Iterator"/>
     <iterator Binds="VIEW_SALES_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_SALES_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_SALES_CHART1Iterator"/>
     <iterator Binds="VIEW_SALES_MONTHLY_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_SALES_MONTHLY_CHART1Iterator" CacheResults="false"/>
-    <iterator Binds="VIEW_PURCHASE_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_PURCHASE_CHART1Iterator" CacheResults="false"/>
-    <iterator Binds="VIEW_PURCHASE_MONTHLY_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_PURCHASE_MONTHLY_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_SALES_MONTHLY_CHART1Iterator"/>
     <iterator Binds="VIEW_PENDING_SALE_ORDER_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PENDING_SALE_ORDER_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_PENDING_SALE_ORDER_CHART1Iterator"/>
     <searchRegion Binds="VIEW_PENDING_SALE_ORDER_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="VIEW_PENDING_SALE_ORDER_CHART1Query"/>
     <iterator Binds="VIEW_PENDING_PO_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PENDING_PO_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_PENDING_PO_CHART1Iterator"/>
     <searchRegion Binds="VIEW_PENDING_PO_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PENDING_PO_CHART1Query"/>
-    <iterator Binds="VIEW_TODAY_SALES_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_TODAY_SALES_CHART1Iterator" CacheResults="false"/>
-    <searchRegion Binds="VIEW_TODAY_SALES_CHART1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_TODAY_SALES_CHART1Query"/>
+    <iterator Binds="VIEW_PURCHASE_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
+              id="VIEW_PURCHASE_CHART1Iterator"/>
+    <iterator Binds="VIEW_PURCHASE_MONTHLY_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
+              id="VIEW_PURCHASE_MONTHLY_CHART1Iterator"/>
     <iterator Binds="VIEW_DEPT_EMP_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_DEPT_EMP_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_DEPT_EMP_CHART1Iterator"/>
     <searchRegion Binds="VIEW_DEPT_EMP_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_DEPT_EMP_CHART1Query"/>
     <iterator Binds="VIEW_DESIG_EMP_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_DESIG_EMP_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_DESIG_EMP_CHART1Iterator"/>
     <searchRegion Binds="VIEW_DESIG_EMP_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_DESIG_EMP_CHART1Query"/>
     <iterator Binds="VIEW_DEPT_ATT_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_DEPT_ATT_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_DEPT_ATT_CHART1Iterator"/>
     <searchRegion Binds="VIEW_DEPT_ATT_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_DEPT_ATT_CHART1Query"/>
-    <iterator Binds="Notepad_Chart1" RangeSize="4" DataControl="AppModuleDataControl1" id="Notepad_Chart1Iterator"
-              CacheResults="false"/>
-    <searchRegion Binds="Notepad_Chart1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Notepad_Chart1Query"/>
+    <iterator Binds="VIEW_TODAY_SALES_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
+              id="VIEW_TODAY_SALES_CHART1Iterator"/>
+    <searchRegion Binds="VIEW_TODAY_SALES_CHART1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_TODAY_SALES_CHART1Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="VIEW_EXPENSE_CHART1Iterator" id="VIEW_EXPENSE_CHART1" ChangeEventPolicy="ppr">
-      <nodeDefinition DefName="model.ERP.VO.VIEW_EXPENSE_CHART" Name="VIEW_EXPENSE_CHART1">
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="Notepad_Chart1Iterator" id="Notepad_Chart1">
+      <nodeDefinition DefName="model.ERP.VO.Notepad_Chart" Name="Notepad_Chart10">
         <AttrNames>
-          <Item Value="Expenses"/>
+          <Item Value="Id"/>
           <Item Value="Dated"/>
+          <Item Value="UserId"/>
+          <Item Value="Rmks"/>
+          <Item Value="Ast"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="VIEW_PR_CHART1Iterator" id="VIEW_PR_CHART1" ChangeEventPolicy="ppr">
-      <nodeDefinition DefName="model.ERP.VO.VIEW_PR_CHART" Name="VIEW_PR_CHART1">
-        <AttrNames>
-          <Item Value="Payments"/>
-          <Item Value="Dated"/>
-          <Item Value="Receipts"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
+    <action IterBinding="Notepad_Chart1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <tree IterBinding="VIEW_PDC_PAID_CHART1Iterator" id="VIEW_PDC_PAID_CHART1">
       <nodeDefinition DefName="model.ERP.VO.VIEW_PDC_PAID_CHART" Name="VIEW_PDC_PAID_CHART10">
         <AttrNames>
@@ -92,23 +86,16 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="VIEW_EXPENSE_CHART1Iterator" id="VIEW_EXPENSE_CHART11">
-      <nodeDefinition DefName="model.ERP.VO.VIEW_EXPENSE_CHART" Name="VIEW_EXPENSE_CHART110">
-        <AttrNames>
-          <Item Value="Expenses"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="VIEW_EXPENSE_CHART1Iterator" id="VIEW_EXPENSE_CHART12" ChangeEventPolicy="ppr">
-      <nodeDefinition DefName="model.ERP.VO.VIEW_EXPENSE_CHART" Name="VIEW_EXPENSE_CHART12">
+    <tree IterBinding="VIEW_EXPENSE_CHART1Iterator" id="VIEW_EXPENSE_CHART1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_EXPENSE_CHART" Name="VIEW_EXPENSE_CHART1">
         <AttrNames>
           <Item Value="Expenses"/>
           <Item Value="Dated"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="VIEW_PR_CHART1Iterator" id="VIEW_PR_CHART11" ChangeEventPolicy="ppr">
-      <nodeDefinition DefName="model.ERP.VO.VIEW_PR_CHART" Name="VIEW_PR_CHART11">
+    <tree IterBinding="VIEW_PR_CHART1Iterator" id="VIEW_PR_CHART1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_PR_CHART" Name="VIEW_PR_CHART1">
         <AttrNames>
           <Item Value="Payments"/>
           <Item Value="Dated"/>
@@ -132,6 +119,24 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="VIEW_PENDING_SALE_ORDER_CHART1Iterator" id="VIEW_PENDING_SALE_ORDER_CHART1">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_PENDING_SALE_ORDER_CHART" Name="VIEW_PENDING_SALE_ORDER_CHART10">
+        <AttrNames>
+          <Item Value="Dated"/>
+          <Item Value="Id"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="VIEW_PENDING_PO_CHART1Iterator" id="VIEW_PENDING_PO_CHART1">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_PENDING_PO_CHART" Name="VIEW_PENDING_PO_CHART10">
+        <AttrNames>
+          <Item Value="Dated"/>
+          <Item Value="Id"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
     <tree IterBinding="VIEW_PURCHASE_CHART1Iterator" id="VIEW_PURCHASE_CHART1" ChangeEventPolicy="ppr">
       <nodeDefinition DefName="model.ERP.VO.VIEW_PURCHASE_CHART" Name="VIEW_PURCHASE_CHART1">
         <AttrNames>
@@ -145,33 +150,6 @@
         <AttrNames>
           <Item Value="NetAmount"/>
           <Item Value="Dated"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="VIEW_PENDING_SALE_ORDER_CHART1Iterator" id="VIEW_PENDING_SALE_ORDER_CHART1">
-      <nodeDefinition DefName="model.ERP.VO.VIEW_PENDING_SALE_ORDER_CHART" Name="VIEW_PENDING_SALE_ORDER_CHART10">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="Dated"/>
-          <Item Value="Amount"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="VIEW_PENDING_PO_CHART1Iterator" id="VIEW_PENDING_PO_CHART1">
-      <nodeDefinition DefName="model.ERP.VO.VIEW_PENDING_PO_CHART" Name="VIEW_PENDING_PO_CHART10">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="Dated"/>
-          <Item Value="Amount"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="VIEW_TODAY_SALES_CHART1Iterator" id="VIEW_TODAY_SALES_CHART1">
-      <nodeDefinition DefName="model.ERP.VO.VIEW_TODAY_SALES_CHART" Name="VIEW_TODAY_SALES_CHART10">
-        <AttrNames>
-          <Item Value="CustName"/>
-          <Item Value="SaleType"/>
-          <Item Value="NetAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -196,6 +174,7 @@
     <tree IterBinding="VIEW_DEPT_ATT_CHART1Iterator" id="VIEW_DEPT_ATT_CHART1">
       <nodeDefinition DefName="model.ERP.VO.VIEW_DEPT_ATT_CHART" Name="VIEW_DEPT_ATT_CHART10">
         <AttrNames>
+          <Item Value="Id"/>
           <Item Value="Dept"/>
           <Item Value="TotP"/>
           <Item Value="TotA"/>
@@ -204,19 +183,15 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="Notepad_Chart1Iterator" id="Notepad_Chart1">
-      <nodeDefinition DefName="model.ERP.VO.Notepad_Chart" Name="Notepad_Chart10">
+    <tree IterBinding="VIEW_TODAY_SALES_CHART1Iterator" id="VIEW_TODAY_SALES_CHART1">
+      <nodeDefinition DefName="model.ERP.VO.VIEW_TODAY_SALES_CHART" Name="VIEW_TODAY_SALES_CHART10">
         <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="Dated"/>
-          <Item Value="UserId"/>
-          <Item Value="Rmks"/>
-         
-          <Item Value="Ast"/>
+          <Item Value="RblCustId"/>
+          <Item Value="CustName"/>
+          <Item Value="SaleType"/>
+          <Item Value="NetAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="Notepad_Chart1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
   </bindings>
 </pageDefinition>

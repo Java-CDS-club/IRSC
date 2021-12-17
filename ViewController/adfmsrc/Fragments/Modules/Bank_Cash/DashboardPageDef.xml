@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Bank_CashPageDef"
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="DashboardPageDef"
                 Package="Fragments.Modules.Bank_Cash">
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="View_Bank_Cash1" RangeSize="-1" DataControl="AppModuleDataControl1" id="View_Bank_Cash1Iterator"/>
     <iterator Binds="VIEW_PDC_PAID_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PDC_PAID_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_PDC_PAID_CHART1Iterator"/>
     <searchRegion Binds="VIEW_PDC_PAID_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_PAID_CHART1Query"/>
     <iterator Binds="VIEW_PDC_REC_CHARTS1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PDC_REC_CHARTS1Iterator" CacheResults="false"/>
+              id="VIEW_PDC_REC_CHARTS1Iterator"/>
     <searchRegion Binds="VIEW_PDC_REC_CHARTS1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_REC_CHARTS1Query"/>
   </executables>

@@ -4,12 +4,12 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="VIEW_PENDING_SALE_ORDER_CHART1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="VIEW_PENDING_SALE_ORDER_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
               id="VIEW_PENDING_SALE_ORDER_CHART1Iterator" CacheResults="false"/>
     <searchRegion Binds="VIEW_PENDING_SALE_ORDER_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="VIEW_PENDING_SALE_ORDER_CHART1Query"/>
-    <iterator Binds="VIEW_TODAY_SALES_CHART1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="VIEW_TODAY_SALES_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
               id="VIEW_TODAY_SALES_CHART1Iterator" CacheResults="false"/>
     <searchRegion Binds="VIEW_TODAY_SALES_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_TODAY_SALES_CHART1Query"/>

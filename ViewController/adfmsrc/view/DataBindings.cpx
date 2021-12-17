@@ -435,6 +435,27 @@
           usageId="view_Goods_Issue_Notes_TaskFlow_Goods_Issue_Notes_TaskFlow_ExecuteWithParamsPageDef1"/>
     <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Goods_Issue_Notes.jsff"
           usageId="view_Goods_Issue_NotesPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/General_Ledger/Dashboard_TaskFlow.xml#Dashboard_TaskFlow@ExecuteWithParams"
+          usageId="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/General_Ledger/Dashboard.jsff" usageId="view_DashboardPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Bank_Cash/Dashboard_TaskFlow.xml#Dashboard_TaskFlow@ExecuteWithParams"
+          usageId="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sale_Purchase/Dashboard_TaskFlow.xml#Dashboard_TaskFlow@ExecuteWithParams"
+          usageId="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef2"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payable/Dashboard_TaskFlow.xml#Dashboard_TaskFlow@ExecuteWithParams"
+          usageId="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef3"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Receivable/Dashboard_TaskFlow.xml#Dashboard_TaskFlow@ExecuteWithParams"
+          usageId="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef4"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sales/Dashboard_TaskFlow.xml#Dashboard_TaskFlow@ExecuteWithParams"
+          usageId="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef5"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payroll/Dashboard_TaskFlow.xml#Dashboard_TaskFlow@ExecuteWithParams"
+          usageId="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef6"/>
+    <page path="/WEB-INF/Fragments/Modules/Bank_Cash/Dashboard.jsff" usageId="view_DashboardPageDef2"/>
+    <page path="/WEB-INF/Fragments/Modules/Payable/Dashboard.jsff" usageId="view_DashboardPageDef3"/>
+    <page path="/WEB-INF/Fragments/Modules/Receivable/Dashboard.jsff" usageId="view_DashboardPageDef4"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Dashboard.jsff" usageId="view_DashboardPageDef5"/>
+    <page path="/WEB-INF/Fragments/Modules/Sales/Dashboard.jsff" usageId="view_DashboardPageDef6"/>
+    <page path="/WEB-INF/Fragments/Modules/Payroll/Dashboard.jsff" usageId="view_DashboardPageDef7"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -842,6 +863,27 @@
     <page id="view_Goods_Issue_Notes_TaskFlow_Goods_Issue_Notes_TaskFlow_ExecuteWithParamsPageDef1"
           path="Task_Flows.Modules.Sale_Purchase.Goods_Issue_Notes_TaskFlow_Goods_Issue_Notes_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Goods_Issue_NotesPageDef1" path="Fragments.Modules.Sale_Purchase.Goods_Issue_NotesPageDef"/>
+    <page id="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.General_Ledger.Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_DashboardPageDef1" path="Fragments.Modules.General_Ledger.DashboardPageDef"/>
+    <page id="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.Bank_Cash.Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef2"
+          path="Task_Flows.Modules.Sale_Purchase.Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef3"
+          path="Task_Flows.Modules.Payable.Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef4"
+          path="Task_Flows.Modules.Receivable.Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef5"
+          path="Task_Flows.Modules.Sales.Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef6"
+          path="Task_Flows.Modules.Payroll.Dashboard_TaskFlow_Dashboard_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_DashboardPageDef2" path="Fragments.Modules.Bank_Cash.DashboardPageDef"/>
+    <page id="view_DashboardPageDef3" path="Fragments.Modules.Payable.DashboardPageDef"/>
+    <page id="view_DashboardPageDef4" path="Fragments.Modules.Receivable.DashboardPageDef"/>
+    <page id="view_DashboardPageDef5" path="Fragments.Modules.Sale_Purchase.DashboardPageDef"/>
+    <page id="view_DashboardPageDef6" path="Fragments.Modules.Sales.DashboardPageDef"/>
+    <page id="view_DashboardPageDef7" path="Fragments.Modules.Payroll.DashboardPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

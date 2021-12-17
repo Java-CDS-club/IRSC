@@ -323,11 +323,11 @@
            <af:panelBox text="Date Wise Expenses" id="pb4" >
                 <f:facet name="toolbar"/>
            <af:panelGroupLayout id="pgl2"  layout="horizontal">
-               <dvt:lineChart id="lineChart1" var="row" value="#{bindings.VIEW_EXPENSE_CHART12.collectionModel}" styleClass="abc"
+               <dvt:lineChart id="lineChart1" var="row" value="#{bindings.VIEW_EXPENSE_CHART1.collectionModel}" styleClass="abc"
                            title="Date Wise Expenses">
               <dvt:chartLegend id="cl2"/>
               <f:facet name="dataStamp">
-                <dvt:chartDataItem id="di2" series="#{bindings.VIEW_EXPENSE_CHART12.hints.Expenses.label}" 
+                <dvt:chartDataItem id="di2" series="#{bindings.VIEW_EXPENSE_CHART1.hints.Expenses.label}" 
                                    value="#{row.Expenses}" group="#{row.Dated}"/>
               </f:facet>
             </dvt:lineChart>
@@ -353,14 +353,14 @@
           <af:panelBox text="Date Wise Payments &amp; Receipts" id="pb5" >
                 <f:facet name="toolbar"/>
                   <af:panelGroupLayout  id="pgl5" layout="horizontal">
-                 <dvt:lineChart id="lineChart2" var="row" value="#{bindings.VIEW_PR_CHART11.collectionModel}"
+                 <dvt:lineChart id="lineChart2" var="row" value="#{bindings.VIEW_PR_CHART1.collectionModel}"
                            title="Date Wise Payments &amp; Receipts">
               <dvt:chartLegend id="cl3"/>
               <f:facet name="dataStamp">
                 <af:group id="g1">
-                  <dvt:chartDataItem id="di3" series="#{bindings.VIEW_PR_CHART11.hints.Payments.label}"
+                  <dvt:chartDataItem id="di3" series="#{bindings.VIEW_PR_CHART1.hints.Payments.label}"
                                      value="#{row.Payments}" group="#{row.Dated}"/>
-                  <dvt:chartDataItem id="di4" series="#{bindings.VIEW_PR_CHART11.hints.Receipts.label}"
+                  <dvt:chartDataItem id="di4" series="#{bindings.VIEW_PR_CHART1.hints.Receipts.label}"
                                      value="#{row.Receipts}" group="#{row.Dated}"/>
                 </af:group>
               </f:facet>
@@ -519,7 +519,7 @@
            <af:panelBox text="Today Sales Detail" id="pb9" >
                 <f:facet name="toolbar"/>
                  <af:panelGroupLayout id="pgl9" layout="scroll">
-            
+               
                 <af:table value="#{bindings.VIEW_TODAY_SALES_CHART1.collectionModel}" var="row"
                       rows="#{bindings.VIEW_TODAY_SALES_CHART1.rangeSize}"
                       emptyText="#{bindings.VIEW_TODAY_SALES_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"

@@ -1,40 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="SalesPageDef"
-                Package="Fragments.Modules.Sales">
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="DashboardPageDef"
+                Package="Fragments.Modules.Receivable">
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="VIEW_SALES_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_SALES_CHART1Iterator" CacheResults="false"/>
-    <iterator Binds="VIEW_SALES_MONTHLY_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_SALES_MONTHLY_CHART1Iterator" CacheResults="false"/>
     <iterator Binds="VIEW_PENDING_SALE_ORDER_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PENDING_SALE_ORDER_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_PENDING_SALE_ORDER_CHART1Iterator"/>
     <searchRegion Binds="VIEW_PENDING_SALE_ORDER_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="VIEW_PENDING_SALE_ORDER_CHART1Query"/>
     <iterator Binds="VIEW_TODAY_SALES_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_TODAY_SALES_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_TODAY_SALES_CHART1Iterator"/>
     <searchRegion Binds="VIEW_TODAY_SALES_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_TODAY_SALES_CHART1Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="VIEW_SALES_CHART1Iterator" id="VIEW_SALES_CHART1" ChangeEventPolicy="ppr">
-      <nodeDefinition DefName="model.ERP.VO.VIEW_SALES_CHART" Name="VIEW_SALES_CHART1">
-        <AttrNames>
-          <Item Value="NetAmount"/>
-          <Item Value="Dated"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="VIEW_SALES_MONTHLY_CHART1Iterator" id="VIEW_SALES_MONTHLY_CHART1" ChangeEventPolicy="ppr">
-      <nodeDefinition DefName="model.ERP.VO.VIEW_SALES_MONTHLY_CHART" Name="VIEW_SALES_MONTHLY_CHART1">
-        <AttrNames>
-          <Item Value="NetAmount"/>
-          <Item Value="Dated"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <tree IterBinding="VIEW_PENDING_SALE_ORDER_CHART1Iterator" id="VIEW_PENDING_SALE_ORDER_CHART1">
       <nodeDefinition DefName="model.ERP.VO.VIEW_PENDING_SALE_ORDER_CHART" Name="VIEW_PENDING_SALE_ORDER_CHART10">
         <AttrNames>

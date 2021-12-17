@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="PayrollPageDef"
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="DashboardPageDef"
                 Package="Fragments.Modules.Payroll">
   <parameters/>
   <executables>
@@ -39,6 +39,7 @@
     <tree IterBinding="VIEW_DEPT_ATT_CHART1Iterator" id="VIEW_DEPT_ATT_CHART1">
       <nodeDefinition DefName="model.ERP.VO.VIEW_DEPT_ATT_CHART" Name="VIEW_DEPT_ATT_CHART10">
         <AttrNames>
+          <Item Value="Id"/>
           <Item Value="Dept"/>
           <Item Value="TotP"/>
           <Item Value="TotA"/>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Sale_PurchasePageDef"
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="DashboardPageDef"
                 Package="Fragments.Modules.Sale_Purchase">
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="VIEW_PENDING_PO_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PENDING_PO_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_PENDING_PO_CHART1Iterator"/>
     <searchRegion Binds="VIEW_PENDING_PO_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PENDING_PO_CHART1Query"/>
     <iterator Binds="VIEW_PURCHASE_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_PURCHASE_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_PURCHASE_CHART1Iterator"/>
     <iterator Binds="VIEW_PURCHASE_MONTHLY_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_PURCHASE_MONTHLY_CHART1Iterator" CacheResults="false"/>
+              id="VIEW_PURCHASE_MONTHLY_CHART1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="VIEW_PENDING_PO_CHART1Iterator" id="VIEW_PENDING_PO_CHART1">

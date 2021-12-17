@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Dashboard" styleClass="backColor">
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+            <dvt:lineChart id="lineChart1" var="row" value="#{bindings.VIEW_SALES_CHART1.collectionModel}" title="Date wise Sales">
+              <dvt:chartLegend id="cl1"/>
+              <f:facet name="dataStamp">
+                <dvt:chartDataItem id="di1" series="#{bindings.VIEW_SALES_CHART1.hints.NetAmount.label}"
+                                   value="#{row.NetAmount}" group="#{row.Dated}"/>
+              </f:facet>
+            </dvt:lineChart>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+           
+              <dvt:lineChart id="lineChart2" var="row" value="#{bindings.VIEW_SALES_MONTHLY_CHART1.collectionModel}" title="Month wise Sales">
+                <dvt:chartLegend id="cl2"/>
+                <f:facet name="dataStamp">
+                  <dvt:chartDataItem id="di2" series="#{bindings.VIEW_SALES_MONTHLY_CHART1.hints.NetAmount.label}"
+                                     value="#{row.NetAmount}" group="#{row.Dated}"/>
+                </f:facet>
+              </dvt:lineChart>
+            
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+           <af:panelGroupLayout id="pgl8">
+            <af:outputLabel value="Pending Sale Orders" id="ol3"/>
+              <af:table value="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.collectionModel}" var="row"
+                        rows="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.rangeSize}"
+                        emptyText="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        rowBandingInterval="0"
+                        selectedRowKeys="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.collectionModel.makeCurrent}"
+                        rowSelection="single" fetchSize="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.rangeSize}"
+                        filterModel="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1Query.queryDescriptor}"
+                        filterVisible="true"
+                        queryListener="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1Query.processQuery}" varStatus="vs"
+                        id="t3" scrollPolicy="page" autoHeightRows="0">
+                <af:column sortProperty="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Id.name}" filterable="false"
+                           sortable="false" headerText="ID"
+                           id="c9">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it16" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.Id.inputValue}"
+                                label="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Id.label}"
+                                required="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Id.mandatory}"
+                                columns="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Id.displayWidth}"
+                                maximumLength="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Id.precision}"
+                                shortDesc="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Id.tooltip}" id="it12" readOnly="true">
+                    <f:validator binding="#{row.bindings.Id.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Id.format}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Dated.name}" filterable="false"
+                           sortable="false" headerText="Date"
+                           id="c10">
+                  <f:facet name="filter">
+                    <af:inputDate value="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                  id="id6" placeholder="Search ">
+                      <af:convertDateTime pattern="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </f:facet>
+                  <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                label="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Dated.label}"
+                                required="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Dated.mandatory}"
+                                columns="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Dated.displayWidth}"
+                                shortDesc="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Dated.tooltip}" id="id7" readOnly="true">
+                    <f:validator binding="#{row.bindings.Dated.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Dated.format}"/>
+                  </af:inputDate>
+                </af:column>
+                <af:column sortProperty="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Amount.name}"
+                           filterable="false"
+                           sortable="false" headerText="Amount"
+                           id="c11">
+                            <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it17" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                  <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                label="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Amount.label}"
+                                required="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Amount.mandatory}"
+                                columns="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Amount.displayWidth}"
+                                maximumLength="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Amount.precision}"
+                                shortDesc="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Amount.tooltip}" id="it13" readOnly="true">
+                    <f:validator binding="#{row.bindings.Amount.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VIEW_PENDING_SALE_ORDER_CHART1.hints.Amount.format}"/>
+                  </af:inputText>
+                </af:column>
+              </af:table>
+            </af:panelGroupLayout>
+          </af:gridCell>
+           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+              <af:panelGroupLayout id="pgl9">
+             <af:outputLabel value="Today Sales Detail" id="ol4"/>
+                <af:table value="#{bindings.VIEW_TODAY_SALES_CHART1.collectionModel}" var="row"
+                      rows="#{bindings.VIEW_TODAY_SALES_CHART1.rangeSize}"
+                      emptyText="#{bindings.VIEW_TODAY_SALES_CHART1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.VIEW_TODAY_SALES_CHART1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.VIEW_TODAY_SALES_CHART1.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.VIEW_TODAY_SALES_CHART1.rangeSize}"
+                      filterModel="#{bindings.VIEW_TODAY_SALES_CHART1Query.queryDescriptor}" filterVisible="true"
+                      queryListener="#{bindings.VIEW_TODAY_SALES_CHART1Query.processQuery}" varStatus="vs" id="t5"
+                      scrollPolicy="page" autoHeightRows="0">
+              <af:column sortProperty="#{bindings.VIEW_TODAY_SALES_CHART1.hints.CustName.name}" filterable="false"
+                         sortable="false" headerText="Customer Name" id="c15">
+                          <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CustName}"
+       id="it23" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                <af:inputText value="#{row.bindings.CustName.inputValue}"
+                              label="#{bindings.VIEW_TODAY_SALES_CHART1.hints.CustName.label}"
+                              required="#{bindings.VIEW_TODAY_SALES_CHART1.hints.CustName.mandatory}"
+                              columns="#{bindings.VIEW_TODAY_SALES_CHART1.hints.CustName.displayWidth}"
+                              maximumLength="#{bindings.VIEW_TODAY_SALES_CHART1.hints.CustName.precision}"
+                              shortDesc="#{bindings.VIEW_TODAY_SALES_CHART1.hints.CustName.tooltip}" id="it20" readOnly="true">
+                  <f:validator binding="#{row.bindings.CustName.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.VIEW_TODAY_SALES_CHART1.hints.SaleType.name}" filterable="false"
+                         sortable="false" headerText="Sale Type" id="c16">
+                          <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SaleType}"
+       id="it24" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                <af:inputText value="#{row.bindings.SaleType.inputValue}"
+                              label="#{bindings.VIEW_TODAY_SALES_CHART1.hints.SaleType.label}"
+                              required="#{bindings.VIEW_TODAY_SALES_CHART1.hints.SaleType.mandatory}"
+                              columns="#{bindings.VIEW_TODAY_SALES_CHART1.hints.SaleType.displayWidth}"
+                              maximumLength="#{bindings.VIEW_TODAY_SALES_CHART1.hints.SaleType.precision}"
+                              shortDesc="#{bindings.VIEW_TODAY_SALES_CHART1.hints.SaleType.tooltip}" id="it21" readOnly="true">
+                  <f:validator binding="#{row.bindings.SaleType.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.VIEW_TODAY_SALES_CHART1.hints.NetAmount.name}" filterable="false"
+                         sortable="false" headerText="Net Amount"
+                         id="c17">
+                          <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.NetAmount}"
+       id="it25" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                <af:inputText value="#{row.bindings.NetAmount.inputValue}"
+                              label="#{bindings.VIEW_TODAY_SALES_CHART1.hints.NetAmount.label}"
+                              required="#{bindings.VIEW_TODAY_SALES_CHART1.hints.NetAmount.mandatory}"
+                              columns="#{bindings.VIEW_TODAY_SALES_CHART1.hints.NetAmount.displayWidth}"
+                              maximumLength="#{bindings.VIEW_TODAY_SALES_CHART1.hints.NetAmount.precision}"
+                              shortDesc="#{bindings.VIEW_TODAY_SALES_CHART1.hints.NetAmount.tooltip}" id="it22" readOnly="true">
+                  <f:validator binding="#{row.bindings.NetAmount.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.VIEW_TODAY_SALES_CHART1.hints.NetAmount.format}"/>
+                </af:inputText>
+              </af:column>
+            </af:table>
+            </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+       
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+        </af:gridRow>
+      </af:panelGridLayout>
+     
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
