@@ -337,8 +337,26 @@
                                         pattern="#{bindings.TblCompanyDetailView3.hints.Id.format}"/>
                     </af:inputText>
                   </af:column>
+                  
+                  <af:column headerText="Bank Name" id="c27"
+                             sortable="true" filterable="true" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.BankName}"
+       id="it50" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.BankName.inputValue}"
+                                  label="#{bindings.TblCompanyDetailView3.hints.BankName.label}"
+                                  required="#{bindings.TblCompanyDetailView3.hints.BankName.mandatory}"
+                                  columns="#{bindings.TblCompanyDetailView3.hints.BankName.displayWidth}"
+                                  maximumLength="#{bindings.TblCompanyDetailView3.hints.BankName.precision}"
+                                  shortDesc="#{bindings.TblCompanyDetailView3.hints.BankName.tooltip}" id="it49">
+                      <f:validator binding="#{row.bindings.BankName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                
                   <af:column sortProperty="#{bindings.TblCompanyDetailView3.hints.Title.name}" filterable="true"
-                             sortable="true" headerText="Tittle" id="c14" width="300">
+                             sortable="true" headerText="Account Tittle" id="c14" width="200">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Title}"
        id="it29" placeholder="Search ">

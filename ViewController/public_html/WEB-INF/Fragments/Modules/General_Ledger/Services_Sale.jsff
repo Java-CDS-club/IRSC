@@ -116,7 +116,7 @@
                                            disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b4"/>
                                 <af:button actionListener="#{bindings.Next.execute}" text="Next" styleClass="af|Voucheractionbutton"
                                            disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b5"/>
-                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last" styleClass="af|Voucheractionbutton"
                                            disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b6"/>
                               </af:panelGroupLayout>
                             </f:facet>

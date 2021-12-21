@@ -153,6 +153,7 @@
           <Item Value="IbanNo"/>
           <Item Value="AccNo"/>
           <Item Value="Ast"/>
+          <Item Value="BankName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
