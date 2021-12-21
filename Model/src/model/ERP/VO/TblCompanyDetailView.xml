@@ -107,4 +107,10 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblCompanyDetail"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="BankName"
+    PrecisionRule="true"
+    EntityAttrName="BankName"
+    EntityUsage="TblCompanyDetail"
+    AliasName="BANK_NAME"/>
 </ViewObject>

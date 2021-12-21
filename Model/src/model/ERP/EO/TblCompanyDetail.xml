@@ -105,6 +105,18 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_COMPANY_DETAIL"/>
+  <Attribute
+    Name="BankName"
+    Precision="150"
+    ColumnName="BANK_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_COMPANY_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblCompany"
     Association="model.ERP.EO.FKCompanyMasterDetailAssoc"
