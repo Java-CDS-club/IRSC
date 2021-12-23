@@ -82,4 +82,16 @@
     EntityAttrName="Cr"
     EntityUsage="TempGlDp"
     AliasName="CR"/>
+  <ViewAttribute
+    Name="MId"
+    PrecisionRule="true"
+    EntityAttrName="MId"
+    EntityUsage="TempGlDp"
+    AliasName="M_ID"/>
+  <ViewAttribute
+    Name="Vtp"
+    PrecisionRule="true"
+    EntityAttrName="Vtp"
+    EntityUsage="TempGlDp"
+    AliasName="VTP"/>
 </ViewObject>

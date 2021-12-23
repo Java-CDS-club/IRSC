@@ -1,5 +1,7 @@
 package view.Report;
 
+import java.math.BigDecimal;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,14 +15,18 @@ import javax.faces.event.ActionEvent;
 
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 
+import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
+
 import view.DatabaseConnection.DatabaseConnection;
 
 public class VoucherPrint {
     private RichInputText it4;
-    
+    private static BigDecimal sendVMID;
     private static String company_id;
     private static String company_name;
     private RichInputText it1;
+    private RichInputText it2;
+
 
     public VoucherPrint() {
     }
@@ -969,5 +975,55 @@ public class VoucherPrint {
 
     public RichInputText getIt1() {
         return it1;
+    }
+
+    public void getVReport(ActionEvent actionEvent) {
+        // Add event code here....
+        Number sendVMID = (Number) actionEvent.getComponent().getAttributes().get("sendVMID");
+        String sendVTYPE = this.getIt2().getValue().toString();
+        System.out.println(" Voucher ID is : " + sendVMID);
+        System.out.println(" Voucher Type is : " + sendVTYPE);
+        String url = "";
+        
+        switch (sendVTYPE) {
+            case "BPV":
+            reportBean.setReportParameter("P_BPV_M_id", sendVMID.toString());
+            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Bank_Payment_GL_Detail&");
+            break;
+            case "CPV":
+            reportBean.setReportParameter("P_CPV_M_id", sendVMID.toString());
+            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Cash_Payment_GL_Detail&");
+            break;
+            case "BRV":
+            reportBean.setReportParameter("P_BRV_M_id", sendVMID.toString());
+            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Bank_Reciept_GL_Detail&");
+            break;
+            case "CRV":
+            reportBean.setReportParameter("P_CRV_M_id", sendVMID.toString());
+            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Cash_Reciept_GL_Detail&");
+            break;
+            case "JV":
+            reportBean.setReportParameter("P_JV_M_id", sendVMID.toString());
+            reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Journal_Voucher_GL_Detail&");
+            break;
+        }
+        
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                        "CACHE"); // which will be one of the [cashe - file - mail - printer]
+        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                        "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+        reportBean.setReportParameter("paramform", "no");
+
+        url = reportBean.getReportServerURL();
+        System.out.println("Url => " + url);
+        reportBean.openUrlInNewWindow(url);
+        }
+        
+    public void setIt2(RichInputText it2) {
+        this.it2 = it2;
+    }
+
+    public RichInputText getIt2() {
+        return it2;
     }
 }

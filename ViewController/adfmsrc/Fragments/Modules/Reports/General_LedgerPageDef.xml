@@ -7,7 +7,8 @@
     <iterator Binds="TempGlView1" RangeSize="50" DataControl="AppModuleDataControl1" id="TempGlView1Iterator"/>
     <searchRegion Binds="TempGlView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempGlView1Query"/>
-    <iterator Binds="TempGlDpView1" RangeSize="50" DataControl="AppModuleDataControl1" id="TempGlDpView1Iterator"/>
+    <iterator Binds="TempGlDpView1" RangeSize="50" DataControl="AppModuleDataControl1" id="TempGlDpView1Iterator"
+              CacheResults="false" Refresh="default"/>
     <searchRegion Binds="TempGlDpView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TempGlDpView1Query"/>
     <iterator Binds="VIEW_GL_Param1" RangeSize="25" DataControl="AppModuleDataControl1" id="VIEW_GL_Param1Iterator"/>
@@ -32,6 +33,8 @@
           <Item Value="Narr"/>
           <Item Value="Dr"/>
           <Item Value="Cr"/>
+          <Item Value="MId"/>
+          <Item Value="Vtp"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

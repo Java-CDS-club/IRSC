@@ -382,4 +382,9 @@ public class TrialBalanceReports {
     public RichSelectOneChoice getCompanyidparam() {
         return companyidparam;
     }
+
+    public String gen_GL() {
+        // Add event code here...
+        return null;
+    }
 }

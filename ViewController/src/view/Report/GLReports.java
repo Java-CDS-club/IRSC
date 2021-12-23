@@ -72,7 +72,7 @@ public class GLReports {
 
         if (gotFormat == "") {
         showMessage("Please Select Report Format");
-        } else {
+        } else { 
 
         switch (selectedReportType) {
 

@@ -244,12 +244,31 @@
                                               required="#{bindings.TempGlDpView1.hints.Vno.mandatory}"
                                               columns="#{bindings.TempGlDpView1.hints.Vno.displayWidth}"
                                               maximumLength="#{bindings.TempGlDpView1.hints.Vno.precision}"
+                                              
                                               shortDesc="#{bindings.TempGlDpView1.hints.Vno.tooltip}" id="it5" readOnly="true">
                                     <f:validator binding="#{row.bindings.Vno.validator}"/>
                                 </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TempGlDpView1.hints.Narr.name}" filterable="true"
-                                       sortable="true" headerText="Narration" id="c7" width="500">
+                                    <af:column headerText="#{bindings.TempGlDpView1.hints.Vtp.label}" id="c10"
+                                               sortable="true" filterable="true">
+                                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vtp}"
+       id="it15" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                                        <af:inputText value="#{row.bindings.Vtp.inputValue}"
+                                                      label="#{bindings.TempGlDpView1.hints.Vtp.label}"
+                                                      required="#{bindings.TempGlDpView1.hints.Vtp.mandatory}"
+                                                      columns="#{bindings.TempGlDpView1.hints.Vtp.displayWidth}"
+                                                      maximumLength="#{bindings.TempGlDpView1.hints.Vtp.precision}"
+                                                      binding="#{backingBeanScope.VoucherPrintBean.it2}"
+                                                      shortDesc="#{bindings.TempGlDpView1.hints.Vtp.tooltip}" id="it14" readOnly="true"
+                                                      >
+                                            <f:validator binding="#{row.bindings.Vtp.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TempGlDpView1.hints.Narr.name}" filterable="true"
+                                       sortable="true" headerText="Narration" id="c7" width="200">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Narr}"
        id="it11" placeholder="Search ">
@@ -265,7 +284,7 @@
                                 </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TempGlDpView1.hints.Dr.name}" filterable="true"
-                                       sortable="true" headerText="Dr." id="c8" width="150">
+                                       sortable="true" headerText="Dr." id="c8" width="100">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Dr}"
        id="it12" placeholder="Search ">
@@ -283,7 +302,7 @@
                                 </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TempGlDpView1.hints.Cr.name}" filterable="true"
-                                       sortable="true" headerText="Cr." id="c9" width="150">
+                                       sortable="true" headerText="Cr." id="c9" width="100">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Cr}"
        id="it13" placeholder="Search ">
@@ -300,7 +319,18 @@
                                                       pattern="#{bindings.TempGlDpView1.hints.Cr.format}"/>
                                 </af:inputText>
                             </af:column>
-                        </af:table>
+                    <af:column sortProperty="#{bindings.TempGlDpView1.hints.MId.name}" filterable="true" sortable="true"
+                     headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.TempGlDpView1.hints.MId.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                    actionListener="#{backingBeanScope.VoucherPrintBean.getVReport}">
+                   <f:attribute name="sendVMID" value="#{row.bindings.MId.inputValue}"/>
+                   <!--<f:attribute name="sendVTYPE" value="#{row.bindings.MId.inputValue}"/>-->
+                </af:link>
+                
+                    
+                  </af:column>
+                                </af:table>
                                 
                             </af:showDetailItem>
                         </af:panelTabbed>

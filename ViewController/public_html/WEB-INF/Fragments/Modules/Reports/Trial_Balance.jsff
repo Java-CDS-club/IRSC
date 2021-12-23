@@ -234,6 +234,11 @@
                                                               pattern="#{bindings.TbView1.hints.DpCr.format}"/>
                                         </af:inputText>
                                     </af:column>
+                                    <af:column headerText="#{bindings.TbView1.hints.Button.label}" id="c6">
+                                        <af:link shortDesc="#{bindings.TbView1.hints.Button.tooltip}" id="it9"
+                                                 text="link 1"
+                                                 action="#{backingBeanScope.TrialBalanceReportsBackBean.gen_GL}"/>
+                                    </af:column>
                                 </af:table>
                             </af:showDetailItem>
                         </af:panelTabbed>

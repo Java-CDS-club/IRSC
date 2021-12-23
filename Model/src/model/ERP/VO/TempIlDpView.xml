@@ -12,7 +12,8 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  FetchMode="FETCH_AS_NEEDED">
   <ViewAccessor
     Name="Item_Level4_LOV1"
     ViewObjectName="model.LOV.Item_Level4_LOV"

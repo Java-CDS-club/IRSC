@@ -79,4 +79,15 @@
     EntityAttrName="DpCr"
     EntityUsage="Tb"
     AliasName="DP_CR"/>
+  <ViewAttribute
+    Name="Button"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
 </ViewObject>

@@ -77,6 +77,27 @@
     ColumnType="NUMBER"
     TableName="TEMP_GL_DP"
     PrimaryKey="true"/>
+  <Attribute
+    Name="MId"
+    ColumnName="M_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TEMP_GL_DP"/>
+  <Attribute
+    Name="Vtp"
+    Precision="3"
+    ColumnName="VTP"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TEMP_GL_DP"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="TempgldpPrimaryKey"
     PrimaryKey="true">
