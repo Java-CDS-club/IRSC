@@ -19,6 +19,9 @@ import view.DatabaseConnection.DatabaseConnection;
 import java.sql.CallableStatement;
 import java.util.Date;
 import java.util.Locale;
+
+import javax.faces.event.ActionEvent;
+
 import view.DatabaseConnection.DatabaseConnection;
 
 public class TrialBalanceReports {
@@ -28,6 +31,7 @@ public class TrialBalanceReports {
     private RichInputDate toDateParam;
     private RichSelectOneChoice projectidparam;
     private RichSelectOneChoice companyidparam;
+    private RichSelectOneChoice glL4idparam;
 
     public TrialBalanceReports() {
     }
@@ -36,6 +40,7 @@ public class TrialBalanceReports {
     private static String gotFormat = "";
     private static BigDecimal gotprojectId;
     private static BigDecimal gotcompanyId;
+    private static BigDecimal gotGlL4id;
 
     public String gen_Report() {
         // Add event code here...
@@ -43,6 +48,7 @@ public class TrialBalanceReports {
         gotFormat = (String) this.getFormat_type().getValue();
         gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
         gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
+        
         
         
         
@@ -62,6 +68,7 @@ public class TrialBalanceReports {
         if (gotcompanyId != null) {
                     reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
         }
+        
         
     
 
@@ -383,8 +390,178 @@ public class TrialBalanceReports {
         return companyidparam;
     }
 
-    public String gen_GL() {
+    public void gen_GL(ActionEvent actionEvent) {
         // Add event code here...
-        return null;
+        BigDecimal sendGLID = (BigDecimal) actionEvent.getComponent().getAttributes().get("sendGLID");
+//        selectedReportType = (String) this.getReport_type().getValue();
+//        gotFormat = (String) this.getFormat_type().getValue();
+//        gotGlL4id = (BigDecimal) this.getGlL4idparam().getValue();
+        gotprojectId = (BigDecimal) this.getProjectidparam().getValue();
+        gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
+        
+        System.out.println(" L4 is : " + sendGLID);
+        System.out.println(" Project is : " + gotprojectId);
+        System.out.println(" Company is : " + gotcompanyId);
+        
+        
+        DatabaseConnection dbconnect = new DatabaseConnection();
+        OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
+        String url = "";
+
+        if (getFromDate() != "") {
+        reportBean.setReportParameter("P_Fdated", getFromDate());
+        }
+        if (getToDate() != "") {
+        reportBean.setReportParameter("P_Tdated", getToDate());
+        }
+        
+            if (sendGLID != null) {
+                reportBean.setReportParameter("P_AccID", sendGLID.toString());
+            }
+            if (gotprojectId != null) {
+                reportBean.setReportParameter("P_Project_id", gotprojectId.toString());
+            }
+            if (gotcompanyId != null) {
+                        reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
+            }
+            
+        
+
+//        
+        
+
+       
+            
+            //working for procedure call//
+            
+            if (getFromDate() != "" & getToDate() != "" & sendGLID != null & gotcompanyId != null & gotprojectId == null) {
+                    
+                   
+                    BigDecimal P_AccID = sendGLID;
+                    String P_Fdate = getFromDate();
+                    String P_Tdate = getToDate();
+                    BigDecimal P_Company_ID = gotcompanyId;
+                    //calling procedure start//
+                    Connection conn;
+                    ResultSet rs;
+                    try {
+                        conn = DatabaseConnection.getConnection();
+
+        //first procedure
+                        
+                                CallableStatement cstmt = null;
+                                String SQL = "{call P_GL(?,?,?)}";
+                                cstmt = conn.prepareCall(SQL);
+                                
+                                cstmt.setBigDecimal(1, P_AccID );
+                                cstmt.setString(2, P_Fdate );
+                        cstmt.setBigDecimal(3, P_Company_ID );
+                                rs = null;
+                                rs = cstmt.executeQuery();
+                            
+                        
+                        
+        //second procedure
+                        
+                        CallableStatement cstmt2 = null;
+                        String SQL2 = "{call P_GL_DP(?,?,?,?)}";
+                        cstmt2 = conn.prepareCall(SQL2);
+                        
+                        cstmt2.setBigDecimal(1, P_AccID );
+                        cstmt2.setString(2, P_Fdate );
+                        cstmt2.setString(3, P_Tdate );
+                        cstmt2.setBigDecimal(4, P_Company_ID );
+                        rs = null;
+                        rs = cstmt2.executeQuery();
+                        
+                        
+                        
+                        
+                    
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                    }
+                    
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/General_Ledger&");
+
+            }
+             if (getFromDate() != "" & getToDate() != "" & sendGLID != null & gotcompanyId != null & gotprojectId != null ) {
+                    
+                   
+                    BigDecimal P_AccID = sendGLID;
+                    BigDecimal P_PROJECTID = gotprojectId;
+                    String P_Fdate = getFromDate();
+                    String P_Tdate = getToDate();
+                BigDecimal P_Company_ID = gotcompanyId;
+                    //calling procedure start//
+                    Connection conn;
+                    ResultSet rs;
+                    try {
+                        conn = DatabaseConnection.getConnection();
+
+            //first procedure
+                        CallableStatement cstmt = null;
+                        String SQL = "{call P_GL_PROJECT(?,?,?,?)}";
+                        cstmt = conn.prepareCall(SQL);
+                       
+                        cstmt.setBigDecimal(1, P_AccID );
+                        cstmt.setString(2, P_Fdate );
+                        cstmt.setBigDecimal(3, P_PROJECTID );
+                        cstmt.setBigDecimal(4, P_Company_ID );
+                        rs = null;
+                        rs = cstmt.executeQuery();
+                        
+            //second procedure
+                        CallableStatement cstmt2 = null;
+                        String SQL2 = "{call P_GL_DP_PROJECT(?,?,?,?,?)}";
+                        cstmt2 = conn.prepareCall(SQL2);
+                        
+                        cstmt2.setBigDecimal(1, P_AccID );
+                        cstmt2.setString(2, P_Fdate );
+                        cstmt2.setString(3, P_Tdate );
+                        cstmt2.setBigDecimal(4, P_PROJECTID );
+                        cstmt2.setBigDecimal(5, P_Company_ID );
+                        rs = null;
+                        rs = cstmt2.executeQuery();
+                        
+                        
+                        
+                        
+                    
+                    } catch (SQLException e) {
+                        System.out.println(e);
+                    }
+                    
+                reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/General_Ledger&"); 
+
+            }
+            
+            
+           
+            
+           
+            //calling procedure end//
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+            reportBean.setReportParameter("paramform", "no");
+
+            url = reportBean.getReportServerURL();
+            System.out.println("Url => " + url);
+            reportBean.openUrlInNewWindow(url);
+
+        }
+
+        
+       
+    
+
+    public void setGlL4idparam(RichSelectOneChoice glL4idparam) {
+        this.glL4idparam = glL4idparam;
+    }
+
+    public RichSelectOneChoice getGlL4idparam() {
+        return glL4idparam;
     }
 }

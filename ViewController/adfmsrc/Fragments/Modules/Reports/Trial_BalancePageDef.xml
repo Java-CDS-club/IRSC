@@ -19,6 +19,7 @@
           <Item Value="DpDr"/>
           <Item Value="DpCr"/>
           <Item Value="Button"/>
+          <Item Value="Pkcode1"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -99,7 +99,8 @@
                                                 binding="#{backingBeanScope.TrialBalanceReportsBackBean.report_type}"
                                                 contentStyle="width:300px;">
                                                 
-                                <af:selectItem label="Trial Report" value="trialReport" id="si9"/>
+                                <af:selectItem label="Trial Balance" value="trialReport" id="si9"/>
+                                <af:selectItem label="General Ledger" value="generalLedger" id="si4"/>
                                 
                                 
                                 
@@ -119,6 +120,7 @@
                              <af:spacer width="7" height="30" id="s1"/>
                             <af:button text="Generate Report" id="b2"
                                        action="#{backingBeanScope.TrialBalanceReportsBackBean.gen_Report}"/>
+                                       
                                       
                             
                             <af:spacer width="30" height="10" id="s6"/>
@@ -150,9 +152,11 @@
       </af:inputText>
 </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.Pkcode.inputValue}"
+                                        
                                                             label="#{row.bindings.Pkcode.label}"
                                                             required="#{bindings.TbView1.hints.Pkcode.mandatory}"
                                                             shortDesc="#{bindings.TbView1.hints.Pkcode.tooltip}"
+                                                            binding="#{backingBeanScope.TrialBalanceReportsBackBean.glL4idparam}"
                                                             id="soc1" readOnly="true">
                                             <f:selectItems value="#{row.bindings.Pkcode.items}" id="si1"/>
                                             <f:validator binding="#{row.bindings.Pkcode.validator}"/>
@@ -234,11 +238,22 @@
                                                               pattern="#{bindings.TbView1.hints.DpCr.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TbView1.hints.Button.label}" id="c6">
-                                        <af:link shortDesc="#{bindings.TbView1.hints.Button.tooltip}" id="it9"
-                                                 text="link 1"
-                                                 action="#{backingBeanScope.TrialBalanceReportsBackBean.gen_GL}"/>
-                                    </af:column>
+                                    <!--<af:column headerText="#{bindings.TbView1.hints.Pkcode1.label}" id="c7">
+                                        <af:link shortDesc="#{bindings.TbView1.hints.Pkcode1.tooltip}" id="it10" icon="#{resource['images:get_report.png']}"
+                                                 actionListener="#{backingBeanScope.TrialBalanceReportsBackBean.gen_GL}"/>
+                                    </af:column>-->
+                                   
+                                   
+                                    <af:column sortProperty="#{bindings.TbView1.hints.Pkcode1.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.TbView1.hints.Pkcode1.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.TrialBalanceReportsBackBean.gen_GL}">
+                   <f:attribute name="sendGLID" value="#{row.bindings.Pkcode1.inputValue}"/>
+                   
+                </af:link>
+                    
+                  </af:column>
                                 </af:table>
                             </af:showDetailItem>
                         </af:panelTabbed>

@@ -13,7 +13,8 @@
        Tb.OB_DR, 
        Tb.OB_CR, 
        Tb.DP_DR, 
-       Tb.DP_CR"
+       Tb.DP_CR, 
+       Tb.PKCODE AS PKCODE1"
   FromList="TB Tb"
   Where="(Tb.OB_DR>0 or Tb.OB_CR>0 or Tb.DP_DR>0 or Tb.DP_CR>0)">
   <ViewAccessor
@@ -86,8 +87,14 @@
     IsPersistent="false"
     PrecisionRule="true"
     Precision="255"
-    Type="java.lang.String"
+    Type="oracle.jbo.domain.Number"
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="Pkcode1"
+    PrecisionRule="true"
+    EntityAttrName="Pkcode"
+    EntityUsage="Tb"
+    AliasName="PKCODE1"/>
 </ViewObject>
