@@ -37,6 +37,7 @@ public class TblProFgMasterImpl extends EntityImpl {
         DepartmentId,
         ProjectDId,
         ProjectId,
+        CompanyId,
         TblProFgDetail,
         TblFgTrnMaster,
         TblPorMaster;
@@ -77,6 +78,7 @@ public class TblProFgMasterImpl extends EntityImpl {
     public static final int DEPARTMENTID = AttributesEnum.DepartmentId.index();
     public static final int PROJECTDID = AttributesEnum.ProjectDId.index();
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
+    public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int TBLPROFGDETAIL = AttributesEnum.TblProFgDetail.index();
     public static final int TBLFGTRNMASTER = AttributesEnum.TblFgTrnMaster.index();
     public static final int TBLPORMASTER = AttributesEnum.TblPorMaster.index();
@@ -285,6 +287,22 @@ public class TblProFgMasterImpl extends EntityImpl {
      */
     public void setProjectId(BigDecimal value) {
         setAttributeInternal(PROJECTID, value);
+    }
+
+    /**
+     * Gets the attribute value for CompanyId, using the alias name CompanyId.
+     * @return the value of CompanyId
+     */
+    public BigDecimal getCompanyId() {
+        return (BigDecimal) getAttributeInternal(COMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanyId.
+     * @param value value to set the CompanyId
+     */
+    public void setCompanyId(BigDecimal value) {
+        setAttributeInternal(COMPANYID, value);
     }
 
     /**

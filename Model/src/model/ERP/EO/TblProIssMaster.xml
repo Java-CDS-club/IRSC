@@ -125,11 +125,7 @@
     ColumnType="NUMBER"
     TableName="TBL_PRO_ISS_MASTER"
     RetrievedOnInsert="true"
-    RetrievedOnUpdate="true">
-    <TransientExpression
-      Name="ExpressionScript"
-      CodeSourceName="TblProIssMasterRow"/>
-  </Attribute>
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="ToDeptId"
     ColumnName="TO_DEPT_ID"
@@ -144,6 +140,18 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_PRO_ISS_MASTER"/>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PRO_ISS_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblProIssMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblProIssDetail"
     Association="model.ERP.EO.FkProIssDetailMasterAssoc"

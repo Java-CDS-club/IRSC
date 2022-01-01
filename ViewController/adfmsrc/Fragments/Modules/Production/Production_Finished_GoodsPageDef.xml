@@ -98,8 +98,6 @@
             Action="removeCurrentRow"/>
     <list IterBinding="TblProFgMasterView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblProFgMasterView1Iterator" StaticList="false" Uses="LOV_ProjectDId" id="ProjectDId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblProFgMasterView1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblProFgMasterView1Iterator" StaticList="false" Uses="LOV_PorMasterIdStatic"

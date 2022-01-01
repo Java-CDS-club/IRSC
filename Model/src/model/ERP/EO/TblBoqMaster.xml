@@ -125,6 +125,17 @@
     TableName="TBL_BOQ_MASTER">
     <TransientExpression
       Name="ExpressionScript"
+      CodeSourceName="TblBoqMasterRow"/>
+  </Attribute>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_BOQ_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
       trustMode="trusted"
       CodeSourceName="TblBoqMasterRow"/>
   </Attribute>

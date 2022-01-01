@@ -20,8 +20,19 @@
        TblBoqMaster.CREATED_BY, 
        TblBoqMaster.UPDATED_DATE, 
        TblBoqMaster.UPDATED_BY, 
-       TblBoqMaster.PROJECT_ID"
-  FromList="TBL_BOQ_MASTER TblBoqMaster">
+       TblBoqMaster.PROJECT_ID, 
+       TblBoqMaster.COMPANY_ID"
+  FromList="TBL_BOQ_MASTER TblBoqMaster"
+  Where="TblBoqMaster.COMPANY_ID = nvl(:P_COMPANY_ID,TblBoqMaster.COMPANY_ID)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblBoqMasterView"/>
+  </Variable>
   <ViewAccessor
     Name="Voucher_Type1"
     ViewObjectName="model.LOV.Voucher_Type"
@@ -29,6 +40,10 @@
   <ViewAccessor
     Name="Item_Level4_LOV1"
     ViewObjectName="model.LOV.Item_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Project_Name_LOV1"
+    ViewObjectName="model.LOV.Project_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -60,6 +75,24 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ProjectId"
+    ListVOName="Project_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -169,7 +202,21 @@
     PrecisionRule="true"
     EntityAttrName="ProjectId"
     EntityUsage="TblBoqMaster"
-    AliasName="PROJECT_ID"/>
+    AliasName="PROJECT_ID"
+    LOVName="LOV_ProjectId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblBoqMaster"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblBoqDetailView"
     ViewLink="model.ERP.VO.FkBoqDetailMasterLink"

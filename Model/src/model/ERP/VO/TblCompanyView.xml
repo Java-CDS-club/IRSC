@@ -6,13 +6,34 @@
   Name="TblCompanyView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblCompany.ID, 
+       TblCompany.NAME, 
+       TblCompany.CO_ADDRESS, 
+       TblCompany.IMAGE_CHOOSE, 
+       TblCompany.IMAGE_NAME, 
+       TblCompany.AST, 
+       TblCompany.CONTACT, 
+       TblCompany.CONTACT_PERS, 
+       TblCompany.EMAIL, 
+       TblCompany.FAX, 
+       TblCompany.GST, 
+       TblCompany.LIC_ENDATE, 
+       TblCompany.LIC_STDATE, 
+       TblCompany.MOBILE, 
+       TblCompany.NTN, 
+       TblCompany.ST_DATE, 
+       TblCompany.STRN, 
+       TblCompany.URL, 
+       TblCompany.LICENSE_NO, 
+       TblCompany.REG_DATE, 
+       TblCompany.REN_DATE, 
+       TblCompany.ABBR, 
+       TblCompany.IMAGE_PATH"
+  FromList="TBL_COMPANY TblCompany"
+  Where="AST='Y'">
   <ViewAccessor
     Name="Active_LOV1"
     ViewObjectName="model.LOV.Active_LOV"

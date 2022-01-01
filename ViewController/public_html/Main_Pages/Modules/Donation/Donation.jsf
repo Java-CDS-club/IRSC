@@ -17,7 +17,7 @@
                             <f:facet name="first">
                                 <!-- Left -->
                                 <af:panelAccordion discloseMany="false" id="pa4" styleClass="sidebar_style">
-                                    <af:showDetailItem id="sdi1" text="Donation" styleClass="backColor sidebar_detailitem_Style">
+                                    <af:showDetailItem id="sdi1" text="Drawer" styleClass="backColor sidebar_detailitem_Style">
                                         <af:spacer width="190" height="10" id="s1"/>
                                         <af:iterator id="i2" value="#{bindings.Pages_Donation1.collectionModel}" var="item"
                                                      varStatus="status">

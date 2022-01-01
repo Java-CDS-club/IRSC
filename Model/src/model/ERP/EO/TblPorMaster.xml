@@ -114,11 +114,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_POR_MASTER">
-    <TransientExpression
-      Name="ExpressionScript"
-      CodeSourceName="TblPorMasterRow"/>
-  </Attribute>
+    TableName="TBL_POR_MASTER"/>
   <Attribute
     Name="ProjectDId"
     ColumnName="PROJECT_D_ID"
@@ -145,6 +141,18 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_POR_MASTER"/>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_POR_MASTER">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblPorMasterRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblPorDetail"
     Association="model.ERP.EO.FkPorDetailMasterAssoc"

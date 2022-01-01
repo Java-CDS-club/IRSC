@@ -36,6 +36,7 @@ public class TblBoqMasterImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         ProjectId,
+        CompanyId,
         TblBoqDetail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -73,6 +74,7 @@ public class TblBoqMasterImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
+    public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int TBLBOQDETAIL = AttributesEnum.TblBoqDetail.index();
 
     /**
@@ -263,6 +265,22 @@ public class TblBoqMasterImpl extends EntityImpl {
      */
     public void setProjectId(BigDecimal value) {
         setAttributeInternal(PROJECTID, value);
+    }
+
+    /**
+     * Gets the attribute value for CompanyId, using the alias name CompanyId.
+     * @return the value of CompanyId
+     */
+    public BigDecimal getCompanyId() {
+        return (BigDecimal) getAttributeInternal(COMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanyId.
+     * @param value value to set the CompanyId
+     */
+    public void setCompanyId(BigDecimal value) {
+        setAttributeInternal(COMPANYID, value);
     }
 
     /**

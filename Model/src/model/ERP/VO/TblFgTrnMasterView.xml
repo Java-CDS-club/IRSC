@@ -23,15 +23,17 @@
        TblFgTrnMaster.PROJECT_D_D_ID, 
        TblFgTrnMaster.DEPARTMENT_ID, 
        TblFgTrnMaster.PROJECT_ID, 
-       TblFgTrnMaster.PRO_FG_MASTER_ID AS PRO_FG_MASTER_ID1"
+       TblFgTrnMaster.PRO_FG_MASTER_ID AS PRO_FG_MASTER_ID1, 
+       TblFgTrnMaster.COMPANY_ID"
   FromList="TBL_FG_TRN_MASTER TblFgTrnMaster"
-  Where="TblFgTrnMaster.PROJECT_ID = nvl(:getProId,TblFgTrnMaster.PROJECT_ID)">
+  Where="TblFgTrnMaster.COMPANY_ID = nvl(:P_COMPANY_ID,TblFgTrnMaster.COMPANY_ID)">
   <Variable
-    Name="getProId"
+    Name="P_COMPANY_ID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="TblFgTrnMasterView"/>
   </Variable>
   <ViewAccessor
@@ -347,6 +349,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblFgTrnMaster"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblFgTrnDetailView"
     ViewLink="model.ERP.VO.FkFgTrnDetailMasterLink"

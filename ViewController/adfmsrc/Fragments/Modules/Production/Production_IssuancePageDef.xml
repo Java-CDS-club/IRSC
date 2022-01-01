@@ -127,8 +127,6 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblProIssMasterView1Iterator" StaticList="false" Uses="LOV_ToDeptId" id="ToDeptId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblProIssMasterView1Iterator" StaticList="false" Uses="LOV_ProjectDId" id="ProjectDId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblProIssMasterView1Iterator" StaticList="false" Uses="LOV_PorMasterIdstatic"
           id="PorMasterIdstatic" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>

@@ -23,15 +23,17 @@
        TblProIssMaster.FR_DEPT_ID, 
        TblProIssMaster.TO_DEPT_ID, 
        TblProIssMaster.PROJECT_D_ID, 
-       TblProIssMaster.POR_MASTER_ID AS POR_MASTER_ID1"
+       TblProIssMaster.POR_MASTER_ID AS POR_MASTER_ID1, 
+       TblProIssMaster.COMPANY_ID"
   FromList="TBL_PRO_ISS_MASTER TblProIssMaster"
-  Where="TblProIssMaster.PROJECT_ID = nvl(:getProId,TblProIssMaster.PROJECT_ID)">
+  Where="TblProIssMaster.COMPANY_ID = nvl(:P_COMPANY_ID,TblProIssMaster.COMPANY_ID)">
   <Variable
-    Name="getProId"
+    Name="P_COMPANY_ID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="TblProIssMasterView"/>
   </Variable>
   <ViewAccessor
@@ -365,6 +367,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblProIssMaster"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblProIssDetailView"
     ViewLink="model.ERP.VO.FkProIssDetailMasterLink"

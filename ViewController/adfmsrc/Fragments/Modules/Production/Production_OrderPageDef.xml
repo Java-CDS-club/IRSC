@@ -98,14 +98,5 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblPorMasterView1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblPorMasterView1Iterator" StaticList="false" Uses="LOV_ProjectDId" id="ProjectDId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblPorMasterView1Iterator" StaticList="false" Uses="LOV_MenuType" id="MenuType"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblPorMasterView1Iterator" id="FeedSt">
-      <AttrNames>
-        <Item Value="FeedSt"/>
-      </AttrNames>
-    </attributeValues>
   </bindings>
 </pageDefinition>

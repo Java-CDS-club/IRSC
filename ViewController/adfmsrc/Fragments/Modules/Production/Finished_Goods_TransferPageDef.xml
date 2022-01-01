@@ -101,8 +101,6 @@
             Action="removeCurrentRow"/>
     <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_ProjectDId" id="ProjectDId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <tree IterBinding="TblFgTrnDetailDView2Iterator" id="TblFgTrnDetailDView2">

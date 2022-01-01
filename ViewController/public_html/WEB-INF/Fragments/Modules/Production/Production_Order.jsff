@@ -3,7 +3,7 @@
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Production Order">
-         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+         <!--<af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
@@ -14,7 +14,7 @@
                                    disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
                                    iconPosition="top"/>
                         <af:spacer width="10" height="10" id="s1"/>
-                        </af:panelGroupLayout>
+                        </af:panelGroupLayout>-->
       <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
@@ -28,7 +28,7 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Production Order Master">
-                <af:panelFormLayout id="pfl1" maxColumns="3" rows="8"> 
+                <af:panelFormLayout id="pfl1" maxColumns="2" rows="6"> 
                   <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
                                 maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
@@ -45,42 +45,18 @@
                     <af:convertDateTime pattern="#{bindings.Dated.format}"/>
                   </af:inputDate>
                             <af:spacer  id="s2"/>
-                            <af:selectOneChoice value="#{bindings.MenuType.inputValue}"
-                                                label="Menu Type" contentStyle="width:150px;"
-                                                required="#{bindings.MenuType.hints.mandatory}"
-                                                shortDesc="#{bindings.MenuType.hints.tooltip}" id="soc9">
-                              <f:selectItems value="#{bindings.MenuType.items}" id="si9"/>
-                              <f:validator binding="#{bindings.MenuType.validator}"/>
-                            </af:selectOneChoice>
-                            <af:spacer  id="s12"/>
-                             <af:inputText value="#{bindings.Narration.inputValue}" label="Remarks"
-                                required="#{bindings.Narration.hints.mandatory}"
-                                columns="30"
-                                maximumLength="#{bindings.Narration.hints.precision}"
-                                shortDesc="#{bindings.Narration.hints.tooltip}" id="it4" contentStyle="width:150px;"
-                              rows="10">
-                    <f:validator binding="#{bindings.Narration.validator}"/>
-                  </af:inputText>
-                 <af:spacer  id="s10"/>
-                            <af:spacer  id="s14"/>
+                            
+                
                             <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
                                                 label="Project" autoSubmit="true"
                                                 required="#{bindings.ProjectId.hints.mandatory}"
-                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc2" readOnly="${sessionScope.sessPrID != ''}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc2" 
                                                 contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
                               <f:validator binding="#{bindings.ProjectId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s8"/>
-                            <af:selectOneChoice value="#{bindings.ProjectDId.inputValue}"
-                                                label="Project Centers"
-                                                required="#{bindings.ProjectDId.hints.mandatory}"
-                                                shortDesc="#{bindings.ProjectDId.hints.tooltip}" id="soc8"
-                                                contentStyle="width:150px;">
-                              <f:selectItems value="#{bindings.ProjectDId.items}" id="si8"/>
-                              <f:validator binding="#{bindings.ProjectDId.validator}"/>
-                            </af:selectOneChoice>
-                            <af:spacer  id="s6"/>
+                           
                             <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}"
                                                 label="Department"
                                                 required="#{bindings.DepartmentId.hints.mandatory}"
@@ -89,15 +65,7 @@
                               <f:validator binding="#{bindings.DepartmentId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s4"/>
-                            <af:inputText value="#{bindings.FeedSt.inputValue}" label="Feedy Person"
-                                          required="#{bindings.FeedSt.hints.mandatory}"
-                                          columns="#{bindings.FeedSt.hints.displayWidth}"
-                                          maximumLength="#{bindings.FeedSt.hints.precision}"
-                                          shortDesc="#{bindings.FeedSt.hints.tooltip}" id="it14" contentStyle='width:150px;'>
-                              <f:validator binding="#{bindings.FeedSt.validator}"/>
-                              <af:convertNumber groupingUsed="false" pattern="#{bindings.FeedSt.format}"/>
-                            </af:inputText>
-                            <af:spacer  id="s15"/>
+                           
                             
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                 required="#{bindings.Vno.hints.mandatory}" columns="17"
@@ -114,31 +82,48 @@
                     <f:selectItems value="#{bindings.Vtp.items}" id="si1"/>
                     <f:validator binding="#{bindings.Vtp.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer  id="s12"/>
+                             <af:inputText value="#{bindings.Narration.inputValue}" label="Remarks"
+                                required="#{bindings.Narration.hints.mandatory}"
+                                columns="30"
+                                maximumLength="#{bindings.Narration.hints.precision}"
+                                shortDesc="#{bindings.Narration.hints.tooltip}" id="it4" contentStyle="width:300px;"
+                              rows="1">
+                    <f:validator binding="#{bindings.Narration.validator}"/>
+                  </af:inputText>
                   <f:facet name="footer">
-                    <af:panelGroupLayout layout="horizontal"  halign="center" id="pgl5">
-                      <af:button actionListener="#{bindings.First.execute}" text="First"
+                    <af:panelGroupLayout layout="horizontal"   id="pgl5">
+                      <af:button actionListener="#{bindings.First.execute}" text="First" styleClass="af|Voucheractionbutton af|message"
                                  disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b6"/>
-                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous" styleClass="af|Voucheractionbutton af|message"
                                  disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
-                      <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                      <af:button actionListener="#{bindings.Next.execute}" text="Next" styleClass="af|Voucheractionbutton af|message"
                                  disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
-                      <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                      <af:button actionListener="#{bindings.Last.execute}" text="Last" styleClass="af|Voucheractionbutton af|message"
                                  disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
                     </af:panelGroupLayout>
                   </f:facet>
                 </af:panelFormLayout>
                 <af:spacer width="5" height="10" id="s5"/>
-                <af:panelGroupLayout id="pgl3" halign="center"  layout="horizontal">
-                            
+                 <af:panelGroupLayout id="pgl3"  layout="horizontal">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
-                                <af:spacer width="5" height="10" id="s11"/>
+                                <af:spacer width="5" height="10" id="s15"/>
                             </af:iterator>
+                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" styleClass="af|Voucheractionbutton"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="leading">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="5" height="10" id="s1"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All" styleClass="af|Voucheractionbutton"
+                                   disabled="#{!bindings.Commit.enabled}" id="b7" icon="#{resource['images:save.png']}"
+                                   iconPosition="leading"/>
                         </af:panelGroupLayout>
               </af:showDetailItem>
               
@@ -243,16 +228,16 @@
                   </af:column>
                 </af:table>
                   <af:spacer width="5" height="10" id="s3"/>
-                <af:panelGroupLayout id="pgl2" halign="center"  layout="horizontal">
+                <af:panelGroupLayout id="pgl7"  layout="horizontal">
                             
-                            <af:iterator id="i1" var="index" varStatus="status"
+                            <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
                                 </af:button>
-                                <af:spacer width="5" height="10" id="s13"/>
+                                <af:spacer width="5" height="10" id="s16"/>
                             </af:iterator>
                         </af:panelGroupLayout>
               </af:showDetailItem>
@@ -272,36 +257,6 @@
                           filterModel="#{bindings.TblPorMasterView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblPorMasterView1Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0" partialTriggers="::b6">
-                  <af:column sortProperty="#{bindings.TblPorMasterView1.hints.Vno.name}" filterable="true"
-                             sortable="true" headerText="Voucher No." id="c8">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Vno}"
-       id="it18" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:inputText value="#{row.bindings.Vno.inputValue}"
-                                  label="#{bindings.TblPorMasterView1.hints.Vno.label}"
-                                  required="#{bindings.TblPorMasterView1.hints.Vno.mandatory}"
-                                  columns="#{bindings.TblPorMasterView1.hints.Vno.displayWidth}"
-                                  maximumLength="#{bindings.TblPorMasterView1.hints.Vno.precision}"
-                                  shortDesc="#{bindings.TblPorMasterView1.hints.Vno.tooltip}" id="it15" readOnly="true">
-                      <f:validator binding="#{row.bindings.Vno.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblPorMasterView1.hints.Vtp.name}" filterable="true"
-                             sortable="true" headerText="Voucher Type" id="c10">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.Vtp}"
-       id="it19" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
-                                        required="#{bindings.TblPorMasterView1.hints.Vtp.mandatory}"
-                                        shortDesc="#{bindings.TblPorMasterView1.hints.Vtp.tooltip}" id="soc5" readOnly="true">
-                      <f:selectItems value="#{row.bindings.Vtp.items}" id="si5"/>
-                      <f:validator binding="#{row.bindings.Vtp.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblPorMasterView1.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Date" id="c9">
                     <f:facet name="filter">
@@ -320,19 +275,34 @@
                       <af:convertDateTime pattern="#{bindings.TblPorMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Menu Type" id="c2" sortable="true" filterable="true">
-                   <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.MenuType}"
-       id="it3" placeholder="Search ">
+                  <af:column sortProperty="#{bindings.TblPorMasterView1.hints.Vno.name}" filterable="true"
+                             sortable="true" headerText="Voucher No." id="c8">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vno}"
+       id="it18" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.MenuType.inputValue}"
-                                        label="#{row.bindings.MenuType.label}"
-                                        required="#{bindings.TblPorMasterView1.hints.MenuType.mandatory}"
-                                        shortDesc="#{bindings.TblPorMasterView1.hints.MenuType.tooltip}" id="soc6"
-                                        readOnly="true">
-                      <f:selectItems value="#{row.bindings.MenuType.items}" id="si6"/>
-                      <f:validator binding="#{row.bindings.MenuType.validator}"/>
+                    <af:inputText value="#{row.bindings.Vno.inputValue}"
+                                  label="#{bindings.TblPorMasterView1.hints.Vno.label}"
+                                  required="#{bindings.TblPorMasterView1.hints.Vno.mandatory}"
+                                  columns="#{bindings.TblPorMasterView1.hints.Vno.displayWidth}"
+                                  maximumLength="#{bindings.TblPorMasterView1.hints.Vno.precision}"
+                                  shortDesc="#{bindings.TblPorMasterView1.hints.Vno.tooltip}" id="it15" readOnly="true">
+                      <f:validator binding="#{row.bindings.Vno.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblPorMasterView1.hints.Vtp.name}" filterable="true"
+                             sortable="true" headerText="Voucher Type" id="c10" width="110">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vtp}"
+       id="it19" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
+                                        required="#{bindings.TblPorMasterView1.hints.Vtp.mandatory}"
+                                        shortDesc="#{bindings.TblPorMasterView1.hints.Vtp.tooltip}" id="soc5" readOnly="true">
+                      <f:selectItems value="#{row.bindings.Vtp.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.Vtp.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="Project" id="c11" sortable="true" filterable="true">
@@ -348,22 +318,6 @@
                                         readOnly="true">
                       <f:selectItems value="#{row.bindings.ProjectId.items}" id="si10"/>
                       <f:validator binding="#{row.bindings.ProjectId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column headerText="Project Centers" id="c12" sortable="true"
-                             filterable="true">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.ProjectDId}"
-       id="it9" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                    <af:selectOneChoice value="#{row.bindings.ProjectDId.inputValue}"
-                                        label="#{row.bindings.ProjectDId.label}"
-                                        required="#{bindings.TblPorMasterView1.hints.ProjectDId.mandatory}"
-                                        shortDesc="#{bindings.TblPorMasterView1.hints.ProjectDId.tooltip}" id="soc11"
-                                        readOnly="true">
-                      <f:selectItems value="#{row.bindings.ProjectDId.items}" id="si11"/>
-                      <f:validator binding="#{row.bindings.ProjectDId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="Department" id="c14"
