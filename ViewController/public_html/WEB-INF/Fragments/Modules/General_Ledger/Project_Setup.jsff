@@ -1,6 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+                <af:popup animate="false" contentDelivery="lazyUncached"
+          childCreation="deferred" id="p1">
+  <af:panelWindow resize="on" stretchChildren="first" id="pw1" title="Help">
+    <af:image id="i4" shortDesc="Image Show" source="/Resources/Project_Setup.jpg"/>
+  </af:panelWindow>
+</af:popup>
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="backColor">
     <af:showDetailItem id="pane1" text="Project Setup" styleClass="backColor">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button" >
@@ -14,6 +20,10 @@
                                    disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
                                    iconPosition="top"/>
                         <af:spacer width="10" height="10" id="s1"/>-->
+                         <af:button id="b2" text="Help" icon="#{resource['images:info.png']}" iconPosition="top" styleClass="af|Voucheractionbutton"
+                   inlineStyle="background-color:InfoBackground;">
+          <af:showPopupBehavior popupId="p1"/>
+        </af:button>
                        </af:panelGroupLayout>
       <af:panelGridLayout id="pgl1" >
         
@@ -109,7 +119,7 @@
                             </af:iterator>
                             <af:spacer width="5" height="10" id="s8"/>
                                  <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" styleClass="af|Voucheractionbutton"
-                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b2"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" >
                             <af:resetActionListener/>
                         </af:button>

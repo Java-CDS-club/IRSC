@@ -90,6 +90,10 @@
          <list n="constituent-sets">
             <hash>
                <list n="pattern-filters">
+                  <string v="+Flower.jpg"/>
+                  <string v="+UM/"/>
+                  <string v="+Flower.jpg"/>
+                  <string v="+add.png"/>
                   <string v="+edit.png"/>
                   <string v="+door_open.png"/>
                   <string v="+photo_not_available.png"/>

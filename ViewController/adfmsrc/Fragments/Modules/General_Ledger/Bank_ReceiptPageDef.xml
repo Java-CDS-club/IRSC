@@ -132,7 +132,5 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="TblBrvMView1Iterator" StaticList="false" Uses="LOV_DrawerId" id="DrawerId" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblBrvMView1Iterator" StaticList="false" Uses="LOV_DrawerId1" id="DrawerId1"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

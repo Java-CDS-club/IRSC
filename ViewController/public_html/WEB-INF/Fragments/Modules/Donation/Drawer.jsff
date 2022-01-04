@@ -1,7 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-  
+   <af:popup animate="false" contentDelivery="lazyUncached"
+          childCreation="deferred" id="p1">
+  <af:panelWindow resize="on" stretchChildren="first" id="pw1" title="Info">
+                                                 <af:image id="i1" styleClass="af|moduleimg" 
+                                                  shortDesc="Upload image or refresh page to render properly"
+                                                  inlineStyle="height:200px; width:169px;" 
+                                                  source="/viewimageservlet?getPath=#{sessionScope.sessIMGP}&amp;getImage=#{bindings.Image.inputValue}"
+                                                  partialTriggers="it1"/>
+                                                  </af:panelWindow>
+</af:popup>
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Drawer">
          <!--<af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -36,7 +45,7 @@
                                     rowBandingInterval="0"
                                     selectedRowKeys="#{bindings.TblDrawerView1.collectionModel.selectedRow}"
                                     selectionListener="#{bindings.TblDrawerView1.collectionModel.makeCurrent}"
-                                    rowSelection="single" fetchSize="#{bindings.TblDrawerView1.rangeSize}"
+                                    rowSelection="single" fetchSize="#{bindings.TblDrawerView1.rangeSize}" width="750" 
                                     filterModel="#{bindings.TblDrawerView1Query.queryDescriptor}" filterVisible="true"
                                     queryListener="#{bindings.TblDrawerView1Query.processQuery}" varStatus="vs" id="t1"  
                                     scrollPolicy="page" autoHeightRows="0" >
@@ -233,12 +242,17 @@
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc10">
                       <af:panelGroupLayout id="pgl5" layout="vertical" inlineStyle="margin-top: 15%; margin-left: 5%; padding:8%; border: 0px solid black;" >
-                                       <af:image id="i1"
+                                       <af:image id="i4" styleClass="af|moduleimg" 
                                                   shortDesc="Upload image or refresh page to render properly"
                                                   inlineStyle="height:200px; width:169px;"
                                                   source="/viewimageservlet?getPath=#{sessionScope.sessIMGP}&amp;getImage=#{bindings.Image.inputValue}"
-                                                  partialTriggers=""/>
-                                       <!--<af:image id="i1"
+                                                  partialTriggers="it1"/>
+                        <af:spacer width="10" height="10" id="s7"/>
+                         <af:button id="b3" text="Show Image" icon="#{resource['images:info.png']}" iconPosition="top" styleClass="af|Voucheractionbutton"
+                   inlineStyle="background-color:InfoBackground;">
+          <af:showPopupBehavior popupId="p1"/>
+        </af:button>
+                        <!--<af:image id="i1"
                                                   shortDesc="#{bindings.ImageName.hints.tooltip}"
                                                   inlineStyle="height:200px; width:169px;"
                                                   source="/imageservlet?Id=#{bindings.Id.inputValue}"/>--> 
@@ -335,7 +349,7 @@
                       <af:iterator id="i3" value="#{bindings.BPV_BRV_CPV_CRV_JV_Open_Fragment1.collectionModel}" var="item"
                                                      varStatus="status">
                                            
-                                                <af:button text="#{item.bindings.PagesName.inputValue}" id="b3"  
+                                                <af:button text="#{item.bindings.PagesName.inputValue}" id="b2"  
                                                            styleClass="sidebar_button" iconPosition="leading"
                                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{item.bindings.PageIcon.inputValue}?ln=images"
                                                            actionListener="#{viewScope.DrawerOpenFragmentBean.fragmentCall}">

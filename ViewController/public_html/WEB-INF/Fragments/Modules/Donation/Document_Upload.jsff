@@ -1,7 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-  
+  <af:popup animate="false" contentDelivery="lazyUncached"
+          childCreation="deferred" id="p1">
+  <af:panelWindow resize="on" stretchChildren="first" id="pw1" title="Help">
+                                                 <af:image id="i1" styleClass="af|moduleimg" 
+                                                  shortDesc="Upload image or refresh page to render properly"
+                                                  inlineStyle="height:200px; width:169px;" 
+                                                  source="/viewimageservlet?getPath=#{sessionScope.sessIMGP}&amp;getImage=#{bindings.Image.inputValue}"
+                                                  partialTriggers="it1"/>
+                                                  </af:panelWindow>
+</af:popup>
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Document Upload">
          <!--<af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -187,7 +196,8 @@
                                                    actionListener="#{pageFlowScope.UploadBean.UploadImage}">
                                                   
                                                 </af:button>-->
-                                                 <af:image id="i1" styleClass="af|moduleimg" 
+                                                
+                                                 <af:image id="i3" styleClass="af|moduleimg" 
                                                   shortDesc="Upload image or refresh page to render properly"
                                                   inlineStyle="height:200px; width:169px;" 
                                                   source="/viewimageservlet?getPath=#{sessionScope.sessIMGP}&amp;getImage=#{bindings.Image.inputValue}"
@@ -200,6 +210,11 @@
                                                    <f:attribute name="path" value="#{sessionScope.sessIMGP}"/>
                                                    <f:attribute name="actionPerform" value="db_Image_Value"/>
                                                 </af:button>
+                                                 <af:spacer width="5" height="5" id="s2"/>
+                                                 <af:button id="b1" text="Show Image" icon="#{resource['images:info.png']}" iconPosition="top" styleClass="af|Voucheractionbutton"
+                   inlineStyle="background-color:InfoBackground;">
+          <af:showPopupBehavior popupId="p1"/>
+        </af:button>
                         
                       </af:panelGroupLayout>
                     </af:gridCell>

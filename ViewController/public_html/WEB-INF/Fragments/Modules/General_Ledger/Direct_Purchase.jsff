@@ -1,11 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-  
+   <af:popup animate="false" contentDelivery="lazyUncached"
+          childCreation="deferred" id="p1">
+  <af:panelWindow resize="on" stretchChildren="first" id="pw1" title="Help">
+    <af:image id="i4" shortDesc="Image Show" source="/Resources/Direct_Purchase.jpg"/>
+  </af:panelWindow>
+</af:popup>
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Direct Purchase">
-         <!--<af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
-                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <!--<af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
                             <af:resetActionListener/>
@@ -14,8 +19,12 @@
                         <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
                                    disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
                                    iconPosition="top"/>
-                        <af:spacer width="10" height="10" id="s1"/>
-                        </af:panelGroupLayout>-->
+                        <af:spacer width="10" height="10" id="s1"/>-->
+                         <af:button id="b2" text="Help" icon="#{resource['images:info.png']}" iconPosition="top" styleClass="af|Voucheractionbutton"
+                   inlineStyle="background-color:InfoBackground;">
+          <af:showPopupBehavior popupId="p1"/>
+        </af:button>
+                        </af:panelGroupLayout>
       <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
@@ -126,7 +135,7 @@
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" halign="left" id="pgl6">
                                 <af:button actionListener="#{bindings.First.execute}" text="First" styleClass="af|Voucheractionbutton"
-                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b9"/>
                                 <af:button actionListener="#{bindings.Previous.execute}" text="Previous" styleClass="af|Voucheractionbutton"
                                            disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
                                 <af:button actionListener="#{bindings.Next.execute}" text="Next" styleClass="af|Voucheractionbutton"
@@ -394,7 +403,7 @@
                           fetchSize="#{bindings.TblGrnMView1.rangeSize}"
                           filterModel="#{bindings.TblGrnMView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblGrnMView1Query.processQuery}" varStatus="vs" id="t1"
-                          scrollPolicy="page" autoHeightRows="0">
+                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b9">
                   
                   <af:column sortProperty="#{bindings.TblGrnMView1.hints.Vno.name}" filterable="true"
                              sortable="true" headerText="Voucher No."
@@ -556,7 +565,7 @@
             <af:panelGroupLayout id="pgl9" layout="horizontal">
               <af:iterator id="i3" value="#{bindings.INV_Chart_of_Account_OpenFragment1.collectionModel}" var="item"
                                                      varStatus="status">
-                                            <af:panelGroupLayout id="pgl4" layout="horizontal" inlineStyle="padding: 1%;"  >
+                                            <af:panelGroupLayout id="pgl10" layout="horizontal" inlineStyle="padding: 1%;"  >
                                                 <af:button text="#{item.bindings.PagesName.inputValue}" id="b7"
                                                            styleClass="sidebar_button" iconPosition="leading"
                                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{item.bindings.PageIcon.inputValue}?ln=images"
@@ -566,7 +575,7 @@
                                             </af:panelGroupLayout>
                                         </af:iterator>
               <af:spacer width="20" height="10" id="s9"/>
-              <af:iterator id="i4" value="#{bindings.Payable_Supplier_OpenFragment1_1.collectionModel}" var="item"
+              <af:iterator id="i5" value="#{bindings.Payable_Supplier_OpenFragment1_1.collectionModel}" var="item"
                                                      varStatus="status">
                                             <af:panelGroupLayout id="pgl8" layout="horizontal"   >
                                                 <af:button text="#{item.bindings.PagesName.inputValue}" id="b8"

@@ -85,6 +85,7 @@
                                           contentStyle="font-size: large;" columns="30" styleClass="loginfeilds"
                                           secret="true" simple="true" 
                                           requiredMessageDetail="Please enter Password..!" binding="#{LoginBean.it2}"/>
+                            <af:spacer width="20" height="10" id="s6"/>
                         </af:panelGroupLayout>
                         
                         <!--<af:spacer width="10" height="20" id="s6"/>-->
@@ -132,7 +133,7 @@
                         <af:link id="l1" 
                                  action="#{LoginBean.login_Session}"   icon="#{resource['images:login_buttons.png']}"
                                  inlineStyle="font-weight: bold;font-size: x-large;color:black; "/>
-                                  <af:spacer width="125" height="10" id="s13"/>
+                                  <af:spacer width="180" height="10" id="s13"/>
                     </af:gridCell>
                     <!--<af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc21"/>-->
                 </af:gridRow>

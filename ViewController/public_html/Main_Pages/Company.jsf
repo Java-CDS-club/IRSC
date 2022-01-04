@@ -45,7 +45,7 @@
                 </af:gridRow>
                 <af:gridRow marginTop="0px" height="auto" id="gr5">
                     
-                    <af:gridCell marginStart="5px" width="100%" id="gc14" valign="middle" halign="start"
+                    <af:gridCell marginStart="5px" width="100%" id="gc14" valign="middle" halign="end"
                                  
                                  >
                                  
@@ -129,11 +129,9 @@
                                     </af:inputText>
                                 </af:column>
                             </af:table>
+                              <af:spacer width="20" height="10" id="s2"/>
                         </af:panelGroupLayout>
-                       
-                        
-                        
-                     
+                      
                     </af:gridCell>
                     <!--<af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc15"/>-->
                 </af:gridRow>
