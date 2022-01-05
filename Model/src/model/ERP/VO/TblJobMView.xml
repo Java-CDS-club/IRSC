@@ -25,14 +25,14 @@
        TblJobM.PROJECT_ID, 
        TblJobM.COMPANY_ID"
   FromList="TBL_JOB_M TblJobM"
-  Where="TblJobM.COMPANY_ID = nvl(:P_COMPANY_ID,TblJobM.COMPANY_ID)">
+  Where="TblJobM.COMPANY_ID = nvl(:P_COMPANY_ID,TblJobM.COMPANY_ID) 
+order by TblJobM.ID desc">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblJobMView"/>
   </Variable>
   <ViewAccessor

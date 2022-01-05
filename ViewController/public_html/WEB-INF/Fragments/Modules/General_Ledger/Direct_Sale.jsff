@@ -288,8 +288,9 @@
                                   maximumLength="#{bindings.TblSaleInvDetailView2.hints.Qty.precision}"
                                   shortDesc="#{bindings.TblSaleInvDetailView2.hints.Qty.tooltip}" id="it9">
                       <f:validator binding="#{row.bindings.Qty.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblSaleInvDetailView2.hints.Qty.format}"/>
+                      <!--<af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleInvDetailView2.hints.Qty.format}"/>-->
+                                        <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Rate.name}" filterable="true"
@@ -307,8 +308,9 @@
                                   maximumLength="#{bindings.TblSaleInvDetailView2.hints.Rate.precision}"
                                   shortDesc="#{bindings.TblSaleInvDetailView2.hints.Rate.tooltip}" id="it10">
                       <f:validator binding="#{row.bindings.Rate.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblSaleInvDetailView2.hints.Rate.format}"/>
+                      <!--<af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleInvDetailView2.hints.Rate.format}"/>-->
+                                        <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
                  
@@ -346,8 +348,9 @@
                                   maximumLength="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.precision}"
                                   shortDesc="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.tooltip}" id="it13">
                       <f:validator binding="#{row.bindings.DiscAmount.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.format}"/>
+                      <!--<af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleInvDetailView2.hints.DiscAmount.format}"/>-->
+                                        <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
                    <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Amount.name}" filterable="true"
@@ -365,8 +368,9 @@
                                   maximumLength="#{bindings.TblSaleInvDetailView2.hints.Amount.precision}"
                                   shortDesc="#{bindings.TblSaleInvDetailView2.hints.Amount.tooltip}" id="it11" readOnly="true">
                       <f:validator binding="#{row.bindings.Amount.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblSaleInvDetailView2.hints.Amount.format}"/>
+                      <!--<af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleInvDetailView2.hints.Amount.format}"/>-->
+                                        <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                     </af:inputText>
                   </af:column>
                             <af:column headerText="Tax Type" id="c16" sortable="true" filterable="true">
@@ -399,8 +403,9 @@
                                             shortDesc="#{bindings.TblSaleInvDetailView2.hints.TaxPerc.tooltip}"
                                             id="it8" readOnly="true">
                                 <f:validator binding="#{row.bindings.TaxPerc.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSaleInvDetailView2.hints.TaxPerc.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSaleInvDetailView2.hints.TaxPerc.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Tax Amount" id="c8"
@@ -418,8 +423,9 @@
                                             shortDesc="#{bindings.TblSaleInvDetailView2.hints.TaxAmount.tooltip}"
                                             id="it12" readOnly="true">
                                 <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSaleInvDetailView2.hints.TaxAmount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSaleInvDetailView2.hints.TaxAmount.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Net Amount" id="c11"
@@ -437,8 +443,9 @@
                                             shortDesc="#{bindings.TblSaleInvDetailView2.hints.NetAmount.tooltip}"
                                             id="it15" readOnly="true">
                                 <f:validator binding="#{row.bindings.NetAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSaleInvDetailView2.hints.NetAmount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSaleInvDetailView2.hints.NetAmount.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                           </af:table>

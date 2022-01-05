@@ -24,7 +24,8 @@
        TblOpenBlncInv.DEPARTMENT_ID, 
        TblOpenBlncInv.COMPANY_ID"
   FromList="TBL_OPEN_BLNC_INV TblOpenBlncInv"
-  Where="TblOpenBlncInv.COMPANY_ID = nvl(:P_COMPANY_ID,TblOpenBlncInv.COMPANY_ID)">
+  Where="TblOpenBlncInv.COMPANY_ID = nvl(:P_COMPANY_ID,TblOpenBlncInv.COMPANY_ID) 
+order by TblOpenBlncInv.ID desc">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"

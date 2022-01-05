@@ -263,8 +263,9 @@
                                             maximumLength="#{bindings.TblGrnDView2.hints.Qty.precision}"
                                             shortDesc="#{bindings.TblGrnDView2.hints.Qty.tooltip}" id="it12">
                                 <f:validator binding="#{row.bindings.Qty.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblGrnDView2.hints.Qty.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblGrnDView2.hints.Qty.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                            
@@ -282,8 +283,9 @@
                                             maximumLength="#{bindings.TblGrnDView2.hints.Rate.precision}"
                                             shortDesc="#{bindings.TblGrnDView2.hints.Rate.tooltip}" id="it20">
                                 <f:validator binding="#{row.bindings.Rate.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblGrnDView2.hints.Rate.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblGrnDView2.hints.Rate.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblGrnDView2.hints.Amount.name}" filterable="true"
@@ -301,8 +303,9 @@
                                             maximumLength="#{bindings.TblGrnDView2.hints.Amount.precision}"
                                             shortDesc="#{bindings.TblGrnDView2.hints.Amount.tooltip}" id="it21" readOnly="true">
                                 <f:validator binding="#{row.bindings.Amount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblGrnDView2.hints.Amount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblGrnDView2.hints.Amount.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Tax Type" id="c2" sortable="true" filterable="true">
@@ -333,8 +336,9 @@
                                             maximumLength="#{bindings.TblGrnDView2.hints.TaxParc.precision}"
                                             shortDesc="#{bindings.TblGrnDView2.hints.TaxParc.tooltip}" id="it6" readOnly="true">
                                 <f:validator binding="#{row.bindings.TaxParc.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblGrnDView2.hints.TaxParc.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblGrnDView2.hints.TaxParc.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Tax Amount" id="c13" sortable="true" filterable="true">
@@ -350,8 +354,9 @@
                                             maximumLength="#{bindings.TblGrnDView2.hints.TaxAmount.precision}"
                                             shortDesc="#{bindings.TblGrnDView2.hints.TaxAmount.tooltip}" id="it17" readOnly="true">
                                 <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblGrnDView2.hints.TaxAmount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblGrnDView2.hints.TaxAmount.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Net Amount" id="c17"
@@ -368,8 +373,9 @@
                                             maximumLength="#{bindings.TblGrnDView2.hints.NetAmount.precision}"
                                             shortDesc="#{bindings.TblGrnDView2.hints.NetAmount.tooltip}" id="it22" readOnly="true">
                                 <f:validator binding="#{row.bindings.NetAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblGrnDView2.hints.NetAmount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblGrnDView2.hints.NetAmount.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                           </af:table>

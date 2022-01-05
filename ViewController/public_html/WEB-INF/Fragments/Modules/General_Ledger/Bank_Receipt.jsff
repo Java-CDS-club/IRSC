@@ -332,11 +332,14 @@
                                             maximumLength="#{bindings.TblBrvDView2.hints.Dr.precision}"
                                             shortDesc="#{bindings.TblBrvDView2.hints.Dr.tooltip}" id="it18">
                                 <f:validator binding="#{row.bindings.Dr.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblBrvDView2.hints.Dr.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblBrvDView2.hints.Dr.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                                <f:facet name="footer"   >
-                                <af:outputText  value="#{bindings.TotalDr.inputValue}" id="ot1"    />
+                                <af:outputText  value="#{bindings.TotalDr.inputValue}" id="ot1"    >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
                               </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblBrvDView2.hints.Cr.name}" filterable="true"
@@ -353,11 +356,15 @@
                                             maximumLength="#{bindings.TblBrvDView2.hints.Cr.precision}"
                                             shortDesc="#{bindings.TblBrvDView2.hints.Cr.tooltip}" id="it19">
                                 <f:validator binding="#{row.bindings.Cr.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblBrvDView2.hints.Cr.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblBrvDView2.hints.Cr.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                                 <f:facet name="footer"   >
-                                <af:outputText  value="#{bindings.TotalCr.inputValue}" id="ot2"    />
+                                <af:outputText  value="#{bindings.TotalCr.inputValue}" id="ot2"  >
+                                
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
                               </f:facet>
                             </af:column>
                           </af:table>

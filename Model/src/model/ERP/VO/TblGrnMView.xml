@@ -30,7 +30,8 @@
        TblGrnM.PO_M_ID AS PO_MID1, 
        TblGrnM.JOB_M_ID"
   FromList="TBL_GRN_M TblGrnM"
-  Where="TblGrnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblGrnM.COMPANY_ID)">
+  Where="TblGrnM.COMPANY_ID = nvl(:P_COMPANY_ID,TblGrnM.COMPANY_ID) 
+order by TblGrnM.ID desc">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"

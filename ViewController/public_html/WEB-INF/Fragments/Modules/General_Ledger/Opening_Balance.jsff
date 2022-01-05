@@ -104,10 +104,14 @@
                                   maximumLength="#{bindings.TblOpenBlncView1.hints.Dr.precision}"
                                   shortDesc="#{bindings.TblOpenBlncView1.hints.Dr.tooltip}" id="it2">
                       <f:validator binding="#{row.bindings.Dr.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblOpenBlncView1.hints.Dr.format}"/>
+                      <!--<af:convertNumber groupingUsed="false" pattern="#{bindings.TblOpenBlncView1.hints.Dr.format}"/>-->
+                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                               
                     </af:inputText>
                      <f:facet name="footer"   >
-                                <af:outputText  value="#{bindings.TotalDr.inputValue}" id="ot1"    />
+                                <af:outputText  value="#{bindings.TotalDr.inputValue}" id="ot1"    >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
                               </f:facet>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblOpenBlncView1.hints.Cr.name}" filterable="true" sortable="true"
@@ -124,10 +128,14 @@
                                   maximumLength="#{bindings.TblOpenBlncView1.hints.Cr.precision}"
                                   shortDesc="#{bindings.TblOpenBlncView1.hints.Cr.tooltip}" id="it3">
                       <f:validator binding="#{row.bindings.Cr.validator}"/>
-                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblOpenBlncView1.hints.Cr.format}"/>
+                      <!--<af:convertNumber groupingUsed="false" pattern="#{bindings.TblOpenBlncView1.hints.Cr.format}"/>-->
+                      <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                               
                     </af:inputText>
                      <f:facet name="footer"   >
-                                <af:outputText  value="#{bindings.TotalCr.inputValue}" id="ot2"    />
+                                <af:outputText  value="#{bindings.TotalCr.inputValue}" id="ot2"   >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
                               </f:facet>
                   </af:column>
                   

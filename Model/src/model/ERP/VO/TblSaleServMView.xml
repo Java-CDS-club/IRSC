@@ -24,7 +24,8 @@
        TblSaleServM.RBL_CUST_D_ID, 
        TblSaleServM.INV_NO"
   FromList="TBL_SALE_SERV_M TblSaleServM"
-  Where="TblSaleServM.COMPANY_ID=nvl(:P_COMPANY_ID,TblSaleServM.COMPANY_ID)">
+  Where="TblSaleServM.COMPANY_ID=nvl(:P_COMPANY_ID,TblSaleServM.COMPANY_ID) 
+order by TblSaleServM.ID desc">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"

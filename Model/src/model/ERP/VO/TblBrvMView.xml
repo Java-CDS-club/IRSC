@@ -30,7 +30,8 @@
        TblBrvM.DRAWER_ID, 
        TblBrvM.DRAWER_ID AS DRAWER_ID1"
   FromList="TBL_BRV_M TblBrvM"
-  Where="TblBrvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBrvM.COMPANY_ID)">
+  Where="TblBrvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblBrvM.COMPANY_ID) 
+order by TblBrvM.ID desc">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"

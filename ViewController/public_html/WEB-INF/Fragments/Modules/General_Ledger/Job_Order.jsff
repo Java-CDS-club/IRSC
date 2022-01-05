@@ -285,8 +285,9 @@
                                             maximumLength="#{bindings.TblJobDView2.hints.Amount.precision}"
                                             shortDesc="#{bindings.TblJobDView2.hints.Amount.tooltip}" id="it9">
                                 <f:validator binding="#{row.bindings.Amount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblJobDView2.hints.Amount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblJobDView2.hints.Amount.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblJobDView2.hints.TaxId.name}" filterable="true"
@@ -321,8 +322,9 @@
                                             maximumLength="#{bindings.TblJobDView2.hints.TaxPerc.precision}"
                                             shortDesc="#{bindings.TblJobDView2.hints.TaxPerc.tooltip}" id="it8" readOnly="true">
                                 <f:validator binding="#{row.bindings.TaxPerc.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblJobDView2.hints.TaxPerc.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblJobDView2.hints.TaxPerc.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblJobDView2.hints.TaxAmount.name}"
@@ -339,8 +341,9 @@
                                             maximumLength="#{bindings.TblJobDView2.hints.TaxAmount.precision}"
                                             shortDesc="#{bindings.TblJobDView2.hints.TaxAmount.tooltip}" id="it7" readOnly="true">
                                 <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblJobDView2.hints.TaxAmount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblJobDView2.hints.TaxAmount.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblJobDView2.hints.NetAmount.name}"
@@ -358,11 +361,14 @@
                                             maximumLength="#{bindings.TblJobDView2.hints.NetAmount.precision}"
                                             shortDesc="#{bindings.TblJobDView2.hints.NetAmount.tooltip}" id="it10" readOnly="true">
                                 <f:validator binding="#{row.bindings.NetAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblJobDView2.hints.NetAmount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblJobDView2.hints.NetAmount.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                               <f:facet name="footer"   >
-                                <af:outputText  value="#{bindings.TotalnetAmount.inputValue}" id="ot1"    />
+                                <af:outputText  value="#{bindings.TotalnetAmount.inputValue}" id="ot1"    >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
                               </f:facet>
                             </af:column>
                           </af:table>
