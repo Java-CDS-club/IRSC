@@ -100,7 +100,7 @@
                                                 contentStyle="width:300px;">
                                                 
                                 <af:selectItem label="Trial Balance" value="trialReport" id="si9"/>
-                                <af:selectItem label="General Ledger" value="generalLedger" id="si4"/>
+                               
                                 
                                 
                                 

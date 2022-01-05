@@ -62,24 +62,21 @@
                                                   pattern="#{bindings.TblTaxMasterView1.hints.Id.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblTaxMasterView1.hints.CompanyId.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="Company" id="c2" width="200">
-                                       <f:facet name="filter">
+                            <af:column headerText="Company" id="c2"
+                                       sortable="true" filterable="true" width="300">
+                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.CompanyId}"
        id="id4" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                              <af:inputText value="#{row.bindings.CompanyId.inputValue}"
-                                            label="#{bindings.TblTaxMasterView1.hints.CompanyId.label}"
-                                            required="#{bindings.TblTaxMasterView1.hints.CompanyId.mandatory}"
-                                            columns="#{bindings.TblTaxMasterView1.hints.CompanyId.displayWidth}"
-                                            maximumLength="#{bindings.TblTaxMasterView1.hints.CompanyId.precision}"
-                                            shortDesc="#{bindings.TblTaxMasterView1.hints.CompanyId.tooltip}" id="it2" readOnly="true">
+                              <af:selectOneChoice value="#{row.bindings.CompanyId.inputValue}"
+                                                  label="#{row.bindings.CompanyId.label}"
+                                                  required="#{bindings.TblTaxMasterView1.hints.CompanyId.mandatory}"
+                                                  shortDesc="#{bindings.TblTaxMasterView1.hints.CompanyId.tooltip}"
+                                                  id="soc3" readOnly="true">
+                                <f:selectItems value="#{row.bindings.CompanyId.items}" id="si3"/>
                                 <f:validator binding="#{row.bindings.CompanyId.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblTaxMasterView1.hints.CompanyId.format}"/>
-                              </af:inputText>
+                              </af:selectOneChoice>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblTaxMasterView1.hints.Name.name}" filterable="true"
                                        sortable="true" headerText="Tax Name"
