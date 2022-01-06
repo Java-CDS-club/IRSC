@@ -184,6 +184,8 @@ public class TrialBalanceReports {
         gotcompanyId = (BigDecimal) this.getCompanyidparam().getValue();
         
         
+        
+        
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
         String url = "";
@@ -201,6 +203,8 @@ public class TrialBalanceReports {
                     reportBean.setReportParameter("P_Company_id", gotcompanyId.toString());
         }
         
+        
+        
 
         if (gotFormat == "") {
         showMessage("Please Select Report Format");
@@ -212,29 +216,31 @@ public class TrialBalanceReports {
 
             //working for procedure call//
             
-            if (getFromDate() != "" & getToDate() != "" ) {
+            if (getFromDate() != "" & getToDate() != ""  & gotcompanyId != null) {
                     
                     
                     
                     String pstdt = getFromDate();
                     String pendt = getToDate();
-                   
+                    BigDecimal P_Company_ID = gotcompanyId;
                     //calling procedure start//
                     Connection conn;
                     ResultSet rs;
                     CallableStatement cstmt = null;
                     try {
                         conn = DatabaseConnection.getConnection();
-                        String SQL = "{call P_TB(?,?)}";
+                        String SQL = "{call P_TB(?,?,?)}";
                         cstmt = conn.prepareCall(SQL);
                         
                        
                         cstmt.setString(1, pstdt );
                         cstmt.setString(2, pendt );
+                        cstmt.setBigDecimal(3, P_Company_ID );
                         
-                        
-                        
+                        rs = null;
                         rs = cstmt.executeQuery();
+                        
+                    
                     } catch (SQLException e) {
                         System.out.println(e);
                     }
@@ -242,14 +248,14 @@ public class TrialBalanceReports {
                     reportBean.setReportURLName("userid=irsc/irscir@orcl&domain=classicdomain&report=C:/IRSC_Reports/Trial_Balace_Report&");
 
                 }
-            if (getFromDate() != "" & getToDate() != "" & gotprojectId != null   ) {
+             if (getFromDate() != "" & getToDate() != "" & gotprojectId != null & gotcompanyId != null  ) {
                     
                     
                     
                     String pstdt = getFromDate();
                     String pendt = getToDate();
                     BigDecimal p_project_id = gotprojectId;
-                
+                    BigDecimal P_Company_ID = gotcompanyId;
                    
                     //calling procedure start//
                     Connection conn;
@@ -257,16 +263,19 @@ public class TrialBalanceReports {
                     CallableStatement cstmt = null;
                     try {
                         conn = DatabaseConnection.getConnection();
-                        String SQL = "{call P_TB_PROJECT(?,?,?)}";
+                        String SQL = "{call P_TB_PROJECT(?,?,?,?)}";
                         cstmt = conn.prepareCall(SQL);
                         
                        
                         cstmt.setString(1, pstdt );
                         cstmt.setString(2, pendt );
                         cstmt.setBigDecimal(3, p_project_id );
-                        
-                        
+                        cstmt.setBigDecimal(4, P_Company_ID );
+                        rs = null;
                         rs = cstmt.executeQuery();
+                        
+                        
+                        
                     } catch (SQLException e) {
                         System.out.println(e);
                     }
@@ -275,7 +284,7 @@ public class TrialBalanceReports {
 
                 }
             else{
-                showMessage("Please Select From Date, Project ");
+                showMessage("Please Select From Date, Project, Item & Department");
             }
             
             break;
