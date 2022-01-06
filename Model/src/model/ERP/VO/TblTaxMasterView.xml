@@ -18,8 +18,8 @@
        TblTaxMaster.UPDATED_BY, 
        TblTaxMaster.COMPANY_ID"
   FromList="TBL_TAX_MASTER TblTaxMaster"
-  Where="TblTaxMaster.COMPANY_ID=Nvl(:P_COMPANY_ID,TblTaxMaster.COMPANY_ID)  
-order by TblTaxMaster.ID desc">
+  Where="TblTaxMaster.COMPANY_ID=Nvl(:P_COMPANY_ID,TblTaxMaster.COMPANY_ID)"
+  OrderBy="TblTaxMaster.ID desc">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"

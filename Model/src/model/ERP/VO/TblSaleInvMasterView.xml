@@ -31,8 +31,8 @@
        TblSaleInvMaster.SALE_ORDER_MASTER_ID, 
        TblSaleInvMaster.JOB_M_ID"
   FromList="TBL_SALE_INV_MASTER TblSaleInvMaster"
-  Where="TblSaleInvMaster.COMPANY_ID=Nvl(:P_COMPANY_ID,TblSaleInvMaster.COMPANY_ID) 
-order by TblSaleInvMaster.ID desc">
+  Where="TblSaleInvMaster.COMPANY_ID=Nvl(:P_COMPANY_ID,TblSaleInvMaster.COMPANY_ID)"
+  OrderBy="TblSaleInvMaster.ID desc">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"

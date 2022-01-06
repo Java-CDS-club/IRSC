@@ -30,7 +30,8 @@
        TblJvM.AUTO_EXP_AC, 
        TblJvM.AUTO_VCHR"
   FromList="TBL_JV_M TblJvM"
-  Where="TblJvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblJvM.COMPANY_ID)">
+  Where="TblJvM.COMPANY_ID = nvl(:P_COMPANY_ID,TblJvM.COMPANY_ID)"
+  OrderBy="TblJvM.ID desc">
   <Variable
     Name="P_COMPANY_ID"
     Kind="where"
