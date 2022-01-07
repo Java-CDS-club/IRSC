@@ -109,7 +109,7 @@
                               <f:validator binding="#{bindings.PartyCa.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s11"/>
-                            <af:selectOneChoice value="#{bindings.JobMId.inputValue}" label="Jon No."
+                            <af:selectOneChoice value="#{bindings.JobMId.inputValue}" label="Job No."
                                                 required="#{bindings.JobMId.hints.mandatory}"
                                                 shortDesc="#{bindings.JobMId.hints.tooltip}" id="soc17" contentStyle="width:138px;">
                               <f:selectItems value="#{bindings.JobMId.items}" id="si17"/>
