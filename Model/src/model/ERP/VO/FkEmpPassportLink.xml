@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkEmpPassportLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkEmpPassportAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.ERP.VO.FkEmpPassportLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="TblEmpView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblEmpView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblEmpView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblEmpView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblEmpPassportView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblEmpPassportView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblEmpPassportView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblEmpPassportView.EmpId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

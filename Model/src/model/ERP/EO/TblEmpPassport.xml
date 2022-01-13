@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblEmpPassport"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_EMP_PASSPORT"
+  AliasName="TblEmpPassport"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP_PASSPORT"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="EmpId"
+    IsNotNull="true"
+    ColumnName="EMP_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP_PASSPORT"/>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_EMP_PASSPORT"/>
+  <Attribute
+    Name="Country"
+    Precision="150"
+    ColumnName="COUNTRY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP_PASSPORT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PassportNo"
+    Precision="25"
+    ColumnName="PASSPORT_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP_PASSPORT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PassportIssDate"
+    ColumnName="PASSPORT_ISS_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_EMP_PASSPORT"/>
+  <Attribute
+    Name="PassportExpDate"
+    ColumnName="PASSPORT_EXP_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_EMP_PASSPORT"/>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_EMP_PASSPORT"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_EMP_PASSPORT"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP_PASSPORT"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_EMP_PASSPORT"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP_PASSPORT"/>
+  <Attribute
+    Name="Image"
+    Precision="100"
+    ColumnName="IMAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP_PASSPORT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="TblEmp"
+    Association="model.ERP.EO.FkEmpPassportAssoc"
+    AssociationEnd="model.ERP.EO.FkEmpPassportAssoc.TblEmp"
+    AssociationOtherEnd="model.ERP.EO.FkEmpPassportAssoc.TblEmpPassport"
+    Type="model.ERP.EO.TblEmpImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkEmpPassport"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_EMP_PASSPORT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEmpPassport.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkEmpPassport">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_EMP_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EMP_PASSPORT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEmpPassport.EmpId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblEmpPassport">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_EMP_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_EMP_PASSPORT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEmpPassport.EmpId"/>
+    </AttrArray>
+  </Key>
+</Entity>

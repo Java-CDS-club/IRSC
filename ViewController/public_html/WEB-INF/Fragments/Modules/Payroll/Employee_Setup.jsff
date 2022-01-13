@@ -816,6 +816,855 @@
                             </af:iterator>
                         </af:panelGroupLayout>
                         </af:showDetailItem>
+                        <af:showDetailItem text="Visa" id="sdi5">
+                          <af:table value="#{bindings.TblEmpVisaView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblEmpVisaView2.rangeSize}"
+                                    emptyText="#{bindings.TblEmpVisaView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblEmpVisaView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblEmpVisaView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblEmpVisaView2.rangeSize}"
+                                    filterModel="#{bindings.TblEmpVisaView2Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblEmpVisaView2Query.processQuery}" varStatus="vs"
+                                    id="t6" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblEmpVisaView2.hints.Id.name}"
+                                                   filterable="true" sortable="true" headerText="Staff Visa ID" id="c33"
+                                                   align="center" width="80" visible="false">
+                                            <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.Id}" id="it54"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                                            <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                          label="#{bindings.TblEmpVisaView2.hints.Id.label}"
+                                                          required="#{bindings.TblEmpVisaView2.hints.Id.mandatory}"
+                                                          columns="#{bindings.TblEmpVisaView2.hints.Id.displayWidth}"
+                                                          maximumLength="#{bindings.TblEmpVisaView2.hints.Id.precision}"
+                                                          shortDesc="#{bindings.TblEmpVisaView2.hints.Id.tooltip}"
+                                                          id="it55" readOnly="true" contentStyle='text-align: center'>
+                                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.TblEmpVisaView2.hints.Id.format}"/>
+                                            </af:inputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.TblEmpVisaView2.hints.Dated.name}"
+                                                   filterable="true" sortable="true" headerText="Date" id="c34"
+                                                   align="left" width="100">
+                                            <f:facet name="filter">
+                                                <af:inputDate value="#{bindings.TblEmpVisaView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                                              id="id19">
+                                                    <af:convertDateTime pattern="#{bindings.TblEmpVisaView2.hints.Dated.format}"/>
+                                                </af:inputDate>
+                                            </f:facet>
+                                            <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                                          label="#{bindings.TblEmpVisaView2.hints.Dated.label}"
+                                                          required="#{bindings.TblEmpVisaView2.hints.Dated.mandatory}"
+                                                          columns="#{bindings.TblEmpVisaView2.hints.Dated.displayWidth}"
+                                                          shortDesc="#{bindings.TblEmpVisaView2.hints.Dated.tooltip}"
+                                                          id="id20" contentStyle='text-align: left'>
+                                                <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                                <af:convertDateTime pattern="#{bindings.TblEmpVisaView2.hints.Dated.format}"/>
+                                            </af:inputDate>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.TblEmpVisaView2.hints.VisaNo.name}"
+                                                   filterable="true" sortable="true" headerText="Visa No." id="c35"
+                                                   align="left" width="100">
+                                            <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.VisaNo}" id="it73"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                                            <af:inputText value="#{row.bindings.VisaNo.inputValue}"
+                                                          label="#{bindings.TblEmpVisaView2.hints.VisaNo.label}"
+                                                          required="#{bindings.TblEmpVisaView2.hints.VisaNo.mandatory}"
+                                                          columns="#{bindings.TblEmpVisaView2.hints.VisaNo.displayWidth}"
+                                                          maximumLength="#{bindings.TblEmpVisaView2.hints.VisaNo.precision}"
+                                                          shortDesc="#{bindings.TblEmpVisaView2.hints.VisaNo.tooltip}"
+                                                          id="it74" contentStyle='text-align: right'>
+                                                <f:validator binding="#{row.bindings.VisaNo.validator}"/>
+                                            </af:inputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.TblEmpVisaView2.hints.VisaIssDate.name}"
+                                                   filterable="true" sortable="true" headerText="Issue Date"
+                                                   id="c36" align="left" width="100">
+                                            <f:facet name="filter">
+                                                <af:inputDate value="#{bindings.TblEmpVisaView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.VisaIssDate.value}"
+                                                              id="id21">
+                                                    <af:convertDateTime pattern="#{bindings.TblEmpVisaView2.hints.VisaIssDate.format}"/>
+                                                </af:inputDate>
+                                            </f:facet>
+                                            <af:inputDate value="#{row.bindings.VisaIssDate.inputValue}"
+                                                          label="#{bindings.TblEmpVisaView2.hints.VisaIssDate.label}"
+                                                          required="#{bindings.TblEmpVisaView2.hints.VisaIssDate.mandatory}"
+                                                          columns="#{bindings.TblEmpVisaView2.hints.VisaIssDate.displayWidth}"
+                                                          shortDesc="#{bindings.TblEmpVisaView2.hints.VisaIssDate.tooltip}"
+                                                          id="id22" contentStyle='text-align: left'>
+                                                <f:validator binding="#{row.bindings.VisaIssDate.validator}"/>
+                                                <af:convertDateTime pattern="#{bindings.TblEmpVisaView2.hints.VisaIssDate.format}"/>
+                                            </af:inputDate>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.TblEmpVisaView2.hints.VisaExpDate.name}"
+                                                   filterable="true" sortable="true" headerText="Expiry Date"
+                                                   id="c37" width="100" align="left">
+                                            <f:facet name="filter">
+                                                <af:inputDate value="#{bindings.TblEmpVisaView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.VisaExpDate.value}"
+                                                              id="id23">
+                                                    <af:convertDateTime pattern="#{bindings.TblEmpVisaView2.hints.VisaExpDate.format}"/>
+                                                </af:inputDate>
+                                            </f:facet>
+                                            <af:inputDate value="#{row.bindings.VisaExpDate.inputValue}"
+                                                          label="#{bindings.TblEmpVisaView2.hints.VisaExpDate.label}"
+                                                          required="#{bindings.TblEmpVisaView2.hints.VisaExpDate.mandatory}"
+                                                          columns="#{bindings.TblEmpVisaView2.hints.VisaExpDate.displayWidth}"
+                                                          shortDesc="#{bindings.TblEmpVisaView2.hints.VisaExpDate.tooltip}"
+                                                          id="id24" contentStyle='text-align: left'>
+                                                <f:validator binding="#{row.bindings.VisaExpDate.validator}"/>
+                                                <af:convertDateTime pattern="#{bindings.TblEmpVisaView2.hints.VisaExpDate.format}"/>
+                                            </af:inputDate>
+                                        </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpVisaView2.hints.VisaType.name}" filterable="true"
+                                       sortable="true" headerText="Visa Type"
+                                       id="c31">
+                                        <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.VisaType}" id="it75"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.VisaType.inputValue}"
+                                                  label="#{row.bindings.VisaType.label}"
+                                                  required="#{bindings.TblEmpVisaView2.hints.VisaType.mandatory}"
+                                                  shortDesc="#{bindings.TblEmpVisaView2.hints.VisaType.tooltip}"
+                                                  id="soc1">
+                                <f:selectItems value="#{row.bindings.VisaType.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.VisaType.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpVisaView2.hints.VisaSpons.name}" filterable="true"
+                                       sortable="true" headerText="Visa Sponsor"
+                                       id="c28" width="150">
+                                       <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.VisaSpons}" id="it76"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:inputText value="#{row.bindings.VisaSpons.inputValue}"
+                                            label="#{bindings.TblEmpVisaView2.hints.VisaSpons.label}"
+                                            required="#{bindings.TblEmpVisaView2.hints.VisaSpons.mandatory}"
+                                            columns="#{bindings.TblEmpVisaView2.hints.VisaSpons.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpVisaView2.hints.VisaSpons.precision}"
+                                            shortDesc="#{bindings.TblEmpVisaView2.hints.VisaSpons.tooltip}" id="it56">
+                                <f:validator binding="#{row.bindings.VisaSpons.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpVisaView2.hints.Ast.name}" filterable="true"
+                                       sortable="true" headerText="Active"
+                                       id="c70">
+                                       
+                                        <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.Ast}" id="it77"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                  label="#{row.bindings.Ast.label}"
+                                                  required="#{bindings.TblEmpVisaView2.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblEmpVisaView2.hints.Ast.tooltip}" id="soc8">
+                                <f:selectItems value="#{row.bindings.Ast.items}" id="si8"/>
+                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                          </af:table>
+                           <af:spacer width="5" height="10" id="s26"/>
+                        
+			<af:panelGroupLayout id="pgl10" halign="center" layout="horizontal">
+                            <af:iterator id="i6" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}5"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s27"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Passport" id="sdi6">
+                          <af:table value="#{bindings.TblEmpPassportView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblEmpPassportView2.rangeSize}"
+                                    emptyText="#{bindings.TblEmpPassportView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblEmpPassportView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblEmpPassportView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblEmpPassportView2.rangeSize}"
+                                    filterModel="#{bindings.TblEmpPassportView2Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblEmpPassportView2Query.processQuery}" varStatus="vs"
+                                    id="t7" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblEmpPassportView2.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID" visible="false"
+                                       id="c38">
+                                        <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.Id}" id="it79"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblEmpPassportView2.hints.Id.label}"
+                                            required="#{bindings.TblEmpPassportView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblEmpPassportView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpPassportView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblEmpPassportView2.hints.Id.tooltip}" id="it57" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblEmpPassportView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpPassportView2.hints.Dated.name}" filterable="true"
+                                       sortable="true" headerText="Date"
+                                       id="c39">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblEmpPassportView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                              id="id14">
+                                  <af:convertDateTime pattern="#{bindings.TblEmpPassportView2.hints.Dated.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                            label="#{bindings.TblEmpPassportView2.hints.Dated.label}"
+                                            required="#{bindings.TblEmpPassportView2.hints.Dated.mandatory}"
+                                            columns="#{bindings.TblEmpPassportView2.hints.Dated.displayWidth}"
+                                            shortDesc="#{bindings.TblEmpPassportView2.hints.Dated.tooltip}" id="id15">
+                                <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblEmpPassportView2.hints.Dated.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpPassportView2.hints.Country.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Country" id="c40">
+                                         <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.Country}" id="it80"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:inputText value="#{row.bindings.Country.inputValue}"
+                                            label="#{bindings.TblEmpPassportView2.hints.Country.label}"
+                                            required="#{bindings.TblEmpPassportView2.hints.Country.mandatory}"
+                                            columns="#{bindings.TblEmpPassportView2.hints.Country.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpPassportView2.hints.Country.precision}"
+                                            shortDesc="#{bindings.TblEmpPassportView2.hints.Country.tooltip}" id="it58">
+                                <f:validator binding="#{row.bindings.Country.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpPassportView2.hints.PassportNo.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Passport No." id="c41">
+                                       <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.PassportNo}" id="it78"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:inputText value="#{row.bindings.PassportNo.inputValue}"
+                                            label="#{bindings.TblEmpPassportView2.hints.PassportNo.label}"
+                                            required="#{bindings.TblEmpPassportView2.hints.PassportNo.mandatory}"
+                                            columns="#{bindings.TblEmpPassportView2.hints.PassportNo.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpPassportView2.hints.PassportNo.precision}"
+                                            shortDesc="#{bindings.TblEmpPassportView2.hints.PassportNo.tooltip}"
+                                            id="it59">
+                                <f:validator binding="#{row.bindings.PassportNo.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpPassportView2.hints.PassportIssDate.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Issue Date"
+                                       id="c42" width="100">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblEmpPassportView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.PassportIssDate.value}"
+                                              id="id16">
+                                  <af:convertDateTime pattern="#{bindings.TblEmpPassportView2.hints.PassportIssDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.PassportIssDate.inputValue}"
+                                            label="#{bindings.TblEmpPassportView2.hints.PassportIssDate.label}"
+                                            required="#{bindings.TblEmpPassportView2.hints.PassportIssDate.mandatory}"
+                                            columns="#{bindings.TblEmpPassportView2.hints.PassportIssDate.displayWidth}"
+                                            shortDesc="#{bindings.TblEmpPassportView2.hints.PassportIssDate.tooltip}"
+                                            id="id17">
+                                <f:validator binding="#{row.bindings.PassportIssDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblEmpPassportView2.hints.PassportIssDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpPassportView2.hints.PassportExpDate.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Expiry Date"
+                                       id="c43" width="100">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblEmpPassportView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.PassportExpDate.value}"
+                                              id="id18">
+                                  <af:convertDateTime pattern="#{bindings.TblEmpPassportView2.hints.PassportExpDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.PassportExpDate.inputValue}"
+                                            label="#{bindings.TblEmpPassportView2.hints.PassportExpDate.label}"
+                                            required="#{bindings.TblEmpPassportView2.hints.PassportExpDate.mandatory}"
+                                            columns="#{bindings.TblEmpPassportView2.hints.PassportExpDate.displayWidth}"
+                                            shortDesc="#{bindings.TblEmpPassportView2.hints.PassportExpDate.tooltip}"
+                                            id="id25">
+                                <f:validator binding="#{row.bindings.PassportExpDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblEmpPassportView2.hints.PassportExpDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpPassportView2.hints.Ast.name}" filterable="true"
+                                       sortable="true" headerText="Active"
+                                       id="c44">
+                                        <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.Ast}" id="it81"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                  label="#{row.bindings.Ast.label}"
+                                                  required="#{bindings.TblEmpPassportView2.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblEmpPassportView2.hints.Ast.tooltip}"
+                                                  id="soc9">
+                                <f:selectItems value="#{row.bindings.Ast.items}" id="si9"/>
+                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                          </af:table>
+                           <af:spacer width="5" height="10" id="s28"/>
+                        
+			<af:panelGroupLayout id="pgl11" halign="center" layout="horizontal">
+                            <af:iterator id="i7" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}6"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s29"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Role" id="sdi7">
+                          <af:table value="#{bindings.TblEmpRoleView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblEmpRoleView2.rangeSize}"
+                                    emptyText="#{bindings.TblEmpRoleView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblEmpRoleView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblEmpRoleView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblEmpRoleView2.rangeSize}"
+                                    filterModel="#{bindings.TblEmpRoleView2Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblEmpRoleView2Query.processQuery}" varStatus="vs"
+                                    id="t8" scrollPolicy="page" autoHeightRows="0" >
+                            <af:column sortProperty="#{bindings.TblEmpRoleView2.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID" id="c45" visible="false">
+                                       <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.Id}" id="it82"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblEmpRoleView2.hints.Id.label}"
+                                            required="#{bindings.TblEmpRoleView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblEmpRoleView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpRoleView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblEmpRoleView2.hints.Id.tooltip}" id="it60" readOnly="true">
+                                            
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblEmpRoleView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpRoleView2.hints.Dated.name}" filterable="true"
+                                       sortable="true" headerText="Date"
+                                       id="c46">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblEmpRoleView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                              id="id26">
+                                  <af:convertDateTime pattern="#{bindings.TblEmpRoleView2.hints.Dated.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                            label="#{bindings.TblEmpRoleView2.hints.Dated.label}"
+                                            required="#{bindings.TblEmpRoleView2.hints.Dated.mandatory}"
+                                            columns="#{bindings.TblEmpRoleView2.hints.Dated.displayWidth}"
+                                            shortDesc="#{bindings.TblEmpRoleView2.hints.Dated.tooltip}" id="id27">
+                                <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblEmpRoleView2.hints.Dated.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpRoleView2.hints.StaffRole.name}" filterable="true"
+                                       sortable="true" headerText="Role"
+                                       id="c47" width="150">
+                                       <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.StaffRole}" id="it83"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:inputText value="#{row.bindings.StaffRole.inputValue}"
+                                            label="#{bindings.TblEmpRoleView2.hints.StaffRole.label}"
+                                            required="#{bindings.TblEmpRoleView2.hints.StaffRole.mandatory}"
+                                            columns="#{bindings.TblEmpRoleView2.hints.StaffRole.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpRoleView2.hints.StaffRole.precision}"
+                                            shortDesc="#{bindings.TblEmpRoleView2.hints.StaffRole.tooltip}" id="it61">
+                                <f:validator binding="#{row.bindings.StaffRole.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpRoleView2.hints.Ast.name}" filterable="true"
+                                       sortable="true" headerText="Active"
+                                       id="c48">
+                                        <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.Ast}" id="it84"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                  label="#{row.bindings.Ast.label}"
+                                                  required="#{bindings.TblEmpRoleView2.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblEmpRoleView2.hints.Ast.tooltip}" id="soc10">
+                                <f:selectItems value="#{row.bindings.Ast.items}" id="si10"/>
+                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                          </af:table>
+                         <af:spacer width="5" height="10" id="s32"/>
+                        
+			<af:panelGroupLayout id="pgl13" halign="center" layout="horizontal">
+                            <af:iterator id="i9" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}7"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s33"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Benefit" id="sdi8">
+                          <af:table value="#{bindings.TblEmpBenefitView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblEmpBenefitView2.rangeSize}"
+                                    emptyText="#{bindings.TblEmpBenefitView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblEmpBenefitView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblEmpBenefitView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblEmpBenefitView2.rangeSize}"
+                                    filterModel="#{bindings.TblEmpBenefitView2Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblEmpBenefitView2Query.processQuery}" varStatus="vs"
+                                    id="t9" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblEmpBenefitView2.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID" visible="false"
+                                       id="c49">
+                                        <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.Id}" id="it85"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblEmpBenefitView2.hints.Id.label}"
+                                            required="#{bindings.TblEmpBenefitView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblEmpBenefitView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpBenefitView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblEmpBenefitView2.hints.Id.tooltip}" id="it62" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblEmpBenefitView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpBenefitView2.hints.Dated.name}" filterable="true"
+                                       sortable="true" headerText="Date"
+                                       id="c50">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblEmpBenefitView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                              id="id28">
+                                  <af:convertDateTime pattern="#{bindings.TblEmpBenefitView2.hints.Dated.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                            label="#{bindings.TblEmpBenefitView2.hints.Dated.label}"
+                                            required="#{bindings.TblEmpBenefitView2.hints.Dated.mandatory}"
+                                            columns="#{bindings.TblEmpBenefitView2.hints.Dated.displayWidth}"
+                                            shortDesc="#{bindings.TblEmpBenefitView2.hints.Dated.tooltip}" id="id29">
+                                <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblEmpBenefitView2.hints.Dated.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpBenefitView2.hints.Benefit.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Benefit" id="c51" width="150">
+                                        <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.Benefit}" id="it86"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:inputText value="#{row.bindings.Benefit.inputValue}"
+                                            label="#{bindings.TblEmpBenefitView2.hints.Benefit.label}"
+                                            required="#{bindings.TblEmpBenefitView2.hints.Benefit.mandatory}"
+                                            columns="#{bindings.TblEmpBenefitView2.hints.Benefit.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpBenefitView2.hints.Benefit.precision}"
+                                            shortDesc="#{bindings.TblEmpBenefitView2.hints.Benefit.tooltip}" id="it63">
+                                <f:validator binding="#{row.bindings.Benefit.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpBenefitView2.hints.BenefitAmount.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Benefit Amount" id="c52" width="120">
+                                        <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.BenefitAmount}" id="it87"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:inputText value="#{row.bindings.BenefitAmount.inputValue}"
+                                            label="#{bindings.TblEmpBenefitView2.hints.BenefitAmount.label}"
+                                            required="#{bindings.TblEmpBenefitView2.hints.BenefitAmount.mandatory}"
+                                            columns="#{bindings.TblEmpBenefitView2.hints.BenefitAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpBenefitView2.hints.BenefitAmount.precision}"
+                                            shortDesc="#{bindings.TblEmpBenefitView2.hints.BenefitAmount.tooltip}"
+                                            id="it64">
+                                <f:validator binding="#{row.bindings.BenefitAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblEmpBenefitView2.hints.BenefitAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpBenefitView2.hints.BenefitType.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Benefit Type" id="c53">
+                                        <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.BenefitType}" id="it88"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.BenefitType.inputValue}"
+                                                  label="#{row.bindings.BenefitType.label}"
+                                                  required="#{bindings.TblEmpBenefitView2.hints.BenefitType.mandatory}"
+                                                  shortDesc="#{bindings.TblEmpBenefitView2.hints.BenefitType.tooltip}"
+                                                  id="soc11">
+                                <f:selectItems value="#{row.bindings.BenefitType.items}" id="si11"/>
+                                <f:validator binding="#{row.bindings.BenefitType.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpBenefitView2.hints.BenefitFrDate.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="From Date" id="c54">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblEmpBenefitView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.BenefitFrDate.value}"
+                                              id="id30">
+                                  <af:convertDateTime pattern="#{bindings.TblEmpBenefitView2.hints.BenefitFrDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.BenefitFrDate.inputValue}"
+                                            label="#{bindings.TblEmpBenefitView2.hints.BenefitFrDate.label}"
+                                            required="#{bindings.TblEmpBenefitView2.hints.BenefitFrDate.mandatory}"
+                                            columns="#{bindings.TblEmpBenefitView2.hints.BenefitFrDate.displayWidth}"
+                                            shortDesc="#{bindings.TblEmpBenefitView2.hints.BenefitFrDate.tooltip}"
+                                            id="id31">
+                                <f:validator binding="#{row.bindings.BenefitFrDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblEmpBenefitView2.hints.BenefitFrDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpBenefitView2.hints.BenefitToDate.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="To Date" id="c55">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblEmpBenefitView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.BenefitToDate.value}"
+                                              id="id32">
+                                  <af:convertDateTime pattern="#{bindings.TblEmpBenefitView2.hints.BenefitToDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.BenefitToDate.inputValue}"
+                                            label="#{bindings.TblEmpBenefitView2.hints.BenefitToDate.label}"
+                                            required="#{bindings.TblEmpBenefitView2.hints.BenefitToDate.mandatory}"
+                                            columns="#{bindings.TblEmpBenefitView2.hints.BenefitToDate.displayWidth}"
+                                            shortDesc="#{bindings.TblEmpBenefitView2.hints.BenefitToDate.tooltip}"
+                                            id="id33">
+                                <f:validator binding="#{row.bindings.BenefitToDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblEmpBenefitView2.hints.BenefitToDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpBenefitView2.hints.Remarks.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Remarks" id="c56" width="300">
+                                        <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.Remarks}" id="it89"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                            label="#{bindings.TblEmpBenefitView2.hints.Remarks.label}"
+                                            required="#{bindings.TblEmpBenefitView2.hints.Remarks.mandatory}"
+                                            columns="#{bindings.TblEmpBenefitView2.hints.Remarks.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpBenefitView2.hints.Remarks.precision}"
+                                            shortDesc="#{bindings.TblEmpBenefitView2.hints.Remarks.tooltip}" id="it65">
+                                <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpBenefitView2.hints.Ast.name}" filterable="true"
+                                       sortable="true" headerText="Active"
+                                       id="c57">
+                                        <f:facet name="filter">
+                                                <af:inputText value="#{vs.filterCriteria.Ast}" id="it91"
+                                                              placeholder="Search "></af:inputText>
+                                            </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                  label="#{row.bindings.Ast.label}"
+                                                  required="#{bindings.TblEmpBenefitView2.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblEmpBenefitView2.hints.Ast.tooltip}"
+                                                  id="soc12">
+                                <f:selectItems value="#{row.bindings.Ast.items}" id="si12"/>
+                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                          </af:table>
+                          <af:spacer width="5" height="10" id="s30"/>
+                        
+			<af:panelGroupLayout id="pgl12" halign="center" layout="horizontal">
+                            <af:iterator id="i8" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}8"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s31"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Salary" id="sdi9">
+                          <af:table value="#{bindings.TblEmpSalaryView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblEmpSalaryView2.rangeSize}"
+                                    emptyText="#{bindings.TblEmpSalaryView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblEmpSalaryView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblEmpSalaryView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblEmpSalaryView2.rangeSize}"
+                                    filterModel="#{bindings.TblEmpSalaryView2Query.queryDescriptor}"
+                                    filterVisible="true" queryListener="#{bindings.TblEmpSalaryView2Query.processQuery}"
+                                    varStatus="vs" id="t10" scrollPolicy="page" autoHeightRows="0" >
+                            <af:column sortProperty="#{bindings.TblEmpSalaryView2.hints.Id.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="Staff Salary ID" id="c61" width="80"
+                                                                   align="center" visible="false">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.Id}" id="it66"
+                                                                              placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                                                            <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                                          label="#{bindings.TblEmpSalaryView2.hints.Id.label}"
+                                                                          required="#{bindings.TblEmpSalaryView2.hints.Id.mandatory}"
+                                                                          columns="#{bindings.TblEmpSalaryView2.hints.Id.displayWidth}"
+                                                                          maximumLength="#{bindings.TblEmpSalaryView2.hints.Id.precision}"
+                                                                          shortDesc="#{bindings.TblEmpSalaryView2.hints.Id.tooltip}"
+                                                                          id="it67" readOnly="true"
+                                                                          contentStyle='text-align: center'>
+                                                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.TblEmpSalaryView2.hints.Id.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column headerText="Payment Mode" d="c63" align="left"
+                                                                   filterable="true" sortable="true" width="110">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.PaymentMode}"
+                                                                              id="it68" placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                                                            <af:selectOneChoice value="#{row.bindings.PaymentMode.inputValue}"
+                                                                                label="#{row.bindings.PaymentMode.label}"
+                                                                                required="#{bindings.TblEmpSalaryView2.hints.PaymentMode.mandatory}"
+                                                                                shortDesc="#{bindings.TblEmpSalaryView2.hints.PaymentMode.tooltip}"
+                                                                                id="soc32">
+                                                                <f:selectItems value="#{row.bindings.PaymentMode.items}"
+                                                                               id="si32"/>
+                                                                <f:validator binding="#{row.bindings.PaymentMode.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblEmpSalaryView2.hints.Bank.name}"
+                                                                   filterable="true" sortable="true" headerText="Bank"
+                                                                   id="c64" width="200" align="left">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.Bank}"
+                                                                              id="it69"
+                                                                              placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                                                            <af:inputText value="#{row.bindings.Bank.inputValue}"
+                                                                          label="#{bindings.TblEmpSalaryView2.hints.Bank.label}"
+                                                                          required="#{bindings.TblEmpSalaryView2.hints.Bank.mandatory}"
+                                                                          columns="#{bindings.TblEmpSalaryView2.hints.Bank.displayWidth}"
+                                                                          maximumLength="#{bindings.TblEmpSalaryView2.hints.Bank.precision}"
+                                                                          shortDesc="#{bindings.TblEmpSalaryView2.hints.Bank.tooltip}"
+                                                                          id="it70" contentStyle="text-align: left">
+                                                                <f:validator binding="#{row.bindings.Bank.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblEmpSalaryView2.hints.BankAc.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="Bank Account" id="c65" align="left"
+                                                                   width="150">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.BankAc}"
+                                                                              id="it92" placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                                                            <af:inputText value="#{row.bindings.BankAc.inputValue}"
+                                                                          label="#{bindings.TblEmpSalaryView2.hints.BankAc.label}"
+                                                                          required="#{bindings.TblEmpSalaryView2.hints.BankAc.mandatory}"
+                                                                          columns="#{bindings.TblEmpSalaryView2.hints.BankAc.displayWidth}"
+                                                                          maximumLength="#{bindings.TblEmpSalaryView2.hints.BankAc.precision}"
+                                                                          shortDesc="#{bindings.TblEmpSalaryView2.hints.BankAc.tooltip}"
+                                                                          id="it93" contentStyle='text-align: left'>
+                                                                <f:validator binding="#{row.bindings.BankAc.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblEmpSalaryView2.hints.NetSalary.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="Net salary" id="c66" align="left">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.NetSalary}"
+                                                                              id="it94" placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                                                            <af:inputText value="#{row.bindings.NetSalary.inputValue}"
+                                                                          label="#{bindings.TblEmpSalaryView2.hints.NetSalary.label}"
+                                                                          required="#{bindings.TblEmpSalaryView2.hints.NetSalary.mandatory}"
+                                                                          columns="#{bindings.TblEmpSalaryView2.hints.NetSalary.displayWidth}"
+                                                                          maximumLength="#{bindings.TblEmpSalaryView2.hints.NetSalary.precision}"
+                                                                          shortDesc="#{bindings.TblEmpSalaryView2.hints.NetSalary.tooltip}"
+                                                                          id="it95" contentStyle='text-align: right'
+                                                                          readOnly="true">
+                                                                <f:validator binding="#{row.bindings.NetSalary.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.TblEmpSalaryView2.hints.NetSalary.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblEmpSalaryView2.hints.Remarks.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="Remarks" id="c67" width="300"
+                                                                   align="left">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                                                              id="it96" placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                                                            <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                                                          label="#{bindings.TblEmpSalaryView2.hints.Remarks.label}"
+                                                                          required="#{bindings.TblEmpSalaryView2.hints.Remarks.mandatory}"
+                                                                          columns="#{bindings.TblEmpSalaryView2.hints.Remarks.displayWidth}"
+                                                                          maximumLength="#{bindings.TblEmpSalaryView2.hints.Remarks.precision}"
+                                                                          shortDesc="#{bindings.TblEmpSalaryView2.hints.Remarks.tooltip}"
+                                                                          id="it100" contentStyle="text-align: left">
+                                                                <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.TblEmpSalaryView2.hints.Ast.name}"
+                                                                   filterable="true" sortable="true" headerText="Active"
+                                                                   id="c68" align="left">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.Ast}" id="it90"
+                                                                              placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                                                            <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                                                label="#{row.bindings.Ast.label}"
+                                                                                required="#{bindings.TblEmpSalaryView2.hints.Ast.mandatory}"
+                                                                                shortDesc="#{bindings.TblEmpSalaryView2.hints.Ast.tooltip}"
+                                                                                id="soc23"
+                                                                                contentStyle="text-align: left">
+                                                                <f:selectItems value="#{row.bindings.Ast.items}"
+                                                                               id="si23"/>
+                                                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                          </af:table>
+                          <af:spacer width="5" height="10" id="s34"/>
+                        
+			<af:panelGroupLayout id="pgl14" halign="center" layout="horizontal">
+                            <af:iterator id="i10" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}9"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s35"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Leave" id="sdi10">
+                          <af:table value="#{bindings.TblEmpLeavePkgView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblEmpLeavePkgView2.rangeSize}"
+                                    emptyText="#{bindings.TblEmpLeavePkgView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblEmpLeavePkgView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblEmpLeavePkgView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblEmpLeavePkgView2.rangeSize}"
+                                    filterModel="#{bindings.TblEmpLeavePkgView2Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblEmpLeavePkgView2Query.processQuery}" varStatus="vs"
+                                    id="t11" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblEmpLeavePkgView2.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID" visible="false"
+                                       id="c32">
+                                       <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.Id}" id="it98"
+                                                                              placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblEmpLeavePkgView2.hints.Id.label}"
+                                            required="#{bindings.TblEmpLeavePkgView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblEmpLeavePkgView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpLeavePkgView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblEmpLeavePkgView2.hints.Id.tooltip}" id="it71" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblEmpLeavePkgView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpLeavePkgView2.hints.Dated.name}" filterable="true"
+                                       sortable="true" headerText="Date"
+                                       id="c58">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblEmpLeavePkgView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                              id="id36">
+                                  <af:convertDateTime pattern="#{bindings.TblEmpLeavePkgView2.hints.Dated.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                            label="#{bindings.TblEmpLeavePkgView2.hints.Dated.label}"
+                                            required="#{bindings.TblEmpLeavePkgView2.hints.Dated.mandatory}"
+                                            columns="#{bindings.TblEmpLeavePkgView2.hints.Dated.displayWidth}"
+                                            shortDesc="#{bindings.TblEmpLeavePkgView2.hints.Dated.tooltip}" id="id37">
+                                <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblEmpLeavePkgView2.hints.Dated.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpLeavePkgView2.hints.LeavePkg.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Leave Package" id="c59" width="150">
+                                       <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.LeavePkg}"
+                                                                              id="it97"
+                                                                              placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                              <af:inputText value="#{row.bindings.LeavePkg.inputValue}"
+                                            label="#{bindings.TblEmpLeavePkgView2.hints.LeavePkg.label}"
+                                            required="#{bindings.TblEmpLeavePkgView2.hints.LeavePkg.mandatory}"
+                                            columns="#{bindings.TblEmpLeavePkgView2.hints.LeavePkg.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpLeavePkgView2.hints.LeavePkg.precision}"
+                                            shortDesc="#{bindings.TblEmpLeavePkgView2.hints.LeavePkg.tooltip}"
+                                            id="it72">
+                                <f:validator binding="#{row.bindings.LeavePkg.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblEmpLeavePkgView2.hints.Ast.name}" filterable="true"
+                                       sortable="true" headerText="Active"
+                                       id="c69">
+                                       <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.Ast}"
+                                                                              id="it99"
+                                                                              placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                  label="#{row.bindings.Ast.label}"
+                                                  required="#{bindings.TblEmpLeavePkgView2.hints.Ast.mandatory}"
+                                                  shortDesc="#{bindings.TblEmpLeavePkgView2.hints.Ast.tooltip}"
+                                                  id="soc15">
+                                <f:selectItems value="#{row.bindings.Ast.items}" id="si15"/>
+                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                          </af:table>
+                          <af:spacer width="5" height="10" id="s36"/>
+                        
+			<af:panelGroupLayout id="pgl15" halign="center" layout="horizontal">
+                            <af:iterator id="i11" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}10"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s37"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
                       </af:panelTabbed>
                     </af:gridCell>
                   </af:gridRow>

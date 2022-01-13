@@ -440,4 +440,34 @@
     ViewLink="model.ERP.VO.FkTblEmpAllFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblEmpVisaView"
+    ViewLink="model.ERP.VO.FkEmpVisaLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblEmpPassportView"
+    ViewLink="model.ERP.VO.FkEmpPassportLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblEmpRoleView"
+    ViewLink="model.ERP.VO.FkEmpRoleLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblEmpBenefitView"
+    ViewLink="model.ERP.VO.FkEmpBenefitLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblEmpSalaryView"
+    ViewLink="model.ERP.VO.FkEmpSalaryLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblEmpLeavePkgView"
+    ViewLink="model.ERP.VO.FkEmpLeaveLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

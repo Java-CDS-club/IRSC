@@ -379,6 +379,48 @@
     AssociationOtherEnd="model.ERP.EO.FkTblEmpAllFkAssoc.TblEmp"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblEmpVisa"
+    Association="model.ERP.EO.FkEmpVisaAssoc"
+    AssociationEnd="model.ERP.EO.FkEmpVisaAssoc.TblEmpVisa"
+    AssociationOtherEnd="model.ERP.EO.FkEmpVisaAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblEmpPassport"
+    Association="model.ERP.EO.FkEmpPassportAssoc"
+    AssociationEnd="model.ERP.EO.FkEmpPassportAssoc.TblEmpPassport"
+    AssociationOtherEnd="model.ERP.EO.FkEmpPassportAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblEmpRole"
+    Association="model.ERP.EO.FkEmpRoleAssoc"
+    AssociationEnd="model.ERP.EO.FkEmpRoleAssoc.TblEmpRole"
+    AssociationOtherEnd="model.ERP.EO.FkEmpRoleAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblEmpBenefit"
+    Association="model.ERP.EO.FkEmpBenefitAssoc"
+    AssociationEnd="model.ERP.EO.FkEmpBenefitAssoc.TblEmpBenefit"
+    AssociationOtherEnd="model.ERP.EO.FkEmpBenefitAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblEmpSalary"
+    Association="model.ERP.EO.FkEmpSalaryAssoc"
+    AssociationEnd="model.ERP.EO.FkEmpSalaryAssoc.TblEmpSalary"
+    AssociationOtherEnd="model.ERP.EO.FkEmpSalaryAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblEmpLeavePkg"
+    Association="model.ERP.EO.FkEmpLeaveAssoc"
+    AssociationEnd="model.ERP.EO.FkEmpLeaveAssoc.TblEmpLeavePkg"
+    AssociationOtherEnd="model.ERP.EO.FkEmpLeaveAssoc.TblEmp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkEmpId"
     PrimaryKey="true">

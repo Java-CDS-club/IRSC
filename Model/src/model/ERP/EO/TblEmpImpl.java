@@ -61,7 +61,13 @@ public class TblEmpImpl extends EntityImpl {
         TblEmpQua,
         TblGrade,
         TblEmpKin,
-        TblEmpAll;
+        TblEmpAll,
+        TblEmpVisa,
+        TblEmpPassport,
+        TblEmpRole,
+        TblEmpBenefit,
+        TblEmpSalary,
+        TblEmpLeavePkg;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -124,6 +130,12 @@ public class TblEmpImpl extends EntityImpl {
     public static final int TBLGRADE = AttributesEnum.TblGrade.index();
     public static final int TBLEMPKIN = AttributesEnum.TblEmpKin.index();
     public static final int TBLEMPALL = AttributesEnum.TblEmpAll.index();
+    public static final int TBLEMPVISA = AttributesEnum.TblEmpVisa.index();
+    public static final int TBLEMPPASSPORT = AttributesEnum.TblEmpPassport.index();
+    public static final int TBLEMPROLE = AttributesEnum.TblEmpRole.index();
+    public static final int TBLEMPBENEFIT = AttributesEnum.TblEmpBenefit.index();
+    public static final int TBLEMPSALARY = AttributesEnum.TblEmpSalary.index();
+    public static final int TBLEMPLEAVEPKG = AttributesEnum.TblEmpLeavePkg.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -681,6 +693,54 @@ public class TblEmpImpl extends EntityImpl {
      */
     public RowIterator getTblEmpAll() {
         return (RowIterator) getAttributeInternal(TBLEMPALL);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblEmpVisa() {
+        return (RowIterator) getAttributeInternal(TBLEMPVISA);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblEmpPassport() {
+        return (RowIterator) getAttributeInternal(TBLEMPPASSPORT);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblEmpRole() {
+        return (RowIterator) getAttributeInternal(TBLEMPROLE);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblEmpBenefit() {
+        return (RowIterator) getAttributeInternal(TBLEMPBENEFIT);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblEmpSalary() {
+        return (RowIterator) getAttributeInternal(TBLEMPSALARY);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblEmpLeavePkg() {
+        return (RowIterator) getAttributeInternal(TBLEMPLEAVEPKG);
     }
 
 

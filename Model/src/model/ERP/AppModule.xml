@@ -979,6 +979,42 @@
   <ViewUsage
     Name="TblExpAppView1"
     ViewObjectName="model.ERP.VO.TblExpAppView"/>
+  <ViewUsage
+    Name="TblEmpBenefitView1"
+    ViewObjectName="model.ERP.VO.TblEmpBenefitView"/>
+  <ViewUsage
+    Name="TblEmpLeavePkgView1"
+    ViewObjectName="model.ERP.VO.TblEmpLeavePkgView"/>
+  <ViewUsage
+    Name="TblEmpPassportView1"
+    ViewObjectName="model.ERP.VO.TblEmpPassportView"/>
+  <ViewUsage
+    Name="TblEmpRoleView1"
+    ViewObjectName="model.ERP.VO.TblEmpRoleView"/>
+  <ViewUsage
+    Name="TblEmpSalaryView1"
+    ViewObjectName="model.ERP.VO.TblEmpSalaryView"/>
+  <ViewUsage
+    Name="TblEmpVisaView1"
+    ViewObjectName="model.ERP.VO.TblEmpVisaView"/>
+  <ViewUsage
+    Name="TblEmpVisaView2"
+    ViewObjectName="model.ERP.VO.TblEmpVisaView"/>
+  <ViewUsage
+    Name="TblEmpPassportView2"
+    ViewObjectName="model.ERP.VO.TblEmpPassportView"/>
+  <ViewUsage
+    Name="TblEmpRoleView2"
+    ViewObjectName="model.ERP.VO.TblEmpRoleView"/>
+  <ViewUsage
+    Name="TblEmpBenefitView2"
+    ViewObjectName="model.ERP.VO.TblEmpBenefitView"/>
+  <ViewUsage
+    Name="TblEmpSalaryView2"
+    ViewObjectName="model.ERP.VO.TblEmpSalaryView"/>
+  <ViewUsage
+    Name="TblEmpLeavePkgView2"
+    ViewObjectName="model.ERP.VO.TblEmpLeavePkgView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1728,5 +1764,41 @@
     ViewLinkObjectName="model.ERP.VO.FkExpAppDMasterLink"
     SrcViewUsageName="model.ERP.AppModule.TblExpAppMView1"
     DstViewUsageName="model.ERP.AppModule.TblExpAppDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkEmpVisaLink1"
+    ViewLinkObjectName="model.ERP.VO.FkEmpVisaLink"
+    SrcViewUsageName="model.ERP.AppModule.TblEmpView1"
+    DstViewUsageName="model.ERP.AppModule.TblEmpVisaView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkEmpPassportLink1"
+    ViewLinkObjectName="model.ERP.VO.FkEmpPassportLink"
+    SrcViewUsageName="model.ERP.AppModule.TblEmpView1"
+    DstViewUsageName="model.ERP.AppModule.TblEmpPassportView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkEmpRoleLink1"
+    ViewLinkObjectName="model.ERP.VO.FkEmpRoleLink"
+    SrcViewUsageName="model.ERP.AppModule.TblEmpView1"
+    DstViewUsageName="model.ERP.AppModule.TblEmpRoleView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkEmpBenefitLink1"
+    ViewLinkObjectName="model.ERP.VO.FkEmpBenefitLink"
+    SrcViewUsageName="model.ERP.AppModule.TblEmpView1"
+    DstViewUsageName="model.ERP.AppModule.TblEmpBenefitView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkEmpSalaryLink1"
+    ViewLinkObjectName="model.ERP.VO.FkEmpSalaryLink"
+    SrcViewUsageName="model.ERP.AppModule.TblEmpView1"
+    DstViewUsageName="model.ERP.AppModule.TblEmpSalaryView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkEmpLeaveLink1"
+    ViewLinkObjectName="model.ERP.VO.FkEmpLeaveLink"
+    SrcViewUsageName="model.ERP.AppModule.TblEmpView1"
+    DstViewUsageName="model.ERP.AppModule.TblEmpLeavePkgView2"
     Reversed="false"/>
 </AppModule>

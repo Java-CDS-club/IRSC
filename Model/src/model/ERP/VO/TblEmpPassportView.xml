@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblEmpPassportView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblEmpPassport"
+    Entity="model.ERP.EO.TblEmpPassport"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblEmpPassport"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="EmpId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmpId"
+    EntityUsage="TblEmpPassport"
+    AliasName="EMP_ID"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblEmpPassport"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="Country"
+    PrecisionRule="true"
+    EntityAttrName="Country"
+    EntityUsage="TblEmpPassport"
+    AliasName="COUNTRY"/>
+  <ViewAttribute
+    Name="PassportNo"
+    PrecisionRule="true"
+    EntityAttrName="PassportNo"
+    EntityUsage="TblEmpPassport"
+    AliasName="PASSPORT_NO"/>
+  <ViewAttribute
+    Name="PassportIssDate"
+    PrecisionRule="true"
+    EntityAttrName="PassportIssDate"
+    EntityUsage="TblEmpPassport"
+    AliasName="PASSPORT_ISS_DATE"/>
+  <ViewAttribute
+    Name="PassportExpDate"
+    PrecisionRule="true"
+    EntityAttrName="PassportExpDate"
+    EntityUsage="TblEmpPassport"
+    AliasName="PASSPORT_EXP_DATE"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblEmpPassport"
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblEmpPassport"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblEmpPassport"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblEmpPassport"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblEmpPassport"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="Image"
+    PrecisionRule="true"
+    EntityAttrName="Image"
+    EntityUsage="TblEmpPassport"
+    AliasName="IMAGE"/>
+</ViewObject>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblEmpLeavePkg"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_EMP_LEAVE_PKG"
+  AliasName="TblEmpLeavePkg"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP_LEAVE_PKG"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="EmpId"
+    IsNotNull="true"
+    ColumnName="EMP_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP_LEAVE_PKG"/>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_EMP_LEAVE_PKG"/>
+  <Attribute
+    Name="LeavePkg"
+    Precision="150"
+    ColumnName="LEAVE_PKG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EMP_LEAVE_PKG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_EMP_LEAVE_PKG"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_EMP_LEAVE_PKG"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP_LEAVE_PKG"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_EMP_LEAVE_PKG"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EMP_LEAVE_PKG"/>
+  <AccessorAttribute
+    Name="TblEmp"
+    Association="model.ERP.EO.FkEmpLeaveAssoc"
+    AssociationEnd="model.ERP.EO.FkEmpLeaveAssoc.TblEmp"
+    AssociationOtherEnd="model.ERP.EO.FkEmpLeaveAssoc.TblEmpLeavePkg"
+    Type="model.ERP.EO.TblEmpImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkEmpLeavePkg"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_EMP_LEAVE_PKG"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEmpLeavePkg.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkEmpLeavePkg">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_EMP_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EMP_LEAVE_PKG"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEmpLeavePkg.EmpId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblEmpLeavePkg">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_EMP_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_EMP_LEAVE_PKG"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblEmpLeavePkg.EmpId"/>
+    </AttrArray>
+  </Key>
+</Entity>

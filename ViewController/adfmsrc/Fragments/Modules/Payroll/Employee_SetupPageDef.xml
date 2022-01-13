@@ -25,6 +25,28 @@
               id="Department_OpenFragment1Iterator"/>
     <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.GeneralLedgerOpenFragmentBean.dynamicTaskFlowId7}"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="TblEmpVisaView2" RangeSize="5" DataControl="AppModuleDataControl1" id="TblEmpVisaView2Iterator"/>
+    <searchRegion Binds="TblEmpVisaView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEmpVisaView2Query"/>
+    <iterator Binds="TblEmpPassportView2" RangeSize="5" DataControl="AppModuleDataControl1"
+              id="TblEmpPassportView2Iterator"/>
+    <searchRegion Binds="TblEmpPassportView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEmpPassportView2Query"/>
+    <iterator Binds="TblEmpRoleView2" RangeSize="5" DataControl="AppModuleDataControl1" id="TblEmpRoleView2Iterator"/>
+    <searchRegion Binds="TblEmpRoleView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEmpRoleView2Query"/>
+    <iterator Binds="TblEmpBenefitView2" RangeSize="5" DataControl="AppModuleDataControl1"
+              id="TblEmpBenefitView2Iterator"/>
+    <searchRegion Binds="TblEmpBenefitView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEmpBenefitView2Query"/>
+    <iterator Binds="TblEmpSalaryView2" RangeSize="5" DataControl="AppModuleDataControl1"
+              id="TblEmpSalaryView2Iterator"/>
+    <searchRegion Binds="TblEmpSalaryView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEmpSalaryView2Query"/>
+    <iterator Binds="TblEmpLeavePkgView2" RangeSize="5" DataControl="AppModuleDataControl1"
+              id="TblEmpLeavePkgView2Iterator"/>
+    <searchRegion Binds="TblEmpLeavePkgView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblEmpLeavePkgView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -208,5 +230,110 @@
         <Item Value="VisaExp"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="TblEmpVisaView2Iterator" id="TblEmpVisaView2">
+      <nodeDefinition DefName="model.ERP.VO.TblEmpVisaView" Name="TblEmpVisaView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="VisaNo"/>
+          <Item Value="VisaIssDate"/>
+          <Item Value="VisaExpDate"/>
+          <Item Value="VisaType"/>
+          <Item Value="VisaSpons"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblEmpVisaView2Iterator" id="CreateInsert5" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEmpVisaView2Iterator" id="Execute5" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblEmpVisaView2Iterator" id="Delete5" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblEmpPassportView2Iterator" id="TblEmpPassportView2">
+      <nodeDefinition DefName="model.ERP.VO.TblEmpPassportView" Name="TblEmpPassportView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="Country"/>
+          <Item Value="PassportNo"/>
+          <Item Value="PassportIssDate"/>
+          <Item Value="PassportExpDate"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblEmpPassportView2Iterator" id="CreateInsert6" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEmpPassportView2Iterator" id="Execute6" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblEmpPassportView2Iterator" id="Delete6" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblEmpRoleView2Iterator" id="TblEmpRoleView2">
+      <nodeDefinition DefName="model.ERP.VO.TblEmpRoleView" Name="TblEmpRoleView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="StaffRole"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblEmpRoleView2Iterator" id="CreateInsert7" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEmpRoleView2Iterator" id="Execute7" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblEmpRoleView2Iterator" id="Delete7" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblEmpBenefitView2Iterator" id="TblEmpBenefitView2">
+      <nodeDefinition DefName="model.ERP.VO.TblEmpBenefitView" Name="TblEmpBenefitView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="Benefit"/>
+          <Item Value="BenefitAmount"/>
+          <Item Value="BenefitType"/>
+          <Item Value="BenefitFrDate"/>
+          <Item Value="BenefitToDate"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblEmpBenefitView2Iterator" id="CreateInsert8" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEmpBenefitView2Iterator" id="Execute8" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblEmpBenefitView2Iterator" id="Delete8" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblEmpSalaryView2Iterator" id="TblEmpSalaryView2">
+      <nodeDefinition DefName="model.ERP.VO.TblEmpSalaryView" Name="TblEmpSalaryView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="PaymentMode"/>
+          <Item Value="Bank"/>
+          <Item Value="BankAc"/>
+          <Item Value="NetSalary"/>
+          <Item Value="Remarks"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblEmpSalaryView2Iterator" id="CreateInsert9" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEmpSalaryView2Iterator" id="Execute9" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblEmpSalaryView2Iterator" id="Delete9" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblEmpLeavePkgView2Iterator" id="TblEmpLeavePkgView2">
+      <nodeDefinition DefName="model.ERP.VO.TblEmpLeavePkgView" Name="TblEmpLeavePkgView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="LeavePkg"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblEmpLeavePkgView2Iterator" id="CreateInsert10" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEmpLeavePkgView2Iterator" id="Execute10" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblEmpLeavePkgView2Iterator" id="Delete10" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
