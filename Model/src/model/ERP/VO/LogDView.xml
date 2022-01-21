@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LogDView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tax_Detail_Perc_LOV1"
+    ViewObjectName="model.LOV.Tax_Detail_Perc_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_GlL4Id"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TaxDetailId"
+    ListVOName="Tax_Detail_Perc_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TaxDetailId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="LogD"
+    Entity="model.ERP.EO.LogD"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="LogD"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="DId"
+    PrecisionRule="true"
+    EntityAttrName="DId"
+    EntityUsage="LogD"
+    AliasName="D_ID"/>
+  <ViewAttribute
+    Name="SrNo"
+    PrecisionRule="true"
+    EntityAttrName="SrNo"
+    EntityUsage="LogD"
+    AliasName="SR_NO"/>
+  <ViewAttribute
+    Name="GlL4Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GlL4Id"
+    EntityUsage="LogD"
+    AliasName="GL_L4_ID"
+    LOVName="LOV_GlL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="LogD"
+    AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="Dr"
+    PrecisionRule="true"
+    EntityAttrName="Dr"
+    EntityUsage="LogD"
+    AliasName="DR"/>
+  <ViewAttribute
+    Name="Cr"
+    PrecisionRule="true"
+    EntityAttrName="Cr"
+    EntityUsage="LogD"
+    AliasName="CR"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="LogD"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="LogD"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="LogD"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="LogD"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="DeletedDate"
+    PrecisionRule="true"
+    EntityAttrName="DeletedDate"
+    EntityUsage="LogD"
+    AliasName="DELETED_DATE"/>
+  <ViewAttribute
+    Name="DeletedBy"
+    PrecisionRule="true"
+    EntityAttrName="DeletedBy"
+    EntityUsage="LogD"
+    AliasName="DELETED_BY"/>
+  <ViewAttribute
+    Name="TaxDetailId"
+    PrecisionRule="true"
+    EntityAttrName="TaxDetailId"
+    EntityUsage="LogD"
+    AliasName="TAX_DETAIL_ID"
+    LOVName="LOV_TaxDetailId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TaxAmount"
+    PrecisionRule="true"
+    EntityAttrName="TaxAmount"
+    EntityUsage="LogD"
+    AliasName="TAX_AMOUNT"/>
+  <ViewAttribute
+    Name="TaxPerc"
+    PrecisionRule="true"
+    EntityAttrName="TaxPerc"
+    EntityUsage="LogD"
+    AliasName="TAX_PERC"/>
+  <ViewAttribute
+    Name="VSts"
+    PrecisionRule="true"
+    EntityAttrName="VSts"
+    EntityUsage="LogD"
+    AliasName="V_STS"/>
+  <ViewAttribute
+    Name="MId"
+    PrecisionRule="true"
+    EntityAttrName="MId"
+    EntityUsage="LogD"
+    AliasName="M_ID"/>
+</ViewObject>

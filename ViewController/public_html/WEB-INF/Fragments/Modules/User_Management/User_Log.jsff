@@ -1,0 +1,746 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+                <af:popup animate="false" contentDelivery="lazyUncached"
+          childCreation="deferred" id="p1">
+  <af:panelWindow resize="on" stretchChildren="first" id="pw1" title="Help">
+    <af:image id="i4" shortDesc="Image Show" source="/Resources/Project_Setup.jpg"/>
+  </af:panelWindow>
+</af:popup>
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="backColor">
+    <af:showDetailItem id="pane1" text="User Log" styleClass="backColor">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button" >
+                            <!--<af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>-->
+                         <af:button id="b2" text="Help" icon="#{resource['images:info.png']}" iconPosition="top" styleClass="af|Voucheractionbutton"
+                   inlineStyle="background-color:InfoBackground;">
+          <af:showPopupBehavior popupId="p1"/>
+        </af:button>
+                       </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1" >
+        
+        <af:gridRow marginTop="5px" height="auto" id="gr2" >
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2" >
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab" >
+              <af:showDetailItem id="tab1" text="User Log" inlineStyle=" border:none  " >
+                <af:panelGridLayout id="pgl5" >
+                  <af:gridRow marginTop="5px" height="auto" id="gr6" >
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" >
+                      <af:panelTabbed position="above" id="pt3" styleClass="backColor" >
+                        <af:showDetailItem id="tab3" text="Master" styleClass="backColor" >
+                       
+                          <!--<af:spacer width="5" height="10" id="s5"/>
+                           <af:panelGroupLayout id="pgl3" halign="left" layout="horizontal" >
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                 
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                            <af:spacer width="5" height="10" id="s8"/>
+                                 <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" styleClass="af|Voucheractionbutton"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" >
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="5" height="10" id="s10"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All" styleClass="af|Voucheractionbutton"
+                                   disabled="#{!bindings.Commit.enabled}" id="b3" icon="#{resource['images:save.png']}"
+                                   />
+                            
+                          </af:panelGroupLayout>-->
+                          <af:table value="#{bindings.LogMView1.collectionModel}" var="row"
+                                    rows="#{bindings.LogMView1.rangeSize}"
+                                    emptyText="#{bindings.LogMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.LogMView1.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.LogMView1.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.LogMView1.rangeSize}"
+                                    filterModel="#{bindings.LogMView1Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.LogMView1Query.processQuery}" varStatus="vs" id="t1">
+                            <af:column sortProperty="#{bindings.LogMView1.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID" id="c1">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.LogMView1.hints.Id.label}"
+                                            required="#{bindings.LogMView1.hints.Id.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.LogMView1.hints.Id.precision}"
+                                            shortDesc="#{bindings.LogMView1.hints.Id.tooltip}" id="it1" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.LogMView1.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.Dated.name}" filterable="true"
+                                       sortable="true" headerText="Date" id="c2">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.LogMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                              id="id1" placeholder="Search ">
+                                  <af:convertDateTime pattern="#{bindings.LogMView1.hints.Dated.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                            label="#{bindings.LogMView1.hints.Dated.label}"
+                                            required="#{bindings.LogMView1.hints.Dated.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.Dated.displayWidth}"
+                                            shortDesc="#{bindings.LogMView1.hints.Dated.tooltip}" id="id2" readOnly="true">
+                                <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.LogMView1.hints.Dated.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.MId.name}" filterable="true"
+                                       sortable="true" headerText="M ID" id="c3">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.MId}"
+       id="it25" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.MId.inputValue}"
+                                            label="#{bindings.LogMView1.hints.MId.label}"
+                                            required="#{bindings.LogMView1.hints.MId.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.MId.displayWidth}"
+                                            maximumLength="#{bindings.LogMView1.hints.MId.precision}"
+                                            shortDesc="#{bindings.LogMView1.hints.MId.tooltip}" id="it2" readOnly="true">
+                                <f:validator binding="#{row.bindings.MId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.LogMView1.hints.MId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.Vno.name}" filterable="true"
+                                       sortable="true" headerText="Voucher No." id="c4">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vno}"
+       id="it7" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Vno.inputValue}"
+                                            label="#{bindings.LogMView1.hints.Vno.label}"
+                                            required="#{bindings.LogMView1.hints.Vno.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.Vno.displayWidth}"
+                                            maximumLength="#{bindings.LogMView1.hints.Vno.precision}"
+                                            shortDesc="#{bindings.LogMView1.hints.Vno.tooltip}" id="it3" readOnly="true">
+                                <f:validator binding="#{row.bindings.Vno.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.LogMView1.hints.Vno.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.Vtp.name}" filterable="true"
+                                       sortable="true" headerText="Voucher Type" id="c5">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vtp}"
+       id="it26" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Vtp.inputValue}"
+                                            label="#{bindings.LogMView1.hints.Vtp.label}"
+                                            required="#{bindings.LogMView1.hints.Vtp.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.Vtp.displayWidth}"
+                                            maximumLength="#{bindings.LogMView1.hints.Vtp.precision}"
+                                            shortDesc="#{bindings.LogMView1.hints.Vtp.tooltip}" id="it4" readOnly="true">
+                                <f:validator binding="#{row.bindings.Vtp.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.ProjectId.name}" filterable="true"
+                                       sortable="true" headerText="Project" id="c6">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ProjectId}"
+       id="it27" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.ProjectId.inputValue}"
+                                                  label="#{row.bindings.ProjectId.label}"
+                                                  required="#{bindings.LogMView1.hints.ProjectId.mandatory}"
+                                                  shortDesc="#{bindings.LogMView1.hints.ProjectId.tooltip}" id="soc1" readOnly="true">
+                                <f:selectItems value="#{row.bindings.ProjectId.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.ProjectId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.BankName.name}" filterable="true"
+                                       sortable="true" headerText="Bank Name" id="c12">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.BankName}"
+       id="it28" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.BankName.inputValue}"
+                                            label="#{bindings.LogMView1.hints.BankName.label}"
+                                            required="#{bindings.LogMView1.hints.BankName.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.BankName.displayWidth}"
+                                            maximumLength="#{bindings.LogMView1.hints.BankName.precision}"
+                                            shortDesc="#{bindings.LogMView1.hints.BankName.tooltip}" id="it8" readOnly="true">
+                                <f:validator binding="#{row.bindings.BankName.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.ChqNo.name}" filterable="true"
+                                       sortable="true" headerText="Chq No." id="c7">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ChqNo}"
+       id="it29" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.ChqNo.inputValue}"
+                                            label="#{bindings.LogMView1.hints.ChqNo.label}"
+                                            required="#{bindings.LogMView1.hints.ChqNo.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.ChqNo.displayWidth}"
+                                            maximumLength="#{bindings.LogMView1.hints.ChqNo.precision}"
+                                            shortDesc="#{bindings.LogMView1.hints.ChqNo.tooltip}" id="it5" readOnly="true">
+                                <f:validator binding="#{row.bindings.ChqNo.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.ChqDate.name}" filterable="true"
+                                       sortable="true" headerText="Chq Date" id="c8">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.LogMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ChqDate.value}"
+                                              id="id3" placeholder="Search ">
+                                  <af:convertDateTime pattern="#{bindings.LogMView1.hints.ChqDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.ChqDate.inputValue}"
+                                            label="#{bindings.LogMView1.hints.ChqDate.label}"
+                                            required="#{bindings.LogMView1.hints.ChqDate.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.ChqDate.displayWidth}"
+                                            shortDesc="#{bindings.LogMView1.hints.ChqDate.tooltip}" id="id19" readOnly="true">
+                                <f:validator binding="#{row.bindings.ChqDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.LogMView1.hints.ChqDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.ClrDate.name}" filterable="true"
+                                       sortable="true" headerText="Clr Date" id="c9">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.LogMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ClrDate.value}"
+                                              id="id5" placeholder="Search ">
+                                  <af:convertDateTime pattern="#{bindings.LogMView1.hints.ClrDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.ClrDate.inputValue}"
+                                            label="#{bindings.LogMView1.hints.ClrDate.label}"
+                                            required="#{bindings.LogMView1.hints.ClrDate.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.ClrDate.displayWidth}"
+                                            shortDesc="#{bindings.LogMView1.hints.ClrDate.tooltip}" id="id6" readOnly="true">
+                                <f:validator binding="#{row.bindings.ClrDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.LogMView1.hints.ClrDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.Narration.name}" filterable="true"
+                                       sortable="true" headerText="Remarks"
+                                       id="c10">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Narration}"
+       id="it30" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Narration.inputValue}"
+                                            label="#{bindings.LogMView1.hints.Narration.label}"
+                                            required="#{bindings.LogMView1.hints.Narration.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.Narration.displayWidth}"
+                                            maximumLength="#{bindings.LogMView1.hints.Narration.precision}"
+                                            shortDesc="#{bindings.LogMView1.hints.Narration.tooltip}" id="it6" readOnly="true">
+                                <f:validator binding="#{row.bindings.Narration.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.JobMId.name}" filterable="true"
+                                       sortable="true" headerText="Job ID" id="c13">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.JobMId}"
+       id="it31" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.JobMId.inputValue}"
+                                            label="#{bindings.LogMView1.hints.JobMId.label}"
+                                            required="#{bindings.LogMView1.hints.JobMId.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.JobMId.displayWidth}"
+                                            maximumLength="#{bindings.LogMView1.hints.JobMId.precision}"
+                                            shortDesc="#{bindings.LogMView1.hints.JobMId.tooltip}" id="it9" readOnly="true">
+                                <f:validator binding="#{row.bindings.JobMId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.LogMView1.hints.JobMId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.CreatedDate.name}" filterable="true"
+                                       sortable="true" headerText="Created Date"
+                                       id="c14">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.LogMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CreatedDate.value}"
+                                              id="id7" placeholder="Search ">
+                                  <af:convertDateTime pattern="#{bindings.LogMView1.hints.CreatedDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.CreatedDate.inputValue}"
+                                            label="#{bindings.LogMView1.hints.CreatedDate.label}"
+                                            required="#{bindings.LogMView1.hints.CreatedDate.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.CreatedDate.displayWidth}"
+                                            shortDesc="#{bindings.LogMView1.hints.CreatedDate.tooltip}" id="id8" readOnly="true">
+                                <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.LogMView1.hints.CreatedDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.CreatedBy.name}" filterable="true"
+                                       sortable="true" headerText="Created By"
+                                       id="c15">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CreatedBy}"
+       id="it32" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
+                                            label="#{bindings.LogMView1.hints.CreatedBy.label}"
+                                            required="#{bindings.LogMView1.hints.CreatedBy.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.CreatedBy.displayWidth}"
+                                            maximumLength="#{bindings.LogMView1.hints.CreatedBy.precision}"
+                                            shortDesc="#{bindings.LogMView1.hints.CreatedBy.tooltip}" id="it10" readOnly="true">
+                                <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.LogMView1.hints.CreatedBy.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.UpdatedDate.name}" filterable="true"
+                                       sortable="true" headerText="Updated Date"
+                                       id="c16">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.LogMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.UpdatedDate.value}"
+                                              id="id9" placeholder="Search ">
+                                  <af:convertDateTime pattern="#{bindings.LogMView1.hints.UpdatedDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.UpdatedDate.inputValue}"
+                                            label="#{bindings.LogMView1.hints.UpdatedDate.label}"
+                                            required="#{bindings.LogMView1.hints.UpdatedDate.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.UpdatedDate.displayWidth}"
+                                            shortDesc="#{bindings.LogMView1.hints.UpdatedDate.tooltip}" id="id10" readOnly="true">
+                                <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.LogMView1.hints.UpdatedDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.UpdatedBy.name}" filterable="true"
+                                       sortable="true" headerText="Updated By"
+                                       id="c17">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.UpdatedBy}"
+       id="it33" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.UpdatedBy.inputValue}"
+                                            label="#{bindings.LogMView1.hints.UpdatedBy.label}"
+                                            required="#{bindings.LogMView1.hints.UpdatedBy.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.UpdatedBy.displayWidth}"
+                                            maximumLength="#{bindings.LogMView1.hints.UpdatedBy.precision}"
+                                            shortDesc="#{bindings.LogMView1.hints.UpdatedBy.tooltip}" id="it11" readOnly="true">
+                                <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.LogMView1.hints.UpdatedBy.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.DeletedDate.name}" filterable="true"
+                                       sortable="true" headerText="Deleted Date"
+                                       id="c18">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.LogMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DeletedDate.value}"
+                                              id="id11" placeholder="Search ">
+                                  <af:convertDateTime pattern="#{bindings.LogMView1.hints.DeletedDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.DeletedDate.inputValue}"
+                                            label="#{bindings.LogMView1.hints.DeletedDate.label}"
+                                            required="#{bindings.LogMView1.hints.DeletedDate.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.DeletedDate.displayWidth}"
+                                            shortDesc="#{bindings.LogMView1.hints.DeletedDate.tooltip}" id="id12" readOnly="true">
+                                <f:validator binding="#{row.bindings.DeletedDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.LogMView1.hints.DeletedDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.DeletedBy.name}" filterable="true"
+                                       sortable="true" headerText="Deleted By"
+                                       id="c19">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DeletedBy}"
+       id="it34" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.DeletedBy.inputValue}"
+                                            label="#{bindings.LogMView1.hints.DeletedBy.label}"
+                                            required="#{bindings.LogMView1.hints.DeletedBy.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.DeletedBy.displayWidth}"
+                                            maximumLength="#{bindings.LogMView1.hints.DeletedBy.precision}"
+                                            shortDesc="#{bindings.LogMView1.hints.DeletedBy.tooltip}" id="it12" readOnly="true">
+                                <f:validator binding="#{row.bindings.DeletedBy.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.LogMView1.hints.DeletedBy.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogMView1.hints.VSts.name}" filterable="true"
+                                       sortable="true" headerText="Status" id="c20">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.VSts}"
+       id="it35" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.VSts.inputValue}"
+                                            label="#{bindings.LogMView1.hints.VSts.label}"
+                                            required="#{bindings.LogMView1.hints.VSts.mandatory}"
+                                            columns="#{bindings.LogMView1.hints.VSts.displayWidth}"
+                                            maximumLength="#{bindings.LogMView1.hints.VSts.precision}"
+                                            shortDesc="#{bindings.LogMView1.hints.VSts.tooltip}" id="it13" readOnly="true">
+                                <f:validator binding="#{row.bindings.VSts.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr7" >
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7" >
+                      
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr8" >
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8" >
+                       <af:panelTabbed position="above" id="pt2" >
+              <af:showDetailItem id="tab2" text="Detail" styleClass="backColor">
+                        
+                          <!--<af:spacer width="5" height="10" id="s6"/>
+                          <af:panelGroupLayout id="pgl2" halign="left" layout="horizontal">
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                               
+                                <af:spacer width="5" height="10" id="s4"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>-->
+                          <af:table value="#{bindings.LogDView1.collectionModel}" var="row"
+                                    rows="#{bindings.LogDView1.rangeSize}"
+                                    emptyText="#{bindings.LogDView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.LogDView1.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.LogDView1.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.LogDView1.rangeSize}"
+                                    filterModel="#{bindings.LogDView1Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.LogDView1Query.processQuery}" varStatus="vs" id="t2">
+                            <af:column sortProperty="#{bindings.LogDView1.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID" id="c21">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it36" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.LogDView1.hints.Id.label}"
+                                            required="#{bindings.LogDView1.hints.Id.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.LogDView1.hints.Id.precision}"
+                                            shortDesc="#{bindings.LogDView1.hints.Id.tooltip}" id="it14" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.LogDView1.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.MId.name}" filterable="true"
+                                       sortable="true" headerText="Vocher M ID" id="c22">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.MId}"
+       id="it38" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.MId.inputValue}"
+                                            label="#{bindings.LogDView1.hints.MId.label}"
+                                            required="#{bindings.LogDView1.hints.MId.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.MId.displayWidth}"
+                                            maximumLength="#{bindings.LogDView1.hints.MId.precision}"
+                                            shortDesc="#{bindings.LogDView1.hints.MId.tooltip}" id="it15" readOnly="true">
+                                <f:validator binding="#{row.bindings.MId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.LogDView1.hints.MId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.GlL4Id.name}" filterable="true"
+                                       sortable="true" headerText="Gl L4" id="c23">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GlL4Id}"
+       id="it37" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.GlL4Id.inputValue}"
+                                                  label="#{row.bindings.GlL4Id.label}"
+                                                  required="#{bindings.LogDView1.hints.GlL4Id.mandatory}"
+                                                  shortDesc="#{bindings.LogDView1.hints.GlL4Id.tooltip}" id="soc2" readOnly="true">
+                                <f:selectItems value="#{row.bindings.GlL4Id.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.GlL4Id.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.Description.name}" filterable="true"
+                                       sortable="true" headerText="Description"
+                                       id="c24">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Description}"
+       id="it39" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Description.inputValue}"
+                                            label="#{bindings.LogDView1.hints.Description.label}"
+                                            required="#{bindings.LogDView1.hints.Description.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.Description.displayWidth}"
+                                            maximumLength="#{bindings.LogDView1.hints.Description.precision}"
+                                            shortDesc="#{bindings.LogDView1.hints.Description.tooltip}" id="it16" readOnly="true">
+                                <f:validator binding="#{row.bindings.Description.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.TaxDetailId.name}" filterable="true"
+                                       sortable="true" headerText="Tax Name"
+                                       id="c25">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxDetailId}"
+       id="it40" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.TaxDetailId.inputValue}"
+                                                  label="#{row.bindings.TaxDetailId.label}"
+                                                  required="#{bindings.LogDView1.hints.TaxDetailId.mandatory}"
+                                                  shortDesc="#{bindings.LogDView1.hints.TaxDetailId.tooltip}" id="soc3" readOnly="true">
+                                <f:selectItems value="#{row.bindings.TaxDetailId.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.TaxDetailId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.TaxPerc.name}" filterable="true"
+                                       sortable="true" headerText="Tax Perc" id="c26">
+                                         <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxPerc}"
+       id="it41" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxPerc.inputValue}"
+                                            label="#{bindings.LogDView1.hints.TaxPerc.label}"
+                                            required="#{bindings.LogDView1.hints.TaxPerc.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.TaxPerc.displayWidth}"
+                                            maximumLength="#{bindings.LogDView1.hints.TaxPerc.precision}"
+                                            shortDesc="#{bindings.LogDView1.hints.TaxPerc.tooltip}" id="it17" readOnly="true">
+                                <f:validator binding="#{row.bindings.TaxPerc.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.LogDView1.hints.TaxPerc.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.TaxAmount.name}" filterable="true"
+                                       sortable="true" headerText="Tax Amount"
+                                       id="c27">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxAmount}"
+       id="it42" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxAmount.inputValue}"
+                                            label="#{bindings.LogDView1.hints.TaxAmount.label}"
+                                            required="#{bindings.LogDView1.hints.TaxAmount.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.TaxAmount.displayWidth}"
+                                            maximumLength="#{bindings.LogDView1.hints.TaxAmount.precision}"
+                                            shortDesc="#{bindings.LogDView1.hints.TaxAmount.tooltip}" id="it18" readOnly="true">
+                                <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.LogDView1.hints.TaxAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.Dr.name}" filterable="true"
+                                       sortable="true" headerText="Dr" id="c28">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Dr}"
+       id="it43" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Dr.inputValue}"
+                                            label="#{bindings.LogDView1.hints.Dr.label}"
+                                            required="#{bindings.LogDView1.hints.Dr.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.Dr.displayWidth}"
+                                            maximumLength="#{bindings.LogDView1.hints.Dr.precision}"
+                                            shortDesc="#{bindings.LogDView1.hints.Dr.tooltip}" id="it19" readOnly="true">
+                                <f:validator binding="#{row.bindings.Dr.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.LogDView1.hints.Dr.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.Cr.name}" filterable="true"
+                                       sortable="true" headerText="Cr" id="c29">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Cr}"
+       id="it44" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Cr.inputValue}"
+                                            label="#{bindings.LogDView1.hints.Cr.label}"
+                                            required="#{bindings.LogDView1.hints.Cr.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.Cr.displayWidth}"
+                                            maximumLength="#{bindings.LogDView1.hints.Cr.precision}"
+                                            shortDesc="#{bindings.LogDView1.hints.Cr.tooltip}" id="it20" readOnly="true">
+                                <f:validator binding="#{row.bindings.Cr.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.LogDView1.hints.Cr.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.CreatedDate.name}" filterable="true"
+                                       sortable="true" headerText="Created Date"
+                                       id="c30">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.LogDView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CreatedDate.value}"
+                                              id="id13" placeholder="Search ">
+                                  <af:convertDateTime pattern="#{bindings.LogDView1.hints.CreatedDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.CreatedDate.inputValue}"
+                                            label="#{bindings.LogDView1.hints.CreatedDate.label}"
+                                            required="#{bindings.LogDView1.hints.CreatedDate.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.CreatedDate.displayWidth}"
+                                            shortDesc="#{bindings.LogDView1.hints.CreatedDate.tooltip}" id="id14" readOnly="true">
+                                <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.LogDView1.hints.CreatedDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.CreatedBy.name}" filterable="true"
+                                       sortable="true" headerText="Created By"
+                                       id="c31">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CreatedBy}"
+       id="it45" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
+                                            label="#{bindings.LogDView1.hints.CreatedBy.label}"
+                                            required="#{bindings.LogDView1.hints.CreatedBy.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.CreatedBy.displayWidth}"
+                                            maximumLength="#{bindings.LogDView1.hints.CreatedBy.precision}"
+                                            shortDesc="#{bindings.LogDView1.hints.CreatedBy.tooltip}" id="it21" readOnly="true">
+                                <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.LogDView1.hints.CreatedBy.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.UpdatedDate.name}" filterable="true"
+                                       sortable="true" headerText="Updated Date"
+                                       id="c32">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.LogDView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.UpdatedDate.value}"
+                                              id="id15" placeholder="Search ">
+                                  <af:convertDateTime pattern="#{bindings.LogDView1.hints.UpdatedDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.UpdatedDate.inputValue}"
+                                            label="#{bindings.LogDView1.hints.UpdatedDate.label}"
+                                            required="#{bindings.LogDView1.hints.UpdatedDate.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.UpdatedDate.displayWidth}"
+                                            shortDesc="#{bindings.LogDView1.hints.UpdatedDate.tooltip}" id="id16" readOnly="true">
+                                <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.LogDView1.hints.UpdatedDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.UpdatedBy.name}" filterable="true"
+                                       sortable="true" headerText="Updated By"
+                                       id="c33">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.UpdatedBy}"
+       id="it46" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.UpdatedBy.inputValue}"
+                                            label="#{bindings.LogDView1.hints.UpdatedBy.label}"
+                                            required="#{bindings.LogDView1.hints.UpdatedBy.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.UpdatedBy.displayWidth}"
+                                            maximumLength="#{bindings.LogDView1.hints.UpdatedBy.precision}"
+                                            shortDesc="#{bindings.LogDView1.hints.UpdatedBy.tooltip}" id="it22" readOnly="true">
+                                <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.LogDView1.hints.UpdatedBy.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.DeletedDate.name}" filterable="true"
+                                       sortable="true" headerText="Deleted Date"
+                                       id="c34">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.LogDView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DeletedDate.value}"
+                                              id="id17" placeholder="Search ">
+                                  <af:convertDateTime pattern="#{bindings.LogDView1.hints.DeletedDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.DeletedDate.inputValue}"
+                                            label="#{bindings.LogDView1.hints.DeletedDate.label}"
+                                            required="#{bindings.LogDView1.hints.DeletedDate.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.DeletedDate.displayWidth}"
+                                            shortDesc="#{bindings.LogDView1.hints.DeletedDate.tooltip}" id="id18" readOnly="true">
+                                <f:validator binding="#{row.bindings.DeletedDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.LogDView1.hints.DeletedDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.DeletedBy.name}" filterable="true"
+                                       sortable="true" headerText="Deleted By"
+                                       id="c35">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DeletedBy}"
+       id="it47" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.DeletedBy.inputValue}"
+                                            label="#{bindings.LogDView1.hints.DeletedBy.label}"
+                                            required="#{bindings.LogDView1.hints.DeletedBy.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.DeletedBy.displayWidth}"
+                                            maximumLength="#{bindings.LogDView1.hints.DeletedBy.precision}"
+                                            shortDesc="#{bindings.LogDView1.hints.DeletedBy.tooltip}" id="it23" readOnly="true">
+                                <f:validator binding="#{row.bindings.DeletedBy.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.LogDView1.hints.DeletedBy.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.LogDView1.hints.VSts.name}" filterable="true"
+                                       sortable="true" headerText="Status" id="c36">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.VSts}"
+       id="it48" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.VSts.inputValue}"
+                                            label="#{bindings.LogDView1.hints.VSts.label}"
+                                            required="#{bindings.LogDView1.hints.VSts.mandatory}"
+                                            columns="#{bindings.LogDView1.hints.VSts.displayWidth}"
+                                            maximumLength="#{bindings.LogDView1.hints.VSts.precision}"
+                                            shortDesc="#{bindings.LogDView1.hints.VSts.tooltip}" id="it24" readOnly="true">
+                                <f:validator binding="#{row.bindings.VSts.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                        </af:showDetailItem>
+            </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr9">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
+                       
+                    </af:gridCell>
+                  </af:gridRow>
+                
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11">
+                       
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
+

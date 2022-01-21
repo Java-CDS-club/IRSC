@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="User_LogPageDef"
+                Package="Fragments.Modules.User_Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="LogMView1" RangeSize="25" DataControl="AppModuleDataControl1" id="LogMView1Iterator"/>
+    <searchRegion Binds="LogMView1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="LogMView1Query"/>
+    <iterator Binds="LogDView1" RangeSize="25" DataControl="AppModuleDataControl1" id="LogDView1Iterator"/>
+    <searchRegion Binds="LogDView1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="LogDView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="LogMView1Iterator" id="LogMView1">
+      <nodeDefinition DefName="model.ERP.VO.LogMView" Name="LogMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="MId"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="ProjectId"/>
+          <Item Value="ChqNo"/>
+          <Item Value="ChqDate"/>
+          <Item Value="ClrDate"/>
+          <Item Value="Narration"/>
+          <Item Value="ImageName"/>
+          <Item Value="BankName"/>
+          <Item Value="JobMId"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="DeletedDate"/>
+          <Item Value="DeletedBy"/>
+          <Item Value="VSts"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="LogDView1Iterator" id="LogDView1">
+      <nodeDefinition DefName="model.ERP.VO.LogDView" Name="LogDView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="MId"/>
+          <Item Value="GlL4Id"/>
+          <Item Value="Description"/>
+          <Item Value="TaxDetailId"/>
+          <Item Value="TaxPerc"/>
+          <Item Value="TaxAmount"/>
+          <Item Value="Dr"/>
+          <Item Value="Cr"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="DeletedDate"/>
+          <Item Value="DeletedBy"/>
+          <Item Value="VSts"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

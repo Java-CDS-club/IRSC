@@ -456,6 +456,9 @@
     <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Dashboard.jsff" usageId="view_DashboardPageDef5"/>
     <page path="/WEB-INF/Fragments/Modules/Sales/Dashboard.jsff" usageId="view_DashboardPageDef6"/>
     <page path="/WEB-INF/Fragments/Modules/Payroll/Dashboard.jsff" usageId="view_DashboardPageDef7"/>
+    <page path="/WEB-INF/Task_Flows/Modules/User_Management/User_Log_TaskFlow.xml#User_Log_TaskFlow@ExecuteWithParams"
+          usageId="view_User_Log_TaskFlow_User_Log_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/User_Management/User_Log.jsff" usageId="view_User_LogPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -884,6 +887,9 @@
     <page id="view_DashboardPageDef5" path="Fragments.Modules.Sale_Purchase.DashboardPageDef"/>
     <page id="view_DashboardPageDef6" path="Fragments.Modules.Sales.DashboardPageDef"/>
     <page id="view_DashboardPageDef7" path="Fragments.Modules.Payroll.DashboardPageDef"/>
+    <page id="view_User_Log_TaskFlow_User_Log_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.User_Management.User_Log_TaskFlow_User_Log_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_User_LogPageDef" path="Fragments.Modules.User_Management.User_LogPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

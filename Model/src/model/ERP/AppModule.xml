@@ -1015,6 +1015,12 @@
   <ViewUsage
     Name="TblEmpLeavePkgView2"
     ViewObjectName="model.ERP.VO.TblEmpLeavePkgView"/>
+  <ViewUsage
+    Name="LogDView1"
+    ViewObjectName="model.ERP.VO.LogDView"/>
+  <ViewUsage
+    Name="LogMView1"
+    ViewObjectName="model.ERP.VO.LogMView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
