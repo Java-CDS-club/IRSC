@@ -459,6 +459,31 @@
     <page path="/WEB-INF/Task_Flows/Modules/User_Management/User_Log_TaskFlow.xml#User_Log_TaskFlow@ExecuteWithParams"
           usageId="view_User_Log_TaskFlow_User_Log_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/User_Management/User_Log.jsff" usageId="view_User_LogPageDef"/>
+    <page path="/Main_Pages/Modules/CRM/CRM.jsf" usageId="view_CRMPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/CRM/Department_Setup_TaskFlow.xml#Department_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Department_Setup_TaskFlow_Department_Setup_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/CRM/Designation_TaskFlow.xml#Designation_TaskFlow@ExecuteWithParams"
+          usageId="view_Designation_TaskFlow_Designation_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/CRM/Employee_Setup_TaskFlow.xml#Employee_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Employee_Setup_TaskFlow_Employee_Setup_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/CRM/Customer_Setup_TaskFlow.xml#Customer_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Customer_Setup_TaskFlow_Customer_Setup_TaskFlow_ExecuteWithParamsPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/CRM/Product_Services_TaskFlow.xml#Product_Services_TaskFlow@ExecuteWithParams"
+          usageId="view_Product_Services_TaskFlow_Product_Services_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/CRM/Customer_Ticket_TaskFlow.xml#Customer_Ticket_TaskFlow@ExecuteWithParams"
+          usageId="view_Customer_Ticket_TaskFlow_Customer_Ticket_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/CRM/Customer_Quotaion_TaskFlow.xml#Customer_Quotaion_TaskFlow@ExecuteWithParams"
+          usageId="view_Customer_Quotaion_TaskFlow_Customer_Quotaion_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/CRM/Job_Allocation_TaskFlow.xml#Job_Allocation_TaskFlow@ExecuteWithParams"
+          usageId="view_Job_Allocation_TaskFlow_Job_Allocation_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/CRM/Job_Followup_Status_TaskFlow.xml#Job_Followup_Status_TaskFlow@ExecuteWithParams"
+          usageId="view_Job_Followup_Status_TaskFlow_Job_Followup_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/CRM/Job_Completion_TaskFlow.xml#Job_Completion_TaskFlow@ExecuteWithParams"
+          usageId="view_Job_Completion_TaskFlow_Job_Completion_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/CRM/Department_Setup.jsff" usageId="view_Department_SetupPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/CRM/Designation.jsff" usageId="view_DesignationPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/CRM/Customer_Setup.jsff" usageId="view_Customer_SetupPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/CRM/Employee_Setup.jsff" usageId="view_Employee_SetupPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -890,6 +915,31 @@
     <page id="view_User_Log_TaskFlow_User_Log_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.User_Management.User_Log_TaskFlow_User_Log_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_User_LogPageDef" path="Fragments.Modules.User_Management.User_LogPageDef"/>
+    <page id="view_CRMPageDef" path="Main_Pages.Modules.CRM.CRMPageDef"/>
+    <page id="view_Department_Setup_TaskFlow_Department_Setup_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.CRM.Department_Setup_TaskFlow_Department_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Designation_TaskFlow_Designation_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.CRM.Designation_TaskFlow_Designation_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Employee_Setup_TaskFlow_Employee_Setup_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.CRM.Employee_Setup_TaskFlow_Employee_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Customer_Setup_TaskFlow_Customer_Setup_TaskFlow_ExecuteWithParamsPageDef1"
+          path="Task_Flows.Modules.CRM.Customer_Setup_TaskFlow_Customer_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Product_Services_TaskFlow_Product_Services_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.CRM.Product_Services_TaskFlow_Product_Services_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Customer_Ticket_TaskFlow_Customer_Ticket_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.CRM.Customer_Ticket_TaskFlow_Customer_Ticket_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Customer_Quotaion_TaskFlow_Customer_Quotaion_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.CRM.Customer_Quotaion_TaskFlow_Customer_Quotaion_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Job_Allocation_TaskFlow_Job_Allocation_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.CRM.Job_Allocation_TaskFlow_Job_Allocation_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Job_Followup_Status_TaskFlow_Job_Followup_Status_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.CRM.Job_Followup_Status_TaskFlow_Job_Followup_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Job_Completion_TaskFlow_Job_Completion_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.CRM.Job_Completion_TaskFlow_Job_Completion_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Department_SetupPageDef1" path="Fragments.Modules.CRM.Department_SetupPageDef"/>
+    <page id="view_DesignationPageDef1" path="Fragments.Modules.CRM.DesignationPageDef"/>
+    <page id="view_Customer_SetupPageDef1" path="Fragments.Modules.CRM.Customer_SetupPageDef"/>
+    <page id="view_Employee_SetupPageDef1" path="Fragments.Modules.CRM.Employee_SetupPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

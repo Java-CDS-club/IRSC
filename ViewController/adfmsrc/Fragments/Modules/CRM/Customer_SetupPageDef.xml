@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Customer_SetupPageDef"
+                Package="Fragments.Modules.CRM">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblRblCustView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblRblCustView1Iterator"/>
+    <searchRegion Binds="TblRblCustView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRblCustView1Query"/>
+    <iterator Binds="TblRblCustDView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblRblCustDView2Iterator"/>
+    <searchRegion Binds="TblRblCustDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblRblCustDView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS11">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS110">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Type">
+      <AttrNames>
+        <Item Value="Type"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblRblCustView1Iterator" StaticList="false" Uses="LOV_GlL4Id" id="GlL4Id" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="CustBuss">
+      <AttrNames>
+        <Item Value="CustBuss"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="ContactPer">
+      <AttrNames>
+        <Item Value="ContactPer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Designation">
+      <AttrNames>
+        <Item Value="Designation"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Cnic">
+      <AttrNames>
+        <Item Value="Cnic"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Cell">
+      <AttrNames>
+        <Item Value="Cell"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Fax">
+      <AttrNames>
+        <Item Value="Fax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Ntn">
+      <AttrNames>
+        <Item Value="Ntn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Strn">
+      <AttrNames>
+        <Item Value="Strn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="EMail">
+      <AttrNames>
+        <Item Value="EMail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="Url">
+      <AttrNames>
+        <Item Value="Url"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblRblCustView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblRblCustView1Iterator" id="CompanyId">
+      <AttrNames>
+        <Item Value="CompanyId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblRblCustView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblRblCustView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblRblCustView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblRblCustView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblRblCustView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRblCustView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblRblCustView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblRblCustView1Iterator" id="TblRblCustView1">
+      <nodeDefinition DefName="model.ERP.VO.TblRblCustView" Name="TblRblCustView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Type"/>
+          <Item Value="GlL4Id"/>
+          <Item Value="CustBuss"/>
+          <Item Value="ContactPer"/>
+          <Item Value="Phone"/>
+          <Item Value="Designation"/>
+          <Item Value="Cnic"/>
+          <Item Value="Cell"/>
+          <Item Value="Fax"/>
+          <Item Value="Ntn"/>
+          <Item Value="Strn"/>
+          <Item Value="EMail"/>
+          <Item Value="Url"/>
+          <Item Value="ProjectId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblRblCustDView2Iterator" id="TblRblCustDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblRblCustDView" Name="TblRblCustDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblRblCustDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblRblCustDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblRblCustDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

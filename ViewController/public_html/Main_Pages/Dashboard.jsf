@@ -109,10 +109,12 @@
                                 <!--<af:link  id="pt_l12" icon="#{resource['images:gl.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf" text="General Ledger" iconPosition="top"/>-->
-                        <af:spacer width="10" height="10" id="s5"/>
-                         <af:button  id="l1" icon="#{resource['images:Uploader.png']}"
+                        
+                        
+                        <af:spacer width="10" height="10" id="s6"/>
+                         <af:button  id="b3" icon="#{resource['images:Uploader.png']}"
                         styleClass="af|modulebutton" inlineStyle="font-size:14px;"
-                        action="/faces/Main_Pages/Modules/Donation/Donation.jsf" text="Drawer" iconPosition="top"/>
+                        action="/faces/Main_Pages/Modules/CRM/CRM.jsf" text="CRM" iconPosition="top"/>
                        
                         <!--<af:link  id="pt_l31" icon="#{resource['images:Inventory.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
@@ -129,7 +131,12 @@
                         styleClass="af|modulebutton"
                         action="/faces/Main_Pages/Modules/Sales/Sales.jsf" text="Sales" iconPosition="top"/>
                         
-                         <af:spacer width="10" height="10" id="s12"/>
+                        <af:spacer width="10" height="10" id="s5"/>
+                         <af:button  id="l1" icon="#{resource['images:Uploader.png']}"
+                        styleClass="af|modulebutton" inlineStyle="font-size:14px;"
+                        action="/faces/Main_Pages/Modules/Donation/Donation.jsf" text="Drawer" iconPosition="top"/>
+                        
+                         <!--<af:spacer width="10" height="10" id="s12"/>-->
                            <af:button  id="pt_7l1" icon="#{resource['images:rpt.png']}"
                         styleClass="af|modulebutton" inlineStyle="font-size:14px;"
                         action="/faces/Main_Pages/Modules/Reports/Reports.jsf" text="Reports" iconPosition="top"/>     

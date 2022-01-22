@@ -154,6 +154,9 @@
   <ViewUsage
     Name="Department_OpenFragment1"
     ViewObjectName="model.UserRole.VO.Department_OpenFragment"/>
+  <ViewUsage
+    Name="Pages_CRM1"
+    ViewObjectName="model.UserRole.VO.Pages_CRM"/>
   <ViewLinkUsage
     Name="FkPagesLink1"
     ViewLinkObjectName="model.UserRole.VO.FkPagesLink"
