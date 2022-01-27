@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkJobAllProdMLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkJobAllProdMAssoc">
+  <ViewLinkDefEnd
+    Name="TblJobAllMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblJobAllMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblJobAllMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblJobAllMView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblJobAllProdView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblJobAllProdView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblJobAllProdView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblJobAllProdView.JobAllMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

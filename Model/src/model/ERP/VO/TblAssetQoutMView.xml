@@ -20,11 +20,12 @@
        TblAssetQoutM.CREATED_DATE, 
        TblAssetQoutM.CREATED_BY, 
        TblAssetQoutM.UPDATED_DATE, 
-       TblAssetQoutM.UPDATED_BY"
+       TblAssetQoutM.UPDATED_BY, 
+       TblAssetQoutM.COMPANY_ID"
   FromList="TBL_ASSET_QOUT_M TblAssetQoutM"
-  Where="TblAssetQoutM.PROJECT_ID= nvl(:getProId,TblAssetQoutM.PROJECT_ID)">
+  Where="TblAssetQoutM.COMPANY_ID = nvl(:P_COMPANY_ID,TblAssetQoutM.COMPANY_ID)">
   <Variable
-    Name="getProId"
+    Name="P_COMPANY_ID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
@@ -230,6 +231,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblAssetQoutM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblAssetQoutM"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblAssetQoutDView"
     ViewLink="model.ERP.VO.FkAssetQoutDMLink"

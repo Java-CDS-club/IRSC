@@ -4,26 +4,27 @@
     <af:document title="Fixed Assets" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1" usesUpload="true">
-            <af:panelGridLayout id="pgl2">
-                <af:gridRow height="160px" id="gr2">
-                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+            <af:panelGridLayout id="pgl2" styleClass="backColor">
+                <af:gridRow height="85px" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1" styleClass="backColor">
                         <!-- Header -->
                         <af:pageTemplate viewId="/Main_Pages/Header.jsf" id="pt1"/>
+                        <?audit suppress oracle.adf.faces.pt-missing-model?>
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow height="100%" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2" styleClass="backColor">
-                        <af:panelSplitter orientation="horizontal" splitterPosition="228" id="ps1">
+                        <af:panelSplitter orientation="horizontal" splitterPosition="220" id="ps1">
                             <f:facet name="first">
                                 <!-- Left -->
-                                <af:panelAccordion discloseMany="false" id="pa4" styleClass="sidebar_style">
-                                    <af:showDetailItem id="sdi1" text="Fixed Assets" styleClass="theme_color sidebar_detailitem_Style">
+                                <af:panelAccordion discloseMany="false" id="pa4" >
+                                    <af:showDetailItem id="sdi1" text="Fixed Assets" styleClass="sidebar_detailitem_Style">
                                         <af:spacer width="190" height="10" id="s1"/>
                                         <af:iterator id="i2" value="#{bindings.Pages_Fixed_Assets1.collectionModel}" var="item"
                                                      varStatus="status">
-                                            <af:panelGroupLayout id="pgl1" layout="vertical" inlineStyle="padding: 4%;">
+                                            <af:panelGroupLayout id="pgl1" layout="vertical" inlineStyle="padding: 1%;">
                                                 <af:button text="#{item.bindings.PagesName.inputValue}" id="b1"
-                                                           styleClass="sidebar_button"
+                                                           styleClass="sidebar_button" iconPosition="leading"
                                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{item.bindings.PageIcon.inputValue}?ln=images"
                                                            actionListener="#{viewScope.FixedAsstesSidebarBean.fragmentCall}">
                                                     <f:attribute name="link" value="#{item.bindings.PageLink.inputValue}"/>

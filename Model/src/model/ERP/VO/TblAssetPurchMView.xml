@@ -26,15 +26,17 @@
        TblAssetPurchM.UPDATED_BY, 
        TblAssetPurchM.WARRANTY_UPTO, 
        TblAssetPurchM.ASSET_TYPE, 
-       TblAssetPurchM.ASSET_WRNTY_CLAIM_M_ID"
+       TblAssetPurchM.ASSET_WRNTY_CLAIM_M_ID, 
+       TblAssetPurchM.COMPANY_ID"
   FromList="TBL_ASSET_PURCH_M TblAssetPurchM"
-  Where="TblAssetPurchM.PROJECT_ID= nvl(:getProId,TblAssetPurchM.PROJECT_ID)">
+  Where="TblAssetPurchM.COMPANY_ID = nvl(:P_COMPANY_ID,TblAssetPurchM.COMPANY_ID)">
   <Variable
-    Name="getProId"
+    Name="P_COMPANY_ID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="TblAssetPurchMView"/>
   </Variable>
   <ViewAccessor
@@ -403,6 +405,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblAssetPurchM"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblAssetPurchDView"
     ViewLink="model.ERP.VO.FkAssetPurchDMLink"

@@ -36,6 +36,7 @@ public class TblAssetReturnMImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        CompanyId,
         TblAssetReturnD,
         TblAssetPurchM;
         private static AttributesEnum[] vals = null;
@@ -75,6 +76,7 @@ public class TblAssetReturnMImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int TBLASSETRETURND = AttributesEnum.TblAssetReturnD.index();
     public static final int TBLASSETPURCHM = AttributesEnum.TblAssetPurchM.index();
 
@@ -244,13 +246,6 @@ public class TblAssetReturnMImpl extends EntityImpl {
         return (Timestamp) getAttributeInternal(CREATEDDATE);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for CreatedDate.
-     * @param value value to set the CreatedDate
-     */
-    public void setCreatedDate(Timestamp value) {
-        setAttributeInternal(CREATEDDATE, value);
-    }
 
     /**
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
@@ -276,13 +271,6 @@ public class TblAssetReturnMImpl extends EntityImpl {
         return (Timestamp) getAttributeInternal(UPDATEDDATE);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for UpdatedDate.
-     * @param value value to set the UpdatedDate
-     */
-    public void setUpdatedDate(Timestamp value) {
-        setAttributeInternal(UPDATEDDATE, value);
-    }
 
     /**
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
@@ -301,6 +289,22 @@ public class TblAssetReturnMImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CompanyId, using the alias name CompanyId.
+     * @return the value of CompanyId
+     */
+    public BigDecimal getCompanyId() {
+        return (BigDecimal) getAttributeInternal(COMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanyId.
+     * @param value value to set the CompanyId
+     */
+    public void setCompanyId(BigDecimal value) {
+        setAttributeInternal(COMPANYID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblAssetReturnD() {
@@ -310,14 +314,14 @@ public class TblAssetReturnMImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblAssetPurchM() {
-        return (EntityImpl) getAttributeInternal(TBLASSETPURCHM);
+    public TblAssetPurchMImpl getTblAssetPurchM() {
+        return (TblAssetPurchMImpl) getAttributeInternal(TBLASSETPURCHM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblAssetPurchM(EntityImpl value) {
+    public void setTblAssetPurchM(TblAssetPurchMImpl value) {
         setAttributeInternal(TBLASSETPURCHM, value);
     }
 

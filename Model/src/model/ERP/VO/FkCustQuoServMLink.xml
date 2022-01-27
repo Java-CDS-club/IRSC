@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkCustQuoServMLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkCustQuoServMAssoc">
+  <ViewLinkDefEnd
+    Name="TblCustQuoMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblCustQuoMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblCustQuoMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblCustQuoMView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblCustQuoServView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblCustQuoServView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblCustQuoServView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblCustQuoServView.CustQuoMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -22,7 +22,8 @@
        TblSaleServM.GL_L4_ID, 
        TblSaleServM.COMPANY_ID, 
        TblSaleServM.RBL_CUST_D_ID, 
-       TblSaleServM.INV_NO"
+       TblSaleServM.INV_NO, 
+       TblSaleServM.IMAGE"
   FromList="TBL_SALE_SERV_M TblSaleServM"
   Where="TblSaleServM.COMPANY_ID=nvl(:P_COMPANY_ID,TblSaleServM.COMPANY_ID)"
   OrderBy="TblSaleServM.ID desc">
@@ -242,6 +243,12 @@
     EntityAttrName="InvNo"
     EntityUsage="TblSaleServM"
     AliasName="INV_NO"/>
+  <ViewAttribute
+    Name="Image"
+    PrecisionRule="true"
+    EntityAttrName="Image"
+    EntityUsage="TblSaleServM"
+    AliasName="IMAGE"/>
   <ViewLinkAccessor
     Name="TblSaleServDView"
     ViewLink="model.ERP.VO.FkSaleServDMLink"

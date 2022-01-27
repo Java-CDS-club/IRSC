@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblJobAllM"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_JOB_ALL_M"
+  AliasName="TblJobAllM"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_ALL_M"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="Vno"
+    ColumnName="VNO"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_ALL_M"/>
+  <Attribute
+    Name="Vtp"
+    Precision="3"
+    ColumnName="VTP"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_JOB_ALL_M"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_JOB_ALL_M"/>
+  <Attribute
+    Name="Narration"
+    Precision="300"
+    ColumnName="NARRATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_JOB_ALL_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjectId"
+    ColumnName="PROJECT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_ALL_M"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_JOB_ALL_M"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_ALL_M"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_JOB_ALL_M"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_ALL_M"/>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_ALL_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblJobAllMRow"/>
+  </Attribute>
+  <Attribute
+    Name="CustQuoId"
+    ColumnName="CUST_QUO_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_ALL_M"/>
+  <Attribute
+    Name="SvrId"
+    ColumnName="SVR_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_JOB_ALL_M"/>
+  <Attribute
+    Name="JobStart"
+    ColumnName="JOB_START"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_JOB_ALL_M"/>
+  <Attribute
+    Name="JobEnd"
+    ColumnName="JOB_END"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_JOB_ALL_M"/>
+  <AccessorAttribute
+    Name="TblCustQuoM"
+    Association="model.ERP.EO.FkJobAllCustAssoc"
+    AssociationEnd="model.ERP.EO.FkJobAllCustAssoc.TblCustQuoM"
+    AssociationOtherEnd="model.ERP.EO.FkJobAllCustAssoc.TblJobAllM"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblJobAllProd"
+    Association="model.ERP.EO.FkJobAllProdMAssoc"
+    AssociationEnd="model.ERP.EO.FkJobAllProdMAssoc.TblJobAllProd"
+    AssociationOtherEnd="model.ERP.EO.FkJobAllProdMAssoc.TblJobAllM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblJobAllServ"
+    Association="model.ERP.EO.FkJobAllServMAssoc"
+    AssociationEnd="model.ERP.EO.FkJobAllServMAssoc.TblJobAllServ"
+    AssociationOtherEnd="model.ERP.EO.FkJobAllServMAssoc.TblJobAllM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblJobCompM"
+    Association="model.ERP.EO.FkJobCompAllAssoc"
+    AssociationEnd="model.ERP.EO.FkJobCompAllAssoc.TblJobCompM"
+    AssociationOtherEnd="model.ERP.EO.FkJobCompAllAssoc.TblJobAllM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblJobStsM"
+    Association="model.ERP.EO.FkJobStsAllAssoc"
+    AssociationEnd="model.ERP.EO.FkJobStsAllAssoc.TblJobStsM"
+    AssociationOtherEnd="model.ERP.EO.FkJobStsAllAssoc.TblJobAllM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkJobAllMId"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_JOB_ALL_M_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblJobAllM.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkJobAllCompany">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_COMPANY_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_JOB_ALL_COMPANY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblJobAllM.CompanyId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkJobAllCust">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_CUST_QUO_M_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_JOB_ALL_CUST"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblJobAllM.CustQuoId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkJobAllProj">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_PROJECT"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_JOB_ALL_PROJ"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblJobAllM.ProjectId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkJobAllSvr">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_EMP_ID"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_JOB_ALL_SVR"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblJobAllM.SvrId"/>
+    </AttrArray>
+  </Key>
+</Entity>

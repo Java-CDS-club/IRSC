@@ -37,10 +37,10 @@ public class TblAssetOrderMImpl extends EntityImpl {
         UpdatedBy,
         ProjectId,
         AssetApprMId,
+        CompanyId,
         TblAssetOrderD,
         TblAssetPurchM;
-        static AttributesEnum[] vals = null;
-        ;
+        private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -78,6 +78,7 @@ public class TblAssetOrderMImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
     public static final int ASSETAPPRMID = AttributesEnum.AssetApprMId.index();
+    public static final int COMPANYID = AttributesEnum.CompanyId.index();
     public static final int TBLASSETORDERD = AttributesEnum.TblAssetOrderD.index();
     public static final int TBLASSETPURCHM = AttributesEnum.TblAssetPurchM.index();
 
@@ -302,6 +303,22 @@ public class TblAssetOrderMImpl extends EntityImpl {
      */
     public void setAssetApprMId(BigDecimal value) {
         setAttributeInternal(ASSETAPPRMID, value);
+    }
+
+    /**
+     * Gets the attribute value for CompanyId, using the alias name CompanyId.
+     * @return the value of CompanyId
+     */
+    public BigDecimal getCompanyId() {
+        return (BigDecimal) getAttributeInternal(COMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanyId.
+     * @param value value to set the CompanyId
+     */
+    public void setCompanyId(BigDecimal value) {
+        setAttributeInternal(COMPANYID, value);
     }
 
     /**

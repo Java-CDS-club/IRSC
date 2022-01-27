@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkJobCompServMAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblJobCompM"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.EO.TblJobCompM">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblJobCompM"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblJobCompM.PkJobCompMId"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblJobCompM.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblJobCompServ"
+    Cardinality="-1"
+    Owner="model.ERP.EO.TblJobCompServ">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblJobCompServ"/>
+      <Attr Name="_foreignKey" Value="model.ERP.EO.TblJobCompServ.FkJobCompServM"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblJobCompServ.JobCompMId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

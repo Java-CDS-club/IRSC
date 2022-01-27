@@ -484,6 +484,12 @@
     <page path="/WEB-INF/Fragments/Modules/CRM/Designation.jsff" usageId="view_DesignationPageDef1"/>
     <page path="/WEB-INF/Fragments/Modules/CRM/Customer_Setup.jsff" usageId="view_Customer_SetupPageDef1"/>
     <page path="/WEB-INF/Fragments/Modules/CRM/Employee_Setup.jsff" usageId="view_Employee_SetupPageDef1"/>
+    <page path="/WEB-INF/Fragments/Modules/CRM/Product_Services.jsff" usageId="view_Product_ServicesPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/CRM/Customer_Ticket.jsff" usageId="view_Customer_TicketPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/CRM/Customer_Quotaion.jsff" usageId="view_Customer_QuotaionPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/CRM/Job_Allocation.jsff" usageId="view_Job_AllocationPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/CRM/Job_Followup_Status.jsff" usageId="view_Job_Followup_StatusPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/CRM/Job_Completion.jsff" usageId="view_Job_CompletionPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -940,6 +946,12 @@
     <page id="view_DesignationPageDef1" path="Fragments.Modules.CRM.DesignationPageDef"/>
     <page id="view_Customer_SetupPageDef1" path="Fragments.Modules.CRM.Customer_SetupPageDef"/>
     <page id="view_Employee_SetupPageDef1" path="Fragments.Modules.CRM.Employee_SetupPageDef"/>
+    <page id="view_Product_ServicesPageDef" path="Fragments.Modules.CRM.Product_ServicesPageDef"/>
+    <page id="view_Customer_TicketPageDef" path="Fragments.Modules.CRM.Customer_TicketPageDef"/>
+    <page id="view_Customer_QuotaionPageDef" path="Fragments.Modules.CRM.Customer_QuotaionPageDef"/>
+    <page id="view_Job_AllocationPageDef" path="Fragments.Modules.CRM.Job_AllocationPageDef"/>
+    <page id="view_Job_Followup_StatusPageDef" path="Fragments.Modules.CRM.Job_Followup_StatusPageDef"/>
+    <page id="view_Job_CompletionPageDef" path="Fragments.Modules.CRM.Job_CompletionPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

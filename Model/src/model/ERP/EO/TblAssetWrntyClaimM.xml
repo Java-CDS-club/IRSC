@@ -117,6 +117,18 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_ASSET_WRNTY_CLAIM_M"/>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSET_WRNTY_CLAIM_M">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblAssetWrntyClaimMRow"/>
+  </Attribute>
   <AccessorAttribute
     Name="TblAssetWrntyClaimD"
     Association="model.ERP.EO.FkAssetWrntyClaimDMAssoc"

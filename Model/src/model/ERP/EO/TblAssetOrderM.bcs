@@ -4,9 +4,12 @@ package model.ERP.EO
 
 import oracle.jbo.script.annotation.TransientValueExpression;
 
-@TransientValueExpression(attributeName="ProjectId")
-def ProjectId_ExpressionScript_Expression()
+
+
+
+@TransientValueExpression(attributeName="CompanyId")
+def CompanyId_ExpressionScript_Expression()
 {
-adf.context.current.sessionScope.get('sessPrID')
+adf.context.current.sessionScope.get('sessCoID')
 }
 

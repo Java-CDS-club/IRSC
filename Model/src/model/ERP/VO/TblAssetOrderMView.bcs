@@ -4,9 +4,9 @@ package model.ERP.VO
 
 import oracle.jbo.script.annotation.VariableExpression;
 
-@VariableExpression(path="getProId")
-def getProId_VariableScript_Variable()
+@VariableExpression(path="P_COMPANY_ID")
+def P_COMPANY_ID_VariableScript_Variable()
 {
-adf.context.current.sessionScope.get('sessPrID')
+adf.context.current.sessionScope.get('sessCoID')
 }
 

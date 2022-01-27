@@ -22,15 +22,17 @@
        TblAssetOrderM.UPDATED_DATE, 
        TblAssetOrderM.UPDATED_BY, 
        TblAssetOrderM.PROJECT_ID, 
-       TblAssetOrderM.ASSET_APPR_M_ID"
+       TblAssetOrderM.ASSET_APPR_M_ID, 
+       TblAssetOrderM.COMPANY_ID"
   FromList="TBL_ASSET_ORDER_M TblAssetOrderM"
-  Where="TblAssetOrderM.PROJECT_ID= nvl(:getProId,TblAssetOrderM.PROJECT_ID)">
+  Where="TblAssetOrderM.COMPANY_ID = nvl(:P_COMPANY_ID,TblAssetOrderM.COMPANY_ID)">
   <Variable
-    Name="getProId"
+    Name="P_COMPANY_ID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="TblAssetOrderMView"/>
   </Variable>
   <ViewAccessor
@@ -283,6 +285,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblAssetOrderM"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblAssetOrderDView"
     ViewLink="model.ERP.VO.FkAssetOrderDMLink"

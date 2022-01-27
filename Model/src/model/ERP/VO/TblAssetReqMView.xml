@@ -19,15 +19,17 @@
        TblAssetReqM.CREATED_DATE, 
        TblAssetReqM.CREATED_BY, 
        TblAssetReqM.UPDATED_DATE, 
-       TblAssetReqM.UPDATED_BY"
+       TblAssetReqM.UPDATED_BY, 
+       TblAssetReqM.COMPANY_ID"
   FromList="TBL_ASSET_REQ_M TblAssetReqM"
-  Where="TblAssetReqM.PROJECT_ID= nvl(:getProId,TblAssetReqM.PROJECT_ID)">
+  Where="TblAssetReqM.COMPANY_ID = nvl(:P_COMPANY_ID,TblAssetReqM.COMPANY_ID)">
   <Variable
-    Name="getProId"
+    Name="P_COMPANY_ID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="TblAssetReqMView"/>
   </Variable>
   <ViewAccessor
@@ -193,6 +195,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblAssetReqM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblAssetReqM"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblAssetReqDView"
     ViewLink="model.ERP.VO.FkAssetReqDMLink"

@@ -286,7 +286,8 @@
                                           required="#{bindings.PassNo.hints.mandatory}"
                                           columns="#{bindings.PassNo.hints.displayWidth}"
                                           maximumLength="#{bindings.PassNo.hints.precision}"
-                                          shortDesc="#{bindings.PassNo.hints.tooltip}" id="it51">
+                                          shortDesc="#{bindings.PassNo.hints.tooltip}" id="it51"
+                                          contentStyle="width:150px;">
                               <f:validator binding="#{bindings.PassNo.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s23"/>
@@ -294,7 +295,8 @@
                                           required="#{bindings.PassExp.hints.mandatory}"
                                           columns="#{bindings.PassExp.hints.displayWidth}"
                                           maximumLength="#{bindings.PassExp.hints.precision}"
-                                          shortDesc="#{bindings.PassExp.hints.tooltip}" id="it52">
+                                          shortDesc="#{bindings.PassExp.hints.tooltip}" id="it52"
+                                           contentStyle="width:150px;">
                               <f:validator binding="#{bindings.PassExp.validator}"/>
                               <af:convertDateTime pattern="#{bindings.PassExp.format}"/>
                             </af:inputText>
@@ -303,7 +305,8 @@
                                           required="#{bindings.VisaExp.hints.mandatory}"
                                           columns="#{bindings.VisaExp.hints.displayWidth}"
                                           maximumLength="#{bindings.VisaExp.hints.precision}"
-                                          shortDesc="#{bindings.VisaExp.hints.tooltip}" id="it53">
+                                          shortDesc="#{bindings.VisaExp.hints.tooltip}" id="it53"
+                                          contentStyle="width:150px;">
                               <f:validator binding="#{bindings.VisaExp.validator}"/>
                               <af:convertDateTime pattern="#{bindings.VisaExp.format}"/>
                             </af:inputText>
@@ -374,7 +377,7 @@
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
                             <f:facet name="footer">
-                              <af:panelGroupLayout layout="horizontal" halign="center" id="pgl5">
+                              <af:panelGroupLayout layout="horizontal"   id="pgl5">
                                 <af:button actionListener="#{bindings.First.execute}" text="First" styleClass="af|Voucheractionbutton"
                                            disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b6"/>
                                 <af:button actionListener="#{bindings.Previous.execute}" text="Previous" styleClass="af|Voucheractionbutton"
@@ -489,7 +492,7 @@
                           </af:table>
                            <af:spacer width="5" height="10" id="s3"/>
                         
-			<af:panelGroupLayout id="pgl6" halign="center" layout="horizontal">
+			<af:panelGroupLayout id="pgl6"   layout="horizontal">
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
@@ -621,7 +624,7 @@
                           </af:table>
                            <af:spacer width="5" height="10" id="s17"/>
                         
-			<af:panelGroupLayout id="pgl7" halign="center" layout="horizontal">
+			<af:panelGroupLayout id="pgl7"   layout="horizontal">
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
@@ -733,7 +736,7 @@
                           </af:table>
                            <af:spacer width="5" height="10" id="s19"/>
                         
-			<af:panelGroupLayout id="pgl8" halign="center" layout="horizontal">
+			<af:panelGroupLayout id="pgl8"   layout="horizontal">
                             <af:iterator id="i4" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
@@ -813,7 +816,7 @@
                           </af:table>
                           <af:spacer width="5" height="10" id="s21"/>
                         
-			<af:panelGroupLayout id="pgl9" halign="center" layout="horizontal">
+			<af:panelGroupLayout id="pgl9"   layout="horizontal">
                             <af:iterator id="i5" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
@@ -980,7 +983,7 @@
                           </af:table>
                            <af:spacer width="5" height="10" id="s26"/>
                         
-			<af:panelGroupLayout id="pgl10" halign="center" layout="horizontal">
+			<af:panelGroupLayout id="pgl10"   layout="horizontal">
                             <af:iterator id="i6" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
@@ -1132,7 +1135,7 @@
                           </af:table>
                            <af:spacer width="5" height="10" id="s28"/>
                         
-			<af:panelGroupLayout id="pgl11" halign="center" layout="horizontal">
+			<af:panelGroupLayout id="pgl11"   layout="horizontal">
                             <af:iterator id="i7" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
@@ -1225,7 +1228,7 @@
                           </af:table>
                          <af:spacer width="5" height="10" id="s32"/>
                         
-			<af:panelGroupLayout id="pgl13" halign="center" layout="horizontal">
+			<af:panelGroupLayout id="pgl13"   layout="horizontal">
                             <af:iterator id="i9" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
@@ -1409,7 +1412,7 @@
                           </af:table>
                           <af:spacer width="5" height="10" id="s30"/>
                         
-			<af:panelGroupLayout id="pgl12" halign="center" layout="horizontal">
+			<af:panelGroupLayout id="pgl12"   layout="horizontal">
                             <af:iterator id="i8" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
@@ -1564,7 +1567,7 @@
                           </af:table>
                           <af:spacer width="5" height="10" id="s34"/>
                         
-			<af:panelGroupLayout id="pgl14" halign="center" layout="horizontal">
+			<af:panelGroupLayout id="pgl14"   layout="horizontal">
                             <af:iterator id="i10" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
@@ -1662,7 +1665,7 @@
                           </af:table>
                           <af:spacer width="5" height="10" id="s36"/>
                         
-			<af:panelGroupLayout id="pgl15" halign="center" layout="horizontal">
+			<af:panelGroupLayout id="pgl15"   layout="horizontal">
                             <af:iterator id="i11" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
