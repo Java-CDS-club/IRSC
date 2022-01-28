@@ -120,7 +120,7 @@
                         
                         
                         <af:spacer width="10" height="10" id="s6"/>
-                         <af:button  id="b3" icon="#{resource['images:Uploader.png']}"
+                         <af:button  id="b3" icon="#{resource['images:crm.png']}"
                         styleClass="af|modulebutton" inlineStyle="font-size:14px;"
                         action="/faces/Main_Pages/Modules/CRM/CRM.jsf" text="CRM" iconPosition="top"/>
                        

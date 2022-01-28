@@ -9,18 +9,15 @@
     <iterator Binds="TblAssetL1View1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblAssetL1View1Iterator"/>
     <searchRegion Binds="TblAssetL1View1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssetL1View1Query"/>
-    <iterator Binds="TblAssetL2View2" RangeSize="8" DataControl="AppModuleDataControl1" id="TblAssetL2View2Iterator"/>
-    <searchRegion Binds="TblAssetL2View2Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssetL2View2Query"/>
-    <iterator Binds="TblAssetL3View3" RangeSize="8" DataControl="AppModuleDataControl1" id="TblAssetL3View3Iterator"/>
-    <searchRegion Binds="TblAssetL3View3Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssetL3View3Query"/>
-    <iterator Binds="TblAssetL4View3" RangeSize="8" DataControl="AppModuleDataControl1" id="TblAssetL4View3Iterator"/>
-    <searchRegion Binds="TblAssetL4View3Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssetL4View3Query"/>
-    <iterator Binds="TblAssetL4View1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblAssetL4View1Iterator"/>
+    <iterator Binds="TblAssetL2View1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblAssetL2View1Iterator"/>
+    <searchRegion Binds="TblAssetL2View1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssetL2View1Query"/>
+    <iterator Binds="TblAssetL3View1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblAssetL3View1Iterator"/>
+    <searchRegion Binds="TblAssetL3View1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssetL3View1Query"/>
     <searchRegion Binds="TblAssetL4View1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssetL4View1Query"/>
+    <iterator Binds="TblAssetL4View1" RangeSize="8" DataControl="AppModuleDataControl1" id="TblAssetL4View1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -49,49 +46,49 @@
     <action IterBinding="TblAssetL1View1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
-    <tree IterBinding="TblAssetL2View2Iterator" id="TblAssetL2View2">
-      <nodeDefinition DefName="model.ERP.VO.TblAssetL2View" Name="TblAssetL2View20">
+    <tree IterBinding="TblAssetL2View1Iterator" id="TblAssetL2View1">
+      <nodeDefinition DefName="model.ERP.VO.TblAssetL2View" Name="TblAssetL2View10">
         <AttrNames>
+          <Item Value="AssetL2Id"/>
           <Item Value="AssetL1Id"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblAssetL2View1Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblAssetL2View1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblAssetL2View1Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblAssetL3View1Iterator" id="TblAssetL3View1">
+      <nodeDefinition DefName="model.ERP.VO.TblAssetL3View" Name="TblAssetL3View10">
+        <AttrNames>
+          <Item Value="AssetL3Id"/>
           <Item Value="AssetL2Id"/>
           <Item Value="Name"/>
           <Item Value="Ast"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblAssetL2View2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+    <action IterBinding="TblAssetL3View1Iterator" id="CreateInsert2" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="TblAssetL2View2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblAssetL2View2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <tree IterBinding="TblAssetL3View3Iterator" id="TblAssetL3View3">
-      <nodeDefinition DefName="model.ERP.VO.TblAssetL3View" Name="TblAssetL3View30">
+    <action IterBinding="TblAssetL3View1Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblAssetL3View1Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblAssetL4View1Iterator" id="TblAssetL4View11">
+      <nodeDefinition DefName="model.ERP.VO.TblAssetL4View" Name="TblAssetL4View110">
         <AttrNames>
-          <Item Value="AssetL2Id"/>
-          <Item Value="AssetL3Id"/>
-          <Item Value="Name"/>
-          <Item Value="Ast"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action IterBinding="TblAssetL3View3Iterator" id="CreateInsert2" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblAssetL3View3Iterator" id="Execute2" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblAssetL3View3Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <tree IterBinding="TblAssetL4View3Iterator" id="TblAssetL4View3">
-      <nodeDefinition DefName="model.ERP.VO.TblAssetL4View" Name="TblAssetL4View30">
-        <AttrNames>
-          <Item Value="AssetL3Id"/>
           <Item Value="AssetL4Id"/>
+          <Item Value="AssetL3Id"/>
           <Item Value="Name"/>
-          <Item Value="UomId"/>
           <Item Value="Ast"/>
+          <Item Value="UomId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblAssetL4View3Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+    <action IterBinding="TblAssetL4View1Iterator" id="CreateInsert3" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="TblAssetL4View3Iterator" id="Execute3" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblAssetL4View3Iterator" id="Delete3" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="TblAssetL4View1Iterator" id="Execute3" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblAssetL4View1Iterator" id="Delete3" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <tree IterBinding="TblAssetL4View1Iterator" id="TblAssetL4View1">
       <nodeDefinition DefName="model.ERP.VO.TblAssetL4View" Name="TblAssetL4View10">
         <AttrNames>
@@ -103,5 +100,77 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TblAssetL1View1Iterator" id="AssetL1Id">
+      <AttrNames>
+        <Item Value="AssetL1Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblAssetL1View1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblAssetL1View1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblAssetL1View1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblAssetL1View1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblAssetL1View1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblAssetL1View1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <list IterBinding="TblAssetL2View1Iterator" StaticList="false" Uses="LOV_AssetL1Id" id="AssetL1Id1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblAssetL2View1Iterator" id="AssetL2Id">
+      <AttrNames>
+        <Item Value="AssetL2Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblAssetL2View1Iterator" id="Name1">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblAssetL2View1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblAssetL2View1Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblAssetL2View1Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblAssetL2View1Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblAssetL2View1Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <list IterBinding="TblAssetL3View1Iterator" StaticList="false" Uses="LOV_AssetL2Id" id="AssetL2Id1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblAssetL3View1Iterator" id="AssetL3Id">
+      <AttrNames>
+        <Item Value="AssetL3Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblAssetL3View1Iterator" id="Name2">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblAssetL3View1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast2" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblAssetL3View1Iterator" id="First2" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblAssetL3View1Iterator" id="Previous2" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblAssetL3View1Iterator" id="Next2" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblAssetL3View1Iterator" id="Last2" RequiresUpdateModel="true" Action="last"/>
+    <list IterBinding="TblAssetL4View1Iterator" StaticList="false" Uses="LOV_AssetL3Id" id="AssetL3Id1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblAssetL4View1Iterator" id="AssetL4Id">
+      <AttrNames>
+        <Item Value="AssetL4Id"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblAssetL4View1Iterator" StaticList="false" Uses="LOV_UomId" id="UomId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblAssetL4View1Iterator" id="Name3">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblAssetL4View1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast3" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblAssetL4View1Iterator" id="First3" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblAssetL4View1Iterator" id="Previous3" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblAssetL4View1Iterator" id="Next3" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblAssetL4View1Iterator" id="Last3" RequiresUpdateModel="true" Action="last"/>
   </bindings>
 </pageDefinition>

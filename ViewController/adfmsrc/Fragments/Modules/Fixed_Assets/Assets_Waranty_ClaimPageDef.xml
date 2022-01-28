@@ -12,6 +12,8 @@
               id="TblAssetWrntyClaimDView2Iterator"/>
     <searchRegion Binds="TblAssetWrntyClaimDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssetWrntyClaimDView2Query"/>
+    <searchRegion Binds="TblAssetWrntyClaimMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssetWrntyClaimMView1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -86,5 +88,20 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblAssetWrntyClaimDView2Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="TblAssetWrntyClaimMView1Iterator" id="TblAssetWrntyClaimMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblAssetWrntyClaimMView" Name="TblAssetWrntyClaimMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="ProjectId"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="PblSuppId"/>
+          <Item Value="AssetReturnMId"/>
+          <Item Value="Narration"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
