@@ -106,11 +106,18 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="AssetL2Code"
+    PrecisionRule="true"
+    EntityAttrName="AssetL2Code"
+    EntityUsage="TblAssetL2"
+    AliasName="ASSET_L2_CODE"/>
+  <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblAssetL2"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -122,7 +129,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblAssetL2"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
@@ -132,6 +140,11 @@
   <ViewLinkAccessor
     Name="TblAssetL3View"
     ViewLink="model.ERP.VO.FkTblAssetL3FkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblAssetL2DView"
+    ViewLink="model.ERP.VO.FkTblAssetL2DLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

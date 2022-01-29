@@ -69,11 +69,18 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="AssetL1Code"
+    PrecisionRule="true"
+    EntityAttrName="AssetL1Code"
+    EntityUsage="TblAssetL1"
+    AliasName="ASSET_L1_CODE"/>
+  <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblAssetL1"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -85,7 +92,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblAssetL1"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"

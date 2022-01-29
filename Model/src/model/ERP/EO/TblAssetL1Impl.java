@@ -30,6 +30,7 @@ public class TblAssetL1Impl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        AssetL1Code,
         TblAssetL2;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -53,6 +54,7 @@ public class TblAssetL1Impl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ASSETL1ID = AttributesEnum.AssetL1Id.index();
     public static final int NAME = AttributesEnum.Name.index();
     public static final int AST = AttributesEnum.Ast.index();
@@ -60,12 +62,20 @@ public class TblAssetL1Impl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int ASSETL1CODE = AttributesEnum.AssetL1Code.index();
     public static final int TBLASSETL2 = AttributesEnum.TblAssetL2.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblAssetL1Impl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetL1");
     }
 
     /**
@@ -165,11 +175,28 @@ public class TblAssetL1Impl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for AssetL1Code, using the alias name AssetL1Code.
+     * @return the value of AssetL1Code
+     */
+    public String getAssetL1Code() {
+        return (String) getAttributeInternal(ASSETL1CODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AssetL1Code.
+     * @param value value to set the AssetL1Code
+     */
+    public void setAssetL1Code(String value) {
+        setAttributeInternal(ASSETL1CODE, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblAssetL2() {
         return (RowIterator) getAttributeInternal(TBLASSETL2);
     }
+
 
     /**
      * @param assetL1Id key constituent
@@ -178,13 +205,6 @@ public class TblAssetL1Impl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal assetL1Id) {
         return new Key(new Object[] { assetL1Id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetL1");
     }
 
     /**

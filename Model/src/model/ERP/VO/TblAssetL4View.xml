@@ -6,13 +6,30 @@
   Name="TblAssetL4View"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblAssetL4.ASSET_L4_ID, 
+       TblAssetL4.ASSET_L3_ID, 
+       TblAssetL4.NAME, 
+       TblAssetL4.AST, 
+       TblAssetL4.ASSET_L4_CODE, 
+       TblAssetL4.CREATED_DATE, 
+       TblAssetL4.CREATED_BY, 
+       TblAssetL4.UPDATED_DATE, 
+       TblAssetL4.UPDATED_BY, 
+       TblAssetL4.UOM_ID, 
+       TblAssetL4.COMPANY_ID"
+  FromList="TBL_ASSET_L4 TblAssetL4"
+  Where="TblAssetL4.COMPANY_ID = nvl(:P_COMPANY_ID,TblAssetL4.COMPANY_ID)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblAssetL4View"/>
+  </Variable>
   <ViewAccessor
     Name="Asset_Level3_LOV1"
     ViewObjectName="model.LOV.Asset_Level3_LOV"
@@ -128,11 +145,18 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="AssetL4Code"
+    PrecisionRule="true"
+    EntityAttrName="AssetL4Code"
+    EntityUsage="TblAssetL4"
+    AliasName="ASSET_L4_CODE"/>
+  <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblAssetL4"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -144,7 +168,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblAssetL4"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
@@ -165,6 +190,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblAssetL4"
+    AliasName="COMPANY_ID"/>
   <ViewLinkAccessor
     Name="TblAssetOrderDView"
     ViewLink="model.ERP.VO.FkAssetOrderDAssetL4IdLink"

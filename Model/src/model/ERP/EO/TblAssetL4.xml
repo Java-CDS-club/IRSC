@@ -100,6 +100,29 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_ASSET_L4"/>
+  <Attribute
+    Name="CompanyId"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSET_L4">
+    <TransientExpression
+      Name="ExpressionScript"
+      CodeSourceName="TblAssetL4Row"/>
+  </Attribute>
+  <Attribute
+    Name="AssetL4Code"
+    Precision="50"
+    ColumnName="ASSET_L4_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_ASSET_L4">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblAssetL3"
     Association="model.ERP.EO.FkTblAssetL4FkAssoc"

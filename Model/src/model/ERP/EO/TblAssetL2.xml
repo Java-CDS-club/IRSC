@@ -93,6 +93,18 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ASSET_L2"/>
+  <Attribute
+    Name="AssetL2Code"
+    Precision="50"
+    ColumnName="ASSET_L2_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_ASSET_L2">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblAssetL1"
     Association="model.ERP.EO.FkTblAssetL2FkAssoc"
@@ -105,6 +117,13 @@
     Association="model.ERP.EO.FkTblAssetL3FkAssoc"
     AssociationEnd="model.ERP.EO.FkTblAssetL3FkAssoc.TblAssetL3"
     AssociationOtherEnd="model.ERP.EO.FkTblAssetL3FkAssoc.TblAssetL2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblAssetL2D"
+    Association="model.ERP.EO.FkTblAssetL2DAssoc"
+    AssociationEnd="model.ERP.EO.FkTblAssetL2DAssoc.TblAssetL2D"
+    AssociationOtherEnd="model.ERP.EO.FkTblAssetL2DAssoc.TblAssetL2"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

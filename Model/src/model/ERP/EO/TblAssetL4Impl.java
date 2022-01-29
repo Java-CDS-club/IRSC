@@ -32,6 +32,8 @@ public class TblAssetL4Impl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         UomId,
+        CompanyId,
+        AssetL4Code,
         TblAssetL3,
         TblAssetOrderD,
         TblAssetPurchD,
@@ -59,6 +61,8 @@ public class TblAssetL4Impl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ASSETL4ID = AttributesEnum.AssetL4Id.index();
     public static final int ASSETL3ID = AttributesEnum.AssetL3Id.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -68,6 +72,8 @@ public class TblAssetL4Impl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UOMID = AttributesEnum.UomId.index();
+    public static final int COMPANYID = AttributesEnum.CompanyId.index();
+    public static final int ASSETL4CODE = AttributesEnum.AssetL4Code.index();
     public static final int TBLASSETL3 = AttributesEnum.TblAssetL3.index();
     public static final int TBLASSETORDERD = AttributesEnum.TblAssetOrderD.index();
     public static final int TBLASSETPURCHD = AttributesEnum.TblAssetPurchD.index();
@@ -79,6 +85,14 @@ public class TblAssetL4Impl extends EntityImpl {
      */
     public TblAssetL4Impl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetL4");
+    }
+
 
     /**
      * Gets the attribute value for AssetL4Id, using the alias name AssetL4Id.
@@ -209,6 +223,38 @@ public class TblAssetL4Impl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CompanyId, using the alias name CompanyId.
+     * @return the value of CompanyId
+     */
+    public BigDecimal getCompanyId() {
+        return (BigDecimal) getAttributeInternal(COMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanyId.
+     * @param value value to set the CompanyId
+     */
+    public void setCompanyId(BigDecimal value) {
+        setAttributeInternal(COMPANYID, value);
+    }
+
+    /**
+     * Gets the attribute value for AssetL4Code, using the alias name AssetL4Code.
+     * @return the value of AssetL4Code
+     */
+    public String getAssetL4Code() {
+        return (String) getAttributeInternal(ASSETL4CODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AssetL4Code.
+     * @param value value to set the AssetL4Code
+     */
+    public void setAssetL4Code(String value) {
+        setAttributeInternal(ASSETL4CODE, value);
+    }
+
+    /**
      * @return the associated entity TblAssetL3Impl.
      */
     public TblAssetL3Impl getTblAssetL3() {
@@ -250,6 +296,7 @@ public class TblAssetL4Impl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLASSETRETURND);
     }
 
+
     /**
      * @param assetL4Id key constituent
 
@@ -257,13 +304,6 @@ public class TblAssetL4Impl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal assetL4Id) {
         return new Key(new Object[] { assetL4Id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetL4");
     }
 
     /**

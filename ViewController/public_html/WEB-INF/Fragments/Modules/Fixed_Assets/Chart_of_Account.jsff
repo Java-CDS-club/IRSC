@@ -27,7 +27,7 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
                       <af:panelFormLayout id="pfl1" maxColumns="2" rows="10">
-                  <af:inputText value="#{bindings.AssetL1Id.inputValue}" label="ID"
+                  <af:inputText value="#{bindings.AssetL1Id.inputValue}" label="ID" visible="false"
                                 required="#{bindings.AssetL1Id.hints.mandatory}"
                                 columns="#{bindings.AssetL1Id.hints.displayWidth}"
                                 maximumLength="#{bindings.AssetL1Id.hints.precision}"
@@ -36,6 +36,15 @@
                     <f:validator binding="#{bindings.AssetL1Id.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.AssetL1Id.format}"/>
                   </af:inputText>
+                        <af:inputText value="#{bindings.AssetL1Code.inputValue}"
+                                      label="Asset L1 Code"
+                                      required="#{bindings.AssetL1Code.hints.mandatory}"
+                                      columns="#{bindings.AssetL1Code.hints.displayWidth}"
+                                      maximumLength="#{bindings.AssetL1Code.hints.precision}"
+                                      shortDesc="#{bindings.AssetL1Code.hints.tooltip}" id="it5" readOnly="true"
+                                contentStyle="width:150px;">
+                          <f:validator binding="#{bindings.AssetL1Code.validator}"/>
+                        </af:inputText>
                         <af:spacer  id="s12"/>
                         <af:inputText value="#{bindings.Name.inputValue}" label="Level 1"
                                 required="#{bindings.Name.hints.mandatory}"
@@ -180,7 +189,7 @@
                           <f:validator binding="#{bindings.AssetL1Id1.validator}"/>
                         </af:selectOneChoice>
                         <af:spacer  id="s14"/>
-                        <af:inputText value="#{bindings.AssetL2Id.inputValue}" label="ID"
+                        <af:inputText value="#{bindings.AssetL2Id.inputValue}" label="ID" visible="false"
                                       required="#{bindings.AssetL2Id.hints.mandatory}"
                                       columns="#{bindings.AssetL2Id.hints.displayWidth}"
                                       maximumLength="#{bindings.AssetL2Id.hints.precision}"
@@ -188,6 +197,15 @@
                                       contentStyle="width:150px;">
                           <f:validator binding="#{bindings.AssetL2Id.validator}"/>
                           <af:convertNumber groupingUsed="false" pattern="#{bindings.AssetL2Id.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.AssetL2Code.inputValue}"
+                                      label="Asset L2 Code"
+                                      required="#{bindings.AssetL2Code.hints.mandatory}"
+                                      columns="#{bindings.AssetL2Code.hints.displayWidth}"
+                                      maximumLength="#{bindings.AssetL2Code.hints.precision}"
+                                      shortDesc="#{bindings.AssetL2Code.hints.tooltip}" id="it6" readOnly="true"
+                                      contentStyle="width:150px;">
+                          <f:validator binding="#{bindings.AssetL2Code.validator}"/>
                         </af:inputText>
                         <af:spacer  id="s15"/>
                         <af:inputText value="#{bindings.Name1.inputValue}" label="Level 2"
@@ -325,13 +343,89 @@
                    
               </af:showDetailItem>
             </af:panelTabbed>-->
+                      <af:panelTabbed position="above" id="pt2">
+                        <af:showDetailItem id="tab3" text="Detail">
+                          <af:table value="#{bindings.TblAssetL2DView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblAssetL2DView2.rangeSize}"
+                                    emptyText="#{bindings.TblAssetL2DView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblAssetL2DView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblAssetL2DView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblAssetL2DView2.rangeSize}"
+                                    filterModel="#{bindings.TblAssetL2DView2Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblAssetL2DView2Query.processQuery}" varStatus="vs"
+                                    id="t1" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblAssetL2DView2.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="ID" id="c1" visible="false">
+                                       
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblAssetL2DView2.hints.Id.label}"
+                                            required="#{bindings.TblAssetL2DView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblAssetL2DView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetL2DView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblAssetL2DView2.hints.Id.tooltip}" id="it1">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblAssetL2DView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetL2DView2.hints.Depr.name}" filterable="true"
+                                       sortable="true" headerText="Depriciation"
+                                       id="c2" width="150">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Depr}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Depr.inputValue}"
+                                            label="#{bindings.TblAssetL2DView2.hints.Depr.label}"
+                                            required="#{bindings.TblAssetL2DView2.hints.Depr.mandatory}"
+                                            columns="#{bindings.TblAssetL2DView2.hints.Depr.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetL2DView2.hints.Depr.precision}"
+                                            shortDesc="#{bindings.TblAssetL2DView2.hints.Depr.tooltip}" id="it2">
+                                <f:validator binding="#{row.bindings.Depr.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetL2DView2.hints.InitialAll.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Initial Allowence" id="c3" width="150">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.InitialAll}"
+       id="it4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.InitialAll.inputValue}"
+                                            label="#{bindings.TblAssetL2DView2.hints.InitialAll.label}"
+                                            required="#{bindings.TblAssetL2DView2.hints.InitialAll.mandatory}"
+                                            columns="#{bindings.TblAssetL2DView2.hints.InitialAll.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetL2DView2.hints.InitialAll.precision}"
+                                            shortDesc="#{bindings.TblAssetL2DView2.hints.InitialAll.tooltip}" id="it3">
+                                <f:validator binding="#{row.bindings.InitialAll.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                         <af:spacer width="5" height="10" id="s25"/>
+                          <af:panelGroupLayout id="pgl7"  layout="horizontal">
+                            
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}4"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s26"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
                     </af:gridCell>
                   </af:gridRow>
                 </af:panelGridLayout>
                 
               </af:showDetailItem>
               <af:showDetailItem text="Level 3" id="sdi6">
-                <af:panelGridLayout id="pgl7">
+                <af:panelGridLayout id="pgl15">
                   <af:gridRow marginTop="5px" height="auto" id="gr6">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
                       <af:panelFormLayout id="pfl3" maxColumns="2" rows="10">
@@ -344,7 +438,7 @@
                           <f:validator binding="#{bindings.AssetL2Id1.validator}"/>
                         </af:selectOneChoice>
                         <af:spacer  id="s17"/>
-                        <af:inputText value="#{bindings.AssetL3Id.inputValue}" label="ID"
+                        <af:inputText value="#{bindings.AssetL3Id.inputValue}" label="ID" visible="false"
                                       required="#{bindings.AssetL3Id.hints.mandatory}"
                                       columns="#{bindings.AssetL3Id.hints.displayWidth}"
                                       maximumLength="#{bindings.AssetL3Id.hints.precision}"
@@ -352,6 +446,15 @@
                                       contentStyle="width:150px;">
                           <f:validator binding="#{bindings.AssetL3Id.validator}"/>
                           <af:convertNumber groupingUsed="false" pattern="#{bindings.AssetL3Id.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.AssetL3Code.inputValue}"
+                                      label="Asset L3 Code"
+                                      required="#{bindings.AssetL3Code.hints.mandatory}"
+                                      columns="#{bindings.AssetL3Code.hints.displayWidth}"
+                                      maximumLength="#{bindings.AssetL3Code.hints.precision}"
+                                      shortDesc="#{bindings.AssetL3Code.hints.tooltip}" id="it13" readOnly="true"
+                                      contentStyle="width:150px;">
+                          <f:validator binding="#{bindings.AssetL3Code.validator}"/>
                         </af:inputText>
                         <af:spacer  id="s18"/>
                         <af:inputText value="#{bindings.Name2.inputValue}" label="Level 3"
@@ -385,7 +488,7 @@
                       </af:panelFormLayout>
                       <af:spacer width="5" height="10" id="s8"/>
                       <af:panelGroupLayout id="pgl13" halign="left" layout="horizontal">
-                            <af:iterator id="i3" var="index" varStatus="status"
+                            <af:iterator id="i4" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
                                            icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
@@ -437,7 +540,7 @@
                         </af:selectOneChoice>
                       </af:column>
                       <af:column sortProperty="#{bindings.TblAssetL3View1.hints.AssetL3Id.name}" filterable="true"
-                                 sortable="true" headerText="ID" id="c8">
+                                 sortable="true" headerText="ID" id="c8" visible="false">
                                   <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AssetL3Id}"
                                    id="it18" placeholder="Search ">
@@ -454,7 +557,23 @@
                                             pattern="#{bindings.TblAssetL3View1.hints.AssetL3Id.format}"/>
                         </af:inputText>
                       </af:column>
-                      <af:column sortProperty="#{bindings.TblAssetL3View1.hints.Name.name}" filterable="true"
+                            <af:column headerText="Asset L3 Code" id="c4"
+                                       sortable="true" filterable="true" width="110">
+                                       <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.AssetL3Code}"
+                                   id="it16" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                              <af:inputText value="#{row.bindings.AssetL3Code.inputValue}"
+                                            label="#{bindings.TblAssetL3View1.hints.AssetL3Code.label}"
+                                            required="#{bindings.TblAssetL3View1.hints.AssetL3Code.mandatory}"
+                                            columns="#{bindings.TblAssetL3View1.hints.AssetL3Code.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetL3View1.hints.AssetL3Code.precision}"
+                                            shortDesc="#{bindings.TblAssetL3View1.hints.AssetL3Code.tooltip}" id="it15" readOnly="true">
+                                <f:validator binding="#{row.bindings.AssetL3Code.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetL3View1.hints.Name.name}" filterable="true"
                                  sortable="true" headerText="Name" id="c9" width="300">
                                   <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Name}"
@@ -508,7 +627,7 @@
                           <f:validator binding="#{bindings.AssetL3Id1.validator}"/>
                         </af:selectOneChoice>
                         <af:spacer  id="s6"/>
-                        <af:inputText value="#{bindings.AssetL4Id.inputValue}" label="ID"
+                        <af:inputText value="#{bindings.AssetL4Id.inputValue}" label="ID" visible="false"
                                       required="#{bindings.AssetL4Id.hints.mandatory}"
                                       columns="#{bindings.AssetL4Id.hints.displayWidth}"
                                       maximumLength="#{bindings.AssetL4Id.hints.precision}"
@@ -516,6 +635,15 @@
                                       contentStyle="width:150px;">
                           <f:validator binding="#{bindings.AssetL4Id.validator}"/>
                           <af:convertNumber groupingUsed="false" pattern="#{bindings.AssetL4Id.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.AssetL4Code.inputValue}"
+                                      label="Asset L4 Code"
+                                      required="#{bindings.AssetL4Code.hints.mandatory}"
+                                      columns="#{bindings.AssetL4Code.hints.displayWidth}"
+                                      maximumLength="#{bindings.AssetL4Code.hints.precision}"
+                                      shortDesc="#{bindings.AssetL4Code.hints.tooltip}" id="it26" readOnly="true"
+                                      contentStyle="width:150px;">
+                          <f:validator binding="#{bindings.AssetL4Code.validator}"/>
                         </af:inputText>
                         <af:spacer  id="s7"/>
                         <af:selectOneChoice value="#{bindings.UomId.inputValue}" label="UOM"
@@ -610,7 +738,7 @@
                         </af:selectOneChoice>
                       </af:column>
                       <af:column sortProperty="#{bindings.TblAssetL4View11.hints.AssetL4Id.name}" filterable="true"
-                                 sortable="true" headerText="ID"
+                                 sortable="true" headerText="ID" visible="false"
                                  id="c11">
                                  <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.AssetL4Id}"
@@ -628,7 +756,24 @@
                                             pattern="#{bindings.TblAssetL4View11.hints.AssetL4Id.format}"/>
                         </af:inputText>
                       </af:column>
-                      <af:column sortProperty="#{bindings.TblAssetL4View11.hints.Name.name}" filterable="true"
+                            <af:column headerText="Asset L4 Code" id="c5"
+                                       sortable="true" filterable="true" width="110">
+                                         <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.AssetL4Code}"
+                                   id="it40" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                              <af:inputText value="#{row.bindings.AssetL4Code.inputValue}"
+                                            label="#{bindings.TblAssetL4View11.hints.AssetL4Code.label}"
+                                            required="#{bindings.TblAssetL4View11.hints.AssetL4Code.mandatory}"
+                                            columns="#{bindings.TblAssetL4View11.hints.AssetL4Code.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetL4View11.hints.AssetL4Code.precision}"
+                                            shortDesc="#{bindings.TblAssetL4View11.hints.AssetL4Code.tooltip}"
+                                            id="it39" readOnly="true">
+                                <f:validator binding="#{row.bindings.AssetL4Code.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetL4View11.hints.Name.name}" filterable="true"
                                  sortable="true" headerText="Name" id="c12" width="300">
                                   <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.Name}"

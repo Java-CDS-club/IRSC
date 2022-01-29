@@ -31,6 +31,8 @@ public class TblAssetL3Impl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        CompanyId,
+        AssetL3Code,
         TblAssetL2,
         TblAssetL4;
         private static AttributesEnum[] vals = null;
@@ -55,6 +57,8 @@ public class TblAssetL3Impl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ASSETL3ID = AttributesEnum.AssetL3Id.index();
     public static final int ASSETL2ID = AttributesEnum.AssetL2Id.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -63,6 +67,8 @@ public class TblAssetL3Impl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int COMPANYID = AttributesEnum.CompanyId.index();
+    public static final int ASSETL3CODE = AttributesEnum.AssetL3Code.index();
     public static final int TBLASSETL2 = AttributesEnum.TblAssetL2.index();
     public static final int TBLASSETL4 = AttributesEnum.TblAssetL4.index();
 
@@ -71,6 +77,14 @@ public class TblAssetL3Impl extends EntityImpl {
      */
     public TblAssetL3Impl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetL3");
+    }
+
 
     /**
      * Gets the attribute value for AssetL3Id, using the alias name AssetL3Id.
@@ -185,6 +199,38 @@ public class TblAssetL3Impl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CompanyId, using the alias name CompanyId.
+     * @return the value of CompanyId
+     */
+    public BigDecimal getCompanyId() {
+        return (BigDecimal) getAttributeInternal(COMPANYID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CompanyId.
+     * @param value value to set the CompanyId
+     */
+    public void setCompanyId(BigDecimal value) {
+        setAttributeInternal(COMPANYID, value);
+    }
+
+    /**
+     * Gets the attribute value for AssetL3Code, using the alias name AssetL3Code.
+     * @return the value of AssetL3Code
+     */
+    public String getAssetL3Code() {
+        return (String) getAttributeInternal(ASSETL3CODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AssetL3Code.
+     * @param value value to set the AssetL3Code
+     */
+    public void setAssetL3Code(String value) {
+        setAttributeInternal(ASSETL3CODE, value);
+    }
+
+    /**
      * @return the associated entity TblAssetL2Impl.
      */
     public TblAssetL2Impl getTblAssetL2() {
@@ -205,6 +251,7 @@ public class TblAssetL3Impl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLASSETL4);
     }
 
+
     /**
      * @param assetL3Id key constituent
 
@@ -212,13 +259,6 @@ public class TblAssetL3Impl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal assetL3Id) {
         return new Key(new Object[] { assetL3Id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetL3");
     }
 
     /**

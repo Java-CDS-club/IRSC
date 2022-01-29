@@ -1111,6 +1111,12 @@
   <ViewUsage
     Name="TblJobStsServView2"
     ViewObjectName="model.ERP.VO.TblJobStsServView"/>
+  <ViewUsage
+    Name="TblAssetL2DView1"
+    ViewObjectName="model.ERP.VO.TblAssetL2DView"/>
+  <ViewUsage
+    Name="TblAssetL2DView2"
+    ViewObjectName="model.ERP.VO.TblAssetL2DView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1980,5 +1986,11 @@
     ViewLinkObjectName="model.ERP.VO.FkJobStsServMLink"
     SrcViewUsageName="model.ERP.AppModule.TblJobStsMView1"
     DstViewUsageName="model.ERP.AppModule.TblJobStsServView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblAssetL2DLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTblAssetL2DLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAssetL2View1"
+    DstViewUsageName="model.ERP.AppModule.TblAssetL2DView2"
     Reversed="false"/>
 </AppModule>

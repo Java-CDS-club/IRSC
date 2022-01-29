@@ -85,6 +85,18 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ASSET_L1"/>
+  <Attribute
+    Name="AssetL1Code"
+    Precision="50"
+    ColumnName="ASSET_L1_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_ASSET_L1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblAssetL2"
     Association="model.ERP.EO.FkTblAssetL2FkAssoc"

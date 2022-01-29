@@ -31,8 +31,10 @@ public class TblAssetL2Impl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        AssetL2Code,
         TblAssetL1,
-        TblAssetL3;
+        TblAssetL3,
+        TblAssetL2D;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -55,6 +57,8 @@ public class TblAssetL2Impl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ASSETL2ID = AttributesEnum.AssetL2Id.index();
     public static final int ASSETL1ID = AttributesEnum.AssetL1Id.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -63,14 +67,24 @@ public class TblAssetL2Impl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int ASSETL2CODE = AttributesEnum.AssetL2Code.index();
     public static final int TBLASSETL1 = AttributesEnum.TblAssetL1.index();
     public static final int TBLASSETL3 = AttributesEnum.TblAssetL3.index();
+    public static final int TBLASSETL2D = AttributesEnum.TblAssetL2D.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblAssetL2Impl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetL2");
+    }
+
 
     /**
      * Gets the attribute value for AssetL2Id, using the alias name AssetL2Id.
@@ -185,6 +199,22 @@ public class TblAssetL2Impl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for AssetL2Code, using the alias name AssetL2Code.
+     * @return the value of AssetL2Code
+     */
+    public String getAssetL2Code() {
+        return (String) getAttributeInternal(ASSETL2CODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AssetL2Code.
+     * @param value value to set the AssetL2Code
+     */
+    public void setAssetL2Code(String value) {
+        setAttributeInternal(ASSETL2CODE, value);
+    }
+
+    /**
      * @return the associated entity TblAssetL1Impl.
      */
     public TblAssetL1Impl getTblAssetL1() {
@@ -206,19 +236,20 @@ public class TblAssetL2Impl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblAssetL2D() {
+        return (RowIterator) getAttributeInternal(TBLASSETL2D);
+    }
+
+
+    /**
      * @param assetL2Id key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal assetL2Id) {
         return new Key(new Object[] { assetL2Id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetL2");
     }
 
     /**
