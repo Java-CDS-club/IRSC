@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkDeprMLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkDeprMAssoc">
+  <ViewLinkDefEnd
+    Name="TblAssetDepreciationMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblAssetDepreciationMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblAssetDepreciationMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblAssetDepreciationMView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblAssetDepreciationDView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblAssetDepreciationDView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblAssetDepreciationDView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblAssetDepreciationDView.DepreciationMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

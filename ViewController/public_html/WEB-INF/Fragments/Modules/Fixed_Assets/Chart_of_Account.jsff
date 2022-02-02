@@ -369,12 +369,28 @@
                                                   pattern="#{bindings.TblAssetL2DView2.hints.Id.format}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column headerText="Fiscal Year" id="c6"
+                                       sortable="true" filterable="true">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CompanyId}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.CompanyId.inputValue}"
+                                                  label="#{row.bindings.CompanyId.label}"
+                                                  required="#{bindings.TblAssetL2DView2.hints.CompanyId.mandatory}"
+                                                  shortDesc="#{bindings.TblAssetL2DView2.hints.CompanyId.tooltip}"
+                                                  id="soc1">
+                                <f:selectItems value="#{row.bindings.CompanyId.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.CompanyId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
                             <af:column sortProperty="#{bindings.TblAssetL2DView2.hints.Depr.name}" filterable="true"
                                        sortable="true" headerText="Depriciation"
                                        id="c2" width="150">
                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Depr}"
-       id="id4" placeholder="Search ">
+       id="it41" placeholder="Search ">
       </af:inputText>
 </f:facet>
                               <af:inputText value="#{row.bindings.Depr.inputValue}"
@@ -388,7 +404,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblAssetL2DView2.hints.InitialAll.name}"
                                        filterable="true" sortable="true"
-                                       headerText="Initial Allowence" id="c3" width="150">
+                                       headerText="Initial Allowance" id="c3" width="150">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.InitialAll}"
        id="it4" placeholder="Search ">

@@ -13,6 +13,28 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Company_Year_LOV1"
+    ViewObjectName="model.LOV.Company_Year_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CompanyId"
+    ListVOName="Company_Year_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CompanyId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Descriptipion"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblAssetL2D"
     Entity="model.ERP.EO.TblAssetL2D"/>
@@ -36,7 +58,15 @@
     PrecisionRule="true"
     EntityAttrName="CompanyId"
     EntityUsage="TblAssetL2D"
-    AliasName="COMPANY_ID"/>
+    AliasName="COMPANY_ID"
+    LOVName="LOV_CompanyId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Depr"
     IsNotNull="true"

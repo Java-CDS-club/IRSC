@@ -1117,6 +1117,18 @@
   <ViewUsage
     Name="TblAssetL2DView2"
     ViewObjectName="model.ERP.VO.TblAssetL2DView"/>
+  <ViewUsage
+    Name="TblAssetDepreciationDView1"
+    ViewObjectName="model.ERP.VO.TblAssetDepreciationDView"/>
+  <ViewUsage
+    Name="TblAssetDepreciationMView1"
+    ViewObjectName="model.ERP.VO.TblAssetDepreciationMView"/>
+  <ViewUsage
+    Name="TblAssetDepreciationDView2"
+    ViewObjectName="model.ERP.VO.TblAssetDepreciationDView"/>
+  <ViewUsage
+    Name="TblOpenBlncAssetView1"
+    ViewObjectName="model.ERP.VO.TblOpenBlncAssetView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1992,5 +2004,11 @@
     ViewLinkObjectName="model.ERP.VO.FkTblAssetL2DLink"
     SrcViewUsageName="model.ERP.AppModule.TblAssetL2View1"
     DstViewUsageName="model.ERP.AppModule.TblAssetL2DView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkDeprMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkDeprMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAssetDepreciationMView1"
+    DstViewUsageName="model.ERP.AppModule.TblAssetDepreciationDView2"
     Reversed="false"/>
 </AppModule>

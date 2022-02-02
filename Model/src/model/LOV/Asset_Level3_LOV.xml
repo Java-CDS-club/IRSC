@@ -8,9 +8,10 @@
   InheritPersonalization="merge"
   SelectList="TblAssetL3.ASSET_L3_ID, 
        TblAssetL3.NAME, 
-       TblAssetL3.AST"
+       TblAssetL3.AST, 
+       TblAssetL3.COMPANY_ID"
   FromList="TBL_ASSET_L3 TblAssetL3"
-  Where="AST='Y'"
+  Where="TblAssetL3.COMPANY_ID = nvl(:P_COMPANY_ID,TblAssetL3.COMPANY_ID)"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
@@ -20,6 +21,15 @@
         ResId="model.LOV.Asset_Level3_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Asset_Level3_LOV"/>
+  </Variable>
   <EntityUsage
     Name="TblAssetL3"
     Entity="model.ERP.EO.TblAssetL3"/>
@@ -44,6 +54,12 @@
     EntityAttrName="Ast"
     EntityUsage="TblAssetL3"
     AliasName="AST"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblAssetL3"
+    AliasName="COMPANY_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

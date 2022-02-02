@@ -184,6 +184,7 @@
           <Item Value="Id"/>
           <Item Value="Depr"/>
           <Item Value="InitialAll"/>
+          <Item Value="CompanyId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

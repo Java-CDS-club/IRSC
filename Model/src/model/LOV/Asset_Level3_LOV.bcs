@@ -1,0 +1,12 @@
+//Groovy Scripts for model.LOV.Asset_Level3_LOV
+
+package model.LOV
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="P_COMPANY_ID")
+def P_COMPANY_ID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessCoID')
+}
+

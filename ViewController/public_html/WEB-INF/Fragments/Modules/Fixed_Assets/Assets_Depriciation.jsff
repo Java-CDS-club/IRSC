@@ -1,2 +1,510 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Assets Depreciation">
+         <!--<af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>-->
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Assets Depreciation">
+                <af:panelGridLayout id="pgl2">
+                  <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                      <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab2" text="Master">
+                          <af:panelFormLayout id="pfl1" maxColumns="2" rows="6">
+                           <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
+                                          required="#{bindings.Id.hints.mandatory}"
+                                          columns="#{bindings.Id.hints.displayWidth}"
+                                          maximumLength="#{bindings.Id.hints.precision}"
+                                          shortDesc="#{bindings.Id.hints.tooltip}" id="it1" disabled="true">
+                              <f:validator binding="#{bindings.Id.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                            </af:inputText>
+                            
+                            <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
+                                          required="#{bindings.Dated.hints.mandatory}"
+                                          columns="20"
+                                          shortDesc="#{bindings.Dated.hints.tooltip}" id="id1"
+                                          contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.Dated.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                            </af:inputDate>
+                            
+                           
+                            
+                            <af:spacer  id="s7"/>
+                            <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
+                                                label="Project"
+                                                required="#{bindings.ProjectId.hints.mandatory}"
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc2" 
+                                                contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
+                              <f:validator binding="#{bindings.ProjectId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s8"/>
+                             <af:selectOneChoice value="#{bindings.CompanyId.inputValue}"
+                                                label="Fiscal Year"
+                                                required="#{bindings.CompanyId.hints.mandatory}"
+                                                shortDesc="#{bindings.CompanyId.hints.tooltip}" id="soc12"
+                                                 contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.CompanyId.items}" id="si12"/>
+                              <f:validator binding="#{bindings.CompanyId.validator}"/>
+                            </af:selectOneChoice>
+                           
+                            <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
+                                          required="#{bindings.Vno.hints.mandatory}"
+                                          columns="17"
+                                          maximumLength="#{bindings.Vno.hints.precision}"
+                                          shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" readOnly="true"
+                                          contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.Vno.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s5"/>
+                            <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type"
+                                                required="#{bindings.Vtp.hints.mandatory}"
+                                                shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc4"
+                                                contentStyle="width:150px;" readOnly="true">
+                              <f:selectItems value="#{bindings.Vtp.items}" id="si4"/>
+                              <f:validator binding="#{bindings.Vtp.validator}"/>
+                            </af:selectOneChoice>
+                             <af:spacer  id="s2"/>
+                            <af:inputText value="#{bindings.Narration.inputValue}"
+                                          label="Remarks"
+                                          required="#{bindings.Narration.hints.mandatory}"
+                                          columns="20"
+                                          maximumLength="#{bindings.Narration.hints.precision}"
+                                          shortDesc="#{bindings.Narration.hints.tooltip}" id="it3"
+                                          contentStyle="width:300px;"  rows="1">
+                              <f:validator binding="#{bindings.Narration.validator}"/>
+                            </af:inputText>
+                            
+                            <f:facet name="footer">
+                              <af:panelGroupLayout layout="horizontal"  id="pgl3">
+                                <af:button actionListener="#{bindings.First.execute}" text="First" styleClass="af|Voucheractionbutton"
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous" styleClass="af|Voucheractionbutton"
+                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next" styleClass="af|Voucheractionbutton"
+                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last" styleClass="af|Voucheractionbutton"
+                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                              </af:panelGroupLayout>
+                            </f:facet>
+                          </af:panelFormLayout>
+                         
+                          <af:spacer width="5" height="10" id="s11"/>
+                 <af:panelGroupLayout id="pgl5" layout="horizontal" halign="left">
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+               
+                <af:spacer width="5" height="10" id="s19"/>
+                            </af:iterator>
+                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" styleClass="af|Voucheractionbutton"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b9"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="leading">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="5" height="10" id="s3"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All" styleClass="af|Voucheractionbutton"
+                                   disabled="#{!bindings.Commit.enabled}" id="b6" icon="#{resource['images:save.png']}"
+                                   iconPosition="leading"/>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                     
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                      <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab3" text="Detail">
+                          <af:table value="#{bindings.TblAssetDepreciationDView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblAssetDepreciationDView2.rangeSize}"
+                                    emptyText="#{bindings.TblAssetDepreciationDView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblAssetDepreciationDView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblAssetDepreciationDView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblAssetDepreciationDView2.rangeSize}"
+                                    filterModel="#{bindings.TblAssetDepreciationDView2Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblAssetDepreciationDView2Query.processQuery}"
+                                    varStatus="vs" id="t1" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblAssetDepreciationDView2.hints.Id.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="ID" id="c1" visible="false">
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblAssetDepreciationDView2.hints.Id.label}"
+                                            required="#{bindings.TblAssetDepreciationDView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblAssetDepreciationDView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetDepreciationDView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblAssetDepreciationDView2.hints.Id.tooltip}"
+                                            id="it4" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblAssetDepreciationDView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetDepreciationDView2.hints.AssetL4Id.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Asset L4"
+                                       id="c2" width="150">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AssetL4Id}"
+       id="id4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.AssetL4Id.inputValue}"
+                                                  label="#{row.bindings.AssetL4Id.label}"
+                                                  required="#{bindings.TblAssetDepreciationDView2.hints.AssetL4Id.mandatory}"
+                                                  shortDesc="#{bindings.TblAssetDepreciationDView2.hints.AssetL4Id.tooltip}"
+                                                  id="soc1">
+                                <f:selectItems value="#{row.bindings.AssetL4Id.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.AssetL4Id.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetDepreciationDView2.hints.Ob.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Opening Balance" id="c3" width="130">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Ob}"
+       id="it13" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Ob.inputValue}"
+                                            label="#{bindings.TblAssetDepreciationDView2.hints.Ob.label}"
+                                            required="#{bindings.TblAssetDepreciationDView2.hints.Ob.mandatory}"
+                                            columns="#{bindings.TblAssetDepreciationDView2.hints.Ob.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetDepreciationDView2.hints.Ob.precision}"
+                                            shortDesc="#{bindings.TblAssetDepreciationDView2.hints.Ob.tooltip}"
+                                            id="it5">
+                                <f:validator binding="#{row.bindings.Ob.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblAssetDepreciationDView2.hints.Ob.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetDepreciationDView2.hints.Addition.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Addition" id="c4">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Addition}"
+       id="it14" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Addition.inputValue}"
+                                            label="#{bindings.TblAssetDepreciationDView2.hints.Addition.label}"
+                                            required="#{bindings.TblAssetDepreciationDView2.hints.Addition.mandatory}"
+                                            columns="#{bindings.TblAssetDepreciationDView2.hints.Addition.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetDepreciationDView2.hints.Addition.precision}"
+                                            shortDesc="#{bindings.TblAssetDepreciationDView2.hints.Addition.tooltip}"
+                                            id="it6">
+                                <f:validator binding="#{row.bindings.Addition.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblAssetDepreciationDView2.hints.Addition.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetDepreciationDView2.hints.Deletion.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Deletion" id="c5">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Deletion}"
+       id="it22" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Deletion.inputValue}"
+                                            label="#{bindings.TblAssetDepreciationDView2.hints.Deletion.label}"
+                                            required="#{bindings.TblAssetDepreciationDView2.hints.Deletion.mandatory}"
+                                            columns="#{bindings.TblAssetDepreciationDView2.hints.Deletion.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetDepreciationDView2.hints.Deletion.precision}"
+                                            shortDesc="#{bindings.TblAssetDepreciationDView2.hints.Deletion.tooltip}"
+                                            id="it7">
+                                <f:validator binding="#{row.bindings.Deletion.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblAssetDepreciationDView2.hints.Deletion.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetDepreciationDView2.hints.CurrValue.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Current Value"
+                                       id="c6" width="110">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CurrValue}"
+       id="it24" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.CurrValue.inputValue}"
+                                            label="#{bindings.TblAssetDepreciationDView2.hints.CurrValue.label}"
+                                            required="#{bindings.TblAssetDepreciationDView2.hints.CurrValue.mandatory}"
+                                            columns="#{bindings.TblAssetDepreciationDView2.hints.CurrValue.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetDepreciationDView2.hints.CurrValue.precision}"
+                                            shortDesc="#{bindings.TblAssetDepreciationDView2.hints.CurrValue.tooltip}"
+                                            id="it8">
+                                <f:validator binding="#{row.bindings.CurrValue.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblAssetDepreciationDView2.hints.CurrValue.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetDepreciationDView2.hints.InitAll.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Initial Allowance" id="c7" width="130">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.InitAll}"
+       id="it25" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.InitAll.inputValue}"
+                                            label="#{bindings.TblAssetDepreciationDView2.hints.InitAll.label}"
+                                            required="#{bindings.TblAssetDepreciationDView2.hints.InitAll.mandatory}"
+                                            columns="#{bindings.TblAssetDepreciationDView2.hints.InitAll.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetDepreciationDView2.hints.InitAll.precision}"
+                                            shortDesc="#{bindings.TblAssetDepreciationDView2.hints.InitAll.tooltip}"
+                                            id="it9">
+                                <f:validator binding="#{row.bindings.InitAll.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblAssetDepreciationDView2.hints.InitAll.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetDepreciationDView2.hints.NetDed.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Net Deduction" id="c13" width="110">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.NetDed}"
+       id="it26" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.NetDed.inputValue}"
+                                            label="#{bindings.TblAssetDepreciationDView2.hints.NetDed.label}"
+                                            required="#{bindings.TblAssetDepreciationDView2.hints.NetDed.mandatory}"
+                                            columns="#{bindings.TblAssetDepreciationDView2.hints.NetDed.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetDepreciationDView2.hints.NetDed.precision}"
+                                            shortDesc="#{bindings.TblAssetDepreciationDView2.hints.NetDed.tooltip}"
+                                            id="it10">
+                                <f:validator binding="#{row.bindings.NetDed.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblAssetDepreciationDView2.hints.NetDed.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetDepreciationDView2.hints.TotBal.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Total Balance" id="c14" width="110">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TotBal}"
+       id="it27" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TotBal.inputValue}"
+                                            label="#{bindings.TblAssetDepreciationDView2.hints.TotBal.label}"
+                                            required="#{bindings.TblAssetDepreciationDView2.hints.TotBal.mandatory}"
+                                            columns="#{bindings.TblAssetDepreciationDView2.hints.TotBal.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetDepreciationDView2.hints.TotBal.precision}"
+                                            shortDesc="#{bindings.TblAssetDepreciationDView2.hints.TotBal.tooltip}"
+                                            id="it11">
+                                <f:validator binding="#{row.bindings.TotBal.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblAssetDepreciationDView2.hints.TotBal.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblAssetDepreciationDView2.hints.Cwdv.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="CWDV" id="c16">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Cwdv}"
+       id="it28" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Cwdv.inputValue}"
+                                            label="#{bindings.TblAssetDepreciationDView2.hints.Cwdv.label}"
+                                            required="#{bindings.TblAssetDepreciationDView2.hints.Cwdv.mandatory}"
+                                            columns="#{bindings.TblAssetDepreciationDView2.hints.Cwdv.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetDepreciationDView2.hints.Cwdv.precision}"
+                                            shortDesc="#{bindings.TblAssetDepreciationDView2.hints.Cwdv.tooltip}"
+                                            id="it12">
+                                <f:validator binding="#{row.bindings.Cwdv.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblAssetDepreciationDView2.hints.Cwdv.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                         
+                          <af:spacer width="5" height="10" id="s12"/>
+                          <af:panelGroupLayout id="pgl7"  layout="horizontal">
+                            
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" styleClass="af|Voucheractionbutton"
+                                           icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s16"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:showDetailItem>
+              <af:showDetailItem text="Search" id="sdi1">
+                <af:table value="#{bindings.TblAssetDepreciationMView1.collectionModel}" var="row"
+                          rows="#{bindings.TblAssetDepreciationMView1.rangeSize}"
+                          emptyText="#{bindings.TblAssetDepreciationMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblAssetDepreciationMView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblAssetDepreciationMView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblAssetDepreciationMView1.rangeSize}"
+                          filterModel="#{bindings.TblAssetDepreciationMView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblAssetDepreciationMView1Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblAssetDepreciationMView1.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblAssetDepreciationMView1.hints.Id.label}" id="c8" visible="false">
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblAssetDepreciationMView1.hints.Id.label}"
+                                  required="#{bindings.TblAssetDepreciationMView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblAssetDepreciationMView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblAssetDepreciationMView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblAssetDepreciationMView1.hints.Id.tooltip}" id="it15">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblAssetDepreciationMView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAssetDepreciationMView1.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Date" id="c9">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblAssetDepreciationMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id2" placeholder="Search ">
+                        <af:convertDateTime pattern="#{bindings.TblAssetDepreciationMView1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblAssetDepreciationMView1.hints.Dated.label}"
+                                  required="#{bindings.TblAssetDepreciationMView1.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblAssetDepreciationMView1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblAssetDepreciationMView1.hints.Dated.tooltip}" id="id3"
+                                  readOnly="true">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblAssetDepreciationMView1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAssetDepreciationMView1.hints.Vno.name}" filterable="true" sortable="true"
+                             headerText="Voucher No." id="c15">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vno}"
+       id="it21" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Vno.inputValue}" label="#{bindings.TblAssetDepreciationMView1.hints.Vno.label}"
+                                  required="#{bindings.TblAssetDepreciationMView1.hints.Vno.mandatory}"
+                                  columns="#{bindings.TblAssetDepreciationMView1.hints.Vno.displayWidth}"
+                                  maximumLength="#{bindings.TblAssetDepreciationMView1.hints.Vno.precision}"
+                                  shortDesc="#{bindings.TblAssetDepreciationMView1.hints.Vno.tooltip}" id="it19" readOnly="true">
+                      <f:validator binding="#{row.bindings.Vno.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAssetDepreciationMView1.hints.Vtp.name}" filterable="true" sortable="true"
+                             headerText="Voucher Type" id="c12" width="110">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vtp}"
+       id="it20" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
+                                        required="#{bindings.TblAssetDepreciationMView1.hints.Vtp.mandatory}"
+                                        shortDesc="#{bindings.TblAssetDepreciationMView1.hints.Vtp.tooltip}" id="soc7" readOnly="true">
+                      <f:selectItems value="#{row.bindings.Vtp.items}" id="si7"/>
+                      <f:validator binding="#{row.bindings.Vtp.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblAssetDepreciationMView1.hints.ProjectId.name}" filterable="true"
+                             sortable="true" headerText="Project" id="c10" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ProjectId}"
+       id="it16" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.ProjectId.inputValue}"
+                                        label="#{row.bindings.ProjectId.label}"
+                                        required="#{bindings.TblAssetDepreciationMView1.hints.ProjectId.mandatory}"
+                                        shortDesc="#{bindings.TblAssetDepreciationMView1.hints.ProjectId.tooltip}" id="soc6" readOnly="true">
+                      <f:selectItems value="#{row.bindings.ProjectId.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.ProjectId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                   <af:column sortProperty="#{bindings.TblAssetDepreciationMView1.hints.CompanyId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblAssetDepreciationMView1.hints.CompanyId.label}" id="c22">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CompanyId}"
+       id="it23" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.CompanyId.inputValue}"
+                                        label="#{row.bindings.CompanyId.label}"
+                                        required="#{bindings.TblAssetDepreciationMView1.hints.CompanyId.mandatory}"
+                                        shortDesc="#{bindings.TblAssetDepreciationMView1.hints.CompanyId.tooltip}"
+                                        id="soc10" readOnly="true">
+                      <f:selectItems value="#{row.bindings.CompanyId.items}" id="si10"/>
+                      <f:validator binding="#{row.bindings.CompanyId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                 
+                   <af:column sortProperty="#{bindings.TblAssetDepreciationMView1.hints.Narration.name}" filterable="true"
+                             sortable="true" headerText="Remarks" id="c11" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Narration}"
+       id="it17" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Narration.inputValue}"
+                                  label="#{bindings.TblAssetDepreciationMView1.hints.Narration.label}"
+                                  required="#{bindings.TblAssetDepreciationMView1.hints.Narration.mandatory}"
+                                  columns="#{bindings.TblAssetDepreciationMView1.hints.Narration.displayWidth}"
+                                  maximumLength="#{bindings.TblAssetDepreciationMView1.hints.Narration.precision}"
+                                  shortDesc="#{bindings.TblAssetDepreciationMView1.hints.Narration.tooltip}" id="it18" readOnly="true">
+                      <f:validator binding="#{row.bindings.Narration.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+               
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>
+
+
+

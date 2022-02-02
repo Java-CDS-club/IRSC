@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Assets_DepriciationPageDef"
+                Package="Fragments.Modules.Fixed_Assets">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblAssetDepreciationMView1" RangeSize="10" DataControl="AppModuleDataControl1"
+              id="TblAssetDepreciationMView1Iterator"/>
+    <searchRegion Binds="TblAssetDepreciationMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssetDepreciationMView1Query"/>
+    <iterator Binds="TblAssetDepreciationDView2" RangeSize="5" DataControl="AppModuleDataControl1"
+              id="TblAssetDepreciationDView2Iterator"/>
+    <searchRegion Binds="TblAssetDepreciationDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAssetDepreciationDView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblAssetDepreciationMView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblAssetDepreciationMView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblAssetDepreciationMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblAssetDepreciationMView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblAssetDepreciationMView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblAssetDepreciationMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblAssetDepreciationMView1Iterator" StaticList="false" Uses="LOV_CompanyId" id="CompanyId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblAssetDepreciationMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblAssetDepreciationMView1Iterator" id="Previous" RequiresUpdateModel="true"
+            Action="previous"/>
+    <action IterBinding="TblAssetDepreciationMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblAssetDepreciationMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblAssetDepreciationMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblAssetDepreciationMView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblAssetDepreciationMView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblAssetDepreciationMView1Iterator" id="TblAssetDepreciationMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblAssetDepreciationMView" Name="TblAssetDepreciationMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="Dated"/>
+          <Item Value="Narration"/>
+          <Item Value="ProjectId"/>
+          <Item Value="CompanyId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblAssetDepreciationDView2Iterator" id="TblAssetDepreciationDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblAssetDepreciationDView" Name="TblAssetDepreciationDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AssetL4Id"/>
+          <Item Value="Ob"/>
+          <Item Value="Addition"/>
+          <Item Value="Deletion"/>
+          <Item Value="CurrValue"/>
+          <Item Value="InitAll"/>
+          <Item Value="NetDed"/>
+          <Item Value="TotBal"/>
+          <Item Value="Cwdv"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblAssetDepreciationDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblAssetDepreciationDView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblAssetDepreciationDView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
