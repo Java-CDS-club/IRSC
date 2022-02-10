@@ -36,6 +36,7 @@ public class TblOpenBlncInvImpl extends EntityImpl {
         UomId,
         DepartmentId,
         CompanyId,
+        ItemL4DId,
         TblItemL4;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -75,6 +76,7 @@ public class TblOpenBlncInvImpl extends EntityImpl {
     public static final int UOMID = AttributesEnum.UomId.index();
     public static final int DEPARTMENTID = AttributesEnum.DepartmentId.index();
     public static final int COMPANYID = AttributesEnum.CompanyId.index();
+    public static final int ITEML4DID = AttributesEnum.ItemL4DId.index();
     public static final int TBLITEML4 = AttributesEnum.TblItemL4.index();
 
     /**
@@ -297,6 +299,22 @@ public class TblOpenBlncInvImpl extends EntityImpl {
      */
     public void setCompanyId(BigDecimal value) {
         setAttributeInternal(COMPANYID, value);
+    }
+
+    /**
+     * Gets the attribute value for ItemL4DId, using the alias name ItemL4DId.
+     * @return the value of ItemL4DId
+     */
+    public BigDecimal getItemL4DId() {
+        return (BigDecimal) getAttributeInternal(ITEML4DID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ItemL4DId.
+     * @param value value to set the ItemL4DId
+     */
+    public void setItemL4DId(BigDecimal value) {
+        setAttributeInternal(ITEML4DID, value);
     }
 
     /**

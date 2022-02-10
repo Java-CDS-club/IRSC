@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<!DOCTYPE OperationDefinitions SYSTEM "jbo_03_01.dtd">
+<OperationDefinitions xmlns="http://xmlns.oracle.com/bc4j" Name="School_Managment_SystemOperations">
+  <ExpressionCodeSource
+    Name="School_Managment_System"
+    Type="Static"
+    URI="model/UserRole/VO/School_Managment_System.bcs"/>
+</OperationDefinitions>

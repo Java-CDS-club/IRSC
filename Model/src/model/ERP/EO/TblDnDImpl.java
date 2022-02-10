@@ -39,6 +39,7 @@ public class TblDnDImpl extends EntityImpl {
         TaxAmount,
         TaxDetailId,
         TaxPerc,
+        ItemL4DId,
         TblDnM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -81,6 +82,7 @@ public class TblDnDImpl extends EntityImpl {
     public static final int TAXAMOUNT = AttributesEnum.TaxAmount.index();
     public static final int TAXDETAILID = AttributesEnum.TaxDetailId.index();
     public static final int TAXPERC = AttributesEnum.TaxPerc.index();
+    public static final int ITEML4DID = AttributesEnum.ItemL4DId.index();
     public static final int TBLDNM = AttributesEnum.TblDnM.index();
 
     /**
@@ -351,6 +353,22 @@ public class TblDnDImpl extends EntityImpl {
      */
     public void setTaxPerc(BigDecimal value) {
         setAttributeInternal(TAXPERC, value);
+    }
+
+    /**
+     * Gets the attribute value for ItemL4DId, using the alias name ItemL4DId.
+     * @return the value of ItemL4DId
+     */
+    public BigDecimal getItemL4DId() {
+        return (BigDecimal) getAttributeInternal(ITEML4DID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ItemL4DId.
+     * @param value value to set the ItemL4DId
+     */
+    public void setItemL4DId(BigDecimal value) {
+        setAttributeInternal(ITEML4DID, value);
     }
 
     /**

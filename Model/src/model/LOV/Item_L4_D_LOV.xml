@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Item_L4_D_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Item_L4_D_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="P_ItemL4"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <SQLQuery><![CDATA[Select  
+tbl_item_l4_d.ID, 
+tbl_item_l4_d.type,    
+Tbl_Typ.Name Typ_Name,    
+tbl_item_l4_d.type2,    
+Tbl_Typ2.Name Typ2_Name,    
+tbl_item_l4_d.type3,    
+Tbl_Typ3.Name Typ3_Name,    
+tbl_item_l4_d.type4,    
+Tbl_Typ4.Name Typ4_Name,    
+tbl_item_l4_d.type5,    
+Tbl_Typ5.Name Typ5_Name  
+From tbl_item_l4_d,tbl_item_type_d Tbl_Typ, tbl_item_type_d Tbl_Typ2, tbl_item_type_d Tbl_Typ3, tbl_item_type_d Tbl_Typ4, tbl_item_type_d Tbl_Typ5  
+where Tbl_Typ.id= tbl_item_l4_d.type    
+And Tbl_Typ2.id= tbl_item_l4_d.type2    
+And Tbl_Typ3.id= tbl_item_l4_d.type3    
+And Tbl_Typ4.id= tbl_item_l4_d.type4    
+And Tbl_Typ5.id= tbl_item_l4_d.type5    
+And tbl_item_l4_d.item_l4_id=:P_ItemL4]]></SQLQuery>
+  <ViewAttribute
+    Name="Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ID"
+    Expression="ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Type"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TYPE"
+    Expression="TYPE"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TypName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TYP_NAME"
+    Expression="TYP_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Type2"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TYPE2"
+    Expression="TYPE2"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Typ2Name"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TYP2_NAME"
+    Expression="TYP2_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Type3"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TYPE3"
+    Expression="TYPE3"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Typ3Name"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TYP3_NAME"
+    Expression="TYP3_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Type4"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TYPE4"
+    Expression="TYPE4"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Typ4Name"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TYP4_NAME"
+    Expression="TYP4_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Type5"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TYPE5"
+    Expression="TYPE5"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Typ5Name"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TYP5_NAME"
+    Expression="TYP5_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -157,6 +157,9 @@
   <ViewUsage
     Name="Pages_CRM1"
     ViewObjectName="model.UserRole.VO.Pages_CRM"/>
+  <ViewUsage
+    Name="School_Managment_System1"
+    ViewObjectName="model.UserRole.VO.School_Managment_System"/>
   <ViewLinkUsage
     Name="FkPagesLink1"
     ViewLinkObjectName="model.UserRole.VO.FkPagesLink"

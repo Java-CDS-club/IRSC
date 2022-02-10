@@ -495,6 +495,13 @@
     <page path="/WEB-INF/Task_Flows/Modules/Fixed_Assets/Opening_Balance_Assets_TaskFlow.xml#Opening_Balance_Assets_TaskFlow@ExecuteWithParams"
           usageId="view_Opening_Balance_Assets_TaskFlow_Opening_Balance_Assets_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Fixed_Assets/Opening_Balance.jsff" usageId="view_Opening_BalancePageDef3"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Sale_Purchase/Item_Type_TaskFlow.xml#Item_Type_TaskFlow@ExecuteWithParams"
+          usageId="view_Item_Type_TaskFlow_Item_Type_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Sale_Purchase/Item_Type.jsff" usageId="view_Item_TypePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/School_Managment_System.jsff"
+          usageId="view_School_Managment_SystemPageDef"/>
+    <page path="/Main_Pages/Modules/School_Managment_System/School_Managment_System.jsf"
+          usageId="view_School_Managment_SystemPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -961,6 +968,13 @@
     <page id="view_Opening_Balance_Assets_TaskFlow_Opening_Balance_Assets_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Fixed_Assets.Opening_Balance_Assets_TaskFlow_Opening_Balance_Assets_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Opening_BalancePageDef3" path="Fragments.Modules.Fixed_Assets.Opening_BalancePageDef"/>
+    <page id="view_Item_Type_TaskFlow_Item_Type_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Sale_Purchase.Item_Type_TaskFlow_Item_Type_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Item_TypePageDef" path="Fragments.Modules.Sale_Purchase.Item_TypePageDef"/>
+    <page id="view_School_Managment_SystemPageDef"
+          path="Fragments.Modules.School_Managment_System.School_Managment_SystemPageDef"/>
+    <page id="view_School_Managment_SystemPageDef1"
+          path="Main_Pages.Modules.School_Managment_System.School_Managment_SystemPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

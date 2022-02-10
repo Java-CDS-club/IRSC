@@ -198,7 +198,23 @@
                                 <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                           
+                            <af:column headerText="Type" id="c8"
+                                       sortable="true" filterable="true">
+                                       
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL4DId}"
+       id="it12" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.ItemL4DId.inputValue}"
+                                                  label="#{row.bindings.ItemL4DId.label}"
+                                                  required="#{bindings.TblGinDView2.hints.ItemL4DId.mandatory}"
+                                                  shortDesc="#{bindings.TblGinDView2.hints.ItemL4DId.tooltip}"
+                                                  id="soc5">
+                                <f:selectItems value="#{row.bindings.ItemL4DId.items}" id="si5"/>
+                                <f:validator binding="#{row.bindings.ItemL4DId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
                             <af:column headerText="UOM" id="c11" sortable="true" filterable="true">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.uomName}"

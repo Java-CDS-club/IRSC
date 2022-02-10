@@ -37,6 +37,7 @@ public class TblGinDImpl extends EntityImpl {
         GrnMId,
         ConsCa,
         GlL4Id,
+        ItemL4DId,
         TblGinM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -77,6 +78,7 @@ public class TblGinDImpl extends EntityImpl {
     public static final int GRNMID = AttributesEnum.GrnMId.index();
     public static final int CONSCA = AttributesEnum.ConsCa.index();
     public static final int GLL4ID = AttributesEnum.GlL4Id.index();
+    public static final int ITEML4DID = AttributesEnum.ItemL4DId.index();
     public static final int TBLGINM = AttributesEnum.TblGinM.index();
 
     /**
@@ -315,6 +317,22 @@ public class TblGinDImpl extends EntityImpl {
      */
     public void setGlL4Id(BigDecimal value) {
         setAttributeInternal(GLL4ID, value);
+    }
+
+    /**
+     * Gets the attribute value for ItemL4DId, using the alias name ItemL4DId.
+     * @return the value of ItemL4DId
+     */
+    public BigDecimal getItemL4DId() {
+        return (BigDecimal) getAttributeInternal(ITEML4DID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ItemL4DId.
+     * @param value value to set the ItemL4DId
+     */
+    public void setItemL4DId(BigDecimal value) {
+        setAttributeInternal(ITEML4DID, value);
     }
 
     /**

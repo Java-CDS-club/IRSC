@@ -182,12 +182,27 @@
        id="it17" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                              <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
+                              <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}" autoSubmit="true"
                                                   label="#{row.bindings.ItemL4Id.label}"
                                                   required="#{bindings.TblDoDView2.hints.ItemL4Id.mandatory}"
                                                   shortDesc="#{bindings.TblDoDView2.hints.ItemL4Id.tooltip}" id="soc7">
                                 <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si7"/>
                                 <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Type" id="c11"
+                                       sortable="true" filterable="true" width="300">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL4DId}"
+       id="it16" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.ItemL4DId.inputValue}"  autoSubmit="true"
+                                                  label="#{row.bindings.ItemL4DId.label}"
+                                                  required="#{bindings.TblDoDView2.hints.ItemL4DId.mandatory}"
+                                                  shortDesc="#{bindings.TblDoDView2.hints.ItemL4DId.tooltip}" id="soc8">
+                                <f:selectItems value="#{row.bindings.ItemL4DId.items}" id="si8"/>
+                                <f:validator binding="#{row.bindings.ItemL4DId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
                             <!--<af:column sortProperty="#{bindings.TblDoDView2.hints.UomId.name}" filterable="true"

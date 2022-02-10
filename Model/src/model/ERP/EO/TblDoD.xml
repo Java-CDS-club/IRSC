@@ -97,6 +97,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_DO_D"/>
+  <Attribute
+    Name="ItemL4DId"
+    ColumnName="ITEM_L4_D_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_DO_D"/>
   <AccessorAttribute
     Name="TblDoM"
     Association="model.ERP.EO.FkDoDMAssoc"

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkItemTypeMLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ERP.EO.FkItemTypeMAssoc">
+  <ViewLinkDefEnd
+    Name="TblItemTypeMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ERP.VO.TblItemTypeMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblItemTypeMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblItemTypeMView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblItemTypeDView"
+    Cardinality="-1"
+    Owner="model.ERP.VO.TblItemTypeDView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblItemTypeDView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.VO.TblItemTypeDView.ItemTypeMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblItemL4D"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_ITEM_L4_D"
+  AliasName="TblItemL4D"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4_D"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="Type"
+    ColumnName="TYPE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4_D"/>
+  <Attribute
+    Name="Name"
+    ColumnName="NAME"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4_D"/>
+  <Attribute
+    Name="ItemL4Id"
+    IsNotNull="true"
+    ColumnName="ITEM_L4_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4_D"/>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_ITEM_L4_D"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_ITEM_L4_D"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4_D"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_ITEM_L4_D"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4_D"/>
+  <Attribute
+    Name="Type2"
+    ColumnName="TYPE2"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4_D"/>
+  <Attribute
+    Name="Type3"
+    ColumnName="TYPE3"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4_D"/>
+  <Attribute
+    Name="Type4"
+    ColumnName="TYPE4"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4_D"/>
+  <Attribute
+    Name="Type5"
+    ColumnName="TYPE5"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4_D"/>
+  <AccessorAttribute
+    Name="TblItemTypeD"
+    Association="model.ERP.EO.FkItemTypeDetailAssoc"
+    AssociationEnd="model.ERP.EO.FkItemTypeDetailAssoc.TblItemTypeD"
+    AssociationOtherEnd="model.ERP.EO.FkItemTypeDetailAssoc.TblItemL4D"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblItemTypeM"
+    Association="model.ERP.EO.FkItemTypeMasterAssoc"
+    AssociationEnd="model.ERP.EO.FkItemTypeMasterAssoc.TblItemTypeM"
+    AssociationOtherEnd="model.ERP.EO.FkItemTypeMasterAssoc.TblItemL4D"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblItemL4"
+    Association="model.ERP.EO.FkItemL4DAssoc"
+    AssociationEnd="model.ERP.EO.FkItemL4DAssoc.TblItemL4"
+    AssociationOtherEnd="model.ERP.EO.FkItemL4DAssoc.TblItemL4D"
+    Type="model.ERP.EO.TblItemL4Impl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkItemL4D"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_ITEM_L4_D"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblItemL4D.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkItemL4">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_ITEM_L4_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ITEM_L4"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblItemL4D.ItemL4Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkItemTypeDetail">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_ITEM_TYPE_D"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ITEM_TYPE_DETAIL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblItemL4D.Name"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkItemTypeMaster">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_ITEM_TYPE_M"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_ITEM_TYPE_MASTER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblItemL4D.Type"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblItemL4D">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_ITEM_L4_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_ITEM_L4D"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblItemL4D.ItemL4Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

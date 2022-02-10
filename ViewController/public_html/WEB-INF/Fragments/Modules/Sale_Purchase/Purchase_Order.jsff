@@ -214,6 +214,23 @@
                                 <f:validator binding="#{row.bindings.ItemL4IdStatic.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
+                            <af:column headerText="Type" id="c17"
+                                       sortable="true" filterable="true" width="300">
+                                         <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL4DId}"
+       id="it30" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+
+                              <af:selectOneChoice value="#{row.bindings.ItemL4DId.inputValue}"
+                                                  label="#{row.bindings.ItemL4DId.label}"
+                                                  required="#{bindings.TblPoDView2.hints.ItemL4DId.mandatory}"
+                                                  shortDesc="#{bindings.TblPoDView2.hints.ItemL4DId.tooltip}"
+                                                  id="soc12" readOnly="true">
+                                <f:selectItems value="#{row.bindings.ItemL4DId.items}" id="si12"/>
+                                <f:validator binding="#{row.bindings.ItemL4DId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
                             <!--<af:column sortProperty="#{bindings.TblPoDView2.hints.UomId.name}" filterable="true"
                                        sortable="true" headerText="UOM" id="c8" width="70">
                                         <f:facet name="filter">

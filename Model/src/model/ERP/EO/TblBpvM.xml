@@ -194,7 +194,9 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_BPV_M"/>
+    TableName="TBL_BPV_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <AccessorAttribute
     Name="TblBpvD"
     Association="model.ERP.EO.FkBpvDMasterAssoc"

@@ -92,6 +92,7 @@
           <Item Value="NetAmount"/>
           <Item Value="ItemL4Id"/>
           <Item Value="TaxId"/>
+          <Item Value="ItemL4DId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

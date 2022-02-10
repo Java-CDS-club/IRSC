@@ -221,6 +221,13 @@
     AssociationOtherEnd="model.ERP.EO.FkTblItemL4FkAssoc.TblItemL4"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblItemL4D"
+    Association="model.ERP.EO.FkItemL4DAssoc"
+    AssociationEnd="model.ERP.EO.FkItemL4DAssoc.TblItemL4D"
+    AssociationOtherEnd="model.ERP.EO.FkItemL4DAssoc.TblItemL4"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTblItemL4Pk"
     PrimaryKey="true">

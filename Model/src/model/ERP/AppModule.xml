@@ -1129,6 +1129,27 @@
   <ViewUsage
     Name="TblOpenBlncAssetView1"
     ViewObjectName="model.ERP.VO.TblOpenBlncAssetView"/>
+  <ViewUsage
+    Name="TblItemL4DView1"
+    ViewObjectName="model.ERP.VO.TblItemL4DView"/>
+  <ViewUsage
+    Name="TblItemTypeDView1"
+    ViewObjectName="model.ERP.VO.TblItemTypeDView"/>
+  <ViewUsage
+    Name="TblItemTypeMView1"
+    ViewObjectName="model.ERP.VO.TblItemTypeMView"/>
+  <ViewUsage
+    Name="TblItemTypeDView2"
+    ViewObjectName="model.ERP.VO.TblItemTypeDView"/>
+  <ViewUsage
+    Name="TblItemL4DView2"
+    ViewObjectName="model.ERP.VO.TblItemL4DView"/>
+  <ViewUsage
+    Name="TblItemL4DView3"
+    ViewObjectName="model.ERP.VO.TblItemL4DView"/>
+  <ViewUsage
+    Name="TblItemL4DView4"
+    ViewObjectName="model.ERP.VO.TblItemL4DView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -2010,5 +2031,29 @@
     ViewLinkObjectName="model.ERP.VO.FkDeprMLink"
     SrcViewUsageName="model.ERP.AppModule.TblAssetDepreciationMView1"
     DstViewUsageName="model.ERP.AppModule.TblAssetDepreciationDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkItemTypeMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkItemTypeMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblItemTypeMView1"
+    DstViewUsageName="model.ERP.AppModule.TblItemTypeDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkItemTypeDetailLink1"
+    ViewLinkObjectName="model.ERP.VO.FkItemTypeDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblItemTypeDView1"
+    DstViewUsageName="model.ERP.AppModule.TblItemL4DView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkItemTypeMasterLink1"
+    ViewLinkObjectName="model.ERP.VO.FkItemTypeMasterLink"
+    SrcViewUsageName="model.ERP.AppModule.TblItemTypeMView1"
+    DstViewUsageName="model.ERP.AppModule.TblItemL4DView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkItemL4DLink1"
+    ViewLinkObjectName="model.ERP.VO.FkItemL4DLink"
+    SrcViewUsageName="model.ERP.AppModule.TblItemL4View1"
+    DstViewUsageName="model.ERP.AppModule.TblItemL4DView4"
     Reversed="false"/>
 </AppModule>

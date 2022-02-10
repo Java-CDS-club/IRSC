@@ -32,6 +32,7 @@ public class TblDoDImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        ItemL4DId,
         TblDoM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -55,6 +56,7 @@ public class TblDoDImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int DOMID = AttributesEnum.DoMId.index();
     public static final int ITEML4ID = AttributesEnum.ItemL4Id.index();
@@ -65,12 +67,20 @@ public class TblDoDImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int ITEML4DID = AttributesEnum.ItemL4DId.index();
     public static final int TBLDOM = AttributesEnum.TblDoM.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblDoDImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblDoD");
     }
 
     /**
@@ -218,18 +228,35 @@ public class TblDoDImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for ItemL4DId, using the alias name ItemL4DId.
+     * @return the value of ItemL4DId
+     */
+    public BigDecimal getItemL4DId() {
+        return (BigDecimal) getAttributeInternal(ITEML4DID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ItemL4DId.
+     * @param value value to set the ItemL4DId
+     */
+    public void setItemL4DId(BigDecimal value) {
+        setAttributeInternal(ITEML4DID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblDoM() {
-        return (EntityImpl) getAttributeInternal(TBLDOM);
+    public TblDoMImpl getTblDoM() {
+        return (TblDoMImpl) getAttributeInternal(TBLDOM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblDoM(EntityImpl value) {
+    public void setTblDoM(TblDoMImpl value) {
         setAttributeInternal(TBLDOM, value);
     }
+
 
     /**
      * @param id key constituent
@@ -238,13 +265,6 @@ public class TblDoDImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblDoD");
     }
 
     /**

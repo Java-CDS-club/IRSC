@@ -32,7 +32,8 @@
        TblGinD.ITEM_L4_ID AS ITEM_L4ID2, 
        TblGinD.CONS_CA, 
        TblGinD.GL_L4_ID, 
-       TblGinM.COMPANY_ID"
+       TblGinM.COMPANY_ID, 
+       TblGinD.ITEM_L4_D_ID"
   FromList="TBL_GIN_D TblGinD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom, TBL_GIN_M TblGinM"
   Where="TblGinD.GIN_M_ID = TblGinM.ID(+) 
 AND TblGinD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID            
@@ -65,6 +66,10 @@ and TblItemL4.UOM_ID = TblUom.ID">
   <ViewAccessor
     Name="GL_Level4_LOV1"
     ViewObjectName="model.LOV.GL_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Item_L4_D_LOV1"
+    ViewObjectName="model.LOV.Item_L4_D_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_UomId"
@@ -159,6 +164,28 @@ and TblItemL4.UOM_ID = TblUom.ID">
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4DId"
+    ListVOName="Item_L4_D_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4DId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Type"/>
+      <Item Value="Typ2Name"/>
+      <Item Value="Typ3Name"/>
+      <Item Value="Typ4Name"/>
+      <Item Value="Typ5Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -390,6 +417,20 @@ and TblItemL4.UOM_ID = TblUom.ID">
     EntityAttrName="CompanyId"
     EntityUsage="TblGinM"
     AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="ItemL4DId"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4DId"
+    EntityUsage="TblGinD"
+    AliasName="ITEM_L4_D_ID"
+    LOVName="LOV_ItemL4DId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
     <Item Value="ItemL4Id1"/>

@@ -74,6 +74,7 @@
           <Item Value="Amount"/>
           <Item Value="ConsCa"/>
           <Item Value="GlL4Id"/>
+          <Item Value="ItemL4DId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

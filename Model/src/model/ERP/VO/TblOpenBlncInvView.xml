@@ -22,7 +22,8 @@
        TblOpenBlncInv.UPDATED_DATE, 
        TblOpenBlncInv.UPDATED_BY, 
        TblOpenBlncInv.DEPARTMENT_ID, 
-       TblOpenBlncInv.COMPANY_ID"
+       TblOpenBlncInv.COMPANY_ID, 
+       TblOpenBlncInv.ITEM_L4_D_ID"
   FromList="TBL_OPEN_BLNC_INV TblOpenBlncInv"
   Where="TblOpenBlncInv.COMPANY_ID = nvl(:P_COMPANY_ID,TblOpenBlncInv.COMPANY_ID) 
 order by TblOpenBlncInv.ID desc">
@@ -53,6 +54,10 @@ order by TblOpenBlncInv.ID desc">
   <ViewAccessor
     Name="Company_Name_LOV1"
     ViewObjectName="model.LOV.Company_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Item_L4_D_LOV1"
+    ViewObjectName="model.LOV.Item_L4_D_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ItemL4Id"
@@ -127,6 +132,28 @@ order by TblOpenBlncInv.ID desc">
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4DId"
+    ListVOName="Item_L4_D_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4DId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Type"/>
+      <Item Value="Typ2Name"/>
+      <Item Value="Typ3Name"/>
+      <Item Value="Typ4Name"/>
+      <Item Value="Typ5Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -262,6 +289,20 @@ order by TblOpenBlncInv.ID desc">
     EntityAttrName="CompanyId"
     EntityUsage="TblOpenBlncInv"
     AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="ItemL4DId"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4DId"
+    EntityUsage="TblOpenBlncInv"
+    AliasName="ITEM_L4_D_ID"
+    LOVName="LOV_ItemL4DId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

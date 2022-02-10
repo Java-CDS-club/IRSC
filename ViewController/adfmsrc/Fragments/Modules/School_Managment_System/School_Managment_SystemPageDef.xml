@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="School_Managment_SystemPageDef"
+                Package="Fragments.Modules.School_Managment_System">
+  <parameters/>
+  <executables/>
+  <bindings/>
+</pageDefinition>

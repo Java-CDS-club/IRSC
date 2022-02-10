@@ -386,4 +386,9 @@
     ViewLink="model.ERP.VO.FkPblSuppItemsItemL4IdLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblItemL4DView"
+    ViewLink="model.ERP.VO.FkItemL4DLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

@@ -45,13 +45,13 @@
                                     rowBandingInterval="0"
                                     selectedRowKeys="#{bindings.TblDrawerView1.collectionModel.selectedRow}"
                                     selectionListener="#{bindings.TblDrawerView1.collectionModel.makeCurrent}"
-                                    rowSelection="single" fetchSize="#{bindings.TblDrawerView1.rangeSize}" width="750" 
+                                    rowSelection="single" fetchSize="#{bindings.TblDrawerView1.rangeSize}" 
                                     filterModel="#{bindings.TblDrawerView1Query.queryDescriptor}" filterVisible="true"
                                     queryListener="#{bindings.TblDrawerView1Query.processQuery}" varStatus="vs" id="t1"  
                                     scrollPolicy="page" autoHeightRows="0" >
                             <af:column sortProperty="#{bindings.TblDrawerView1.hints.Id.name}" filterable="true" 
                                        sortable="true" headerText="ID" id="c1"
-                                       width="100"  >
+                                       width="60"  >
                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="id4" placeholder="Search ">
@@ -82,6 +82,57 @@
                                             maximumLength="#{bindings.TblDrawerView1.hints.Remarks.precision}"
                                             shortDesc="#{bindings.TblDrawerView1.hints.Remarks.tooltip}" id="it2" readOnly="true">
                                 <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Date" id="c4" width="120">
+                              <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                            label="#{bindings.TblDrawerView1.hints.Dated.label}"
+                                            required="#{bindings.TblDrawerView1.hints.Dated.mandatory}"
+                                            columns="#{bindings.TblDrawerView1.hints.Dated.displayWidth}"
+                                            shortDesc="#{bindings.TblDrawerView1.hints.Dated.tooltip}" id="id1">
+                                <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblDrawerView1.hints.Dated.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column headerText="Project" id="c5" width="120">
+                              <af:selectOneChoice value="#{row.bindings.ProjectId.inputValue}"
+                                                  label="#{row.bindings.ProjectId.label}"
+                                                  required="#{bindings.TblDrawerView1.hints.ProjectId.mandatory}"
+                                                  shortDesc="#{bindings.TblDrawerView1.hints.ProjectId.tooltip}"
+                                                  id="soc2">
+                                <f:selectItems value="#{row.bindings.ProjectId.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.ProjectId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Debit Head" id="c7" width="150">
+                              <af:selectOneChoice value="#{row.bindings.ExpGlId.inputValue}"
+                                                  label="#{row.bindings.ExpGlId.label}"
+                                                  required="#{bindings.TblDrawerView1.hints.ExpGlId.mandatory}"
+                                                  shortDesc="#{bindings.TblDrawerView1.hints.ExpGlId.tooltip}"
+                                                  id="soc3">
+                                <f:selectItems value="#{row.bindings.ExpGlId.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.ExpGlId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Credit Head" id="c8" width="150">
+                              <af:selectOneChoice value="#{row.bindings.CbGlId.inputValue}"
+                                                  label="#{row.bindings.CbGlId.label}"
+                                                  required="#{bindings.TblDrawerView1.hints.CbGlId.mandatory}"
+                                                  shortDesc="#{bindings.TblDrawerView1.hints.CbGlId.tooltip}" id="soc4">
+                                <f:selectItems value="#{row.bindings.CbGlId.items}" id="si4"/>
+                                <f:validator binding="#{row.bindings.CbGlId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Amount" id="c10" width="130">
+                              <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                            label="#{bindings.TblDrawerView1.hints.Amount.label}"
+                                            required="#{bindings.TblDrawerView1.hints.Amount.mandatory}"
+                                            columns="#{bindings.TblDrawerView1.hints.Amount.displayWidth}"
+                                            maximumLength="#{bindings.TblDrawerView1.hints.Amount.precision}"
+                                            shortDesc="#{bindings.TblDrawerView1.hints.Amount.tooltip}" id="it5">
+                                <f:validator binding="#{row.bindings.Amount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblDrawerView1.hints.Amount.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Voucher Type" id="c9"
@@ -279,8 +330,8 @@
         </af:gridRow>
           <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
-            <af:panelTabbed position="above" id="pt3">
-              <af:showDetailItem id="tab3">
+            <!--<af:panelTabbed position="above" id="pt3">
+              --><!--<af:showDetailItem id="tab3">
                 <af:panelFormLayout id="pfl1" maxColumns="2" rows="6">
                   <af:inputDate value="#{bindings.Dated.inputValue}" label="Date"
                                 required="#{bindings.Dated.hints.mandatory}"
@@ -339,8 +390,8 @@
                     </af:panelGroupLayout>
                   </f:facet>
                 </af:panelFormLayout>
-              </af:showDetailItem>
-            </af:panelTabbed>
+              </af:showDetailItem>--><!--
+            </af:panelTabbed>-->
           </af:gridCell>
         </af:gridRow>
           <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">

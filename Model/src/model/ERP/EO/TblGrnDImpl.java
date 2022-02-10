@@ -40,6 +40,7 @@ public class TblGrnDImpl extends EntityImpl {
         TaxId,
         TaxDetailId,
         TaxPerc,
+        ItemL4DId,
         TblGrnM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -83,6 +84,7 @@ public class TblGrnDImpl extends EntityImpl {
     public static final int TAXID = AttributesEnum.TaxId.index();
     public static final int TAXDETAILID = AttributesEnum.TaxDetailId.index();
     public static final int TAXPERC = AttributesEnum.TaxPerc.index();
+    public static final int ITEML4DID = AttributesEnum.ItemL4DId.index();
     public static final int TBLGRNM = AttributesEnum.TblGrnM.index();
 
     /**
@@ -369,6 +371,22 @@ public class TblGrnDImpl extends EntityImpl {
      */
     public void setTaxPerc(BigDecimal value) {
         setAttributeInternal(TAXPERC, value);
+    }
+
+    /**
+     * Gets the attribute value for ItemL4DId, using the alias name ItemL4DId.
+     * @return the value of ItemL4DId
+     */
+    public BigDecimal getItemL4DId() {
+        return (BigDecimal) getAttributeInternal(ITEML4DID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ItemL4DId.
+     * @param value value to set the ItemL4DId
+     */
+    public void setItemL4DId(BigDecimal value) {
+        setAttributeInternal(ITEML4DID, value);
     }
 
     /**

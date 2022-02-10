@@ -36,6 +36,7 @@
           <Item Value="Amount"/>
           <Item Value="DepartmentId"/>
           <Item Value="CompanyId"/>
+          <Item Value="ItemL4DId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

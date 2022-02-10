@@ -14,6 +14,9 @@
               id="InventoryCOASearch1Iterator"/>
     <searchRegion Binds="InventoryCOASearch1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="InventoryCOASearch1Query"/>
+    <iterator Binds="TblItemL4DView4" RangeSize="5" DataControl="AppModuleDataControl1" id="TblItemL4DView4Iterator"/>
+    <searchRegion Binds="TblItemL4DView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblItemL4DView4Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -184,5 +187,24 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="TblItemL4View1Iterator" StaticList="false" Uses="LOV_ConsCa" id="ConsCa" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TblItemL4DView4Iterator" id="TblItemL4DView4">
+      <nodeDefinition DefName="model.ERP.VO.TblItemL4DView" Name="TblItemL4DView40">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="Type"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="Type2"/>
+          <Item Value="Type3"/>
+          <Item Value="Type4"/>
+          <Item Value="Type5"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblItemL4DView4Iterator" id="CreateInsert4" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblItemL4DView4Iterator" id="Execute4" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblItemL4DView4Iterator" id="Delete4" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

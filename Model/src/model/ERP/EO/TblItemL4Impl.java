@@ -45,7 +45,8 @@ public class TblItemL4Impl extends EntityImpl {
         ConsCa,
         TblOpenBlncInv,
         TblPblSuppItems,
-        TblItemL3;
+        TblItemL3,
+        TblItemL4D;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -93,6 +94,7 @@ public class TblItemL4Impl extends EntityImpl {
     public static final int TBLOPENBLNCINV = AttributesEnum.TblOpenBlncInv.index();
     public static final int TBLPBLSUPPITEMS = AttributesEnum.TblPblSuppItems.index();
     public static final int TBLITEML3 = AttributesEnum.TblItemL3.index();
+    public static final int TBLITEML4D = AttributesEnum.TblItemL4D.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -438,6 +440,14 @@ public class TblItemL4Impl extends EntityImpl {
      */
     public void setTblItemL3(TblItemL3Impl value) {
         setAttributeInternal(TBLITEML3, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblItemL4D() {
+        return (RowIterator) getAttributeInternal(TBLITEML4D);
     }
 
 
