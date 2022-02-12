@@ -7,11 +7,11 @@
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
     <iterator Binds="TblSaleInvMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblSaleInvMasterView1Iterator"/>
+              id="TblSaleInvMasterView1Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="TblSaleInvMasterView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSaleInvMasterView1Query"/>
     <iterator Binds="TblSaleInvDetailView2" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblSaleInvDetailView2Iterator"/>
+              id="TblSaleInvDetailView2Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="TblSaleInvDetailView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSaleInvDetailView2Query"/>
     <iterator Binds="INV_Chart_of_Account_OpenFragment1" RangeSize="25" DataControl="AppModuleDataControl"

@@ -106,6 +106,7 @@
           
           <Item Value="UOMName"/>
           <Item Value="TaxId"/>
+          <Item Value="ItemL4DId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

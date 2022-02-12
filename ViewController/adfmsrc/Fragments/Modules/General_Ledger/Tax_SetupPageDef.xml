@@ -7,11 +7,11 @@
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
     <iterator Binds="TblTaxMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblTaxMasterView1Iterator"/>
+              id="TblTaxMasterView1Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="TblTaxMasterView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTaxMasterView1Query"/>
     <iterator Binds="TblTaxDetailView2" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblTaxDetailView2Iterator"/>
+              id="TblTaxDetailView2Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="TblTaxDetailView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTaxDetailView2Query"/>
   </executables>

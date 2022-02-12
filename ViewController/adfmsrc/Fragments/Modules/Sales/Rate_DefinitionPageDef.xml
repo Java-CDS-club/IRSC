@@ -82,6 +82,7 @@
           <Item Value="Description"/>
           <Item Value="Rate"/>
           <Item Value="UOMName"/>
+          <Item Value="ItemL4DId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

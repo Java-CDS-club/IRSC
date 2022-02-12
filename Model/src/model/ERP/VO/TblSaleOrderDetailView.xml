@@ -25,13 +25,18 @@
        TblSaleOrderDetail.UPDATED_BY, 
        TblUom.NAME, 
        TblUom.ID AS ID1, 
-       TblItemL4.ITEM_L4_ID AS ITEM_L4ID1"
+       TblItemL4.ITEM_L4_ID AS ITEM_L4ID1, 
+       TblSaleOrderDetail.ITEM_L4_D_ID"
   FromList="TBL_SALE_ORDER_DETAIL TblSaleOrderDetail, TBL_UOM TblUom, TBL_ITEM_L4 TblItemL4"
   Where="TblSaleOrderDetail.ITEM_L4_ID = TblItemL4.ITEM_L4_ID     
 and TblItemL4.UOM_ID = TblUom.ID">
   <ViewAccessor
     Name="FIFO_LOV1"
     ViewObjectName="model.LOV.FIFO_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Item_L4_D_LOV1"
+    ViewObjectName="model.LOV.Item_L4_D_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ItemL4Id"
@@ -45,13 +50,37 @@ and TblItemL4.UOM_ID = TblUom.ID">
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
       <Item Value="Rate"/>
+      <Item Value="ItemL4DId"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ItemL4Id"/>
       <Item Value="RDRATE"/>
+      <Item Value="ItemL4DId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ItemName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4DId"
+    ListVOName="Item_L4_D_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4DId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TypName"/>
+      <Item Value="Typ2Name"/>
+      <Item Value="Typ3Name"/>
+      <Item Value="Typ4Name"/>
+      <Item Value="Typ5Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -188,4 +217,18 @@ and TblItemL4.UOM_ID = TblUom.ID">
     EntityAttrName="ItemL4Id"
     EntityUsage="TblItemL4"
     AliasName="ITEM_L4ID1"/>
+  <ViewAttribute
+    Name="ItemL4DId"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4DId"
+    EntityUsage="TblSaleOrderDetail"
+    AliasName="ITEM_L4_D_ID"
+    LOVName="LOV_ItemL4DId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
 </ViewObject>

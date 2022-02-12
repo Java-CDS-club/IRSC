@@ -101,6 +101,7 @@
           <Item Value="DiscAmount"/>
           <Item Value="Amount"/>
           <Item Value="UOMName"/>
+          <Item Value="ItemL4DId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

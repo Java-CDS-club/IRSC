@@ -51,7 +51,7 @@
                                     scrollPolicy="page" autoHeightRows="0" >
                             <af:column sortProperty="#{bindings.TblDrawerView1.hints.Id.name}" filterable="true" 
                                        sortable="true" headerText="ID" id="c1"
-                                       width="60"  >
+                                       width="50"  >
                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Id}"
        id="id4" placeholder="Search ">
@@ -69,7 +69,7 @@
                                                   pattern="#{bindings.TblDrawerView1.hints.Id.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="Description" id="c2" width="300" sortable="true" filterable="true">
+                            <af:column headerText="Description" id="c2" width="250" sortable="true" filterable="true">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Remarks}"
        id="it12" placeholder="Search ">
@@ -84,7 +84,7 @@
                                 <f:validator binding="#{row.bindings.Remarks.validator}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="Date" id="c4" width="120">
+                            <af:column headerText="Date" id="c4" width="100">
                               <af:inputDate value="#{row.bindings.Dated.inputValue}"
                                             label="#{bindings.TblDrawerView1.hints.Dated.label}"
                                             required="#{bindings.TblDrawerView1.hints.Dated.mandatory}"
@@ -123,7 +123,7 @@
                                 <f:validator binding="#{row.bindings.CbGlId.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Amount" id="c10" width="130">
+                            <af:column headerText="Amount" id="c10" width="80">
                               <af:inputText value="#{row.bindings.Amount.inputValue}"
                                             label="#{bindings.TblDrawerView1.hints.Amount.label}"
                                             required="#{bindings.TblDrawerView1.hints.Amount.mandatory}"
@@ -136,7 +136,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Voucher Type" id="c9"
-                                       sortable="true" filterable="true" width="150">
+                                       sortable="true" filterable="true" width="130">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.VType}"
        id="it14" placeholder="Search ">
@@ -151,7 +151,7 @@
                               </af:selectOneChoice>
                             </af:column>
                             <af:column headerText="Approved" id="c3" sortable="true"
-                                       filterable="true" width="100">
+                                       filterable="true" width="80">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Ast}"
        id="it8" placeholder="Search ">

@@ -60,7 +60,7 @@
                         <af:spacer width="10" height="10" id="s14"/>
                         
                          <af:button  id="b5" 
-                        styleClass="af|modulebutton" icon="#{resource['images:Uploader.png']}" inlineStyle="font-size:14px;"
+                        styleClass="af|modulebutton" icon="#{resource['images:school.png']}" inlineStyle="font-size:14px;"
                         action="/faces/Main_Pages/Modules/School_Managment_System/School_Managment_System.jsf"
                                     text="School System" iconPosition="top"/>
                         
@@ -153,7 +153,7 @@
                         
                         <af:spacer width="10" height="10" id="s5"/>
                          
-                        <af:button  id="b4" icon="#{resource['images:sales.png']}" inlineStyle="font-size:14px;"
+                        <af:button  id="b4" icon="#{resource['images:Fixed_Assets.png']}" inlineStyle="font-size:14px;"
                         styleClass="af|modulebutton"
                         action="/faces/Main_Pages/Modules/Fixed_Assets/Fixed_Assets.jsf" text="Fixed Assets" iconPosition="top"/>
                          

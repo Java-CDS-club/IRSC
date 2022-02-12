@@ -117,6 +117,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_SALE_ORDER_DETAIL"/>
+  <Attribute
+    Name="ItemL4DId"
+    ColumnName="ITEM_L4_D_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SALE_ORDER_DETAIL"/>
   <AccessorAttribute
     Name="TblSaleOrderMaster"
     Association="model.ERP.EO.FkSaleOrderDetailMasterAssoc"

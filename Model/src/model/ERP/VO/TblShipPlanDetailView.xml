@@ -23,7 +23,8 @@
        TblShipPlanDetail.UPDATED_BY, 
        TblItemL4.ITEM_L4_ID AS ITEM_L4ID1, 
        TblUom.NAME, 
-       TblUom.ID AS ID1"
+       TblUom.ID AS ID1, 
+       TblShipPlanDetail.ITEM_L4_D_ID"
   FromList="TBL_SHIP_PLAN_DETAIL TblShipPlanDetail, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
   Where="TblShipPlanDetail.ITEM_L4_ID = TblItemL4.ITEM_L4_ID            
 and TblItemL4.UOM_ID = TblUom.ID">
@@ -34,6 +35,10 @@ and TblItemL4.UOM_ID = TblUom.ID">
   <ViewAccessor
     Name="Shipment_Type_LOV1"
     ViewObjectName="model.LOV.Shipment_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Item_L4_D_LOV1"
+    ViewObjectName="model.LOV.Item_L4_D_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ItemL4Id"
@@ -68,6 +73,28 @@ and TblItemL4.UOM_ID = TblUom.ID">
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4DId"
+    ListVOName="Item_L4_D_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4DId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TypName"/>
+      <Item Value="Typ2Name"/>
+      <Item Value="Typ3Name"/>
+      <Item Value="Typ4Name"/>
+      <Item Value="Typ5Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -200,6 +227,20 @@ and TblItemL4.UOM_ID = TblUom.ID">
     EntityAttrName="Id"
     EntityUsage="TblUom"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="ItemL4DId"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4DId"
+    EntityUsage="TblShipPlanDetail"
+    AliasName="ITEM_L4_D_ID"
+    LOVName="LOV_ItemL4DId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblShipPlanDetailDView"
     ViewLink="model.ERP.VO.FkShipPlanDetailDDetailLink"

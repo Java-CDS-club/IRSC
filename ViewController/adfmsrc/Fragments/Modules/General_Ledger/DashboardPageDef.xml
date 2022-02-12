@@ -4,51 +4,53 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Notepad_Chart1" RangeSize="4" DataControl="AppModuleDataControl1" id="Notepad_Chart1Iterator"/>
+    <iterator Binds="Notepad_Chart1" RangeSize="4" DataControl="AppModuleDataControl1" id="Notepad_Chart1Iterator"
+              Refresh="always" CacheResults="false"/>
     <searchRegion Binds="Notepad_Chart1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Notepad_Chart1Query"/>
     <iterator Binds="VIEW_PDC_PAID_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PDC_PAID_CHART1Iterator"/>
+              id="VIEW_PDC_PAID_CHART1Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="VIEW_PDC_PAID_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_PAID_CHART1Query"/>
     <iterator Binds="VIEW_PDC_REC_CHARTS1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PDC_REC_CHARTS1Iterator"/>
+              id="VIEW_PDC_REC_CHARTS1Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="VIEW_PDC_REC_CHARTS1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PDC_REC_CHARTS1Query"/>
     <iterator Binds="VIEW_EXPENSE_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_EXPENSE_CHART1Iterator"/>
-    <iterator Binds="VIEW_PR_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1" id="VIEW_PR_CHART1Iterator"/>
+              id="VIEW_EXPENSE_CHART1Iterator" Refresh="always" CacheResults="false"/>
+    <iterator Binds="VIEW_PR_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1" id="VIEW_PR_CHART1Iterator"
+              Refresh="always" CacheResults="false"/>
     <iterator Binds="VIEW_SALES_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_SALES_CHART1Iterator"/>
+              id="VIEW_SALES_CHART1Iterator" Refresh="always" CacheResults="false"/>
     <iterator Binds="VIEW_SALES_MONTHLY_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_SALES_MONTHLY_CHART1Iterator"/>
+              id="VIEW_SALES_MONTHLY_CHART1Iterator" Refresh="always" CacheResults="false"/>
     <iterator Binds="VIEW_PENDING_SALE_ORDER_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PENDING_SALE_ORDER_CHART1Iterator"/>
+              id="VIEW_PENDING_SALE_ORDER_CHART1Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="VIEW_PENDING_SALE_ORDER_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="VIEW_PENDING_SALE_ORDER_CHART1Query"/>
     <iterator Binds="VIEW_PENDING_PO_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_PENDING_PO_CHART1Iterator"/>
+              id="VIEW_PENDING_PO_CHART1Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="VIEW_PENDING_PO_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_PENDING_PO_CHART1Query"/>
     <iterator Binds="VIEW_PURCHASE_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_PURCHASE_CHART1Iterator"/>
+              id="VIEW_PURCHASE_CHART1Iterator" Refresh="always" CacheResults="false"/>
     <iterator Binds="VIEW_PURCHASE_MONTHLY_CHART1" RangeSize="-1" DataControl="AppModuleDataControl1"
-              id="VIEW_PURCHASE_MONTHLY_CHART1Iterator"/>
+              id="VIEW_PURCHASE_MONTHLY_CHART1Iterator" Refresh="always" CacheResults="false"/>
     <iterator Binds="VIEW_DEPT_EMP_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_DEPT_EMP_CHART1Iterator"/>
+              id="VIEW_DEPT_EMP_CHART1Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="VIEW_DEPT_EMP_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_DEPT_EMP_CHART1Query"/>
     <iterator Binds="VIEW_DESIG_EMP_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_DESIG_EMP_CHART1Iterator"/>
+              id="VIEW_DESIG_EMP_CHART1Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="VIEW_DESIG_EMP_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_DESIG_EMP_CHART1Query"/>
     <iterator Binds="VIEW_DEPT_ATT_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_DEPT_ATT_CHART1Iterator"/>
+              id="VIEW_DEPT_ATT_CHART1Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="VIEW_DEPT_ATT_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_DEPT_ATT_CHART1Query"/>
     <iterator Binds="VIEW_TODAY_SALES_CHART1" RangeSize="4" DataControl="AppModuleDataControl1"
-              id="VIEW_TODAY_SALES_CHART1Iterator"/>
+              id="VIEW_TODAY_SALES_CHART1Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="VIEW_TODAY_SALES_CHART1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="VIEW_TODAY_SALES_CHART1Query"/>
   </executables>

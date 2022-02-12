@@ -26,16 +26,17 @@
     Name="get_Company_ID"
     Kind="where"
     Type="java.math.BigDecimal"/>
-  <SQLQuery><![CDATA[select                  
-VF.ID, VF.Item_L4_ID, VF.Item_Name, VF.bal_qty ,VF.bal_amt/VF.bal_qty rate,        
-RD.RATE RD_RATE        
-                 
-from VEW_FIFO VF,TBL_RDF_MASTER RM,TBL_RDF_DETAIL RD        
-        
-where        
-VF.ITEM_L4_ID = RD.ITEM_L4_ID(+)    
-and RM.ID = RD.RDF_MASTER_ID        
-and VF.Department_id = nvl(:get_Dept_ID,VF.Department_id) 
+  <SQLQuery><![CDATA[select                   
+VF.ID, VF.Item_L4_ID, VF.Item_Name, VF.bal_qty ,VF.bal_amt/VF.bal_qty rate,         
+RD.RATE RD_RATE,VF.ITEM_L4_D_ID 
+                  
+from VEW_FIFO VF,TBL_RDF_MASTER RM,TBL_RDF_DETAIL RD         
+         
+where         
+VF.ITEM_L4_ID = RD.ITEM_L4_ID(+)     
+And VF.ITEM_L4_D_ID = RD.ITEM_L4_D_ID(+)     
+and RM.ID = RD.RDF_MASTER_ID         
+and VF.Department_id = nvl(:get_Dept_ID,VF.Department_id)  
 and VF.Company_id = nvl(:get_Company_ID,VF.Company_id)]]></SQLQuery>
   <ViewAttribute
     Name="Id"
@@ -102,6 +103,16 @@ and VF.Company_id = nvl(:get_Company_ID,VF.Company_id)]]></SQLQuery>
     AliasName="RD_RATE"
     SQLType="NUMERIC"
     Expression="RD_RATE"/>
+  <ViewAttribute
+    Name="ItemL4DId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ITEM_L4_D_ID"
+    Expression="ITEM_L4_D_ID"
+    SQLType="NUMERIC"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

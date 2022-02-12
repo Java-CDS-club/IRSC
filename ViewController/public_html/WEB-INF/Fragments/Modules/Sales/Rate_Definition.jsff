@@ -132,7 +132,7 @@
                           queryListener="#{bindings.TblRdfDetailView2Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0" >
                   <af:column sortProperty="#{bindings.TblRdfDetailView2.hints.ItemL4Id.name}" filterable="true"
-                             sortable="true" headerText="Item Name" id="c9" width="500">
+                             sortable="true" headerText="Item Name" id="c9" width="300">
                              <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
                                    id="it15" placeholder="Search ">
@@ -146,7 +146,23 @@
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="UOM" id="c7" sortable="true"
+                            <af:column headerText="Type" id="c5"
+                                       sortable="true" filterable="true" width="300">
+                                       <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.ItemL4DId}"
+                                   id="it12" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.ItemL4DId.inputValue}"
+                                                  label="#{row.bindings.ItemL4DId.label}"
+                                                  required="#{bindings.TblRdfDetailView2.hints.ItemL4DId.mandatory}"
+                                                  shortDesc="#{bindings.TblRdfDetailView2.hints.ItemL4DId.tooltip}"
+                                                  id="soc2">
+                                <f:selectItems value="#{row.bindings.ItemL4DId.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.ItemL4DId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="UOM" id="c7" sortable="true"
                              filterable="true" width="80">
                               <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.UOMName}"

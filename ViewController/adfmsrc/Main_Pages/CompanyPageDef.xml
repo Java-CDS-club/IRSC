@@ -5,7 +5,7 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="User_Company_Detail_View1" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="User_Company_Detail_View1Iterator" CacheResults="false"/>
+              id="User_Company_Detail_View1Iterator" CacheResults="false" Refresh="always"/>
     <searchRegion Binds="User_Company_Detail_View1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="User_Company_Detail_View1Query"/>
   </executables>

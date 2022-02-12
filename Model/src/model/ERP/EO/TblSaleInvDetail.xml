@@ -162,6 +162,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_SALE_INV_DETAIL"/>
+  <Attribute
+    Name="ItemL4DId"
+    ColumnName="ITEM_L4_D_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SALE_INV_DETAIL"/>
   <AccessorAttribute
     Name="TblSaleInvMaster"
     Association="model.ERP.EO.FkSaleInvDetailMasterAssoc"

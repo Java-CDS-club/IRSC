@@ -7,9 +7,9 @@
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
     <iterator Binds="TblSaleServMView1" RangeSize="10" DataControl="AppModuleDataControl1"
-              id="TblSaleServMView1Iterator"/>
+              id="TblSaleServMView1Iterator" Refresh="always" CacheResults="false"/>
     <iterator Binds="TblSaleServDView2" RangeSize="10" DataControl="AppModuleDataControl1"
-              id="TblSaleServDView2Iterator"/>
+              id="TblSaleServDView2Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="TblSaleServDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSaleServDView2Query"/>
     <searchRegion Binds="TblSaleServMView1Iterator" Criteria=""

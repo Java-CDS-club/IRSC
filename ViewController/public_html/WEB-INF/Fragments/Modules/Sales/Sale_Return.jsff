@@ -182,7 +182,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblSaleRetDetailView2.hints.ItemL4Id.name}" filterable="true"
                              sortable="true" headerText="Item Name"
-                             id="c3" width="400">
+                             id="c3" width="300">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
        id="it16" placeholder="Search ">
@@ -196,7 +196,23 @@
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="UOM" id="c2" sortable="true"
+                            <af:column headerText="Type" id="c17"
+                                       sortable="true" filterable="true" width="300">
+                                         <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL4DId}"
+       id="it27" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.ItemL4DId.inputValue}"
+                                                  label="#{row.bindings.ItemL4DId.label}"
+                                                  required="#{bindings.TblSaleRetDetailView2.hints.ItemL4DId.mandatory}"
+                                                  shortDesc="#{bindings.TblSaleRetDetailView2.hints.ItemL4DId.tooltip}"
+                                                  id="soc9">
+                                <f:selectItems value="#{row.bindings.ItemL4DId.items}" id="si9"/>
+                                <f:validator binding="#{row.bindings.ItemL4DId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="UOM" id="c2" sortable="true"
                              filterable="true">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.UOMName}"
