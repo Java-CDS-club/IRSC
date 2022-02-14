@@ -7,11 +7,11 @@
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
     <iterator Binds="TblNotepadMView1" RangeSize="10" DataControl="AppModuleDataControl1"
-              id="TblNotepadMView1Iterator" Refresh="always" CacheResults="false"/>
+              id="TblNotepadMView1Iterator"/>
     <searchRegion Binds="TblNotepadMView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblNotepadMView1Query"/>
     <iterator Binds="TblNotepadDView2" RangeSize="10" DataControl="AppModuleDataControl1"
-              id="TblNotepadDView2Iterator" Refresh="always" CacheResults="false"/>
+              id="TblNotepadDView2Iterator"/>
     <searchRegion Binds="TblNotepadDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblNotepadDView2Query"/>
   </executables>

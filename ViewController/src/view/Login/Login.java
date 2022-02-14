@@ -230,6 +230,20 @@ public class Login {
       
         return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
     }
+    
+//    public String Company_Out() {
+//        // Add event code here...
+//        System.out.println("Company out called");
+//        sessUName = "";
+//        role_master_id = "";
+//        storeOnSession("sessUName", "");
+//        storeOnSession("sessUID", "");
+//        storeOnSession("sessCoID", "");
+//        storeOnSession("sessRID", "");
+//        //        return "good";
+//        
+//        return "/faces/Main_Pages/Company.jsf?faces-redirect=true";
+//    }
 
    
     public String login_Session() { 
@@ -435,4 +449,6 @@ public class Login {
 
         return company_id;
     }
+
+    
 }

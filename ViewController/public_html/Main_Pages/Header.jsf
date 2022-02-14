@@ -47,7 +47,10 @@
                                                        destination="/faces/Main_Pages/Dashboard.jsf"/>
                                             <af:spacer width="10" height="10" id="pt_s3"/>
                                             <af:button icon="#{resource['images:Back_to_Company.png']}" styleClass="af|headerbutton"
-                                            destination="/faces/Main_Pages/Company.jsf" id="pt_b3"/>
+                                             action="#{backingBeanScope.VoucherPrintBean.Company_Out}"
+                                             
+                                             id="pt_b3"/>
+                                            
                                             <af:spacer width="10" height="10" id="pt_s6"/>
                                             <af:button  id="pt_b1" icon="#{resource['images:logout.png']}" styleClass="af|headerbutton"
                                                        action="#{LoginBean.logout_action}" />

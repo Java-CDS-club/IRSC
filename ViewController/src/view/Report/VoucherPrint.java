@@ -21,8 +21,8 @@ import view.DatabaseConnection.DatabaseConnection;
 
 public class VoucherPrint {
     private RichInputText it4;
-    private static BigDecimal sendVMID;
-    private static String company_id;
+    private static String Img_Name;
+    private static Number company_id;
     private static String company_name;
     private RichInputText it1;
     private RichInputText it2;
@@ -962,12 +962,32 @@ public class VoucherPrint {
         storeOnSession("sessCoID", sendCOMPANYID);
         storeOnSession("sessCoName", company);
         storeOnSession("sessIMGP", imgp);
-      
+        
+        company_id=sendCOMPANYID;
+        company_name=company;
+        Img_Name=imgp;
         System.out.println("Company ID= " + sendCOMPANYID);
         System.out.println("Company Name= " + company);
         System.out.println("Image Path= " + imgp);
+        
+        
     }
-
+    
+    public String Company_Out() {
+        // Add event code here...
+        
+        System.out.println("Company out");
+        company_id =null ;
+        company_name = "";
+        Img_Name = "";
+        
+        storeOnSession("sessCoID", "");
+        storeOnSession("sessCoName", "");
+        storeOnSession("sessIMGP", "");
+        //        return "good";
+        System.out.println("Company out Done");
+        return "/faces/Main_Pages/Company.jsf?faces-redirect=true";
+    }
 
     public void setIt1(RichInputText it1) {
         this.it1 = it1;
@@ -1026,4 +1046,6 @@ public class VoucherPrint {
     public RichInputText getIt2() {
         return it2;
     }
+
+   
 }

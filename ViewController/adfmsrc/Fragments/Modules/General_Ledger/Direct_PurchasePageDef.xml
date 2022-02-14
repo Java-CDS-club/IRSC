@@ -6,12 +6,10 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblGrnMView1" RangeSize="10" DataControl="AppModuleDataControl1" id="TblGrnMView1Iterator"
-              Refresh="always" CacheResults="false"/>
+    <iterator Binds="TblGrnMView1" RangeSize="10" DataControl="AppModuleDataControl1" id="TblGrnMView1Iterator"/>
     <searchRegion Binds="TblGrnMView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGrnMView1Query"/>
-    <iterator Binds="TblGrnDView2" RangeSize="10" DataControl="AppModuleDataControl1" id="TblGrnDView2Iterator"
-              Refresh="always" CacheResults="false"/>
+    <iterator Binds="TblGrnDView2" RangeSize="10" DataControl="AppModuleDataControl1" id="TblGrnDView2Iterator"/>
     <searchRegion Binds="TblGrnDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGrnDView2Query"/>
     <iterator Binds="INV_Chart_of_Account_OpenFragment1" RangeSize="25" DataControl="AppModuleDataControl"
