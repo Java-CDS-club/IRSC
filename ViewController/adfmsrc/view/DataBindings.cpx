@@ -502,6 +502,26 @@
           usageId="view_School_Managment_SystemPageDef"/>
     <page path="/Main_Pages/Modules/School_Managment_System/School_Managment_System.jsf"
           usageId="view_School_Managment_SystemPageDef1"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Academic_Year_TaskFlow.xml#Academic_Year_TaskFlow@ExecuteWithParams"
+          usageId="view_Academic_Year_TaskFlow_Academic_Year_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Academic_Group_Setup_TaskFlow.xml#Academic_Group_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Academic_Group_Setup_TaskFlow_Academic_Group_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Academic_Terms_TaskFlow.xml#Academic_Terms_TaskFlow@ExecuteWithParams"
+          usageId="view_Academic_Terms_TaskFlow_Academic_Terms_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Terms_Working_Days_TaskFlow.xml#Terms_Working_Days_TaskFlow@ExecuteWithParams"
+          usageId="view_Terms_Working_Days_TaskFlow_Terms_Working_Days_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Department_Setup_TaskFlow.xml#Department_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Department_Setup_TaskFlow_Department_Setup_TaskFlow_ExecuteWithParamsPageDef2"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Academic_Year.jsff"
+          usageId="view_Academic_YearPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Academic_Terms.jsff"
+          usageId="view_Academic_TermsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Academic_Group_Setup.jsff"
+          usageId="view_Academic_Group_SetupPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Terms_Working_Days.jsff"
+          usageId="view_Terms_Working_DaysPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Department_Setup.jsff"
+          usageId="view_Department_SetupPageDef2"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -975,6 +995,23 @@
           path="Fragments.Modules.School_Managment_System.School_Managment_SystemPageDef"/>
     <page id="view_School_Managment_SystemPageDef1"
           path="Main_Pages.Modules.School_Managment_System.School_Managment_SystemPageDef"/>
+    <page id="view_Academic_Year_TaskFlow_Academic_Year_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Academic_Year_TaskFlow_Academic_Year_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Academic_Group_Setup_TaskFlow_Academic_Group_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Academic_Group_Setup_TaskFlow_Academic_Group_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Academic_Terms_TaskFlow_Academic_Terms_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Academic_Terms_TaskFlow_Academic_Terms_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Terms_Working_Days_TaskFlow_Terms_Working_Days_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Terms_Working_Days_TaskFlow_Terms_Working_Days_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Department_Setup_TaskFlow_Department_Setup_TaskFlow_ExecuteWithParamsPageDef2"
+          path="Task_Flows.Modules.School_Managment_System.Department_Setup_TaskFlow_Department_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Academic_YearPageDef" path="Fragments.Modules.School_Managment_System.Academic_YearPageDef"/>
+    <page id="view_Academic_TermsPageDef" path="Fragments.Modules.School_Managment_System.Academic_TermsPageDef"/>
+    <page id="view_Academic_Group_SetupPageDef"
+          path="Fragments.Modules.School_Managment_System.Academic_Group_SetupPageDef"/>
+    <page id="view_Terms_Working_DaysPageDef"
+          path="Fragments.Modules.School_Managment_System.Terms_Working_DaysPageDef"/>
+    <page id="view_Department_SetupPageDef2" path="Fragments.Modules.School_Managment_System.Department_SetupPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

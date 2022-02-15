@@ -1150,6 +1150,39 @@
   <ViewUsage
     Name="TblItemL4DView4"
     ViewObjectName="model.ERP.VO.TblItemL4DView"/>
+  <ViewUsage
+    Name="TblAcadGroupView1"
+    ViewObjectName="model.ERP.VO.TblAcadGroupView"/>
+  <ViewUsage
+    Name="TblAcadYearView1"
+    ViewObjectName="model.ERP.VO.TblAcadYearView"/>
+  <ViewUsage
+    Name="TblTermWorkDaysView1"
+    ViewObjectName="model.ERP.VO.TblTermWorkDaysView"/>
+  <ViewUsage
+    Name="TblTermsView1"
+    ViewObjectName="model.ERP.VO.TblTermsView"/>
+  <ViewUsage
+    Name="TblWeekView1"
+    ViewObjectName="model.ERP.VO.TblWeekView"/>
+  <ViewUsage
+    Name="TblTermsView2"
+    ViewObjectName="model.ERP.VO.TblTermsView"/>
+  <ViewUsage
+    Name="TblTermWorkDaysView2"
+    ViewObjectName="model.ERP.VO.TblTermWorkDaysView"/>
+  <ViewUsage
+    Name="TblTermWorkDaysView3"
+    ViewObjectName="model.ERP.VO.TblTermWorkDaysView"/>
+  <ViewUsage
+    Name="TblWeekView2"
+    ViewObjectName="model.ERP.VO.TblWeekView"/>
+  <ViewUsage
+    Name="TblWeekView3"
+    ViewObjectName="model.ERP.VO.TblWeekView"/>
+  <ViewUsage
+    Name="TblWeekView4"
+    ViewObjectName="model.ERP.VO.TblWeekView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -2055,5 +2088,41 @@
     ViewLinkObjectName="model.ERP.VO.FkItemL4DLink"
     SrcViewUsageName="model.ERP.AppModule.TblItemL4View1"
     DstViewUsageName="model.ERP.AppModule.TblItemL4DView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTermsAcadYearLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTermsAcadYearLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAcadYearView1"
+    DstViewUsageName="model.ERP.AppModule.TblTermsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTermWorkDaysAcadYearLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTermWorkDaysAcadYearLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAcadYearView1"
+    DstViewUsageName="model.ERP.AppModule.TblTermWorkDaysView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTermWorkDaysTermsLink1"
+    ViewLinkObjectName="model.ERP.VO.FkTermWorkDaysTermsLink"
+    SrcViewUsageName="model.ERP.AppModule.TblTermsView1"
+    DstViewUsageName="model.ERP.AppModule.TblTermWorkDaysView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkWeekAcadYearLink1"
+    ViewLinkObjectName="model.ERP.VO.FkWeekAcadYearLink"
+    SrcViewUsageName="model.ERP.AppModule.TblAcadYearView1"
+    DstViewUsageName="model.ERP.AppModule.TblWeekView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkWeekTermsLink1"
+    ViewLinkObjectName="model.ERP.VO.FkWeekTermsLink"
+    SrcViewUsageName="model.ERP.AppModule.TblTermsView1"
+    DstViewUsageName="model.ERP.AppModule.TblWeekView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkWeekTermsLink2"
+    ViewLinkObjectName="model.ERP.VO.FkWeekTermsLink"
+    SrcViewUsageName="model.ERP.AppModule.TblTermsView2"
+    DstViewUsageName="model.ERP.AppModule.TblWeekView4"
     Reversed="false"/>
 </AppModule>
