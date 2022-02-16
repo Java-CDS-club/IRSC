@@ -973,21 +973,16 @@ public class VoucherPrint {
         
     }
     
-    public String Company_Out() {
+    public void company_Out(ActionEvent actionEvent) {
         // Add event code here...
-        
-        System.out.println("Company out");
-        company_id =null ;
-        company_name = "";
-        Img_Name = "";
-        
-        storeOnSession("sessCoID", "");
-        storeOnSession("sessCoName", "");
-        storeOnSession("sessIMGP", "");
-        //        return "good";
-        System.out.println("Company out Done");
-        return "/faces/Main_Pages/Company.jsf?faces-redirect=true";
+        String url = "";
+        url = "/irsoft_silverclass/faces/Main_Pages/Company.jsf";
+
+        System.out.println("Url => " + url);
+        reportBean.openUrlInNewWindow(url);
     }
+    
+   
 
     public void setIt1(RichInputText it1) {
         this.it1 = it1;
@@ -996,6 +991,8 @@ public class VoucherPrint {
     public RichInputText getIt1() {
         return it1;
     }
+    
+    
 
     public void getVReport(ActionEvent actionEvent) {
         // Add event code here....
@@ -1047,5 +1044,6 @@ public class VoucherPrint {
         return it2;
     }
 
-   
+
+    
 }

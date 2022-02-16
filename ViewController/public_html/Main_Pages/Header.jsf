@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
-                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core"
+                    xmlns:h="http://java.sun.com/jsf/html">
     <af:xmlContent>
         <afc:component>
             <afc:description/>
@@ -47,11 +48,10 @@
                                                        destination="/faces/Main_Pages/Dashboard.jsf"/>
                                             <af:spacer width="10" height="10" id="pt_s3"/>
                                             <af:button icon="#{resource['images:Back_to_Company.png']}" styleClass="af|headerbutton"
-                                             action="#{backingBeanScope.VoucherPrintBean.Company_Out}"
                                              
-                                             id="pt_b3"/>
+                                              actionListener="#{backingBeanScope.VoucherPrintBean.company_Out}" id="pt_b3"/>
                                             
-                                            <af:spacer width="10" height="10" id="pt_s6"/>
+                                            <af:spacer width="10" height="10" id="pt_s7"/>
                                             <af:button  id="pt_b1" icon="#{resource['images:logout.png']}" styleClass="af|headerbutton"
                                                        action="#{LoginBean.logout_action}" />
                                             <af:spacer width="20" height="10" id="pt_s4"/>

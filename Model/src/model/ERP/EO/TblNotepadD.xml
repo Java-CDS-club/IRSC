@@ -74,20 +74,6 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_NOTEPAD_D"/>
-  <Attribute
-    Name="Ast"
-    Precision="1"
-    ColumnName="AST"
-    SQLType="CHAR"
-    Type="java.lang.String"
-    ColumnType="CHAR"
-    TableName="TBL_NOTEPAD_D"
-    RetrievedOnUpdate="true"
-    RetrievedOnInsert="true">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="1"/>
-    </DesignTime>
-  </Attribute>
   <AccessorAttribute
     Name="TblNotepadM"
     Association="model.ERP.EO.FkUserNotepadDMAssoc"
