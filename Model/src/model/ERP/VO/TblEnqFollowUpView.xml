@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblEnqFollowUpView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblEnqFollowUp.ID, 
+       TblEnqFollowUp.DATED, 
+       TblEnqFollowUp.FOLLOW_METHOD, 
+       TblEnqFollowUp.STD_ENQ_ID, 
+       TblEnqFollowUp.SMS_TO_TYPE, 
+       TblEnqFollowUp.SMS_CONTACT_NO, 
+       TblEnqFollowUp.SMS_TEXT, 
+       TblEnqFollowUp.EMAIL_TO_TYPE, 
+       TblEnqFollowUp.EMAIL_TO, 
+       TblEnqFollowUp.EMAIL_SUBJECT, 
+       TblEnqFollowUp.EMAIL_BODY, 
+       TblEnqFollowUp.CALL_TO_TYPE, 
+       TblEnqFollowUp.CALL_CONTACT_NO, 
+       TblEnqFollowUp.CALL_CONTENT, 
+       TblEnqFollowUp.AST, 
+       TblEnqFollowUp.CREATED_DATE, 
+       TblEnqFollowUp.CREATED_BY, 
+       TblEnqFollowUp.UPDATED_DATE, 
+       TblEnqFollowUp.UPDATED_BY, 
+       TblEnqFollowUp.COMPANY_ID"
+  FromList="TBL_ENQ_FOLLOW_UP TblEnqFollowUp"
+  Where="TblEnqFollowUp.COMPANY_ID = nvl(:P_COMPANY_ID,TblEnqFollowUp.COMPANY_ID)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblEnqFollowUpView"/>
+  </Variable>
+  <ViewAccessor
+    Name="Follow_up_Method_LOV1"
+    ViewObjectName="model.LOV.Follow_up_Method_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Student_Equiry_LOV1"
+    ViewObjectName="model.LOV.Student_Equiry_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_FollowMethod"
+    ListVOName="Follow_up_Method_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FollowMethod"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StdEnqId"
+    ListVOName="Student_Equiry_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StdEnqId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblEnqFollowUp"
+    Entity="model.ERP.EO.TblEnqFollowUp"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="FollowMethod"
+    PrecisionRule="true"
+    EntityAttrName="FollowMethod"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="FOLLOW_METHOD"
+    LOVName="LOV_FollowMethod">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StdEnqId"
+    PrecisionRule="true"
+    EntityAttrName="StdEnqId"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="STD_ENQ_ID"
+    LOVName="LOV_StdEnqId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SmsToType"
+    PrecisionRule="true"
+    EntityAttrName="SmsToType"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="SMS_TO_TYPE"/>
+  <ViewAttribute
+    Name="SmsContactNo"
+    PrecisionRule="true"
+    EntityAttrName="SmsContactNo"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="SMS_CONTACT_NO"/>
+  <ViewAttribute
+    Name="SmsText"
+    PrecisionRule="true"
+    EntityAttrName="SmsText"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="SMS_TEXT"/>
+  <ViewAttribute
+    Name="EmailToType"
+    PrecisionRule="true"
+    EntityAttrName="EmailToType"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="EMAIL_TO_TYPE"/>
+  <ViewAttribute
+    Name="EmailTo"
+    PrecisionRule="true"
+    EntityAttrName="EmailTo"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="EMAIL_TO"/>
+  <ViewAttribute
+    Name="EmailSubject"
+    PrecisionRule="true"
+    EntityAttrName="EmailSubject"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="EMAIL_SUBJECT"/>
+  <ViewAttribute
+    Name="EmailBody"
+    PrecisionRule="true"
+    EntityAttrName="EmailBody"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="EMAIL_BODY"/>
+  <ViewAttribute
+    Name="CallToType"
+    PrecisionRule="true"
+    EntityAttrName="CallToType"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="CALL_TO_TYPE"/>
+  <ViewAttribute
+    Name="CallContactNo"
+    PrecisionRule="true"
+    EntityAttrName="CallContactNo"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="CALL_CONTACT_NO"/>
+  <ViewAttribute
+    Name="CallContent"
+    PrecisionRule="true"
+    EntityAttrName="CallContent"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="CALL_CONTENT"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblEnqFollowUp"
+    AliasName="COMPANY_ID"/>
+</ViewObject>

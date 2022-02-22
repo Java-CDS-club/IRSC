@@ -25,7 +25,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblAcadGroupView"/>
   </Variable>
   <ViewAccessor
@@ -110,4 +109,9 @@
     EntityAttrName="CompanyId"
     EntityUsage="TblAcadGroup"
     AliasName="COMPANY_ID"/>
+  <ViewLinkAccessor
+    Name="TblSchoolGradeView"
+    ViewLink="model.ERP.VO.FkAcadGroupSchoolGradeLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

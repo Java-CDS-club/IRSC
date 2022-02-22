@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblLookupMasterView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblLookupMaster.ID, 
+       TblLookupMaster.NAME, 
+       TblLookupMaster.CREATED_DATE, 
+       TblLookupMaster.CREATED_BY, 
+       TblLookupMaster.UPDATED_DATE, 
+       TblLookupMaster.UPDATED_BY, 
+       TblLookupMaster.COMPANY_ID"
+  FromList="TBL_LOOKUP_MASTER TblLookupMaster"
+  Where="TblLookupMaster.COMPANY_ID = nvl(:P_COMPANY_ID,TblLookupMaster.COMPANY_ID)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblLookupMasterView"/>
+  </Variable>
+  <EntityUsage
+    Name="TblLookupMaster"
+    Entity="model.ERP.EO.TblLookupMaster"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblLookupMaster"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblLookupMaster"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblLookupMaster"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblLookupMaster"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblLookupMaster"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblLookupMaster"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblLookupMaster"
+    AliasName="COMPANY_ID"/>
+  <ViewLinkAccessor
+    Name="TblLookupDetailView"
+    ViewLink="model.ERP.VO.FkLookupDetailMasterLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

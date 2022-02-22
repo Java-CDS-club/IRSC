@@ -27,7 +27,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblAcadYearView"/>
   </Variable>
   <ViewAccessor
@@ -138,6 +137,11 @@
   <ViewLinkAccessor
     Name="TblWeekView"
     ViewLink="model.ERP.VO.FkWeekAcadYearLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblHolidaysView"
+    ViewLink="model.ERP.VO.FkAcadYearHolidaysLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

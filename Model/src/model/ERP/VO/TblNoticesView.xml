@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblNoticesView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblNotices.ID, 
+       TblNotices.ACAD_YEAR_ID, 
+       TblNotices.DATED, 
+       TblNotices.NOTICE_DESC, 
+       TblNotices.START_DATE, 
+       TblNotices.END_DATE, 
+       TblNotices.NOTICE_TYPE, 
+       TblNotices.NOTICE_TEACHER, 
+       TblNotices.NOTICE_ALL, 
+       TblNotices.NOTICE_PARENT, 
+       TblNotices.NOTICE_STUDENT, 
+       TblNotices.NOTICE_IMAGE, 
+       TblNotices.CREATED_DATE, 
+       TblNotices.CREATED_BY, 
+       TblNotices.UPDATED_DATE, 
+       TblNotices.UPDATED_BY, 
+       TblNotices.NOTICE_TITLE, 
+       TblNotices.COMPANY_ID"
+  FromList="TBL_NOTICES TblNotices"
+  Where="TblNotices.COMPANY_ID = nvl(:P_COMPANY_ID,TblNotices.COMPANY_ID)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblNoticesView"/>
+  </Variable>
+  <ViewAccessor
+    Name="Academic_Year_LOV1"
+    ViewObjectName="model.LOV.Academic_Year_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Notice_Type_LOV1"
+    ViewObjectName="model.LOV.Notice_Type_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AcadYearId"
+    ListVOName="Academic_Year_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AcadYearId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_NoticeTeacher"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="NoticeTeacher"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_NoticeType"
+    ListVOName="Notice_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="NoticeType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblNotices"
+    Entity="model.ERP.EO.TblNotices"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblNotices"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="AcadYearId"
+    PrecisionRule="true"
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblNotices"
+    AliasName="ACAD_YEAR_ID"
+    LOVName="LOV_AcadYearId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblNotices"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="NoticeDesc"
+    PrecisionRule="true"
+    EntityAttrName="NoticeDesc"
+    EntityUsage="TblNotices"
+    AliasName="NOTICE_DESC"/>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="TblNotices"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="TblNotices"
+    AliasName="END_DATE"/>
+  <ViewAttribute
+    Name="NoticeType"
+    PrecisionRule="true"
+    EntityAttrName="NoticeType"
+    EntityUsage="TblNotices"
+    AliasName="NOTICE_TYPE"
+    LOVName="LOV_NoticeType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NoticeTeacher"
+    PrecisionRule="true"
+    EntityAttrName="NoticeTeacher"
+    EntityUsage="TblNotices"
+    AliasName="NOTICE_TEACHER"
+    LOVName="LOV_NoticeTeacher">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NoticeAll"
+    PrecisionRule="true"
+    EntityAttrName="NoticeAll"
+    EntityUsage="TblNotices"
+    AliasName="NOTICE_ALL"/>
+  <ViewAttribute
+    Name="NoticeParent"
+    PrecisionRule="true"
+    EntityAttrName="NoticeParent"
+    EntityUsage="TblNotices"
+    AliasName="NOTICE_PARENT"/>
+  <ViewAttribute
+    Name="NoticeStudent"
+    PrecisionRule="true"
+    EntityAttrName="NoticeStudent"
+    EntityUsage="TblNotices"
+    AliasName="NOTICE_STUDENT"/>
+  <ViewAttribute
+    Name="NoticeImage"
+    PrecisionRule="true"
+    EntityAttrName="NoticeImage"
+    EntityUsage="TblNotices"
+    AliasName="NOTICE_IMAGE"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblNotices"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblNotices"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblNotices"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblNotices"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="NoticeTitle"
+    PrecisionRule="true"
+    EntityAttrName="NoticeTitle"
+    EntityUsage="TblNotices"
+    AliasName="NOTICE_TITLE"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblNotices"
+    AliasName="COMPANY_ID"/>
+</ViewObject>

@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.EO.TblEnqFollowUp
+
+package model.ERP.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="CompanyId")
+def CompanyId_ExpressionScript_Expression()
+{
+adf.context.current.sessionScope.get('sessCoID')
+}
+

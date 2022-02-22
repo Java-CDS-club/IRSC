@@ -522,6 +522,60 @@
           usageId="view_Terms_Working_DaysPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Department_Setup.jsff"
           usageId="view_Department_SetupPageDef2"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Grade_Setup_TaskFlow.xml#Grade_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Grade_Setup_TaskFlow_Grade_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Grade_Setup.jsff" usageId="view_Grade_SetupPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Grading_Setup_TaskFlow.xml#Grading_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Grading_Setup_TaskFlow_Grading_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Grading_Setup.jsff"
+          usageId="view_Grading_SetupPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Subject_Setup_TaskFlow.xml#Subject_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Subject_Setup_TaskFlow_Subject_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Subject_Setup.jsff"
+          usageId="view_Subject_SetupPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Assessment_Setup_TaskFlow.xml#Assessment_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Assessment_Setup_TaskFlow_Assessment_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Assessment_Setup.jsff"
+          usageId="view_Assessment_SetupPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Grading_Subject_Setup_TaskFlow.xml#Grading_Subject_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Grading_Subject_Setup_TaskFlow_Grading_Subject_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Grading_Subject_Setup.jsff"
+          usageId="view_Grading_Subject_SetupPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Week_Setup_TaskFlow.xml#Week_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Week_Setup_TaskFlow_Week_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Week_Setup.jsff" usageId="view_Week_SetupPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/School_Timing_TaskFlow.xml#School_Timing_TaskFlow@ExecuteWithParams"
+          usageId="view_School_Timing_TaskFlow_School_Timing_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/School_Timing.jsff"
+          usageId="view_School_TimingPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Evaluation_Weightage_TaskFlow.xml#Evaluation_Weightage_TaskFlow@ExecuteWithParams"
+          usageId="view_Evaluation_Weightage_TaskFlow_Evaluation_Weightage_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Evaluation_Weightage.jsff"
+          usageId="view_Evaluation_WeightagePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Holidays_List_TaskFlow.xml#Holidays_List_TaskFlow@ExecuteWithParams"
+          usageId="view_Holidays_List_TaskFlow_Holidays_List_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Holidays_List.jsff"
+          usageId="view_Holidays_ListPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Notice_Setup_TaskFlow.xml#Notice_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Notice_Setup_TaskFlow_Notice_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Notice_Setup.jsff"
+          usageId="view_Notice_SetupPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Lookup_Setup_TaskFlow.xml#Lookup_Setup_TaskFlow@ExecuteWithParams"
+          usageId="view_Lookup_Setup_TaskFlow_Lookup_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Lookup_Setup.jsff"
+          usageId="view_Lookup_SetupPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Age_Eligibility_Policy_TaskFlow.xml#Age_Eligibility_Policy_TaskFlow@ExecuteWithParams"
+          usageId="view_Age_Eligibility_Policy_TaskFlow_Age_Eligibility_Policy_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Age_Eligibility_Policy.jsff"
+          usageId="view_Age_Eligibility_PolicyPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Student_Enquiry_TaskFlow.xml#Student_Enquiry_TaskFlow@ExecuteWithParams"
+          usageId="view_Student_Enquiry_TaskFlow_Student_Enquiry_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Student_Enquiry.jsff"
+          usageId="view_Student_EnquiryPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/School_Managment_System/Student_Registration.jsff"
+          usageId="view_Student_RegistrationPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Student_Registration_TaskFlow.xml#Student_Registration_TaskFlow@ExecuteWithParams"
+          usageId="view_Student_Registration_TaskFlow_Student_Registration_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -1012,6 +1066,52 @@
     <page id="view_Terms_Working_DaysPageDef"
           path="Fragments.Modules.School_Managment_System.Terms_Working_DaysPageDef"/>
     <page id="view_Department_SetupPageDef2" path="Fragments.Modules.School_Managment_System.Department_SetupPageDef"/>
+    <page id="view_Grade_Setup_TaskFlow_Grade_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Grade_Setup_TaskFlow_Grade_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Grade_SetupPageDef" path="Fragments.Modules.School_Managment_System.Grade_SetupPageDef"/>
+    <page id="view_Grading_Setup_TaskFlow_Grading_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Grading_Setup_TaskFlow_Grading_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Grading_SetupPageDef" path="Fragments.Modules.School_Managment_System.Grading_SetupPageDef"/>
+    <page id="view_Subject_Setup_TaskFlow_Subject_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Subject_Setup_TaskFlow_Subject_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Subject_SetupPageDef" path="Fragments.Modules.School_Managment_System.Subject_SetupPageDef"/>
+    <page id="view_Assessment_Setup_TaskFlow_Assessment_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Assessment_Setup_TaskFlow_Assessment_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Assessment_SetupPageDef" path="Fragments.Modules.School_Managment_System.Assessment_SetupPageDef"/>
+    <page id="view_Grading_Subject_Setup_TaskFlow_Grading_Subject_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Grading_Subject_Setup_TaskFlow_Grading_Subject_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Grading_Subject_SetupPageDef"
+          path="Fragments.Modules.School_Managment_System.Grading_Subject_SetupPageDef"/>
+    <page id="view_Week_Setup_TaskFlow_Week_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Week_Setup_TaskFlow_Week_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Week_SetupPageDef" path="Fragments.Modules.School_Managment_System.Week_SetupPageDef"/>
+    <page id="view_School_Timing_TaskFlow_School_Timing_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.School_Timing_TaskFlow_School_Timing_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_School_TimingPageDef" path="Fragments.Modules.School_Managment_System.School_TimingPageDef"/>
+    <page id="view_Evaluation_Weightage_TaskFlow_Evaluation_Weightage_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Evaluation_Weightage_TaskFlow_Evaluation_Weightage_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Evaluation_WeightagePageDef"
+          path="Fragments.Modules.School_Managment_System.Evaluation_WeightagePageDef"/>
+    <page id="view_Holidays_List_TaskFlow_Holidays_List_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Holidays_List_TaskFlow_Holidays_List_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Holidays_ListPageDef" path="Fragments.Modules.School_Managment_System.Holidays_ListPageDef"/>
+    <page id="view_Notice_Setup_TaskFlow_Notice_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Notice_Setup_TaskFlow_Notice_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Notice_SetupPageDef" path="Fragments.Modules.School_Managment_System.Notice_SetupPageDef"/>
+    <page id="view_Lookup_Setup_TaskFlow_Lookup_Setup_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Lookup_Setup_TaskFlow_Lookup_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Lookup_SetupPageDef" path="Fragments.Modules.School_Managment_System.Lookup_SetupPageDef"/>
+    <page id="view_Age_Eligibility_Policy_TaskFlow_Age_Eligibility_Policy_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Age_Eligibility_Policy_TaskFlow_Age_Eligibility_Policy_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Age_Eligibility_PolicyPageDef"
+          path="Fragments.Modules.School_Managment_System.Age_Eligibility_PolicyPageDef"/>
+    <page id="view_Student_Enquiry_TaskFlow_Student_Enquiry_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Student_Enquiry_TaskFlow_Student_Enquiry_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Student_EnquiryPageDef" path="Fragments.Modules.School_Managment_System.Student_EnquiryPageDef"/>
+    <page id="view_Student_RegistrationPageDef"
+          path="Fragments.Modules.School_Managment_System.Student_RegistrationPageDef"/>
+    <page id="view_Student_Registration_TaskFlow_Student_Registration_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.School_Managment_System.Student_Registration_TaskFlow_Student_Registration_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

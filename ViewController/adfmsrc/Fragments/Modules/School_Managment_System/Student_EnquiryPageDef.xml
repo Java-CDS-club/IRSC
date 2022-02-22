@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Student_EnquiryPageDef"
+                Package="Fragments.Modules.School_Managment_System">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblStdEnqView1" RangeSize="10" DataControl="AppModuleDataControl1" id="TblStdEnqView1Iterator"/>
+    <searchRegion Binds="TblStdEnqView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStdEnqView1Query"/>
+    <iterator Binds="TblEnqFollowUpView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblEnqFollowUpView2Iterator"/>
+    <iterator Binds="TblEnqFollowUpView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblEnqFollowUpView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblStdEnqView1Iterator" id="TblStdEnqView1">
+      <nodeDefinition DefName="model.ERP.VO.TblStdEnqView" Name="TblStdEnqView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="SchoolGradeId"/>
+          <Item Value="EmirId"/>
+          <Item Value="SectionsId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStdEnqView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblStdEnqView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblStdEnqView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="Dob">
+      <AttrNames>
+        <Item Value="Dob"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="ContPerson">
+      <AttrNames>
+        <Item Value="ContPerson"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="ContNumber">
+      <AttrNames>
+        <Item Value="ContNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_ContRelation" id="ContRelation"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_LookupRefBy" id="LookupRefBy"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_LookupElecGroup" id="LookupElecGroup"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblStdEnqView1Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblStdEnqView1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblStdEnqView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblStdEnqView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblStdEnqView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblStdEnqView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblEnqFollowUpView2Iterator" StaticList="false" Uses="LOV_FollowMethod" id="FollowMethod"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblEnqFollowUpView2Iterator" StaticList="false" Uses="LOV_StdEnqId" id="StdEnqId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="SmsContactNo">
+      <AttrNames>
+        <Item Value="SmsContactNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="SmsText">
+      <AttrNames>
+        <Item Value="SmsText"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="CallContactNo">
+      <AttrNames>
+        <Item Value="CallContactNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="CallContent">
+      <AttrNames>
+        <Item Value="CallContent"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="EmailTo">
+      <AttrNames>
+        <Item Value="EmailTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="EmailSubject">
+      <AttrNames>
+        <Item Value="EmailSubject"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView2Iterator" id="EmailBody">
+      <AttrNames>
+        <Item Value="EmailBody"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblEnqFollowUpView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="Id1">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="Dated1">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblEnqFollowUpView1Iterator" StaticList="false" Uses="LOV_FollowMethod" id="FollowMethod1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblEnqFollowUpView1Iterator" StaticList="false" Uses="LOV_StdEnqId" id="StdEnqId1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="SmsContactNo1">
+      <AttrNames>
+        <Item Value="SmsContactNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="SmsText1">
+      <AttrNames>
+        <Item Value="SmsText"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="EmailTo1">
+      <AttrNames>
+        <Item Value="EmailTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="EmailSubject1">
+      <AttrNames>
+        <Item Value="EmailSubject"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="EmailBody1">
+      <AttrNames>
+        <Item Value="EmailBody"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="CallContactNo1">
+      <AttrNames>
+        <Item Value="CallContactNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEnqFollowUpView1Iterator" id="CallContent1">
+      <AttrNames>
+        <Item Value="CallContent"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblEnqFollowUpView1Iterator" id="First2" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblEnqFollowUpView1Iterator" id="Previous2" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblEnqFollowUpView1Iterator" id="Next2" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblEnqFollowUpView1Iterator" id="Last2" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblStdEnqView1Iterator" id="TblStdEnqView11">
+      <nodeDefinition DefName="model.ERP.VO.TblStdEnqView" Name="TblStdEnqView110">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Dated"/>
+          <Item Value="AcadYearId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Gender"/>
+          <Item Value="Dob"/>
+          <Item Value="TotAge"/>
+          <Item Value="SchoolGradeId"/>
+          <Item Value="ContPerson"/>
+          <Item Value="ContNumber"/>
+          <Item Value="ContRelation"/>
+          <Item Value="LookupElecGroup"/>
+          <Item Value="Address"/>
+          <Item Value="EmirId"/>
+          <Item Value="EmirArea"/>
+          <Item Value="RegFee"/>
+          <Item Value="Ast"/>
+          <Item Value="ContEmail"/>
+          <Item Value="EligStatus"/>
+          <Item Value="LookupRefBy"/>
+          <Item Value="SectionsId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

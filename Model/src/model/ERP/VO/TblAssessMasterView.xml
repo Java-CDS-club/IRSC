@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblAssessMasterView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblAssessMaster.ID, 
+       TblAssessMaster.ACAD_YEAR_ID, 
+       TblAssessMaster.SCHOOL_GRADE_ID, 
+       TblAssessMaster.SUBJECT_ID, 
+       TblAssessMaster.COMPANY_ID, 
+       TblAssessMaster.AST, 
+       TblAssessMaster.CREATED_DATE, 
+       TblAssessMaster.CREATED_BY, 
+       TblAssessMaster.UPDATED_DATE, 
+       TblAssessMaster.UPDATED_BY"
+  FromList="TBL_ASSESS_MASTER TblAssessMaster"
+  Where="TblAssessMaster.COMPANY_ID = nvl(:P_COMPANY_ID,TblAssessMaster.COMPANY_ID)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblAssessMasterView"/>
+  </Variable>
+  <ViewAccessor
+    Name="Academic_Year_LOV1"
+    ViewObjectName="model.LOV.Academic_Year_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="School_Grade_LOV1"
+    ViewObjectName="model.LOV.School_Grade_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Subject_Name_LOV1"
+    ViewObjectName="model.LOV.Subject_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AcadYearId"
+    ListVOName="Academic_Year_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AcadYearId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SchoolGradeId"
+    ListVOName="School_Grade_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SchoolGradeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GradeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SubjectId"
+    ListVOName="Subject_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SubjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblAssessMaster"
+    Entity="model.ERP.EO.TblAssessMaster"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblAssessMaster"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="AcadYearId"
+    PrecisionRule="true"
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblAssessMaster"
+    AliasName="ACAD_YEAR_ID"
+    LOVName="LOV_AcadYearId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SchoolGradeId"
+    PrecisionRule="true"
+    EntityAttrName="SchoolGradeId"
+    EntityUsage="TblAssessMaster"
+    AliasName="SCHOOL_GRADE_ID"
+    LOVName="LOV_SchoolGradeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SubjectId"
+    PrecisionRule="true"
+    EntityAttrName="SubjectId"
+    EntityUsage="TblAssessMaster"
+    AliasName="SUBJECT_ID"
+    LOVName="LOV_SubjectId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblAssessMaster"
+    AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblAssessMaster"
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblAssessMaster"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblAssessMaster"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblAssessMaster"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblAssessMaster"
+    AliasName="UPDATED_BY"/>
+  <ViewLinkAccessor
+    Name="TblAssessDetailView"
+    ViewLink="model.ERP.VO.FkAssessDetailMasterLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

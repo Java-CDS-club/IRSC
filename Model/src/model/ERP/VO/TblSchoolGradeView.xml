@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblSchoolGradeView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblSchoolGrade.ID, 
+       TblSchoolGrade.ACAD_GROUP_ID, 
+       TblSchoolGrade.GRADE_NAME, 
+       TblSchoolGrade.KIT_NAME, 
+       TblSchoolGrade.AST, 
+       TblSchoolGrade.CREATED_DATE, 
+       TblSchoolGrade.CREATED_BY, 
+       TblSchoolGrade.UPDATED_DATE, 
+       TblSchoolGrade.UPDATED_BY, 
+       TblSchoolGrade.COMPANY_ID"
+  FromList="TBL_SCHOOL_GRADE TblSchoolGrade"
+  Where="TblSchoolGrade.COMPANY_ID = nvl(:P_COMPANY_ID,TblSchoolGrade.COMPANY_ID)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="TblSchoolGradeView"/>
+  </Variable>
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Academic_Group_LOV1"
+    ViewObjectName="model.LOV.Academic_Group_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AcadGroupId"
+    ListVOName="Academic_Group_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AcadGroupId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblSchoolGrade"
+    Entity="model.ERP.EO.TblSchoolGrade"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblSchoolGrade"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="AcadGroupId"
+    PrecisionRule="true"
+    EntityAttrName="AcadGroupId"
+    EntityUsage="TblSchoolGrade"
+    AliasName="ACAD_GROUP_ID"
+    LOVName="LOV_AcadGroupId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GradeName"
+    PrecisionRule="true"
+    EntityAttrName="GradeName"
+    EntityUsage="TblSchoolGrade"
+    AliasName="GRADE_NAME"/>
+  <ViewAttribute
+    Name="KitName"
+    PrecisionRule="true"
+    EntityAttrName="KitName"
+    EntityUsage="TblSchoolGrade"
+    AliasName="KIT_NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblSchoolGrade"
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblSchoolGrade"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblSchoolGrade"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblSchoolGrade"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblSchoolGrade"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblSchoolGrade"
+    AliasName="COMPANY_ID"/>
+  <ViewLinkAccessor
+    Name="TblSectionsView"
+    ViewLink="model.ERP.VO.FkSectionsGradeLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblMarksGradingView"
+    ViewLink="model.ERP.VO.FkMarksGradingSchoolGradeLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblGradeSubjectView"
+    ViewLink="model.ERP.VO.FkGradeSubjectGradeLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblSchoolTimeView"
+    ViewLink="model.ERP.VO.FkSchoolTimeGradeLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblAssessMasterView"
+    ViewLink="model.ERP.VO.FkAssessMasterGradeLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblEvalWeightageView"
+    ViewLink="model.ERP.VO.FkSchoolGradeEvaluationLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

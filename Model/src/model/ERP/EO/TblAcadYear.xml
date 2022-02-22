@@ -98,7 +98,6 @@
     TableName="TBL_ACAD_YEAR">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblAcadYearRow"/>
   </Attribute>
   <AccessorAttribute
@@ -120,6 +119,13 @@
     Association="model.ERP.EO.FkWeekAcadYearAssoc"
     AssociationEnd="model.ERP.EO.FkWeekAcadYearAssoc.TblWeek"
     AssociationOtherEnd="model.ERP.EO.FkWeekAcadYearAssoc.TblAcadYear"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblHolidays"
+    Association="model.ERP.EO.FkAcadYearHolidaysAssoc"
+    AssociationEnd="model.ERP.EO.FkAcadYearHolidaysAssoc.TblHolidays"
+    AssociationOtherEnd="model.ERP.EO.FkAcadYearHolidaysAssoc.TblAcadYear"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

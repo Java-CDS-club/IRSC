@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Holidays_ListPageDef"
+                Package="Fragments.Modules.School_Managment_System">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblAcadYearView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblAcadYearView1Iterator"/>
+    <searchRegion Binds="TblAcadYearView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblAcadYearView1Query"/>
+    <iterator Binds="TblHolidaysView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblHolidaysView2Iterator"/>
+    <searchRegion Binds="TblHolidaysView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblHolidaysView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblAcadYearView1Iterator" id="TblAcadYearView1">
+      <nodeDefinition DefName="model.ERP.VO.TblAcadYearView" Name="TblAcadYearView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblHolidaysView2Iterator" id="TblHolidaysView2">
+      <nodeDefinition DefName="model.ERP.VO.TblHolidaysView" Name="TblHolidaysView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="HolidayFrDate"/>
+          <Item Value="HolidayToDate"/>
+          <Item Value="HolidayName"/>
+          <Item Value="NotifyDays"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblHolidaysView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblHolidaysView2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblHolidaysView2Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>

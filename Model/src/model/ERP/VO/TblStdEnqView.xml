@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblStdEnqView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblStdEnq.ID, 
+       TblStdEnq.DATED, 
+       TblStdEnq.ACAD_YEAR_ID, 
+       TblStdEnq.FIRST_NAME, 
+       TblStdEnq.LAST_NAME, 
+       TblStdEnq.GENDER, 
+       TblStdEnq.DOB, 
+       TblStdEnq.TOT_AGE, 
+       TblStdEnq.SCHOOL_GRADE_ID, 
+       TblStdEnq.CONT_PERSON, 
+       TblStdEnq.CONT_NUMBER, 
+       TblStdEnq.CONT_RELATION, 
+       TblStdEnq.LOOKUP_ELEC_GROUP, 
+       TblStdEnq.ADDRESS, 
+       TblStdEnq.EMIR_ID, 
+       TblStdEnq.EMIR_AREA, 
+       TblStdEnq.REG_FEE, 
+       TblStdEnq.AST, 
+       TblStdEnq.CREATED_DATE, 
+       TblStdEnq.CREATED_BY, 
+       TblStdEnq.UPDATED_DATE, 
+       TblStdEnq.UPDATED_BY, 
+       TblStdEnq.CONT_EMAIL, 
+       TblStdEnq.COMPANY_ID, 
+       TblStdEnq.ELIG_STATUS, 
+       TblStdEnq.LOOKUP_REF_BY, 
+       TblStdEnq.SECTIONS_ID"
+  FromList="TBL_STD_ENQ TblStdEnq"
+  Where="TblStdEnq.COMPANY_ID = nvl(:P_COMPANY_ID,TblStdEnq.COMPANY_ID)">
+  <Variable
+    Name="P_COMPANY_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblStdEnqView"/>
+  </Variable>
+  <ViewAccessor
+    Name="Academic_Year_LOV1"
+    ViewObjectName="model.LOV.Academic_Year_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Gender_Name_LOV1"
+    ViewObjectName="model.LOV.Gender_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="School_Grade_LOV1"
+    ViewObjectName="model.LOV.School_Grade_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Relationship_LOV1"
+    ViewObjectName="model.LOV.Lookup_Relationship_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Elective_Group_LOV1"
+    ViewObjectName="model.LOV.Lookup_Elective_Group_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Lookup_Reference_By_LOV1"
+    ViewObjectName="model.LOV.Lookup_Reference_By_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Section_Name_LOV1"
+    ViewObjectName="model.LOV.Section_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AcadYearId"
+    ListVOName="Academic_Year_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AcadYearId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Gender"
+    ListVOName="Gender_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Gender"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SchoolGradeId"
+    ListVOName="School_Grade_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SchoolGradeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GradeName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ContRelation"
+    ListVOName="Lookup_Relationship_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ContRelation"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupElecGroup"
+    ListVOName="Lookup_Elective_Group_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupElecGroup"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LookupRefBy"
+    ListVOName="Lookup_Reference_By_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LookupRefBy"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SectionsId"
+    ListVOName="Section_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SectionsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblStdEnq"
+    Entity="model.ERP.EO.TblStdEnq"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblStdEnq"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblStdEnq"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="AcadYearId"
+    PrecisionRule="true"
+    EntityAttrName="AcadYearId"
+    EntityUsage="TblStdEnq"
+    AliasName="ACAD_YEAR_ID"
+    LOVName="LOV_AcadYearId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="TblStdEnq"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="TblStdEnq"
+    AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="Gender"
+    PrecisionRule="true"
+    EntityAttrName="Gender"
+    EntityUsage="TblStdEnq"
+    AliasName="GENDER"
+    LOVName="LOV_Gender">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Dob"
+    PrecisionRule="true"
+    EntityAttrName="Dob"
+    EntityUsage="TblStdEnq"
+    AliasName="DOB"/>
+  <ViewAttribute
+    Name="TotAge"
+    PrecisionRule="true"
+    EntityAttrName="TotAge"
+    EntityUsage="TblStdEnq"
+    AliasName="TOT_AGE"/>
+  <ViewAttribute
+    Name="SchoolGradeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SchoolGradeId"
+    EntityUsage="TblStdEnq"
+    AliasName="SCHOOL_GRADE_ID"
+    LOVName="LOV_SchoolGradeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContPerson"
+    PrecisionRule="true"
+    EntityAttrName="ContPerson"
+    EntityUsage="TblStdEnq"
+    AliasName="CONT_PERSON"/>
+  <ViewAttribute
+    Name="ContNumber"
+    PrecisionRule="true"
+    EntityAttrName="ContNumber"
+    EntityUsage="TblStdEnq"
+    AliasName="CONT_NUMBER"/>
+  <ViewAttribute
+    Name="ContRelation"
+    PrecisionRule="true"
+    EntityAttrName="ContRelation"
+    EntityUsage="TblStdEnq"
+    AliasName="CONT_RELATION"
+    LOVName="LOV_ContRelation">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LookupElecGroup"
+    PrecisionRule="true"
+    EntityAttrName="LookupElecGroup"
+    EntityUsage="TblStdEnq"
+    AliasName="LOOKUP_ELEC_GROUP"
+    LOVName="LOV_LookupElecGroup">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Address"
+    PrecisionRule="true"
+    EntityAttrName="Address"
+    EntityUsage="TblStdEnq"
+    AliasName="ADDRESS"/>
+  <ViewAttribute
+    Name="EmirId"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="EmirId"
+    EntityUsage="TblStdEnq"
+    AliasName="EMIR_ID"/>
+  <ViewAttribute
+    Name="EmirArea"
+    PrecisionRule="true"
+    EntityAttrName="EmirArea"
+    EntityUsage="TblStdEnq"
+    AliasName="EMIR_AREA"/>
+  <ViewAttribute
+    Name="RegFee"
+    PrecisionRule="true"
+    EntityAttrName="RegFee"
+    EntityUsage="TblStdEnq"
+    AliasName="REG_FEE"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblStdEnq"
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblStdEnq"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblStdEnq"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblStdEnq"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblStdEnq"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="ContEmail"
+    PrecisionRule="true"
+    EntityAttrName="ContEmail"
+    EntityUsage="TblStdEnq"
+    AliasName="CONT_EMAIL"/>
+  <ViewAttribute
+    Name="CompanyId"
+    PrecisionRule="true"
+    EntityAttrName="CompanyId"
+    EntityUsage="TblStdEnq"
+    AliasName="COMPANY_ID"/>
+  <ViewAttribute
+    Name="EligStatus"
+    PrecisionRule="true"
+    EntityAttrName="EligStatus"
+    EntityUsage="TblStdEnq"
+    AliasName="ELIG_STATUS"/>
+  <ViewAttribute
+    Name="LookupRefBy"
+    PrecisionRule="true"
+    EntityAttrName="LookupRefBy"
+    EntityUsage="TblStdEnq"
+    AliasName="LOOKUP_REF_BY"
+    LOVName="LOV_LookupRefBy">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SectionsId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SectionsId"
+    EntityUsage="TblStdEnq"
+    AliasName="SECTIONS_ID"
+    LOVName="LOV_SectionsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="TblEnqFollowUpView"
+    ViewLink="model.ERP.VO.FkEnqFollowUpEnqLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

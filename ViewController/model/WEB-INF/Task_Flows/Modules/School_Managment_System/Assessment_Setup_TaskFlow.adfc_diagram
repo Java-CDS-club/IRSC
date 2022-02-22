@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">Assessment_Setup</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">484.0</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Assessment_Setup&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">229.5459</property>
+      <property
+         name="page">/WEB-INF/Fragments/Modules/School_Managment_System/Assessment_Setup.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <MethodCall
+      id="MethodCall3">
+      <property
+         name="activityId">ExecuteWithParams</property>
+      <property
+         name="x">219.35156</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">296.1494</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall3"
+      to="View2">
+      <property
+         name="fromOutcome">ExecuteWithParams</property>
+      <property
+         name="sdm:polyPoints">R50,260.35156,295.79883,443.0,229.19531,L50</property>
+   </ControlFlowCase>
+</SDM>
