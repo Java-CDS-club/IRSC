@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="TrialPageDef"
+                Package="Main_Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblFreeTrialView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFreeTrialView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="TblFreeTrialView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFreeTrialView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFreeTrialView1Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFreeTrialView1Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFreeTrialView1Iterator" id="PassWord">
+      <AttrNames>
+        <Item Value="PassWord"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFreeTrialView1Iterator" id="Mobile">
+      <AttrNames>
+        <Item Value="Mobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFreeTrialView1Iterator" id="HearAbout">
+      <AttrNames>
+        <Item Value="HearAbout"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFreeTrialView1Iterator" id="EMail">
+      <AttrNames>
+        <Item Value="EMail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFreeTrialView1Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblFreeTrialView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblFreeTrialView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblFreeTrialView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblFreeTrialView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblFreeTrialView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFreeTrialView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblFreeTrialView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <attributeValues IterBinding="TblFreeTrialView1Iterator" id="Company">
+      <AttrNames>
+        <Item Value="Company"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

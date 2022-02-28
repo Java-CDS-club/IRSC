@@ -1333,6 +1333,9 @@
   <ViewUsage
     Name="StdRegSibingDetail2"
     ViewObjectName="model.ERP.VO.StdRegSibingDetail"/>
+  <ViewUsage
+    Name="TblFreeTrialView1"
+    ViewObjectName="model.ERP.VO.TblFreeTrialView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

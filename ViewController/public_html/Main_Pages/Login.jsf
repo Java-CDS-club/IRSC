@@ -133,7 +133,11 @@
                         <af:link id="l1" 
                                  action="#{LoginBean.login_Session}"   icon="#{resource['images:login_buttons.png']}"
                                  inlineStyle="font-weight: bold;font-size: x-large;color:black; "/>
-                                  <af:spacer width="180" height="10" id="s13"/>
+                                 <af:spacer width="10" height="10" id="s13"/>
+                        <af:button text="Free Trial" 
+                        destination="/faces/Main_Pages/Trial.jsf"
+                        id="b1"/>
+                                  <af:spacer width="180" height="10" id="s12"/>
                     </af:gridCell>
                     <!--<af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc21"/>-->
                 </af:gridRow>

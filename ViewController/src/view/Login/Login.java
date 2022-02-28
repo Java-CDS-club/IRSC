@@ -34,7 +34,7 @@ public class Login {
     private static String company_name;
     private static String sessUName;
     private static String sessCName;
-//    private static Date COStart_Date;
+    private static Date COStart_Date;
 //    private static String COEnd_Date;
 //    private static String abc_Date;
     
@@ -147,7 +147,7 @@ public class Login {
             Statement stmt = conn.createStatement();
             ResultSet rset =
             stmt.executeQuery("SELECT tbl_user_master.role_master_id,tbl_user_master.user_master_id,tbl_user_detail.user_detail_id,tbl_user_detail.company_id,col_code,Tbl_Company.NAME FROM tbl_user_master,tbl_user_detail,Tbl_Company " +
-                            "where tbl_user_detail.user_m_id=tbl_user_master.user_master_id  And tbl_user_detail.company_id=Tbl_Company.ID And user_master_name = '" + username + "'and user_master_email='"+ email+"' and user_master_pwd = '" + password + "' and company_id = '" + company + "'");
+                            "where tbl_user_detail.user_m_id=tbl_user_master.user_master_id And tbl_user_detail.company_id=Tbl_Company.ID And user_master_name = '" + username + "'and user_master_email='"+ email+"' and user_master_pwd = '" + password + "' and company_id = '" + company + "'");
 
             if (rset.next()) {
                 //                conn.close();
@@ -179,6 +179,7 @@ public class Login {
                 
                 //Storing value in session username from input text field and role_master_id from DB
 
+//                System.out.println(".........Today Date :..." + COStart_Date + "...");
                 System.out.println(".........User Name stored in session is :..." + username + "...");
 //                System.out.println(".........User Password stored in session is :..." + password + "...");
                 System.out.println(".........User Role stored in session is :..." + role_master_id + "...");
@@ -281,7 +282,7 @@ public class Login {
                     Statement stmt = conn.createStatement();
                     ResultSet rset =
                     stmt.executeQuery("SELECT tbl_user_master.role_master_id,tbl_user_master.user_master_id,tbl_user_master.user_master_name,tbl_user_master.user_master_Name FROM tbl_user_master " +
-                                    "where  user_master_email='"+ email+"' and user_master_pwd = '" + password +  "'");
+                                    "where user_master_email='"+ email+"' and user_master_pwd = '" + password +  "' And sysdate between tbl_user_master.Start_Date and tbl_user_master.END_DATE");
 
                     if (rset.next()) {
                         //                conn.close();

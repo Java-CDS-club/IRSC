@@ -576,6 +576,7 @@
           usageId="view_Student_RegistrationPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Student_Registration_TaskFlow.xml#Student_Registration_TaskFlow@ExecuteWithParams"
           usageId="view_Student_Registration_TaskFlow_Student_Registration_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/Main_Pages/Trial.jsf" usageId="view_TrialPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -1112,6 +1113,7 @@
           path="Fragments.Modules.School_Managment_System.Student_RegistrationPageDef"/>
     <page id="view_Student_Registration_TaskFlow_Student_Registration_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.School_Managment_System.Student_Registration_TaskFlow_Student_Registration_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_TrialPageDef" path="Main_Pages.TrialPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

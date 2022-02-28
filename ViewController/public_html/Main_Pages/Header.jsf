@@ -2,6 +2,7 @@
 <af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
                     xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core"
                     xmlns:h="http://java.sun.com/jsf/html">
+                
     <af:xmlContent>
         <afc:component>
             <afc:description/>
@@ -43,16 +44,19 @@
                                          <af:outputLabel value="${sessionScope.sessUName}" id="pt_ol1"
                                                             inlineStyle="font-variant-caps:all-petite-caps; font-size:x-large; font-weight:bolder; color: black;"/>
                                           <af:spacer width="20" height="10" id="pt_s1"/>
-                                            <af:button  id="pt_b2" styleClass="af|headerbutton"
+                                          
+                                            <af:button  id="pt_b2" styleClass="af|headerbutton" shortDesc="Dashboard"
                                                        icon="#{resource['images:back_to_home.png']}" 
-                                                       destination="/faces/Main_Pages/Dashboard.jsf"/>
+                                                       destination="/faces/Main_Pages/Dashboard.jsf">
+                                                       
+                                             </af:button>
                                             <af:spacer width="10" height="10" id="pt_s3"/>
                                             <af:button icon="#{resource['images:Back_to_Company.png']}" styleClass="af|headerbutton"
-                                             
+                                             shortDesc="Company"
                                               actionListener="#{backingBeanScope.VoucherPrintBean.company_Out}" id="pt_b3"/>
                                             
                                             <af:spacer width="10" height="10" id="pt_s7"/>
-                                            <af:button  id="pt_b1" icon="#{resource['images:logout.png']}" styleClass="af|headerbutton"
+                                            <af:button  id="pt_b1" icon="#{resource['images:logout.png']}" styleClass="af|headerbutton" shortDesc="Logout"
                                                        action="#{LoginBean.logout_action}" />
                                             <af:spacer width="20" height="10" id="pt_s4"/>
                                         </af:panelGroupLayout>
