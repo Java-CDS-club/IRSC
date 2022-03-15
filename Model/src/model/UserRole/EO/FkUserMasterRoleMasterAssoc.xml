@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkUserMasterRoleMasterAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblUserMaster1"
+    Cardinality="1"
+    Source="true"
+    Owner="model.UserRole.EO.TblUserMaster"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblUserMaster1"/>
+      <Attr Name="_foreignKey" Value="model.UserRole.EO.TblUserMaster.PkUserMaster"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRole.EO.TblUserMaster.UserMasterId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TblRoleMaster1"
+    Cardinality="-1"
+    Owner="model.UserRole.EO.TblRoleMaster">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblRoleMaster1"/>
+      <Attr Name="_foreignKey" Value="model.UserRole.EO.TblRoleMaster.fk_TblRoleMaster"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRole.EO.TblRoleMaster.UserMasterId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

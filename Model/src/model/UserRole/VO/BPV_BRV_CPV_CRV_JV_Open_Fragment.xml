@@ -19,30 +19,31 @@
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="getRoleID"
+    Name="getuser"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="BPV_BRV_CPV_CRV_JV_Open_Fragment"/>
   </Variable>
-  <SQLQuery><![CDATA[SELECT                    
-TP.PAGES_NAME, TP.AST, TP.PAGE_ICON, TP.PAGE_LINK,  TP.SR_NO,           
-RDP.ROLE_MASTER_ID, RDP.PAGES_ID, RDP.ROLE_MASTER_ID, RDP.R_VIEW, RDP.R_ADD, RDP.R_EDIT, RDP.R_DELETE, RDP.R_PRINT                   
-FROM                    
-TBL_PAGES TP, TBL_ROLE_DETAIL_PAGES RDP                  
-Where                    
-TP.PAGES_ID = RDP.PAGES_ID                   
-AND     
-(TP.PAGES_ID = 23 or TP.PAGES_ID = 24 or TP.PAGES_ID = 25 or TP.PAGES_ID = 26 or TP.PAGES_ID = 27  )  
-AND     
-RDP.R_VIEW = 'Y'                   
-AND                   
-TP.AST = 'Y'                   
-AND                   
-TP.MODULE_MENU_ID = 2               
-AND                   
-RDP.ROLE_MASTER_ID = :getRoleID        
+  <SQLQuery><![CDATA[SELECT                     
+TP.PAGES_NAME, TP.AST, TP.PAGE_ICON, TP.PAGE_LINK,  TP.SR_NO,            
+RDP.ROLE_MASTER_ID, RDP.PAGES_ID, RDP.ROLE_MASTER_ID, RDP.R_VIEW, RDP.R_ADD, RDP.R_EDIT, RDP.R_DELETE, RDP.R_PRINT                    
+FROM                     
+TBL_PAGES TP, TBL_ROLE_DETAIL_PAGES RDP                   
+Where                     
+TP.PAGES_ID = RDP.PAGES_ID                    
+AND      
+(TP.PAGES_ID = 23 or TP.PAGES_ID = 24 or TP.PAGES_ID = 25 or TP.PAGES_ID = 26 or TP.PAGES_ID = 27  )   
+AND      
+RDP.R_VIEW = 'Y'                    
+AND                    
+TP.AST = 'Y'                    
+AND                    
+TP.MODULE_MENU_ID = 2                
+AND                    
+RDP.ROLE_MASTER_ID in (Select Role_Master_ID from tbl_user_roles where role_master_id is not null and USER_MASTER_ID=:getuser)       
 ORDER BY TP.SR_NO ASC]]></SQLQuery>
   <ViewAttribute
     Name="PagesName"
@@ -69,7 +70,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="AST"
     Expression="AST"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -154,7 +155,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="R_VIEW"
     Expression="R_VIEW"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -169,7 +170,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="R_ADD"
     Expression="R_ADD"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -184,7 +185,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="R_EDIT"
     Expression="R_EDIT"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -199,7 +200,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="R_DELETE"
     Expression="R_DELETE"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -214,7 +215,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="R_PRINT"
     Expression="R_PRINT"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>

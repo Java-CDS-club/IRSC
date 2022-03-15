@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkUserRoleProfileRoleLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.UserRole.EO.FkUserRoleAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.UserRole.VO.FkUserRoleProfileRoleLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="Tbl_User_Role_ProfileView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.UserRole.VO.Tbl_User_Role_ProfileView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Tbl_User_Role_ProfileView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRole.VO.Tbl_User_Role_ProfileView.UserMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblUserRolesView1"
+    Cardinality="-1"
+    Owner="model.UserRole.VO.TblUserRolesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblUserRolesView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UserRole.VO.TblUserRolesView.UserMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

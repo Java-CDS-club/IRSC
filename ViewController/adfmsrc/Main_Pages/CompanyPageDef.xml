@@ -19,6 +19,7 @@
           <Item Value="CompanyId2"/>
           <Item Value="CompanyName"/>
           <Item Value="ImagePath"/>
+          <Item Value="GroupId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

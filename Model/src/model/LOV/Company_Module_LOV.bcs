@@ -1,0 +1,12 @@
+//Groovy Scripts for model.LOV.Company_Module_LOV
+
+package model.LOV
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="getgroupId")
+def getgroupId_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessGrID')
+}
+

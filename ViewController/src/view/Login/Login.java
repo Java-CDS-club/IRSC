@@ -13,6 +13,8 @@ import java.util.Date;
 import java.util.Map;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
+
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 //import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 //import oracle.adf.view.rich.component.rich.nav.RichButton;
@@ -20,6 +22,7 @@ import oracle.adf.view.rich.component.rich.nav.RichLink;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 
 
+import oracle.adf.view.rich.component.rich.output.RichOutputLabel;
 
 import view.DatabaseConnection.DatabaseConnection;
 
@@ -33,6 +36,7 @@ public class Login {
     private static String company_id;
     private static String company_name;
     private static String sessUName;
+    private static String module_ast;
     private static String sessCName;
     private static Date COStart_Date;
 //    private static String COEnd_Date;
@@ -43,6 +47,7 @@ public class Login {
     private RichLink l1;
     private RichInputText it3;
     private RichSelectOneChoice it4;
+    private RichOutputLabel it5;
     //    private RichButton b1;
 //    private RichPanelGroupLayout pgl2;
 //    private RichButton b2;
@@ -281,13 +286,13 @@ public class Login {
                     conn = DatabaseConnection.getConnection();
                     Statement stmt = conn.createStatement();
                     ResultSet rset =
-                    stmt.executeQuery("SELECT tbl_user_master.role_master_id,tbl_user_master.user_master_id,tbl_user_master.user_master_name,tbl_user_master.user_master_Name FROM tbl_user_master " +
+                    stmt.executeQuery("SELECT tbl_user_master.user_master_id,tbl_user_master.user_master_name FROM tbl_user_master " +
                                     "where user_master_email='"+ email+"' and user_master_pwd = '" + password +  "' And sysdate between tbl_user_master.Start_Date and tbl_user_master.END_DATE");
 
                     if (rset.next()) {
                         //                conn.close();
                         //getting data against column from table
-                        role_master_id = (rset.getString("role_master_id")).toString();
+//                        role_master_id = (rset.getString("role_master_id")).toString();
                         user_master_id = (rset.getString("user_master_id")).toString();
                         user_master_name = (rset.getString("user_master_name")).toString();
 //                        user_detail_id = (rset.getString("user_detail_id")).toString();
@@ -317,7 +322,7 @@ public class Login {
 
                         System.out.println(".........User Name stored in session is :..." + user_master_name + "...");
         //                System.out.println(".........User Password stored in session is :..." + password + "...");
-                        System.out.println(".........User Role stored in session is :..." + role_master_id + "...");
+//                        System.out.println(".........User Role stored in session is :..." + role_master_id + "...");
                         System.out.println(".........User Master ID stored in session is :..." + user_master_id + "...");
                         System.out.println(".........User Master Org name stored in session is :..." + user_master_name + "...");
 //                        System.out.println(".........User detail ID stored in session is :..." + user_detail_id + "...");
@@ -326,7 +331,7 @@ public class Login {
                         
         //                System.out.println(".........Company Start Date in session is :..." + COStart_Date + "...");
                         
-                        storeOnSession("sessRMID", role_master_id);                
+//                        storeOnSession("sessRMID", role_master_id);                
                         storeOnSession("sessUMID", user_master_id); 
                         storeOnSession("sessUName", user_master_name); 
 //                        storeOnSession("sessUDID", user_detail_id);
@@ -354,102 +359,48 @@ public class Login {
                     System.out.println(e);
                 }
 
-                return role_master_id;
+                return user_master_id;
             }
     }
 
     public String login_company(){
-        
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        //get current date time with Date()
-        Date date = new Date();
-        System.out.println(dateFormat.format(date));
-        
-        // Add event code here...
-       
-        
-        String company = this.getIt4().getValue().toString();
-        
-//        sessUName = company;
-//        storeOnSession("sessUName", sessUName);
-//        System.out.println("value for session..............." + sessUName);
-        
-        
-        System.out.println(".......................................................................");
-        System.out.println(".......................................................................");
-        System.out.println(" company is : " + company);
-        System.out.println(dateFormat.format(date));
+       // Add event code here...
+       String usid = this.getIt5().getValue().toString();
+        System.out.println(" Module is : GL "+usid);
         Connection conn;
-        
-
-        try {
+         try {
             conn = DatabaseConnection.getConnection();
             Statement stmt = conn.createStatement();
             ResultSet rset =
-            stmt.executeQuery("SELECT Tbl_Company.id,Tbl_Company.NAME FROM Tbl_Company " +
-                            "where Tbl_Company.id = '" + company + "'");
-
-            if (rset.next()) {
+            stmt.executeQuery("SELECT Tbl_User_D_Modules.id FROM Tbl_User_D_Modules " +
+                            "where Tbl_User_D_Modules.Module_ID = 2 and Tbl_User_D_Modules.ast='Y' and user_master_id='" + usid + "'");
+if (rset.next()) {
                 //                conn.close();
                 //getting data against column from table
+                module_ast = (rset.getString("id"));
+//                company_name = (rset.getString("name"));
                 
-               
-                company_id = (rset.getString("id"));
-                company_name = (rset.getString("name"));
-                
-//                COStart_Date = (rset.getDate("Start_Date"));
-//                COEnd_Date = (rset.getString("End_Date")).toString();
-                
-                
-//                if (rset.wasNull()) {
-//                    project_id = ""; // set it to empty string as you desire.
-//                }
-//                
-                
-                if(rset.getString("id") != null)
-                {
-                    company_id = rset.getString("id").toString();
-                }
-                else
-                {
-                    company_id = "";
-                }
-                
-                
-                //Storing value in session username from input text field and role_master_id from DB
-
-//                System.out.println(".........User Name stored in session is :..." + username + "...");
-//                
-                System.out.println(".........Company ID stored in session is :..." + company_id + "...");
-                System.out.println(".........Company Name stored in session is :..." + company_name + "...");
-                
-//                System.out.println(".........Company Start Date in session is :..." + COStart_Date + "...");
-                
-                
-                storeOnSession("sessCoID", company_id);
-                storeOnSession("sessCoName", company_name);
-               
-                
-                conn.close();
-                
-//                if(dateFormat.format(date) > COStart_Date){
-                    
-                return "/faces/Main_Pages/Dashboard.jsf?faces-redirect=true";
-//                }
+               System.out.println(".........Module Right is :..." + module_ast + "...");
+             
+               return "/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf?faces-redirect=true";
             } else {
-                showMessage("Wrong Login Credentials");
+                showMessage("You Are Unauthorized To Access this Module");
                 conn.close();
-                System.out.println("........wrong login credentials........");
-                //return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
+                System.out.println("........You Are Unauthorized To Access this Module........");
                 return "false";
-
-            }
+}
         } catch (SQLException e) {
             System.out.println(e);
         }
-
-        return company_id;
+return module_ast;
     }
 
-    
+
+    public void setIt5(RichOutputLabel it5) {
+        this.it5 = it5;
+    }
+
+    public RichOutputLabel getIt5() {
+        return it5;
+    }
 }

@@ -1,0 +1,12 @@
+//Groovy Scripts for model.ERP.VO.Tbl_Group_User_Profile
+
+package model.ERP.VO
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="P_Group_ID")
+def P_Group_ID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessGrID')
+}
+

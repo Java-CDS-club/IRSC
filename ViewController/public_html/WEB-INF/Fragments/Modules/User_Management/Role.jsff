@@ -1,0 +1,477 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane1" text="Manage User Roles">
+        <!--<af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>-->
+            <af:panelGridLayout id="pgl8">
+                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="end"
+                                         valign="middle">
+                               
+                            </af:gridCell>
+                        </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr17">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc17">
+                         <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                <af:showDetailItem id="tab3" text="Users and User Roles">
+                    <af:panelGridLayout id="pgl1">
+                        
+                        <af:gridRow marginTop="5px" height="auto" id="gr3">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"></af:gridCell>
+                        </af:gridRow>
+                       
+                        <af:gridRow marginTop="5px" height="auto" id="gr6">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc15"/>
+                        </af:gridRow>
+                         <af:gridRow marginTop="5px" height="auto" id="gr1">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                                <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="tab1" text="User's Roles">
+                                                   
+                                                    <af:table value="#{bindings.TblRoleMasterView1.collectionModel}" var="row"
+                                                  rows="#{bindings.TblRoleMasterView1.rangeSize}"
+                                                  emptyText="#{bindings.TblRoleMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.TblRoleMasterView1.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.TblRoleMasterView1.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.TblRoleMasterView1.rangeSize}"
+                                                  filterModel="#{bindings.TblRoleMasterView1Query.queryDescriptor}"
+                                                  filterVisible="true"
+                                                  queryListener="#{bindings.TblRoleMasterView1Query.processQuery}"
+                                                  varStatus="vs" id="t1" scrollPolicy="page" autoHeightRows="0">
+                                            <af:column sortProperty="#{bindings.TblRoleMasterView1.hints.RoleMasterId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="Role ID"
+                                                       id="c1" align="center" width="60">
+                                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RoleMasterId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
+                                                <af:inputText value="#{row.bindings.RoleMasterId.inputValue}"
+                                                label="#{bindings.TblRoleMasterView1.hints.RoleMasterId.label}"
+                                                              required="#{bindings.TblRoleMasterView1.hints.RoleMasterId.mandatory}"
+                                                              columns="#{bindings.TblRoleMasterView1.hints.RoleMasterId.displayWidth}"
+                                                              maximumLength="#{bindings.TblRoleMasterView1.hints.RoleMasterId.precision}"
+                                                              shortDesc="#{bindings.TblRoleMasterView1.hints.RoleMasterId.tooltip}"
+                                                              id="it1" readOnly="true"
+                                                              contentStyle='text-align: center'>
+                                                    <f:validator binding="#{row.bindings.RoleMasterId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblRoleMasterView1.hints.RoleMasterId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblRoleMasterView1.hints.RoleMasterName.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="Role Name"
+                                                       id="c2" width="250">
+                                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RoleMasterName}"
+                                          id="it3" placeholder="Search Role">
+                           </af:inputText>
+                             </f:facet>
+                                                <af:inputText value="#{row.bindings.RoleMasterName.inputValue}"
+                                                              label="#{bindings.TblRoleMasterView1.hints.RoleMasterName.label}"
+                                                              required="#{bindings.TblRoleMasterView1.hints.RoleMasterName.mandatory}"
+                                                              columns="#{bindings.TblRoleMasterView1.hints.RoleMasterName.displayWidth}"
+                                                              maximumLength="#{bindings.TblRoleMasterView1.hints.RoleMasterName.precision}"
+                                                              shortDesc="#{bindings.TblRoleMasterView1.hints.RoleMasterName.tooltip}"
+                                                              id="it2">
+                                                    <f:validator binding="#{row.bindings.RoleMasterName.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                                        <!--<af:column sortProperty="#{bindings.TblRoleMasterView1.hints.Ast.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblRoleMasterView1.hints.Ast.label}"
+                                                       id="c3">
+                                                <af:inputText value="#{row.bindings.Ast.inputValue}"
+                                                              label="#{bindings.TblRoleMasterView1.hints.Ast.label}"
+                                                              required="#{bindings.TblRoleMasterView1.hints.Ast.mandatory}"
+                                                              columns="#{bindings.TblRoleMasterView1.hints.Ast.displayWidth}"
+                                                              maximumLength="#{bindings.TblRoleMasterView1.hints.Ast.precision}"
+                                                              shortDesc="#{bindings.TblRoleMasterView1.hints.Ast.tooltip}"
+                                                              id="it3">
+                                                    <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                </af:inputText>
+                                            </af:column>-->
+                                                        <af:column sortProperty="#{bindings.TblRoleMasterView1.hints.Ast.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="Active"
+                                                       id="c3">
+                                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                          id="it4" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                                                            <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                                                label="#{row.bindings.Ast.label}"
+                                                                                required="#{bindings.TblRoleMasterView1.hints.Ast.mandatory}"
+                                                                                shortDesc="#{bindings.TblRoleMasterView1.hints.Ast.tooltip}"
+                                                                                id="soc12">
+                                                                <f:selectItems value="#{row.bindings.Ast.items}"
+                                                                               id="si12"/>
+                                                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                    </af:table>
+                                        </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                                <af:panelGroupLayout id="pgl2">
+                                                <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add" styleClass="af|Voucheractionbutton"
+                                    icon="#{resource['images:add.png']}"
+                                               disabled="#{!bindings.CreateInsert.enabled}" id="b16"/>
+                                                <af:spacer width="5" height="10" id="s11"/>
+                                                <af:button actionListener="#{bindings.Execute.execute}" text="Edit" styleClass="af|Voucheractionbutton"
+                                    icon="#{resource['images:edit.png']}"
+                                               disabled="#{!bindings.Execute.enabled}" id="b2"/>
+                                                <af:spacer width="5" height="10" id="s12"/>
+                                                <af:button actionListener="#{bindings.Delete.execute}" text="Delete" styleClass="af|Voucheractionbutton"
+                                    icon="#{resource['images:delete.png']}"
+                                               disabled="#{!bindings.Delete.enabled}" id="b3"/>
+                                               <af:spacer width="5" height="10" id="s1"/>
+                                                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" styleClass="af|Voucheractionbutton"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b7"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="leading">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="5" height="10" id="s3"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All" styleClass="af|Voucheractionbutton"
+                                   disabled="#{!bindings.Commit.enabled}" id="b1" icon="#{resource['images:save.png']}"
+                                   iconPosition="leading"/>
+                                </af:panelGroupLayout>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr15">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                                <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem text="Pages" id="sdi2">
+                                                  
+                                                    <af:table value="#{bindings.TblRoleDetailPagesView3.collectionModel}" var="row"
+                                                  rows="#{bindings.TblRoleDetailPagesView3.rangeSize}"
+                                                  emptyText="#{bindings.TblRoleDetailPagesView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.TblRoleDetailPagesView3.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.TblRoleDetailPagesView3.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.TblRoleDetailPagesView3.rangeSize}"
+                                                  filterModel="#{bindings.TblRoleDetailPagesView3Query.queryDescriptor}"
+                                                  filterVisible="true"
+                                                  queryListener="#{bindings.TblRoleDetailPagesView3Query.processQuery}"
+                                                  varStatus="vs" id="t5"
+                                                  scrollPolicy="page" autoHeightRows="0" >
+                                            <!--<af:column sortProperty="#{bindings.TblRoleDetailPagesView3.hints.RoleDetailPagesId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblRoleDetailPagesView3.hints.RoleDetailPagesId.label}"
+                                                       id="c16">
+                                                <af:inputText value="#{row.bindings.RoleDetailPagesId.inputValue}"
+                                                readOnly="true"
+                                                              label="#{bindings.TblRoleDetailPagesView3.hints.RoleDetailPagesId.label}"
+                                                              required="#{bindings.TblRoleDetailPagesView3.hints.RoleDetailPagesId.mandatory}"
+                                                              columns="#{bindings.TblRoleDetailPagesView3.hints.RoleDetailPagesId.displayWidth}"
+                                                              maximumLength="#{bindings.TblRoleDetailPagesView3.hints.RoleDetailPagesId.precision}"
+                                                              shortDesc="#{bindings.TblRoleDetailPagesView3.hints.RoleDetailPagesId.tooltip}"
+                                                              id="it11">
+                                                    <f:validator binding="#{row.bindings.RoleDetailPagesId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblRoleDetailPagesView3.hints.RoleDetailPagesId.format}"/>
+                                                </af:inputText>
+                                            </af:column>-->
+                                            <!--<af:column sortProperty="#{bindings.TblRoleDetailPagesView3.hints.RoleMasterId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblRoleDetailPagesView3.hints.RoleMasterId.label}"
+                                                       id="c17">
+                                                <af:inputText value="#{row.bindings.RoleMasterId.inputValue}"
+                                                              label="#{bindings.TblRoleDetailPagesView3.hints.RoleMasterId.label}"
+                                                              required="#{bindings.TblRoleDetailPagesView3.hints.RoleMasterId.mandatory}"
+                                                              columns="#{bindings.TblRoleDetailPagesView3.hints.RoleMasterId.displayWidth}"
+                                                              maximumLength="#{bindings.TblRoleDetailPagesView3.hints.RoleMasterId.precision}"
+                                                              shortDesc="#{bindings.TblRoleDetailPagesView3.hints.RoleMasterId.tooltip}"
+                                                              id="it12">
+                                                    <f:validator binding="#{row.bindings.RoleMasterId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblRoleDetailPagesView3.hints.RoleMasterId.format}"/>
+                                                </af:inputText>
+                                            </af:column>-->
+                                            <af:column sortProperty="#{bindings.TblRoleDetailPagesView3.hints.PagesId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="Page Name" 
+                                                       id="c18" width="300">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.PagesId}"
+                                          id="it15" placeholder="Search Pages">
+                           </af:inputText>
+                             </f:facet>
+                                                <af:selectOneChoice value="#{row.bindings.PagesId.inputValue}"
+                                                readOnly="true"
+                                                                    label="#{row.bindings.PagesId.label}"
+                                                                    required="#{bindings.TblRoleDetailPagesView3.hints.PagesId.mandatory}"
+                                                                    shortDesc="#{bindings.TblRoleDetailPagesView3.hints.PagesId.tooltip}"
+                                                                    id="soc3">
+                                                    <f:selectItems value="#{row.bindings.PagesId.items}" id="si3"/>
+                                                    <f:validator binding="#{row.bindings.PagesId.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblRoleDetailPagesView3.hints.RView.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="View"
+                                                       id="c19">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RView}"
+                                          id="it16" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                                                <af:selectOneChoice value="#{row.bindings.RView.inputValue}"
+                                                                    label="#{row.bindings.RView.label}"
+                                                                    required="#{bindings.TblRoleDetailPagesView3.hints.RView.mandatory}"
+                                                                    shortDesc="#{bindings.TblRoleDetailPagesView3.hints.RView.tooltip}"
+                                                                    id="soc4">
+                                                    <f:selectItems value="#{row.bindings.RView.items}" id="si4"/>
+                                                    <f:validator binding="#{row.bindings.RView.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblRoleDetailPagesView3.hints.RAdd.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="Add"
+                                                       id="c20">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RAdd}"
+                                          id="it17" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                                                <af:selectOneChoice value="#{row.bindings.RAdd.inputValue}"
+                                                                    label="#{row.bindings.RAdd.label}"
+                                                                    required="#{bindings.TblRoleDetailPagesView3.hints.RAdd.mandatory}"
+                                                                    shortDesc="#{bindings.TblRoleDetailPagesView3.hints.RAdd.tooltip}"
+                                                                    id="soc5">
+                                                    <f:selectItems value="#{row.bindings.RAdd.items}" id="si5"/>
+                                                    <f:validator binding="#{row.bindings.RAdd.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblRoleDetailPagesView3.hints.REdit.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="Edit"
+                                                       id="c21">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.REdit}"
+                                          id="it18" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                                                <af:selectOneChoice value="#{row.bindings.REdit.inputValue}"
+                                                                    label="#{row.bindings.REdit.label}"
+                                                                    required="#{bindings.TblRoleDetailPagesView3.hints.REdit.mandatory}"
+                                                                    shortDesc="#{bindings.TblRoleDetailPagesView3.hints.REdit.tooltip}"
+                                                                    id="soc6">
+                                                    <f:selectItems value="#{row.bindings.REdit.items}" id="si6"/>
+                                                    <f:validator binding="#{row.bindings.REdit.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblRoleDetailPagesView3.hints.RDelete.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="Delete"
+                                                       id="c22">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RDelete}"
+                                          id="it19" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                                                <af:selectOneChoice value="#{row.bindings.RDelete.inputValue}"
+                                                                    label="#{row.bindings.RDelete.label}"
+                                                                    required="#{bindings.TblRoleDetailPagesView3.hints.RDelete.mandatory}"
+                                                                    shortDesc="#{bindings.TblRoleDetailPagesView3.hints.RDelete.tooltip}"
+                                                                    id="soc7">
+                                                    <f:selectItems value="#{row.bindings.RDelete.items}" id="si7"/>
+                                                    <f:validator binding="#{row.bindings.RDelete.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblRoleDetailPagesView3.hints.RPrint.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="Print"
+                                                       id="c23">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RPrint}"
+                                          id="it20" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                                                <af:selectOneChoice value="#{row.bindings.RPrint.inputValue}"
+                                                                    label="#{row.bindings.RPrint.label}"
+                                                                    required="#{bindings.TblRoleDetailPagesView3.hints.RPrint.mandatory}"
+                                                                    shortDesc="#{bindings.TblRoleDetailPagesView3.hints.RPrint.tooltip}"
+                                                                    id="soc8">
+                                                    <f:selectItems value="#{row.bindings.RPrint.items}" id="si8"/>
+                                                    <f:validator binding="#{row.bindings.RPrint.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblRoleDetailPagesView3.hints.RPost.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="Post"
+                                                       id="c24">
+                                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RPost}"
+                                          id="it21" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                                                <af:selectOneChoice value="#{row.bindings.RPost.inputValue}"
+                                                                    label="#{row.bindings.RPost.label}"
+                                                                    required="#{bindings.TblRoleDetailPagesView3.hints.RPost.mandatory}"
+                                                                    shortDesc="#{bindings.TblRoleDetailPagesView3.hints.RPost.tooltip}"
+                                                                    id="soc9">
+                                                    <f:selectItems value="#{row.bindings.RPost.items}" id="si9"/>
+                                                    <f:validator binding="#{row.bindings.RPost.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                        </af:table>
+                                                    
+                                                    <af:spacer width="100" height="10" id="s5"/>
+                                        <af:panelGroupLayout id="pgl6">
+                                            <!--<af:button actionListener="#{bindings.CreateInsert3.execute}"
+                                                       text="Add"
+                                                       icon="#{resource['images:add.png']}"
+                                                       disabled="#{!bindings.CreateInsert3.enabled}" id="b17"/>
+                                                        <af:spacer width="5" height="10" id="s17"/>-->
+                                                        <af:button actionListener="#{bindings.Execute1.execute}" text="Edit" styleClass="af|Voucheractionbutton"
+                                            icon="#{resource['images:edit.png']}"
+                                                       disabled="#{!bindings.Execute1.enabled}" id="b11"/>
+                                                        <af:spacer width="5" height="10" id="s18"/>
+                                                        <!--<af:button actionListener="#{bindings.Delete3.execute}" text="Delete"
+                                            icon="#{resource['images:delete.png']}"
+                                                       disabled="#{!bindings.Delete3.enabled}" id="b12"/>-->
+                                        </af:panelGroupLayout>
+                                    </af:showDetailItem>
+                                    <af:showDetailItem text="Reports" id="sdi3">
+                                                  
+                                                    <af:table value="#{bindings.TblRoleDetailReportsView3.collectionModel}"
+                                                  var="row" rows="#{bindings.TblRoleDetailReportsView3.rangeSize}"
+                                                  emptyText="#{bindings.TblRoleDetailReportsView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.TblRoleDetailReportsView3.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.TblRoleDetailReportsView3.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.TblRoleDetailReportsView3.rangeSize}"
+                                                  filterModel="#{bindings.TblRoleDetailReportsView3Query.queryDescriptor}"
+                                                  filterVisible="true"
+                                                  queryListener="#{bindings.TblRoleDetailReportsView3Query.processQuery}"
+                                                  varStatus="vs" id="t6"
+                                                  scrollPolicy="page" autoHeightRows="0" >
+                                            <!--<af:column sortProperty="#{bindings.TblRoleDetailReportsView3.hints.RoleDetailReportsId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblRoleDetailReportsView3.hints.RoleDetailReportsId.label}"
+                                                       id="c25">
+                                                <af:inputText value="#{row.bindings.RoleDetailReportsId.inputValue}"
+                                                readOnly="true"
+                                                              label="#{bindings.TblRoleDetailReportsView3.hints.RoleDetailReportsId.label}"
+                                                              required="#{bindings.TblRoleDetailReportsView3.hints.RoleDetailReportsId.mandatory}"
+                                                              columns="#{bindings.TblRoleDetailReportsView3.hints.RoleDetailReportsId.displayWidth}"
+                                                              maximumLength="#{bindings.TblRoleDetailReportsView3.hints.RoleDetailReportsId.precision}"
+                                                              shortDesc="#{bindings.TblRoleDetailReportsView3.hints.RoleDetailReportsId.tooltip}"
+                                                              id="it13">
+                                                    <f:validator binding="#{row.bindings.RoleDetailReportsId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblRoleDetailReportsView3.hints.RoleDetailReportsId.format}"/>
+                                                </af:inputText>
+                                            </af:column>-->
+                                            <!--<af:column sortProperty="#{bindings.TblRoleDetailReportsView3.hints.RoleMasterId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblRoleDetailReportsView3.hints.RoleMasterId.label}"
+                                                       id="c26">
+                                                <af:inputText value="#{row.bindings.RoleMasterId.inputValue}"
+                                                              label="#{bindings.TblRoleDetailReportsView3.hints.RoleMasterId.label}"
+                                                              required="#{bindings.TblRoleDetailReportsView3.hints.RoleMasterId.mandatory}"
+                                                              columns="#{bindings.TblRoleDetailReportsView3.hints.RoleMasterId.displayWidth}"
+                                                              maximumLength="#{bindings.TblRoleDetailReportsView3.hints.RoleMasterId.precision}"
+                                                              shortDesc="#{bindings.TblRoleDetailReportsView3.hints.RoleMasterId.tooltip}"
+                                                              id="it14">
+                                                    <f:validator binding="#{row.bindings.RoleMasterId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblRoleDetailReportsView3.hints.RoleMasterId.format}"/>
+                                                </af:inputText>
+                                            </af:column>-->
+                                            <af:column sortProperty="#{bindings.TblRoleDetailReportsView3.hints.ReportsId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="Report Name"
+                                                       id="c27" width="300">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ReportsId}"
+                                          id="it22" placeholder="Search Reports">
+                           </af:inputText>
+                             </f:facet>
+                                                <af:selectOneChoice value="#{row.bindings.ReportsId.inputValue}"
+                                                readOnly="true"
+                                                                    label="#{row.bindings.ReportsId.label}"
+                                                                    required="#{bindings.TblRoleDetailReportsView3.hints.ReportsId.mandatory}"
+                                                                    shortDesc="#{bindings.TblRoleDetailReportsView3.hints.ReportsId.tooltip}"
+                                                                    id="soc10">
+                                                    <f:selectItems value="#{row.bindings.ReportsId.items}" id="si10"/>
+                                                    <f:validator binding="#{row.bindings.ReportsId.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblRoleDetailReportsView3.hints.RView.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="Report View"
+                                                       id="c28">
+                                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RView}"
+                                          id="it23" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                                                <af:selectOneChoice value="#{row.bindings.RView.inputValue}"
+                                                                    label="#{row.bindings.RView.label}"
+                                                                    required="#{bindings.TblRoleDetailReportsView3.hints.RView.mandatory}"
+                                                                    shortDesc="#{bindings.TblRoleDetailReportsView3.hints.RView.tooltip}"
+                                                                    id="soc11">
+                                                    <f:selectItems value="#{row.bindings.RView.items}" id="si11"/>
+                                                    <f:validator binding="#{row.bindings.RView.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                        </af:table>
+                                        <af:spacer width="100" height="10" id="s7"/>
+                                        <af:panelGroupLayout id="pgl7">
+                                            <!--<af:button actionListener="#{bindings.CreateInsert4.execute}"
+                                                       text="Add"
+                                                       icon="#{resource['images:add.png']}"
+                                                       disabled="#{!bindings.CreateInsert4.enabled}" id="b13"/>
+                                                        <af:spacer width="5" height="10" id="s19"/>-->
+                                                       
+                                                        <af:button actionListener="#{bindings.Execute2.execute}" text="Edit" styleClass="af|Voucheractionbutton"
+                                            icon="#{resource['images:edit.png']}"
+                                                       disabled="#{!bindings.Execute2.enabled}" id="b14"/>
+                                                        <af:spacer width="5" height="10" id="s20"/>
+                                                        <!--<af:button actionListener="#{bindings.Delete4.execute}" text="Delete"
+                                            icon="#{resource['images:delete.png']}"
+                                                       disabled="#{!bindings.Delete4.enabled}" id="b15"/>-->
+                                        </af:panelGroupLayout>
+                                    </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                      
+                                   
+                                    
+                                </af:panelGridLayout>
+                </af:showDetailItem>
+                
+            </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+           
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>

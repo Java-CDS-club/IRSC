@@ -160,6 +160,42 @@
   <ViewUsage
     Name="School_Managment_System1"
     ViewObjectName="model.UserRole.VO.School_Managment_System"/>
+  <ViewUsage
+    Name="TblRoleMasterView2"
+    ViewObjectName="model.UserRole.VO.TblRoleMasterView"/>
+  <ViewUsage
+    Name="TblRoleDetailPagesView4"
+    ViewObjectName="model.UserRole.VO.TblRoleDetailPagesView"/>
+  <ViewUsage
+    Name="TblRoleDetailReportsView4"
+    ViewObjectName="model.UserRole.VO.TblRoleDetailReportsView"/>
+  <ViewUsage
+    Name="TblUserDModulesView1"
+    ViewObjectName="model.UserRole.VO.TblUserDModulesView"/>
+  <ViewUsage
+    Name="TblUserDModulesView2"
+    ViewObjectName="model.UserRole.VO.TblUserDModulesView"/>
+  <ViewUsage
+    Name="TblUserRolesView1"
+    ViewObjectName="model.UserRole.VO.TblUserRolesView"/>
+  <ViewUsage
+    Name="TblUserRolesView2"
+    ViewObjectName="model.UserRole.VO.TblUserRolesView"/>
+  <ViewUsage
+    Name="TblUserDModulesView3"
+    ViewObjectName="model.UserRole.VO.TblUserDModulesView"/>
+  <ViewUsage
+    Name="Tbl_User_Role_ProfileView1"
+    ViewObjectName="model.UserRole.VO.Tbl_User_Role_ProfileView"/>
+  <ViewUsage
+    Name="TblUserDetailView4"
+    ViewObjectName="model.UserRole.VO.TblUserDetailView"/>
+  <ViewUsage
+    Name="TblUserDModulesView4"
+    ViewObjectName="model.UserRole.VO.TblUserDModulesView"/>
+  <ViewUsage
+    Name="TblUserRolesView3"
+    ViewObjectName="model.UserRole.VO.TblUserRolesView"/>
   <ViewLinkUsage
     Name="FkPagesLink1"
     ViewLinkObjectName="model.UserRole.VO.FkPagesLink"
@@ -237,5 +273,59 @@
     ViewLinkObjectName="model.UserRole.VO.FkUserMasterDetailLink"
     SrcViewUsageName="model.UserRole.AppModule.TblUserMasterView2"
     DstViewUsageName="model.UserRole.AppModule.TblUserDetailView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUserMasterRoleMasterLink1"
+    ViewLinkObjectName="model.UserRole.VO.FkUserMasterRoleMasterLink"
+    SrcViewUsageName="model.UserRole.AppModule.TblUserMasterView1"
+    DstViewUsageName="model.UserRole.AppModule.TblRoleMasterView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkRoleDetailPagesLink2"
+    ViewLinkObjectName="model.UserRole.VO.FkRoleDetailPagesLink"
+    SrcViewUsageName="model.UserRole.AppModule.TblRoleMasterView2"
+    DstViewUsageName="model.UserRole.AppModule.TblRoleDetailPagesView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblRoleDetailReportsFkLink2"
+    ViewLinkObjectName="model.UserRole.VO.FkTblRoleDetailReportsFkLink"
+    SrcViewUsageName="model.UserRole.AppModule.TblRoleMasterView2"
+    DstViewUsageName="model.UserRole.AppModule.TblRoleDetailReportsView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUserDetailModuleLink1"
+    ViewLinkObjectName="model.UserRole.VO.FkUserDetailModuleLink"
+    SrcViewUsageName="model.UserRole.AppModule.TblUserDetailView3"
+    DstViewUsageName="model.UserRole.AppModule.TblUserDModulesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUserRoleLink1"
+    ViewLinkObjectName="model.UserRole.VO.FkUserRoleLink"
+    SrcViewUsageName="model.UserRole.AppModule.TblUserMasterView1"
+    DstViewUsageName="model.UserRole.AppModule.TblUserRolesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUserModuleLink1"
+    ViewLinkObjectName="model.UserRole.VO.FkUserModuleLink"
+    SrcViewUsageName="model.UserRole.AppModule.TblUserMasterView1"
+    DstViewUsageName="model.UserRole.AppModule.TblUserDModulesView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUserRoleProfileUserDertailLink1"
+    ViewLinkObjectName="model.UserRole.VO.FkUserRoleProfileUserDertailLink"
+    SrcViewUsageName="model.UserRole.AppModule.Tbl_User_Role_ProfileView1"
+    DstViewUsageName="model.UserRole.AppModule.TblUserDetailView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUserRoleProfileModuleLink1"
+    ViewLinkObjectName="model.UserRole.VO.FkUserRoleProfileModuleLink"
+    SrcViewUsageName="model.UserRole.AppModule.Tbl_User_Role_ProfileView1"
+    DstViewUsageName="model.UserRole.AppModule.TblUserDModulesView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkUserRoleProfileRoleLink1"
+    ViewLinkObjectName="model.UserRole.VO.FkUserRoleProfileRoleLink"
+    SrcViewUsageName="model.UserRole.AppModule.Tbl_User_Role_ProfileView1"
+    DstViewUsageName="model.UserRole.AppModule.TblUserRolesView3"
     Reversed="false"/>
 </AppModule>

@@ -19,28 +19,29 @@
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="getRoleID"
+    Name="getuser"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="Pages_Reports"/>
   </Variable>
-  <SQLQuery><![CDATA[SELECT                    
-TR.REPORTS_NAME, TR.AST, TR.REPORT_ICON, TR.Report_LINK,  TR.SR_NO,           
-RDR.ROLE_MASTER_ID, RDR.Reports_ID, RDR.ROLE_MASTER_ID, RDR.R_VIEW                 
-FROM                    
-TBL_Reports TR, TBL_ROLE_DETAIL_Reports RDR                  
-Where                    
-TR.Reports_ID = RDR.Reports_ID                   
-AND                   
-RDR.R_VIEW = 'Y'                   
-AND                   
-TR.AST = 'Y'                   
-AND                   
-TR.MODULE_MENU_ID = 10         
-AND                   
-RDR.ROLE_MASTER_ID = :getRoleID      
+  <SQLQuery><![CDATA[SELECT                     
+TR.REPORTS_NAME, TR.AST, TR.REPORT_ICON, TR.Report_LINK,  TR.SR_NO,            
+RDR.ROLE_MASTER_ID, RDR.Reports_ID, RDR.ROLE_MASTER_ID, RDR.R_VIEW                  
+FROM                     
+TBL_Reports TR, TBL_ROLE_DETAIL_Reports RDR                   
+Where                     
+TR.Reports_ID = RDR.Reports_ID                    
+AND                    
+RDR.R_VIEW = 'Y'                    
+AND                    
+TR.AST = 'Y'                    
+AND                    
+TR.MODULE_MENU_ID = 10          
+AND                    
+RDR.ROLE_MASTER_ID in (Select Role_Master_ID from tbl_user_roles where role_master_id is not null and USER_MASTER_ID=:getuser)       
 ORDER BY TR.SR_NO ASC]]></SQLQuery>
   <ViewAttribute
     Name="ReportsName"
@@ -67,7 +68,7 @@ ORDER BY TR.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="AST"
     Expression="AST"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -152,7 +153,7 @@ ORDER BY TR.SR_NO ASC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="R_VIEW"
     Expression="R_VIEW"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>

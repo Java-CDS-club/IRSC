@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Point_Of_SalePageDef"
+                Package="Fragments.Modules.POS">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblSaleInvMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblSaleInvMasterView1Iterator"/>
+    <iterator Binds="TblSaleInvDetailView2" RangeSize="10" DataControl="AppModuleDataControl1"
+              id="TblSaleInvDetailView2Iterator"/>
+    <searchRegion Binds="TblSaleInvDetailView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblSaleInvDetailView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblSaleInvMasterView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSaleInvMasterView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblSaleInvMasterView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_RblCustId" id="RblCustId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblSaleInvMasterView1Iterator" id="Barcode">
+      <AttrNames>
+        <Item Value="Barcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSaleInvMasterView1Iterator" id="BarcodeScan">
+      <AttrNames>
+        <Item Value="BarcodeScan"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_EmpId" id="EmpId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_PayType" id="PayType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblSaleInvMasterView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblSaleInvMasterView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblSaleInvMasterView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblSaleInvMasterView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <action IterBinding="TblSaleInvMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblSaleInvMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblSaleInvMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblSaleInvDetailView2Iterator" id="TblSaleInvDetailView2">
+      <nodeDefinition DefName="model.ERP.VO.TblSaleInvDetailView" Name="TblSaleInvDetailView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="Description"/>
+          <Item Value="Qty"/>
+          <Item Value="Rate"/>
+          <Item Value="Amount"/>
+          <Item Value="UOMName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblSaleInvDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblSaleInvDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblSaleInvDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <list IterBinding="TblSaleInvMasterView1Iterator" StaticList="false" Uses="LOV_SaleOrderMasterId"
+          id="SaleOrderMasterId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblSaleInvMasterView1Iterator" id="DiscAmount">
+      <AttrNames>
+        <Item Value="DiscAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSaleInvMasterView1Iterator" id="TaxPerc">
+      <AttrNames>
+        <Item Value="TaxPerc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSaleInvMasterView1Iterator" id="NetAmt">
+      <AttrNames>
+        <Item Value="NetAmt"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

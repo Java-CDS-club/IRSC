@@ -105,4 +105,19 @@
     <managed-bean-class>view.sidebar.SchoolSystemSidebar</managed-bean-class>
     <managed-bean-scope>view</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__22">
+    <managed-bean-name>Module</managed-bean-name>
+    <managed-bean-class>view.Module.Module</managed-bean-class>
+    <managed-bean-scope>none</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__23">
+    <managed-bean-name>ModuleBean</managed-bean-name>
+    <managed-bean-class>view.Module.Module</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__24">
+    <managed-bean-name>Modulebean</managed-bean-name>
+    <managed-bean-class>view.Login.Module</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

@@ -577,6 +577,14 @@
     <page path="/WEB-INF/Task_Flows/Modules/School_Managment_System/Student_Registration_TaskFlow.xml#Student_Registration_TaskFlow@ExecuteWithParams"
           usageId="view_Student_Registration_TaskFlow_Student_Registration_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/Main_Pages/Trial.jsf" usageId="view_TrialPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/POS/Point_Of_Sale.jsff" usageId="view_Point_Of_SalePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/User_Management/Role_TaskFlow.xml#Role_TaskFlow@ExecuteWithParams"
+          usageId="view_Role_TaskFlow_Role_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/User_Management/Role.jsff" usageId="view_RolePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/User_Management/User_Role_Profile_TaskFlow.xml#User_Role_Profile_TaskFlow@ExecuteWithParams"
+          usageId="view_User_Role_Profile_TaskFlow_User_Role_Profile_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/User_Management/User_Role_Profile.jsff"
+          usageId="view_User_Role_ProfilePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -1114,6 +1122,13 @@
     <page id="view_Student_Registration_TaskFlow_Student_Registration_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.School_Managment_System.Student_Registration_TaskFlow_Student_Registration_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_TrialPageDef" path="Main_Pages.TrialPageDef"/>
+    <page id="view_Point_Of_SalePageDef" path="Fragments.Modules.POS.Point_Of_SalePageDef"/>
+    <page id="view_Role_TaskFlow_Role_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.User_Management.Role_TaskFlow_Role_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_RolePageDef" path="Fragments.Modules.User_Management.RolePageDef"/>
+    <page id="view_User_Role_Profile_TaskFlow_User_Role_Profile_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.User_Management.User_Role_Profile_TaskFlow_User_Role_Profile_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_User_Role_ProfilePageDef" path="Fragments.Modules.User_Management.User_Role_ProfilePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

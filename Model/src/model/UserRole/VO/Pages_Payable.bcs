@@ -4,9 +4,9 @@ package model.UserRole.VO
 
 import oracle.jbo.script.annotation.VariableExpression;
 
-@VariableExpression(path="getRoleID")
-def getRoleID_VariableScript_Variable()
+@VariableExpression(path="getuser")
+def getuser_VariableScript_Variable()
 {
-adf.context.current.sessionScope.get('sessRMID')
+adf.context.current.sessionScope.get('sessUMID')
 }
 

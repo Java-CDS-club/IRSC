@@ -1,145 +1,590 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
- <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="POS">
-    
-     <af:panelGridLayout id="pgl1">
-    <af:gridRow marginTop="5px" height="auto" id="gr1">
-      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
-        <af:panelGroupLayout id="pgl24" layout="horizontal" halign="center" valign="middle">
-                    <!--<af:panelFormLayout id="pfl3" maxColumns="8" rows="1" fieldWidth="500px;"
-                                        inlineStyle=" padding: 0%;">
-                        
-                     
-                                   
-                                   
-                                   
-                        --><!--<af:link text="User Management" id="pt_l1" icon="#{resource['images:usrmng.png']}"
-                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf"/>
-                                   
-                        <af:link text="General Ledger" id="pt_l12" icon="#{resource['images:gl.png']}"
-                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/General_Ledger/General_Ledger.jsf"/>
-                                   
-                         <af:link text="Bank / Cash" id="pt_l41" icon="#{resource['images:bc.png']}"
-                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Bank_Cash/Bank_Cash.jsf"/>
-                                   
-                        <af:link text="Payables" id="pt_5l1" icon="#{resource['images:pbl.png']}"
-                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Payable/Payable.jsf"/>
-                                   
-                        <af:link text="Receivable" id="pt_6l1" icon="#{resource['images:rbl.png']}"
-                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Receivable/Receivable.jsf"/>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+   <af:popup animate="false" contentDelivery="lazyUncached"
+          childCreation="deferred" id="p1">
+  <af:panelWindow resize="on" stretchChildren="first" id="pw1" title="Help">
+    <af:image id="i4" shortDesc="Image Show" source="/Resources/Sale_Voucher.jpg"/>
+  </af:panelWindow>
+</af:popup>
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Point of Sale">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <!--<af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>-->
+                         <af:button id="b2" text="Help" icon="#{resource['images:info.png']}" iconPosition="top" styleClass="af|Voucheractionbutton"
+                   inlineStyle="background-color:InfoBackground;">
+          <af:showPopupBehavior popupId="p1"/>
+        </af:button>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Point of Sale">
+                <af:panelGridLayout id="pgl2">
+                  <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                      <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab2" text="Master">
+                         
+                          <af:panelFormLayout id="pfl1" maxColumns="3" rows="8">
+                  <af:inputText value="#{bindings.Id.inputValue}" label="ID" visible="false"
+                                required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
+                                maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}"
+                                id="it1" disabled="true">
+                    <f:validator binding="#{bindings.Id.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                  </af:inputText>
+                  
+                 
+                  <af:inputDate value="#{bindings.Dated.inputValue}" label="Date :"
+                                required="#{bindings.Dated.hints.mandatory}"
+                                columns="17"
+                                shortDesc="#{bindings.Dated.hints.tooltip}" id="id1" contentStyle="width:138px;">
+                    <f:validator binding="#{bindings.Dated.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                  </af:inputDate>
+                  <af:spacer  id="s4"/>
+                 <af:selectOneChoice value="#{bindings.ProjectId.inputValue}" label="Project Name :"
+                        required="#{bindings.ProjectId.hints.mandatory}" shortDesc="#{bindings.ProjectId.hints.tooltip}"
+                        id="soc2" 
+                        contentStyle="width:138px;">
+      <f:selectItems value="#{bindings.ProjectId.items}" id="si2"/>
+      <f:validator binding="#{bindings.ProjectId.validator}"/>
+    </af:selectOneChoice>
+                 
+                  <af:spacer  id="s6"/>
+                            <af:selectOneChoice value="#{bindings.RblCustId.inputValue}" autoSubmit="true"
+                                                label="Customer :"
+                                                required="#{bindings.RblCustId.hints.mandatory}"
+                                                shortDesc="#{bindings.RblCustId.hints.tooltip}" id="soc6"
+                                                contentStyle="width:138px;">
+                              <f:selectItems value="#{bindings.RblCustId.items}" id="si6"/>
+                              <f:validator binding="#{bindings.RblCustId.validator}"/>
+                            </af:selectOneChoice>
+                  <af:spacer  id="s61"/>
+                           <af:selectOneChoice value="#{bindings.EmpId.inputValue}" label="Sales Person"
+                                                required="#{bindings.EmpId.hints.mandatory}"
+                                                shortDesc="#{bindings.EmpId.hints.tooltip}" id="soc22" contentStyle="width:138px;">
+                              <f:selectItems value="#{bindings.EmpId.items}" id="si22"/>
+                              <f:validator binding="#{bindings.EmpId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s7"/>
+                             <af:selectOneChoice value="#{bindings.PayType.inputValue}" label="Payment Type"
+                                                required="#{bindings.PayType.hints.mandatory}"
+                                                shortDesc="#{bindings.PayType.hints.tooltip}" id="soc23" contentStyle="width:138px;">
+                              <f:selectItems value="#{bindings.PayType.items}" id="si23"/>
+                              <f:validator binding="#{bindings.PayType.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer  id="s11"/>
+                            <af:inputText value="#{bindings.BarcodeScan.inputValue}"
+                                          label="Barcode Scan"
+                                          required="#{bindings.BarcodeScan.hints.mandatory}"
+                                          columns="#{bindings.BarcodeScan.hints.displayWidth}"
+                                          maximumLength="#{bindings.BarcodeScan.hints.precision}"
+                                          shortDesc="#{bindings.BarcodeScan.hints.tooltip}" id="it41" contentStyle="width:138px;">
+                              <f:validator binding="#{bindings.BarcodeScan.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s10"/>
+                            <af:inputText value="#{bindings.Barcode.inputValue}" label="Barcode"
+                                          required="#{bindings.Barcode.hints.mandatory}"
+                                          columns="#{bindings.Barcode.hints.displayWidth}"
+                                          maximumLength="#{bindings.Barcode.hints.precision}"
+                                          shortDesc="#{bindings.Barcode.hints.tooltip}" id="it34" contentStyle="width:138px;" readOnly="true">
+                              <f:validator binding="#{bindings.Barcode.validator}"/>
+                            </af:inputText>
+                            
+                            <af:spacer  id="s9"/>
                            
-                        <af:link text="Sale / Purchase" id="pt_l31" icon="#{resource['images:sp.png']}"
-                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Sale_Purchase/Sale_Purchase.jsf"/>
-                        
-                        <af:link text="Point Of sales" id="pt_l2" icon="#{resource['images:sp.png']}"
-                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/POS/POS.jsf"/>
-                                   
-                        <af:link text="Reports" id="pt_7l1" icon="#{resource['images:rpt.png']}"
-                        inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf"/>--><!--
-                        
-                        
-                    </af:panelFormLayout>-->
-                    <af:button text="Dine In" id="pt_b3"
-                               inlineStyle="width:400px; height:200px; text-align:center;  font-size:18px; font-family:Arial !important;"
-                                   destination="/faces/Main_Pages/Modules/POS/Dine_In.jsf"/>
-                        <af:button text="Pick up" id="pt_b4" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family: Arial !important;"
-                                   
-                                   destination="/faces/Main_Pages/Modules/POS/Pick_Up.jsf"/>
-                        <af:button text="Drive Thru" id="pt_b5" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
-                                   
-                                   destination="/faces/Main_Pages/Modules/POS/Drive_Thru.jsf"/>
-                        <af:button text="Delivery" id="pt_b6" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
-                                   
-                                   destination="/faces/Main_Pages/Modules/POS/Delivery.jsf"/>
-                </af:panelGroupLayout>
-      </af:gridCell>
-    </af:gridRow>
-    <af:gridRow marginTop="5px" height="auto" id="gr2">
-      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-        <af:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
-                   
-                        <af:button text="Open Orders" id="b1" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
-                                   destination="/faces/Main_Pages/Modules/POS/Open_Orders.jsf"/>
-                        <af:button text="Cancel/Closed " id="b2" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family: Arial !important;"
-                                   
-                                   destination="/faces/Main_Pages/Modules/POS/Cancel_Closed_Order.jsf"/>
-                        <af:button text="On Account Settle" id="b3" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
-                                   
-                                   destination="/faces/Main_Pages/Modules/POS/On_Account_Settle.jsf"/>
-                        <af:button text="Search Orders" id="b4" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
-                                   
-                                   destination="/faces/Main_Pages/Modules/POS/Search_Orders.jsf"/>
+                           
+                            
+                             <af:spacer  id="s12"/>
+                            <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
+                                required="#{bindings.Vno.hints.mandatory}" columns="20"
+                                maximumLength="#{bindings.Vno.hints.precision}"
+                                shortDesc="#{bindings.Vno.hints.tooltip}" id="it2" readOnly="true"
+                                contentStyle="width:138px;">
+                    <f:validator binding="#{bindings.Vno.validator}"/>
+                  </af:inputText>
+                   <af:spacer  id="s8"/>
+                  <af:selectOneChoice value="#{bindings.Vtp.inputValue}" label="Voucher Type :"
+                                      required="#{bindings.Vtp.hints.mandatory}"
+                                      shortDesc="#{bindings.Vtp.hints.tooltip}" id="soc1" readOnly="true"
+                                      contentStyle="width:138px;">
+                    <f:selectItems value="#{bindings.Vtp.items}" id="si1"/>
+                    <f:validator binding="#{bindings.Vtp.validator}"/>
+                  </af:selectOneChoice>
+                   <af:spacer  id="s2"/>
                   
-                                   
-                                   
-                                   
-                      
-                        
-                        
-                   
-                </af:panelGroupLayout>
-      </af:gridCell>
-    </af:gridRow>
-    <af:gridRow marginTop="5px" height="auto" id="gr3">
-      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-                 <af:panelGroupLayout id="pgl3" layout="horizontal" halign="center" valign="middle">
-                   
-                        <af:button text="Delivery Drivers" id="b14" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
-                                   destination="/faces/Main_Pages/Modules/POS/Delivery_Drivers.jsf"/>
-                        <af:button text="Cash In" id="b8" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family: Arial !important;"
-                                   
-                                   destination="/faces/Main_Pages/Modules/POS/Cash_In.jsf"/>
-                        <af:button text="Cash Out" id="b9" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
-                                   
-                                   destination="/faces/Main_Pages/Modules/POS/Cash_Out.jsf"/>
-                        <af:button text="Attendance" id="b10" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
-                                   
-                                   destination="/faces/Main_Pages/Modules/POS/Attendance.jsf"/>
-               
-                                   
-                                   
-                                   
-                      
-                        
-                        
-                   
-                </af:panelGroupLayout>
-            </af:gridCell>
-    </af:gridRow>
-    <af:gridRow marginTop="5px" height="auto" id="gr4">
-      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-                  <af:panelGroupLayout id="pgl4" layout="horizontal" halign="center" valign="middle">
+                 
+                 
+                 
                   
-                        <af:button text="Back Office" id="b15" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
-                                   destination="/faces/Main_Pages/Modules/POS/Back_Office.jsf"/>
-                        <af:button text="Pre-Orders Detail " id="b16" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family: Arial !important;"
-                                   
-                                   destination="/faces/Main_Pages/Modules/POS/Pre_Orders_Details.jsf"/>
-                        <af:button text="Pre-Order" id="b17" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
-                                   
-                                   destination="/faces/Main_Pages/Modules/POS/Pre_Order.jsf"/>
-                        <af:button text="Exit" id="b18" inlineStyle="width: 400px;height:200px;text-align: center; font-size: 18px;font-family:Arial !important;"
-                                   
-                                   />
+                  <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal"  halign="left" id="pgl5">
+                      <af:button actionListener="#{bindings.First.execute}" text="First"  styleClass="af|Voucheractionbutton"
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b6"/>
+                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"  styleClass="af|Voucheractionbutton"
+                                 disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                      <af:button actionListener="#{bindings.Next.execute}" text="Next"  styleClass="af|Voucheractionbutton"
+                                 disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                      <af:button actionListener="#{bindings.Last.execute}" text="Last"  styleClass="af|Voucheractionbutton"
+                                 disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelFormLayout>
+                         <af:spacer width="5" height="10" id="s5"/>
+                          <af:panelGroupLayout id="pgl3"   layout="horizontal">
+                          
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"  styleClass="af|Voucheractionbutton"
+                                          icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s13"/>
+                            </af:iterator>
+                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"  styleClass="af|Voucheractionbutton"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b7"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="leading">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="5" height="10" id="s3"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"  styleClass="af|Voucheractionbutton"
+                                   disabled="#{!bindings.Commit.enabled}" id="b1" icon="#{resource['images:save.png']}"
+                                   iconPosition="leading"/>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                     
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                      <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab3" text="Detail">
+                        
+                          <af:table value="#{bindings.TblSaleInvDetailView2.collectionModel}" var="row"
+                          rows="#{bindings.TblSaleInvDetailView2.rangeSize}"
+                          emptyText="#{bindings.TblSaleInvDetailView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblSaleInvDetailView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblSaleInvDetailView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblSaleInvDetailView2.rangeSize}"
+                          filterModel="#{bindings.TblSaleInvDetailView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblSaleInvDetailView2Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0" >
+                  <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Id.name}" filterable="true"
+                             sortable="true" headerText="ID" id="c1"
+                             width="100" visible="false">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it30" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblSaleInvDetailView2.hints.Id.label}"
+                                  required="#{bindings.TblSaleInvDetailView2.hints.Id.mandatory}"
+                                  columns="#{bindings.TblSaleInvDetailView2.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleInvDetailView2.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Id.tooltip}" id="it7" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleInvDetailView2.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.ItemL4Id.name}" filterable="true"
+                             sortable="true" headerText="Item Name"
+                             id="c3" width="400">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
+       id="it16" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
+                                        label="#{row.bindings.ItemL4Id.label}" autoSubmit="true"
+                                        required="#{bindings.TblSaleInvDetailView2.hints.ItemL4Id.mandatory}"
+                                        shortDesc="#{bindings.TblSaleInvDetailView2.hints.ItemL4Id.tooltip}" id="soc3" >
+                      <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                            <af:column headerText="UOM" id="c2" sortable="true"
+                             filterable="true">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.UOMName}"
+       id="it4" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.UOMName.inputValue}"
+                                  label="#{bindings.TblSaleInvDetailView2.hints.UOMName.label}"
+                                  required="#{bindings.TblSaleInvDetailView2.hints.UOMName.mandatory}"
+                                  columns="#{bindings.TblSaleInvDetailView2.hints.UOMName.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleInvDetailView2.hints.UOMName.precision}"
+                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.UOMName.tooltip}" id="it3" readOnly="true" >
+                      <f:validator binding="#{row.bindings.UOMName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  
+                  <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Description.name}" filterable="true"
+                             sortable="true" headerText="Description"
+                             id="c10" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Description}"
+       id="it23" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Description.inputValue}"
+                                  label="#{bindings.TblSaleInvDetailView2.hints.Description.label}"
+                                  required="#{bindings.TblSaleInvDetailView2.hints.Description.mandatory}"
+                                  columns="#{bindings.TblSaleInvDetailView2.hints.Description.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleInvDetailView2.hints.Description.precision}"
+                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Description.tooltip}" id="it14" >
+                      <f:validator binding="#{row.bindings.Description.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  
+                  <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Qty.name}" filterable="true"
+                             sortable="true" headerText="Qty" id="c5"
+                             width="150">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Qty}"
+       id="it18" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Qty.inputValue}"
+                                  label="#{bindings.TblSaleInvDetailView2.hints.Qty.label}"
+                                  required="#{bindings.TblSaleInvDetailView2.hints.Qty.mandatory}"
+                                  columns="#{bindings.TblSaleInvDetailView2.hints.Qty.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleInvDetailView2.hints.Qty.precision}"
+                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Qty.tooltip}" id="it9">
+                      <f:validator binding="#{row.bindings.Qty.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleInvDetailView2.hints.Qty.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Rate.name}" filterable="true"
+                             sortable="true" headerText="Rate" id="c6"
+                             width="150">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Rate}"
+       id="it19" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Rate.inputValue}"
+                                  label="#{bindings.TblSaleInvDetailView2.hints.Rate.label}"
+                                  required="#{bindings.TblSaleInvDetailView2.hints.Rate.mandatory}"
+                                  columns="#{bindings.TblSaleInvDetailView2.hints.Rate.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleInvDetailView2.hints.Rate.precision}"
+                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Rate.tooltip}" id="it10">
+                      <f:validator binding="#{row.bindings.Rate.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleInvDetailView2.hints.Rate.format}"/>
+                    </af:inputText>
+                  </af:column>
+                 
+                 
+                   <af:column sortProperty="#{bindings.TblSaleInvDetailView2.hints.Amount.name}" filterable="true"
+                             sortable="true" headerText="Amount" id="c7"
+                             width="150">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it20" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                  label="#{bindings.TblSaleInvDetailView2.hints.Amount.label}"
+                                  required="#{bindings.TblSaleInvDetailView2.hints.Amount.mandatory}"
+                                  columns="#{bindings.TblSaleInvDetailView2.hints.Amount.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleInvDetailView2.hints.Amount.precision}"
+                                  shortDesc="#{bindings.TblSaleInvDetailView2.hints.Amount.tooltip}" id="it11" readOnly="true">
+                      <f:validator binding="#{row.bindings.Amount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblSaleInvDetailView2.hints.Amount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                           
+                          </af:table>
+                         
+                          <af:panelGroupLayout id="pgl6"  layout="horizontal">
+                            
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"  styleClass="af|Voucheractionbutton"
+                                          icon="/irsoft_silverclass/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s1"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                         </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                      <af:panelFormLayout id="pfl2" maxColumns="2" rows="2">
+                        <af:selectOneChoice value="#{bindings.SaleOrderMasterId.inputValue}"
+                                            label="Sale Order"
+                                            required="#{bindings.SaleOrderMasterId.hints.mandatory}"
+                                            shortDesc="#{bindings.SaleOrderMasterId.hints.tooltip}" id="soc7" contentStyle="width:138px;">
+                          <f:selectItems value="#{bindings.SaleOrderMasterId.items}" id="si7"/>
+                          <f:validator binding="#{bindings.SaleOrderMasterId.validator}"/>
+                        </af:selectOneChoice>
+                        <af:spacer  id="s14"/>
+                        <af:inputText value="#{bindings.DiscAmount.inputValue}"
+                                      label="Discount Amount"
+                                      required="#{bindings.DiscAmount.hints.mandatory}"
+                                      columns="#{bindings.DiscAmount.hints.displayWidth}"
+                                      maximumLength="#{bindings.DiscAmount.hints.precision}"
+                                      shortDesc="#{bindings.DiscAmount.hints.tooltip}" id="it6" contentStyle="width:138px;">
+                          <f:validator binding="#{bindings.DiscAmount.validator}"/>
+                          <af:convertNumber groupingUsed="false" pattern="#{bindings.DiscAmount.format}"/>
+                        </af:inputText>
                        
+                        <af:inputText value="#{bindings.TaxPerc.inputValue}" label="Tax %"
+                                      required="#{bindings.TaxPerc.hints.mandatory}"
+                                      columns="#{bindings.TaxPerc.hints.displayWidth}"
+                                      maximumLength="#{bindings.TaxPerc.hints.precision}"
+                                      shortDesc="#{bindings.TaxPerc.hints.tooltip}" id="it8" contentStyle="width:138px;">
+                          <f:validator binding="#{bindings.TaxPerc.validator}"/>
+                          <af:convertNumber groupingUsed="false" pattern="#{bindings.TaxPerc.format}"/>
+                        </af:inputText>
+                        <af:spacer  id="s16"/>
+                        <af:inputText value="#{bindings.NetAmt.inputValue}" label="Net Amount"
+                                      required="#{bindings.NetAmt.hints.mandatory}"
+                                      columns="#{bindings.NetAmt.hints.displayWidth}"
+                                      maximumLength="#{bindings.NetAmt.hints.precision}"
+                                      shortDesc="#{bindings.NetAmt.hints.tooltip}" id="it12" contentStyle="width:138px;">
+                          <f:validator binding="#{bindings.NetAmt.validator}"/>
+                          <af:convertNumber groupingUsed="false" pattern="#{bindings.NetAmt.format}"/>
+                        </af:inputText>
+                        <!--<f:facet name="footer">
+                          <af:panelGroupLayout layout="horizontal" id="pgl10">
+                            <af:button actionListener="#{bindings.First.execute}" text="First"
+                                       disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b9"/>
+                            <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                       disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b10"/>
+                            <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                       disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b11"/>
+                            <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                       disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b12"/>
+                          </af:panelGroupLayout>
+                        </f:facet>-->
+                      </af:panelFormLayout>
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:showDetailItem>
+              <!--<af:showDetailItem text="Serach" id="sdi1">
+                <af:table value="#{bindings.TblSaleInvMasterView1.collectionModel}" var="row"
+                          rows="#{bindings.TblSaleInvMasterView1.rangeSize}"
+                          emptyText="#{bindings.TblSaleInvMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblSaleInvMasterView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblSaleInvMasterView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblSaleInvMasterView1.rangeSize}"
+                          filterModel="#{bindings.TblSaleInvMasterView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblSaleInvMasterView1Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0" >
+                 
+                  <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.Vno.name}" filterable="true"
+                             sortable="true" headerText="Voucher No." id="c12" align="left">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vno}"
+       id="it31" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Vno.inputValue}"
+                                  label="#{bindings.TblSaleInvMasterView1.hints.Vno.label}"
+                                  required="#{bindings.TblSaleInvMasterView1.hints.Vno.mandatory}"
+                                  columns="#{bindings.TblSaleInvMasterView1.hints.Vno.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleInvMasterView1.hints.Vno.precision}"
+                                  shortDesc="#{bindings.TblSaleInvMasterView1.hints.Vno.tooltip}" id="it25" readOnly="true">
+                      <f:validator binding="#{row.bindings.Vno.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Date" id="c13">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblSaleInvMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id2">
+                        <af:convertDateTime pattern="#{bindings.TblSaleInvMasterView1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblSaleInvMasterView1.hints.Dated.label}"
+                                  required="#{bindings.TblSaleInvMasterView1.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblSaleInvMasterView1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblSaleInvMasterView1.hints.Dated.tooltip}" id="id3" readOnly="true">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblSaleInvMasterView1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.Vtp.name}" filterable="true"
+                             sortable="true" headerText="Voucher Type" id="c14">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Vtp}"
+       id="it32" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Vtp.inputValue}" label="#{row.bindings.Vtp.label}"
+                                        required="#{bindings.TblSaleInvMasterView1.hints.Vtp.mandatory}"
+                                        shortDesc="#{bindings.TblSaleInvMasterView1.hints.Vtp.tooltip}" id="soc5" readOnly="true">
+                      <f:selectItems value="#{row.bindings.Vtp.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.Vtp.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                 
+                 <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.ProjectId.name}" filterable="true" sortable="true"
+               headerText="Project Name" id="c15" width="200">
+                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ProjectId}"
+       id="it5" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+      <af:selectOneChoice value="#{row.bindings.ProjectId.inputValue}" label="#{row.bindings.ProjectId.label}"
+                          required="#{bindings.TblSaleInvMasterView1.hints.ProjectId.mandatory}"
+                          shortDesc="#{bindings.TblSaleInvMasterView1.hints.ProjectId.tooltip}" id="soc4" readOnly="true">
+        <f:selectItems value="#{row.bindings.ProjectId.items}" id="si4"/>
+        <f:validator binding="#{row.bindings.ProjectId.validator}"/>
+      </af:selectOneChoice>
+                 </af:column>
+                  <af:column headerText="Customer" id="c17"
+                             sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.RblCustId}"
+       id="it35" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.RblCustId.inputValue}"
+                                        label="#{row.bindings.RblCustId.label}"
+                                        required="#{bindings.TblSaleInvMasterView1.hints.RblCustId.mandatory}"
+                                        shortDesc="#{bindings.TblSaleInvMasterView1.hints.RblCustId.tooltip}"
+                                        id="soc10" readOnly="true">
+                      <f:selectItems value="#{row.bindings.RblCustId.items}" id="si10"/>
+                      <f:validator binding="#{row.bindings.RblCustId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Customer City" id="c18"
+                             sortable="true" filterable="true">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.CustomerDId}"
+       id="it36" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.CustomerDId.inputValue}"
+                                        label="#{row.bindings.CustomerDId.label}"
+                                        required="#{bindings.TblSaleInvMasterView1.hints.CustomerDId.mandatory}"
+                                        shortDesc="#{bindings.TblSaleInvMasterView1.hints.CustomerDId.tooltip}"
+                                        id="soc11" readOnly="true">
+                      <f:selectItems value="#{row.bindings.CustomerDId.items}" id="si11"/>
+                      <f:validator binding="#{row.bindings.CustomerDId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Sales Type" id="c20"
+                             sortable="true" filterable="true">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SalesTypeId}"
+       id="it38" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.SalesTypeId.inputValue}"
+                                        label="#{row.bindings.SalesTypeId.label}"
+                                        required="#{bindings.TblSaleInvMasterView1.hints.SalesTypeId.mandatory}"
+                                        shortDesc="#{bindings.TblSaleInvMasterView1.hints.SalesTypeId.tooltip}"
+                                        id="soc12" readOnly="true">
+                      <f:selectItems value="#{row.bindings.SalesTypeId.items}" id="si12"/>
+                      <f:validator binding="#{row.bindings.SalesTypeId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Sale Control Account" id="c24" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SalesCa}"
+       id="it40" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.SalesCa.inputValue}" label="#{row.bindings.SalesCa.label}"
+                                        required="#{bindings.TblSaleInvMasterView1.hints.SalesCa.mandatory}"
+                                        shortDesc="#{bindings.TblSaleInvMasterView1.hints.SalesCa.tooltip}" id="soc16" readOnly="true">
+                      <f:selectItems value="#{row.bindings.SalesCa.items}" id="si16"/>
+                      <f:validator binding="#{row.bindings.SalesCa.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Party Control Account" id="c23"
+                             sortable="true" filterable="true">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.PartyCa}"
+       id="it39" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.PartyCa.inputValue}" label="#{row.bindings.PartyCa.label}"
+                                        required="#{bindings.TblSaleInvMasterView1.hints.PartyCa.mandatory}"
+                                        shortDesc="#{bindings.TblSaleInvMasterView1.hints.PartyCa.tooltip}" id="soc15" readOnly="true">
+                      <f:selectItems value="#{row.bindings.PartyCa.items}" id="si15"/>
+                      <f:validator binding="#{row.bindings.PartyCa.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                 
+                 
+                  <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.Narration.name}" filterable="true"
+                             sortable="true" headerText="Remarks"
+                             id="c19" width="300">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Narration}"
+       id="it37" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Narration.inputValue}"
+                                  label="#{bindings.TblSaleInvMasterView1.hints.Narration.label}"
+                                  required="#{bindings.TblSaleInvMasterView1.hints.Narration.mandatory}"
+                                  columns="#{bindings.TblSaleInvMasterView1.hints.Narration.displayWidth}"
+                                  maximumLength="#{bindings.TblSaleInvMasterView1.hints.Narration.precision}"
+                                  shortDesc="#{bindings.TblSaleInvMasterView1.hints.Narration.tooltip}" id="it29" readOnly="true">
+                      <f:validator binding="#{row.bindings.Narration.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  
+                  
+                  <af:column sortProperty="#{bindings.TblSaleInvMasterView1.hints.Id.name}" filterable="true" sortable="true"
+                             headerText="Get Report" id="c1223">
+                    <af:link shortDesc="#{bindings.TblSaleInvMasterView1.hints.Id.tooltip}" id="it44"
+                    icon="#{resource['images:get_report.png']}"
+                             actionListener="#{backingBeanScope.VoucherPrintBean.getSaleInvReport}">
+                   <f:attribute name="sendSaleInvMID" value="#{row.bindings.Id.inputValue}"/>
+                  
+                </af:link>
                     
-                </af:panelGroupLayout>
-            </af:gridCell>
-    </af:gridRow>
-    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
-      <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
-    </af:gridRow>
-  </af:panelGridLayout>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>-->
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+         
+      </af:panelGridLayout>
     </af:showDetailItem>
   </af:panelAccordion>
- 
 </ui:composition>
+
+

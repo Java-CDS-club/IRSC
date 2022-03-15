@@ -29,7 +29,13 @@
        TblSaleInvMaster.SALES_CA, 
        TblSaleInvMaster.SALES_TYPE_ID, 
        TblSaleInvMaster.SALE_ORDER_MASTER_ID, 
-       TblSaleInvMaster.JOB_M_ID"
+       TblSaleInvMaster.JOB_M_ID, 
+       TblSaleInvMaster.TAX_AMOUNT, 
+       TblSaleInvMaster.TAX_PERC, 
+       TblSaleInvMaster.BARCODE, 
+       TblSaleInvMaster.BARCODE_SCAN, 
+       TblSaleInvMaster.EMP_ID, 
+       TblSaleInvMaster.PAY_TYPE"
   FromList="TBL_SALE_INV_MASTER TblSaleInvMaster"
   Where="TblSaleInvMaster.COMPANY_ID=Nvl(:P_COMPANY_ID,TblSaleInvMaster.COMPANY_ID)"
   OrderBy="TblSaleInvMaster.ID desc">
@@ -80,6 +86,14 @@
   <ViewAccessor
     Name="Job_Order_Master_LOV1"
     ViewObjectName="model.LOV.Job_Order_Master_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Employee_Name_LOV1"
+    ViewObjectName="model.LOV.Employee_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Payment_Type_LOV1"
+    ViewObjectName="model.LOV.Payment_Type_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -267,6 +281,42 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="JobNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EmpId"
+    ListVOName="Employee_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EmpId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PayType"
+    ListVOName="Payment_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PayType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -473,6 +523,58 @@
     EntityUsage="TblSaleInvMaster"
     AliasName="JOB_M_ID"
     LOVName="LOV_JobMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TaxAmount"
+    PrecisionRule="true"
+    EntityAttrName="TaxAmount"
+    EntityUsage="TblSaleInvMaster"
+    AliasName="TAX_AMOUNT"/>
+  <ViewAttribute
+    Name="TaxPerc"
+    PrecisionRule="true"
+    EntityAttrName="TaxPerc"
+    EntityUsage="TblSaleInvMaster"
+    AliasName="TAX_PERC"/>
+  <ViewAttribute
+    Name="Barcode"
+    PrecisionRule="true"
+    EntityAttrName="Barcode"
+    EntityUsage="TblSaleInvMaster"
+    AliasName="BARCODE"/>
+  <ViewAttribute
+    Name="BarcodeScan"
+    PrecisionRule="true"
+    EntityAttrName="BarcodeScan"
+    EntityUsage="TblSaleInvMaster"
+    AliasName="BARCODE_SCAN"/>
+  <ViewAttribute
+    Name="EmpId"
+    PrecisionRule="true"
+    EntityAttrName="EmpId"
+    EntityUsage="TblSaleInvMaster"
+    AliasName="EMP_ID"
+    LOVName="LOV_EmpId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PayType"
+    PrecisionRule="true"
+    EntityAttrName="PayType"
+    EntityUsage="TblSaleInvMaster"
+    AliasName="PAY_TYPE"
+    LOVName="LOV_PayType">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

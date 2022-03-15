@@ -19,6 +19,10 @@
     </SchemaBasedProperties>
   </Properties>
   <Variable
+    Name="PAGEIDGET"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
+  <Variable
     Name="CrudMastID"
     Kind="where"
     Type="java.math.BigDecimal">
@@ -27,26 +31,22 @@
       trustMode="trusted"
       CodeSourceName="USERS_CRUD_OPERATIONS"/>
   </Variable>
-  <Variable
-    Name="PAGEIDGET"
-    Kind="where"
-    Type="java.math.BigDecimal"/>
-  <SQLQuery><![CDATA[Select        
-Tbl_Role_Detail_Pages_Crud.Crud_ID as CrudId,        
-Tbl_Crud.CRUD_NAME as operation,        
-Tbl_Crud.CRUD_ICON as icon,        
-Tbl_Crud.CRUD_BINDING as bindingName,        
-Tbl_Crud.CRUD_DISABLED as btnDisabled        
-From tbl_role_detail_Pages,Tbl_Role_Detail_Pages_Crud,Tbl_Crud        
-Where Tbl_Role_Detail_Pages_Crud.ROLE_DETAIL_PAGES_ID=tbl_role_detail_Pages.ROLE_DETAIL_PAGES_ID        
-And Tbl_Crud.CRUD_ID=Tbl_Role_Detail_Pages_Crud.CRUD_ID        
-And tbl_role_detail_Pages.R_VIEW='Y'        
-AND (        
-tbl_role_detail_Pages.R_Add =  Tbl_Crud.Crud_ID OR         
-tbl_role_detail_Pages.R_Edit =  Tbl_Crud.Crud_ID OR         
-tbl_role_detail_Pages.R_Delete = Tbl_Crud.Crud_ID     
-) 
-And tbl_role_detail_Pages.Role_Master_ID=:CrudMastID       
+  <SQLQuery><![CDATA[Select          
+Tbl_Role_Detail_Pages_Crud.Crud_ID as CrudId,          
+Tbl_Crud.CRUD_NAME as operation,          
+Tbl_Crud.CRUD_ICON as icon,          
+Tbl_Crud.CRUD_BINDING as bindingName,          
+Tbl_Crud.CRUD_DISABLED as btnDisabled          
+From tbl_role_detail_Pages,Tbl_Role_Detail_Pages_Crud,Tbl_Crud          
+Where Tbl_Role_Detail_Pages_Crud.ROLE_DETAIL_PAGES_ID=tbl_role_detail_Pages.ROLE_DETAIL_PAGES_ID          
+And Tbl_Crud.CRUD_ID=Tbl_Role_Detail_Pages_Crud.CRUD_ID          
+And tbl_role_detail_Pages.R_VIEW='Y'          
+AND (          
+tbl_role_detail_Pages.R_Add =  Tbl_Crud.Crud_ID OR           
+tbl_role_detail_Pages.R_Edit =  Tbl_Crud.Crud_ID OR           
+tbl_role_detail_Pages.R_Delete = Tbl_Crud.Crud_ID       
+)   
+And tbl_role_detail_Pages.Role_Master_ID in (Select Role_Master_ID from tbl_user_roles where role_master_id is not null and USER_MASTER_ID=:CrudMastID)         
 And tbl_role_detail_Pages.Pages_ID=:PAGEIDGET]]></SQLQuery>
   <ViewAttribute
     Name="Crudid"

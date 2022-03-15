@@ -1336,6 +1336,39 @@
   <ViewUsage
     Name="TblFreeTrialView1"
     ViewObjectName="model.ERP.VO.TblFreeTrialView"/>
+  <ViewUsage
+    Name="TblGroupView1"
+    ViewObjectName="model.ERP.VO.TblGroupView"/>
+  <ViewUsage
+    Name="TblCompanyView2"
+    ViewObjectName="model.ERP.VO.TblCompanyView"/>
+  <ViewUsage
+    Name="TblCompanyDetailView4"
+    ViewObjectName="model.ERP.VO.TblCompanyDetailView"/>
+  <ViewUsage
+    Name="TblCompanyYearsView4"
+    ViewObjectName="model.ERP.VO.TblCompanyYearsView"/>
+  <ViewUsage
+    Name="TblCompanyModulesView1"
+    ViewObjectName="model.ERP.VO.TblCompanyModulesView"/>
+  <ViewUsage
+    Name="TblCompanyModulesView2"
+    ViewObjectName="model.ERP.VO.TblCompanyModulesView"/>
+  <ViewUsage
+    Name="Tbl_Group_User_Profile1"
+    ViewObjectName="model.ERP.VO.Tbl_Group_User_Profile"/>
+  <ViewUsage
+    Name="TblCompanyView3"
+    ViewObjectName="model.ERP.VO.TblCompanyView"/>
+  <ViewUsage
+    Name="TblCompanyDetailView5"
+    ViewObjectName="model.ERP.VO.TblCompanyDetailView"/>
+  <ViewUsage
+    Name="TblCompanyModulesView3"
+    ViewObjectName="model.ERP.VO.TblCompanyModulesView"/>
+  <ViewUsage
+    Name="TblCompanyYearsView5"
+    ViewObjectName="model.ERP.VO.TblCompanyYearsView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -2439,5 +2472,53 @@
     ViewLinkObjectName="model.ERP.VO.FkStdRegSiblingDetailLink"
     SrcViewUsageName="model.ERP.AppModule.TblStdRegView1"
     DstViewUsageName="model.ERP.AppModule.StdRegSibingDetail2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkGroupCompanyLink1"
+    ViewLinkObjectName="model.ERP.VO.FkGroupCompanyLink"
+    SrcViewUsageName="model.ERP.AppModule.TblGroupView1"
+    DstViewUsageName="model.ERP.AppModule.TblCompanyView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKCompanyMasterDetailLink2"
+    ViewLinkObjectName="model.ERP.VO.FKCompanyMasterDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblCompanyView2"
+    DstViewUsageName="model.ERP.AppModule.TblCompanyDetailView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKCompanyYearLink2"
+    ViewLinkObjectName="model.ERP.VO.FKCompanyYearLink"
+    SrcViewUsageName="model.ERP.AppModule.TblCompanyView2"
+    DstViewUsageName="model.ERP.AppModule.TblCompanyYearsView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkCompanyModuleLink1"
+    ViewLinkObjectName="model.ERP.VO.FkCompanyModuleLink"
+    SrcViewUsageName="model.ERP.AppModule.TblCompanyView2"
+    DstViewUsageName="model.ERP.AppModule.TblCompanyModulesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkGroupUserProfileLink1"
+    ViewLinkObjectName="model.ERP.VO.FkGroupUserProfileLink"
+    SrcViewUsageName="model.ERP.AppModule.Tbl_Group_User_Profile1"
+    DstViewUsageName="model.ERP.AppModule.TblCompanyView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKCompanyMasterDetailLink3"
+    ViewLinkObjectName="model.ERP.VO.FKCompanyMasterDetailLink"
+    SrcViewUsageName="model.ERP.AppModule.TblCompanyView3"
+    DstViewUsageName="model.ERP.AppModule.TblCompanyDetailView5"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkCompanyModuleLink2"
+    ViewLinkObjectName="model.ERP.VO.FkCompanyModuleLink"
+    SrcViewUsageName="model.ERP.AppModule.TblCompanyView3"
+    DstViewUsageName="model.ERP.AppModule.TblCompanyModulesView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKCompanyYearLink3"
+    ViewLinkObjectName="model.ERP.VO.FKCompanyYearLink"
+    SrcViewUsageName="model.ERP.AppModule.TblCompanyView3"
+    DstViewUsageName="model.ERP.AppModule.TblCompanyYearsView5"
     Reversed="false"/>
 </AppModule>

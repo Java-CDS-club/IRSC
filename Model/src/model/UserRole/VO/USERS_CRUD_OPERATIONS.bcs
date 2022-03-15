@@ -7,6 +7,6 @@ import oracle.jbo.script.annotation.VariableExpression;
 @VariableExpression(path="CrudMastID")
 def CrudMastID_VariableScript_Variable()
 {
-adf.context.current.sessionScope.get('sessRMID')
+adf.context.current.sessionScope.get('sessUMID')
 }
 

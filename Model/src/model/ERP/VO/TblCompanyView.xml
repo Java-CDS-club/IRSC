@@ -31,7 +31,8 @@
        TblCompany.REG_DATE, 
        TblCompany.REN_DATE, 
        TblCompany.ABBR, 
-       TblCompany.IMAGE_PATH"
+       TblCompany.IMAGE_PATH, 
+       TblCompany.GROUP_ID"
   FromList="TBL_COMPANY TblCompany"
   Where="AST='Y'">
   <ViewAccessor
@@ -206,6 +207,12 @@
     EntityAttrName="ImagePath"
     EntityUsage="TblCompany"
     AliasName="IMAGE_PATH"/>
+  <ViewAttribute
+    Name="GroupId"
+    PrecisionRule="true"
+    EntityAttrName="GroupId"
+    EntityUsage="TblCompany"
+    AliasName="GROUP_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>
@@ -217,6 +224,11 @@
   <ViewLinkAccessor
     Name="TblCompanyDetailView"
     ViewLink="model.ERP.VO.FKCompanyMasterDetailLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblCompanyModulesView"
+    ViewLink="model.ERP.VO.FkCompanyModuleLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

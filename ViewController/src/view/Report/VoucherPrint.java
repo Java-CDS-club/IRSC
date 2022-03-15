@@ -23,9 +23,11 @@ public class VoucherPrint {
     private RichInputText it4;
     private static String Img_Name;
     private static Number company_id;
+    private static String Group_id;
     private static String company_name;
     private RichInputText it1;
     private RichInputText it2;
+    private RichInputText it5;
 
 
     public VoucherPrint() {
@@ -954,19 +956,25 @@ public class VoucherPrint {
         System.out.println(" company is : " + company);
         String imgp = this.getIt1().getValue().toString();
         System.out.println(" Image Path is : " + imgp);
+        String group = this.getIt5().getValue().toString();
+        System.out.println(" Group is : " + group);
                
     
         String url = "";
         Number sendCOMPANYID = (Number) actionEvent.getComponent().getAttributes().get("sendCOMPANYID");
         
         storeOnSession("sessCoID", sendCOMPANYID);
+        storeOnSession("sessGrID", group);
         storeOnSession("sessCoName", company);
         storeOnSession("sessIMGP", imgp);
         
         company_id=sendCOMPANYID;
+        Group_id=group;
         company_name=company;
         Img_Name=imgp;
+        
         System.out.println("Company ID= " + sendCOMPANYID);
+        System.out.println("Group ID= " + group);
         System.out.println("Company Name= " + company);
         System.out.println("Image Path= " + imgp);
         
@@ -1045,5 +1053,11 @@ public class VoucherPrint {
     }
 
 
-    
+    public void setIt5(RichInputText it5) {
+        this.it5 = it5;
+    }
+
+    public RichInputText getIt5() {
+        return it5;
+    }
 }

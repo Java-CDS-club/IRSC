@@ -41,7 +41,7 @@ public class UploadBeanUserProfile {
         BindingContext bindingctx = BindingContext.getCurrent();
         BindingContainer bindings = bindingctx.getCurrentBindingsEntry();
         DCBindingContainer bindingsImpl = (DCBindingContainer)bindings;
-        DCIteratorBinding iter = bindingsImpl.findIteratorBinding("TblUserProfileView1Iterator");
+        DCIteratorBinding iter = bindingsImpl.findIteratorBinding("TblCompanyView3Iterator");
        
         Row row = iter.getCurrentRow();
         row.setAttribute("ImageName", createBlobDomain(myfile));
@@ -79,5 +79,5 @@ public class UploadBeanUserProfile {
     }
 
 
-
+   
 }

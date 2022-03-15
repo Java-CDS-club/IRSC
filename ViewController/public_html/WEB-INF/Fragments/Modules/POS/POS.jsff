@@ -1,20 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
- <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+ <!--<af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Dashboard">
     
      <af:panelGridLayout id="pgl1">
     <af:gridRow marginTop="5px" height="auto" id="gr1">
       <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
         <af:panelGroupLayout id="pgl24" layout="horizontal" halign="center" valign="middle">
-                    <!--<af:panelFormLayout id="pfl3" maxColumns="8" rows="1" fieldWidth="500px;"
+                    --><!--<af:panelFormLayout id="pfl3" maxColumns="8" rows="1" fieldWidth="500px;"
                                         inlineStyle=" padding: 0%;">
                         
                      
                                    
                                    
                                    
-                        --><!--<af:link text="User Management" id="pt_l1" icon="#{resource['images:usrmng.png']}"
+                        --><!----><!--<af:link text="User Management" id="pt_l1" icon="#{resource['images:usrmng.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
                         action="/faces/Main_Pages/Modules/User_Management/User_Management.jsf"/>
                                    
@@ -44,10 +44,10 @@
                                    
                         <af:link text="Reports" id="pt_7l1" icon="#{resource['images:rpt.png']}"
                         inlineStyle="font-size: 14px;font-family:Arial !important; color: #256080;" 
-                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf"/>--><!--
+                        action="/faces/Main_Pages/Modules/Reports/Reports.jsf"/>--><!----><!--
                         
                         
-                    </af:panelFormLayout>-->
+                    </af:panelFormLayout>--><!--
                     <af:button text="Dine In" id="pt_b3" icon="#{resource['images:Dine_In.png']}" 
                                inlineStyle="width: 300px;height:150px; text-align:center;  font-size:18px; font-family:Arial !important;"
                                    destination="/faces/Main_Pages/Modules/POS/Dine_In.jsf"/>
@@ -166,6 +166,6 @@
     </af:gridRow>
   </af:panelGridLayout>
     </af:showDetailItem>
-  </af:panelAccordion>
+  </af:panelAccordion>-->
  
 </ui:composition>

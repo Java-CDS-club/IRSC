@@ -6,18 +6,6 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblUserProfileView1" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblUserProfileView1Iterator"/>
-    <searchRegion Binds="TblUserProfileView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblUserProfileView1Query"/>
-    <iterator Binds="TblCompanyDetailView3" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblCompanyDetailView3Iterator"/>
-    <searchRegion Binds="TblCompanyDetailView3Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCompanyDetailView3Query"/>
-    <iterator Binds="TblCompanyYearsView3" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblCompanyYearsView3Iterator"/>
-    <searchRegion Binds="TblCompanyYearsView3Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCompanyYearsView3Query"/>
     <iterator Binds="TblProjectView1" RangeSize="25" DataControl="AppModuleDataControl1" id="TblProjectView1Iterator"/>
     <searchRegion Binds="TblProjectView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblProjectView1Query"/>
@@ -29,6 +17,25 @@
               id="TblProjectDdView1Iterator"/>
     <searchRegion Binds="TblProjectDdView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblProjectDdView1Query"/>
+    <iterator Binds="Tbl_Group_User_Profile1" RangeSize="10" DataControl="AppModuleDataControl1"
+              id="Tbl_Group_User_Profile1Iterator"/>
+    <searchRegion Binds="Tbl_Group_User_Profile1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Tbl_Group_User_Profile1Query"/>
+    <iterator Binds="TblCompanyView3" RangeSize="10" DataControl="AppModuleDataControl1" id="TblCompanyView3Iterator"/>
+    <searchRegion Binds="TblCompanyView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCompanyView3Query"/>
+    <iterator Binds="TblCompanyDetailView5" RangeSize="10" DataControl="AppModuleDataControl1"
+              id="TblCompanyDetailView5Iterator"/>
+    <searchRegion Binds="TblCompanyDetailView5Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCompanyDetailView5Query"/>
+    <iterator Binds="TblCompanyYearsView5" RangeSize="10" DataControl="AppModuleDataControl1"
+              id="TblCompanyYearsView5Iterator"/>
+    <searchRegion Binds="TblCompanyYearsView5Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCompanyYearsView5Query"/>
+    <iterator Binds="TblCompanyModulesView3" RangeSize="10" DataControl="AppModuleDataControl1"
+              id="TblCompanyModulesView3Iterator"/>
+    <searchRegion Binds="TblCompanyModulesView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCompanyModulesView3Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -42,144 +49,8 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="TblUserProfileView1Iterator" id="TblUserProfileView1">
-      <nodeDefinition DefName="model.ERP.VO.TblUserProfileView" Name="TblUserProfileView10">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="StDate"/>
-          <Item Value="Name"/>
-          <Item Value="CoAddress"/>
-          <Item Value="Ast"/>
-          <Item Value="ImageChoose"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action IterBinding="TblUserProfileView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblUserProfileView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblUserProfileView1Iterator" id="Delete" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="Abbr">
-      <AttrNames>
-        <Item Value="Abbr"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="Contact">
-      <AttrNames>
-        <Item Value="Contact"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="ContactPers">
-      <AttrNames>
-        <Item Value="ContactPers"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="Email">
-      <AttrNames>
-        <Item Value="Email"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="Fax">
-      <AttrNames>
-        <Item Value="Fax"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="Gst">
-      <AttrNames>
-        <Item Value="Gst"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="ImageName">
-      <AttrNames>
-        <Item Value="ImageName"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="LicEndate">
-      <AttrNames>
-        <Item Value="LicEndate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="LicStdate">
-      <AttrNames>
-        <Item Value="LicStdate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="LicenseNo">
-      <AttrNames>
-        <Item Value="LicenseNo"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="Mobile">
-      <AttrNames>
-        <Item Value="Mobile"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="Ntn">
-      <AttrNames>
-        <Item Value="Ntn"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="RegDate">
-      <AttrNames>
-        <Item Value="RegDate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="RenDate">
-      <AttrNames>
-        <Item Value="RenDate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="Strn">
-      <AttrNames>
-        <Item Value="Strn"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="Url">
-      <AttrNames>
-        <Item Value="Url"/>
-      </AttrNames>
-    </attributeValues>
-    <action IterBinding="TblUserProfileView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="TblUserProfileView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="TblUserProfileView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="TblUserProfileView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
-    <tree IterBinding="TblCompanyDetailView3Iterator" id="TblCompanyDetailView3">
-      <nodeDefinition DefName="model.ERP.VO.TblCompanyDetailView" Name="TblCompanyDetailView30">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="Title"/>
-          <Item Value="IbanNo"/>
-          <Item Value="AccNo"/>
-          <Item Value="Ast"/>
-          <Item Value="BankName"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action IterBinding="TblCompanyDetailView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblCompanyDetailView3Iterator" id="Execute1" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="TblCompanyDetailView3Iterator" id="Delete1" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
-    <tree IterBinding="TblCompanyYearsView3Iterator" id="TblCompanyYearsView3">
-      <nodeDefinition DefName="model.ERP.VO.TblCompanyYearsView" Name="TblCompanyYearsView30">
-        <AttrNames>
-          <Item Value="Id"/>
-          <Item Value="Frdate"/>
-          <Item Value="Todate"/>
-          <Item Value="Ast"/>
-          <Item Value="Descriptipion"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action IterBinding="TblCompanyYearsView3Iterator" id="CreateInsert2" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblCompanyYearsView3Iterator" id="Execute2" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="TblCompanyYearsView3Iterator" id="Delete2" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
     <tree IterBinding="TblProjectView1Iterator" id="TblProjectView1">
       <nodeDefinition DefName="model.ERP.VO.TblProjectView" Name="TblProjectView10">
         <AttrNames>
@@ -222,10 +93,175 @@
             Action="createInsertRow"/>
     <action IterBinding="TblProjectDdView1Iterator" id="Execute5" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblProjectDdView1Iterator" id="Delete5" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <attributeValues IterBinding="TblUserProfileView1Iterator" id="Id">
+    <tree IterBinding="Tbl_Group_User_Profile1Iterator" id="Tbl_Group_User_Profile1">
+      <nodeDefinition DefName="model.ERP.VO.Tbl_Group_User_Profile" Name="Tbl_Group_User_Profile10">
+        <AttrNames>
+          <Item Value="Ast"/>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="Tbl_Group_User_Profile1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="Tbl_Group_User_Profile1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="Tbl_Group_User_Profile1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblCompanyView3Iterator" id="TblCompanyView3">
+      <nodeDefinition DefName="model.ERP.VO.TblCompanyView" Name="TblCompanyView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="CoAddress"/>
+          <Item Value="StDate"/>
+          <Item Value="ImageChoose"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCompanyView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCompanyView3Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblCompanyView3Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="Id">
       <AttrNames>
         <Item Value="Id"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="ImageName">
+      <AttrNames>
+        <Item Value="ImageName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="Contact">
+      <AttrNames>
+        <Item Value="Contact"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="ContactPers">
+      <AttrNames>
+        <Item Value="ContactPers"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="Fax">
+      <AttrNames>
+        <Item Value="Fax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="Gst">
+      <AttrNames>
+        <Item Value="Gst"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="LicEndate">
+      <AttrNames>
+        <Item Value="LicEndate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="LicStdate">
+      <AttrNames>
+        <Item Value="LicStdate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="Mobile">
+      <AttrNames>
+        <Item Value="Mobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="Ntn">
+      <AttrNames>
+        <Item Value="Ntn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="Strn">
+      <AttrNames>
+        <Item Value="Strn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="Url">
+      <AttrNames>
+        <Item Value="Url"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="LicenseNo">
+      <AttrNames>
+        <Item Value="LicenseNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="RegDate">
+      <AttrNames>
+        <Item Value="RegDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="RenDate">
+      <AttrNames>
+        <Item Value="RenDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCompanyView3Iterator" id="Abbr">
+      <AttrNames>
+        <Item Value="Abbr"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblCompanyView3Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblCompanyView3Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblCompanyView3Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblCompanyView3Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblCompanyDetailView5Iterator" id="TblCompanyDetailView5">
+      <nodeDefinition DefName="model.ERP.VO.TblCompanyDetailView" Name="TblCompanyDetailView50">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Title"/>
+          <Item Value="IbanNo"/>
+          <Item Value="AccNo"/>
+          <Item Value="Ast"/>
+          <Item Value="BankName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCompanyDetailView5Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCompanyDetailView5Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblCompanyDetailView5Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblCompanyYearsView5Iterator" id="TblCompanyYearsView5">
+      <nodeDefinition DefName="model.ERP.VO.TblCompanyYearsView" Name="TblCompanyYearsView50">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Frdate"/>
+          <Item Value="Todate"/>
+          <Item Value="Ast"/>
+          <Item Value="Descriptipion"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCompanyYearsView5Iterator" id="CreateInsert6" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCompanyYearsView5Iterator" id="Execute6" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblCompanyYearsView5Iterator" id="Delete6" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblCompanyModulesView3Iterator" id="TblCompanyModulesView3">
+      <nodeDefinition DefName="model.ERP.VO.TblCompanyModulesView" Name="TblCompanyModulesView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ModuleId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCompanyModulesView3Iterator" id="CreateInsert7" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCompanyModulesView3Iterator" id="Execute7" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblCompanyModulesView3Iterator" id="Delete7" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

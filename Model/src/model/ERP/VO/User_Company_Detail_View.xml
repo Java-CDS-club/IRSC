@@ -16,7 +16,8 @@
        TblUserDetail.COMPANY_ID AS COMPANY_ID2, 
        TblCompany.NAME, 
        TblCompany.ID, 
-       TblCompany.IMAGE_PATH"
+       TblCompany.IMAGE_PATH, 
+       TblCompany.GROUP_ID"
   FromList="TBL_USER_DETAIL TblUserDetail, TBL_COMPANY TblCompany"
   Where="TblUserDetail.USER_M_ID=:P_User_Id  
 AND TblCompany.ID=TblUserDetail.COMPANY_ID">
@@ -124,6 +125,12 @@ AND TblCompany.ID=TblUserDetail.COMPANY_ID">
     EntityAttrName="ImagePath"
     EntityUsage="TblCompany"
     AliasName="IMAGE_PATH"/>
+  <ViewAttribute
+    Name="GroupId"
+    PrecisionRule="true"
+    EntityAttrName="GroupId"
+    EntityUsage="TblCompany"
+    AliasName="GROUP_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

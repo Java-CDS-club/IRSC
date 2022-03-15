@@ -153,9 +153,30 @@
     EntityAttrName="UserMasterEmail"
     EntityUsage="TblUserMaster"
     AliasName="USER_MASTER_EMAIL"/>
+  <ViewAttribute
+    Name="GroupId"
+    PrecisionRule="true"
+    EntityAttrName="GroupId"
+    EntityUsage="TblUserMaster"
+    AliasName="GROUP_ID"/>
   <ViewLinkAccessor
     Name="TblUserDetailView"
     ViewLink="model.UserRole.VO.FkUserMasterDetailLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblRoleMasterView"
+    ViewLink="model.UserRole.VO.FkUserMasterRoleMasterLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblUserRolesView"
+    ViewLink="model.UserRole.VO.FkUserRoleLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblUserDModulesView"
+    ViewLink="model.UserRole.VO.FkUserModuleLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>

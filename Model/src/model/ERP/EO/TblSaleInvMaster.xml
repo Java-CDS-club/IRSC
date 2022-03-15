@@ -190,6 +190,65 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_SALE_INV_MASTER"/>
+  <Attribute
+    Name="Barcode"
+    Precision="150"
+    ColumnName="BARCODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_SALE_INV_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BarcodeScan"
+    Precision="150"
+    ColumnName="BARCODE_SCAN"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_SALE_INV_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EmpId"
+    ColumnName="EMP_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SALE_INV_MASTER"/>
+  <Attribute
+    Name="PayType"
+    Precision="3"
+    ColumnName="PAY_TYPE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_SALE_INV_MASTER"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TaxAmount"
+    ColumnName="TAX_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SALE_INV_MASTER"/>
+  <Attribute
+    Name="TaxPerc"
+    ColumnName="TAX_PERC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SALE_INV_MASTER"/>
   <AccessorAttribute
     Name="TblRbrM"
     Association="model.ERP.EO.FkRbrSaleInvAssoc"

@@ -83,6 +83,13 @@
     AssociationOtherEnd="model.UserRole.EO.FkUserMasterDetailAssoc.TblUserDetail"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblUserDModules"
+    Association="model.UserRole.EO.FkUserDetailModuleAssoc"
+    AssociationEnd="model.UserRole.EO.FkUserDetailModuleAssoc.TblUserDModules"
+    AssociationOtherEnd="model.UserRole.EO.FkUserDetailModuleAssoc.TblUserDetail"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkUserDetail"
     PrimaryKey="true">

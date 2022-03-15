@@ -64,7 +64,6 @@
   </Attribute>
   <Attribute
     Name="RoleMasterId"
-    IsNotNull="true"
     ColumnName="ROLE_MASTER_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
@@ -117,6 +116,13 @@
       <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="GroupId"
+    ColumnName="GROUP_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_USER_MASTER"/>
   <AccessorAttribute
     Name="TblRoleMaster"
     Association="model.UserRole.EO.FkUserMasterRoleAssoc"
@@ -129,6 +135,27 @@
     Association="model.UserRole.EO.FkUserMasterDetailAssoc"
     AssociationEnd="model.UserRole.EO.FkUserMasterDetailAssoc.TblUserDetail"
     AssociationOtherEnd="model.UserRole.EO.FkUserMasterDetailAssoc.TblUserMaster"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblRoleMaster1"
+    Association="model.UserRole.EO.FkUserMasterRoleMasterAssoc"
+    AssociationEnd="model.UserRole.EO.FkUserMasterRoleMasterAssoc.TblRoleMaster1"
+    AssociationOtherEnd="model.UserRole.EO.FkUserMasterRoleMasterAssoc.TblUserMaster1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblUserRoles"
+    Association="model.UserRole.EO.FkUserRoleAssoc"
+    AssociationEnd="model.UserRole.EO.FkUserRoleAssoc.TblUserRoles"
+    AssociationOtherEnd="model.UserRole.EO.FkUserRoleAssoc.TblUserMaster"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblUserDModules"
+    Association="model.UserRole.EO.FkUserModuleAssoc"
+    AssociationEnd="model.UserRole.EO.FkUserModuleAssoc.TblUserDModules"
+    AssociationOtherEnd="model.UserRole.EO.FkUserModuleAssoc.TblUserMaster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key
